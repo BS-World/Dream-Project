@@ -292,7 +292,17 @@
       /* Bold for stronger emphasis */
     }
   </style>
-  
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then((registration) => {
+      console.log('Service Worker registered with scope:', registration.scope);
+    }).catch((error) => {
+      console.error('Service Worker registration failed:', error);
+    });
+  }
+</script>
+
 </head>
 
 <body class="">
@@ -1227,6 +1237,32 @@
 </div>
 <!-- End of .container -->
 <!-- Footer -->
+<script>
+  let deferredPrompt;
+  const addToHomeScreenBtn = document.getElementById('addToHomeScreen');
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    addToHomeScreenBtn.style.display = 'block';
+
+    addToHomeScreenBtn.addEventListener('click', () => {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+        deferredPrompt = null;
+      });
+    });
+  });
+</script>
+
+<button id="addToHomeScreen" style="display: none; background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
+  Add Alfido Tech to Home Screen
+</button>
 
 
 
