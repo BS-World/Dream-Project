@@ -41,7 +41,7 @@
 
         body {
             font-family: var(--font-family);
-            background-color: #f8f9fa;
+            background-color: #f4efe3;
         }
 
         .container {
@@ -56,7 +56,7 @@
         .title {
             text-align: center;
             font-size: 26px;
-            color: var(--primary-color);
+            color: #d43635;
             font-weight: bold;
             margin: 20px 0;
         }
@@ -83,6 +83,13 @@
             width: 130px;
         }
     </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/regular.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css">
 </head>
 
 <body>
@@ -92,6 +99,21 @@
             <img src="Logo 2.png" alt="Alfido Tech Logo" width="260">
         </div>
         <h3 class="text-center mb-4">Internship Offer Letter Form</h3>
+        <div class="d-flex justify-content-center gap-3">
+            <a href="https://www.linkedin.com/company/alfido-tech/" target="_blank" class="btn btn-primary">
+                <i class="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://chat.whatsapp.com/I7oG7w7bLkhDo2EEGzaHAz" target="_blank" class="btn btn-success">
+                <i class="fab fa-whatsapp fa-2x"></i>
+            </a>
+            <a href="https://www.whatsapp.com/channel/0029Va9oTsF1CYoKbCt5TJ41" target="_blank" class="btn btn-warning">
+                <i class="fas fa-bullhorn fa-2x"></i>
+            </a>
+            <a href="https://t.me/+s9WykS4sL7hlN2I1" target="_blank" class="btn btn-info">
+                <i class="fab fa-telegram fa-2x"></i>
+            </a>
+        </div>
+        <br>
         <form id="internshipForm">
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
@@ -171,7 +193,7 @@
                     <p>Co-Founder</p>
                 </div>
                 <div class="signature-item">
-                    <img src="Stamp Alfido Tech.png" alt="Seal">
+                    <img src="stampa.png" alt="Seal">
                 </div>
                 <div class="signature-item">
                     <img src="MSME Logo.png" alt="MSME Logo">
@@ -217,7 +239,7 @@
             const offerLetter = document.getElementById('offerLetter');
             const options = {
                 margin: 0.5,
-                filename: 'Offer_Letter.pdf',
+                filename: 'internship_Offer_Letter.pdf',
                 image: { type: 'jpeg', quality: 1.0 },
                 html2canvas: { scale: 3 },
                 jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
