@@ -70,6 +70,16 @@
  
    <!-- FontAwesome (Optimized, Removed Duplicate Links) -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <!-- Animate.css (Extra Animations) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
  
    <!-- Sitemap -->
    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.alfidotech.com/sitemap.xml">
@@ -249,42 +259,11 @@
       }
     }
 
-    /* Basic card styling */
-    .card {
-      transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
-      border-radius: 15px;
-      /* Rounded corners for a modern look */
-      overflow: hidden;
-      /* Ensure the image stays within the card */
-    }
-
-    /* Image styling */
-    .card img {
-      transition: transform 0.4s ease;
-      /* Animates image scaling */
-    }
-
-    /* Animation on hover */
-    .card:hover {
-      transform: translateY(-10px) scale(1.05);
-      /* Lifts and enlarges the card slightly */
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-      /* Deeper shadow for emphasis */
-      background-color: #f8f9fa;
-      /* Subtle background color change */
-      border-color: #061374;
-      /* Border color change to match theme */
-    }
-
-    /* Image scaling on hover */
-    .card:hover img {
-      transform: scale(1.1);
-      /* Slight zoom on image */
-    }
+    
 
     /* Button styling */
     .btn-primary {
-      background-color: #061374;
+      background-color:  #d43635;
       /* Matches the color of the heading */
       border-color: #061374;
       transition: background-color 0.3s ease, box-shadow 0.3s ease;
@@ -298,12 +277,19 @@
     }
 
     /* Card title styling */
-    .card-title b {
-      color: #061374;
+    .card-title {
+      color:  #d43635;
       /* Strong color to match the brand */
       font-weight: 700;
       /* Bold for stronger emphasis */
     }
+
+    .card {
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
 
     .hero {
       background: linear-gradient(rgb(246, 242, 229), rgb(246, 242, 229)), url('internship.jpg') no-repeat center center/cover;
@@ -486,182 +472,110 @@
 
 
   <br>
-  <figure class="text-center">
-    <blockquote class="blockquote">
-      <h1>Explore Our Internship Domains</h1>
-      <p>Apply now to kickstart your tech career with hands-on experience!</p>
-    </blockquote>
-  </figure>
-
-  <br>
-
-  <div class="container mt-5">
-    <div class="row d-flex">
-      <!-- Card 1 -->
-      <div class="col-md-4 d-flex">
-        <div class="card flex-grow-1">
-          <img src="img/Frontend.webp" class="card-img-top" alt="Frontend Developer Intern">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title"><b style="color: rgb(6, 19, 116);">Frontend Developer Intern</b></h4>
-            <p class="card-text flex-grow-1">Join Alfido Tech as a Frontend Developer Intern!
-              Kickstart your web development career with hands-on experience in building responsive, user-friendly
-              interfaces using HTML, CSS, and JavaScript. Perfect for students or recent graduates passionate about
-              design and innovation. Collaborate with a dynamic team, work on real projects, and enhance your skills in
-              a cutting-edge environment. Apply now and shape your future in tech!</p>
-            <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary mt-auto">Apply</a>
-          </div>
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Explore Our Internship Domains</h1>
+    <p class="text-center mb-5">Apply now to kickstart your tech career with hands-on experience!</p>
+    <div class="row justify-content-center g-4">
+        <div class="col-md-3">
+            <div class="card shadow-lg">
+                <img src="img/frontenddeveloper.jpg" class="card-img-top" alt="Card 1">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Frontend Developer Intern</h5>
+                    <p class="card-text">Join Alfido Tech as a Frontend Developer Intern! Kickstart your web development career with hands-on experience in building responsive, user-friendly interfaces using HTML, CSS, and JavaScript. Perfect for students or recent graduates passionate about design and innovation. Collaborate with a dynamic team, work on real projects, and enhance your skills in a cutting-edge environment. Apply now and shape your future in tech!</p>
+                    <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-4 d-flex">
-        <div class="card flex-grow-1">
-          <img src="img/Python.webp" class="card-img-top" alt="Python Developer Intern ">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title"><b style="color: rgb(6, 19, 116);">Python Developer Intern</b></h4>
-            <p class="card-text flex-grow-1">Join Alfido Tech as a Python Developer Intern and kickstart
-              your career in tech! This internship offers hands-on experience in developing Python applications and
-              collaborating with industry experts. If you're a current student or recent graduate with a passion for
-              coding and familiarity with Python, we want to hear from you! Apply now to be part of an innovative team
-              and enhance your skills in a supportive environment.</p>
-            <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary mt-auto">Apply</a>
-          </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg">
+                <img src="img/AndroidDeveloper.jpg" class="card-img-top" alt="Card 2">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Android Developer Intern</h5>
+                    <p class="card-text">Join Alfido Tech as an Android Developer Intern and jumpstart your career in mobile app development! This internship provides hands-on experience in creating innovative Android applications while collaborating with a team of skilled developers. If you're a current student or recent graduate with a passion for coding and experience in Java or Kotlin, we want to hear from you! Apply now to be part of a dynamic team and enhance your skills in a supportive environment.</p>
+                    <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-4 d-flex">
-        <div class="card flex-grow-1">
-          <img src="img/Data.webp" class="card-img-top" alt="Data Analyst Intern">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title"><b style="color: rgb(6, 19, 116);">Data Analyst Intern</b></h4>
-            <p class="card-text flex-grow-1">Join Alfido Tech as a Data Analyst Intern and take your
-              first step into the world of data analysis! This internship provides the opportunity to work with real
-              data, gain hands-on experience in data visualization and statistical analysis, and collaborate with
-              experienced professionals. If you're a current student or recent graduate with strong analytical skills
-              and a passion for data, we want to hear from you! Apply now to enhance your skills and contribute to
-              exciting projects in a dynamic environment.</p>
-            <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary mt-auto">Apply</a>
-          </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg">
+                <img src="img/React.jpg" class="card-img-top" alt="Card 3">
+                <div class="card-body text-center">
+                    <h5 class="card-title">React.js Intern</h5>
+                    <p class="card-text">Join Alfido Tech as a React.js Developer Intern and take your first step into the world of web development! This internship provides hands-on experience in building dynamic user interfaces and collaborating with a talented team. If you're a current student or recent graduate with a passion for front-end development and familiarity with React.js, we want to hear from you! Apply now to be part of an innovative environment and enhance your skills in a supportive setting.</p>
+                    <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <br>
-
-  <div class="container mt-5">
-    <div class="row d-flex">
-      <!-- Card 1 -->
-      <div class="col-md-4 d-flex">
-        <div class="card flex-grow-1">
-          <img src="img/Java.webp" class="card-img-top" alt="Java Developer Intern">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title"><b style="color: rgb(6, 19, 116);">Java Developer Intern</b></h4>
-            <p class="card-text flex-grow-1">Join Alfido Tech as a Java Developer Intern and kickstart
-              your journey in software development! This internship offers hands-on experience in building robust Java
-              applications and collaborating with experienced professionals. If you're a current student or recent
-              graduate with a passion for programming and familiarity with Java, we want to hear from you! Apply now to
-              be part of an innovative team and enhance your skills in a dynamic environment.</p>
-            <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary mt-auto">Apply</a>
-          </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg">
+                <img src="img/Java.jpg" class="card-img-top" alt="Card 4">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Java Developer Intern</h5>
+                    <p class="card-text">Join Alfido Tech as a Java Developer Intern and kickstart your journey in software development! This internship offers hands-on experience in building robust Java applications and collaborating with experienced professionals. If you're a current student or recent graduate with a passion for programming and familiarity with Java, we want to hear from you! Apply now to be part of an innovative team and enhance your skills in a dynamic environment.</p>
+                    <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Card 2 -->
-      <div class="col-md-4 d-flex">
-        <div class="card flex-grow-1">
-          <img src="img/DataS.webp" class="card-img-top" alt="Data Science Intern">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title"><b style="color: rgb(6, 19, 116);">Data Science Intern</b></h4>
-            <p class="card-text flex-grow-1">Join Alfido Tech as a Data Science Intern and launch your
-              career in the dynamic field of data Science! This internship provides hands-on experience in analyzing
-              data, building models, and deriving insights that drive business decisions. If you're a current student or
-              recent graduate with a passion for data and familiarity with Python or R, we want to hear from you! Apply
-              now to be part of a forward-thinking team and enhance your skills in a collaborative environment.</p>
-            <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary mt-auto">Apply</a>
-          </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg">
+                <img src="img/PythonDeveloper.jpg" class="card-img-top" alt="Card 4">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Python Developer Intern</h5>
+                    <p class="card-text">Join Alfido Tech as a Python Developer Intern and kickstart your career in tech! This internship offers hands-on experience in developing Python applications and collaborating with industry experts. If you're a current student or recent graduate with a passion for coding and familiarity with Python, we want to hear from you! Apply now to be part of an innovative team and enhance your skills in a supportive environment.</p>
+                    <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="col-md-4 d-flex">
-        <div class="card flex-grow-1">
-          <img src="img/UXUI.webp" class="card-img-top" alt="UX/UI Design Intern">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title"><b style="color: rgb(6, 19, 116);">UX/UI Design Intern</b></h4>
-            <p class="card-text flex-grow-1">Join Alfido Tech as a UX/UI Design Intern and take the first
-              step in your design career! This internship provides hands-on experience in creating user-centered designs
-              and collaborating with a dynamic team. If you’re a current student or recent graduate with a passion for
-              design and familiarity with design tools like Sketch or Figma, we want to hear from you! Apply now to
-              enhance your skills in a creative and supportive environment.</p>
-            <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary mt-auto">Apply</a>
-          </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg">
+                <img src="img/DataAnalyst.jpg" class="card-img-top" alt="Card 4">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Data Analyst Intern</h5>
+                    <p class="card-text">Join Alfido Tech as a Data Analyst Intern and take your first step into the world of data analysis! This internship provides the opportunity to work with real data, gain hands-on experience in data visualization and statistical analysis, and collaborate with experienced professionals. If you're a current student or recent graduate with strong analytical skills and a passion for data, we want to hear from you! Apply now to enhance your skills and contribute to exciting projects in a dynamic environment.</p>
+                    <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <div class="container mt-5">
-    <div class="row d-flex">
-      <!-- Card 1 -->
-      <div class="col-md-4 d-flex">
-        <div class="card flex-grow-1">
-          <img src="img/Android.webp" class="card-img-top" alt="Android Developer">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title"><b style="color: rgb(6, 19, 116);">Android Developer Intern</b></h4>
-            <p class="card-text flex-grow-1">Join Alfido Tech as an Android Developer Intern and
-              jumpstart your career in mobile app development! This internship provides hands-on experience in creating
-              innovative Android applications while collaborating with a team of skilled developers. If you're a current
-              student or recent graduate with a passion for coding and experience in Java or Kotlin, we want to hear
-              from you! Apply now to be part of a dynamic team and enhance your skills in a supportive environment.</p>
-            <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary mt-auto">Apply</a>
-          </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg">
+                <img src="img/DataScience .jpg" class="card-img-top" alt="Card 4">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Data Science Intern</h5>
+                    <p class="card-text">Join Alfido Tech as a Data Science Intern and launch your career in the dynamic field of data Science! This internship provides hands-on experience in analyzing data, building models, and deriving insights that drive business decisions. If you're a current student or recent graduate with a passion for data and familiarity with Python or R, we want to hear from you! Apply now to be part of a forward-thinking team and enhance your skills in a collaborative environment.</p>
+                    <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Card 2 -->
-      <div class="col-md-4 d-flex">
-        <div class="card flex-grow-1">
-          <img src="img/React.jpg" class="card-img-top" alt="React.js">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title"><b style="color: rgb(6, 19, 116);">React.js Intern</b></h4>
-            <p class="card-text flex-grow-1">Join Alfido Tech as a React.js Developer Intern and take
-              your first step into the world of web development! This internship provides hands-on experience in
-              building dynamic user interfaces and collaborating with a talented team. If you're a current student or
-              recent graduate with a passion for front-end development and familiarity with React.js, we want to hear
-              from you! Apply now to be part of an innovative environment and enhance your skills in a supportive
-              setting.</p>
-            <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary mt-auto">Apply</a>
-          </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg">
+                <img src="img/NetDeveloper.jpg" class="card-img-top" alt="Card 4">
+                <div class="card-body text-center">
+                    <h5 class="card-title">.NET Developer Intern</h5>
+                    <p class="card-text">Join Alfido Tech as a .NET Developer and advance your career in software development! This role offers an opportunity to work on cutting-edge applications, leveraging your expertise in .NET technologies to deliver high-quality solutions. If you're a tech enthusiast with a strong foundation in .NET frameworks and a passion for back-end or full-stack development, we want you on our team! Apply now to become part of an innovative and collaborative environment where your skills will grow and thrive.</p>
+                    <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
         </div>
-      </div>
 
-      <!-- Card 3 -->
-      <div class="col-md-4 d-flex">
-        <div class="card flex-grow-1">
-          <img src="img/net.webp" class="card-img-top" alt="React.js">
-          <div class="card-body d-flex flex-column">
-            <h4 class="card-title"><b style="color: rgb(6, 19, 116);">.NET Developer Intern</b></h4>
-            <p class="card-text flex-grow-1">Join Alfido Tech as a .NET Developer and advance your career in software
-              development! This role offers an opportunity to work on cutting-edge applications, leveraging your
-              expertise in .NET technologies to deliver high-quality solutions. If you're a tech enthusiast with a
-              strong foundation in .NET frameworks and a passion for back-end or full-stack development, we want you on
-              our team! Apply now to become part of an innovative and collaborative environment where your skills will
-              grow and thrive.</p>
-            <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary mt-auto">Apply</a>
-          </div>
+        <div class="col-md-3">
+            <div class="card shadow-lg">
+                <img src="img/uiuxd.jpg" class="card-img-top" alt="Card 4">
+                <div class="card-body text-center">
+                    <h5 class="card-title">UX/UI Design Intern</h5>
+                    <p class="card-text">Join Alfido Tech as a UX/UI Design Intern and take the first step in your design career! This internship provides hands-on experience in creating user-centered designs and collaborating with a dynamic team. If you’re a current student or recent graduate with a passion for design and familiarity with design tools like Sketch or Figma, we want to hear from you! Apply now to enhance your skills in a creative and supportive environment.</p>
+                    <a href="https://www.alfidotech.com/registration.html" class="btn btn-primary">Apply</a>
+                </div>
+            </div>
         </div>
-      </div>
 
 
     </div>
-  </div>
+</div>
 
-
-
-  <br>
-
-  <br>
   <figure class="text-center">
     <blockquote class="blockquote">
       <h2 id="service" class="h1">Discover Our Range of Services</h2>
@@ -1129,7 +1043,7 @@ document.addEventListener("DOMContentLoaded", function () {
               <h6 class="text-uppercase fw-bold">Contact</h6>
               <hr class="mb-4 mt-0 d-inline-block mx-auto"
                 style="width: 60px; background-color: #221152; height: 2px" />
-              <p><i class="fas fa-home mr-3"></i> Hyderabad, Telangana</p>
+              <p><i class="fas fa-home mr-3"></i> Bhopal, Madhya Pradesh</p>
               <p><i class="fas fa-envelope mr-3"></i> info@alfidotech.com</p>
               <p><i class="fas fa-phone mr-3"></i> +91 9977465250</p>
               <p><i class="fas fa-print mr-3"></i></p>
