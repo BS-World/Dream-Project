@@ -318,6 +318,23 @@
       text-align: center;
       padding: 20px;
     }
+    .service-card {
+      transition: all 0.3s ease-in-out;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-icon {
+      font-size: 48px;
+      color: #007bff;
+    }
   </style>
 
 
@@ -584,122 +601,70 @@
   </figure>
   <br>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mb-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-        <div class="card">
-          <img src="autoadsclicker.webp" class="card-img-top" alt="Auto Google Ads Clicker Automation">
-          <div class="card-body">
-            <h5 class="card-title" id="Auto">Auto Google Ads Clicker Automation</h5>
-            <p class="card-text">Boost your ad engagement and streamline your ad management with Auto Google Ads Clicker
-              Automation. This advanced service automates ad clicks, enhancing click-through rates (CTR) while saving
-              time on repetitive tasks. Ideal for businesses looking to optimize their ad performance, our tool offers a
-              seamless, targeted approach to driving visibility and engagement on Google Ads. With easy setup and secure
-              automation, experience increased efficiency and better ad campaign results.</p>
-            <div class="col-md-12 text-center mt-4">
-              <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+  <div class="container my-5" id="services">
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-bolt service-icon"></i>
+                        <h5 class="card-title mt-3">Auto Google Ads Clicker Automation</h5>
+                        <p>Automate ad clicks and maximize your ROI efficiently.</p>
+                        <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-        <div class="card">
-          <img src="web.webp" class="card-img-top" alt="Web Development Services">
-          <div class="card-body">
-            <h5 class="card-title" id="Design">Design & Development Services</h5>
-            <p class="card-text">Alfido Tech specializes in providing custom web development services designed to
-              enhance your online presence. Our expert team creates responsive and user-friendly websites tailored to
-              meet your specific business needs. We focus on SEO optimization, ensuring your site attracts organic
-              traffic, and offer robust e-commerce solutions for effective online sales. With expertise in popular
-              content management systems like WordPress, we empower clients to manage their content effortlessly.
-              Additionally, our ongoing support and maintenance services ensure your website remains secure and
-              up-to-date. Partner with Alfido Tech to drive engagement and achieve your digital goals.</p>
-            <div class="col-md-12 text-center mt-4">
-              <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-paint-brush service-icon"></i>
+                        <h5 class="card-title mt-3">Design & Development Services</h5>
+                        <p>Custom website and app design for your business needs.</p>
+                        <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mb-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-        <div class="card">
-          <img src="socal.webp" class="card-img-top" alt="Social Media Marketing service">
-          <div class="card-body">
-            <h5 class="card-title" id="Social">Social Media Marketing service</h5>
-            <p class="card-text">Alfido Tech’s Social Media Marketing service empowers businesses to grow their online
-              presence and engage effectively with target audiences. We craft tailored strategies across platforms like
-              Facebook, Instagram, Twitter, and LinkedIn, combining data-driven insights with creative content to
-              maximize reach, drive engagement, and boost brand awareness. From campaign management to analytics and
-              growth optimization, Alfido Tech ensures your brand thrives in the digital landscape.</p>
-            <div class="col-md-12 text-center mt-4">
-              <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line service-icon"></i>
+                        <h5 class="card-title mt-3">SEO Optimization Services</h5>
+                        <p>Enhance your website's visibility with proven SEO techniques.</p>
+                        <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-        <div class="card">
-          <img src="email.webp" class="card-img-top" alt="Email Marketing service">
-          <div class="card-body">
-            <h5 class="card-title">Email Marketing Service</h5>
-            <p class="card-text">Alfido Tech's Email Marketing service boosts engagement and conversions with targeted
-              campaigns tailored to your audience. Using data-driven insights, Alfido Tech helps businesses craft
-              personalized messages that increase brand loyalty, drive traffic, and maximize ROI. Advanced analytics
-              track open rates, click-through rates, and customer behaviors, enabling continuous optimization for better
-              results. With a focus on delivering the right message at the right time, Alfido Tech empowers brands to
-              grow through effective and scalable email marketing strategies.</p>
-            <div class="col-md-12 text-center mt-4">
-              <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-pen-nib service-icon"></i>
+                        <h5 class="card-title mt-3">Logo Maker Service</h5>
+                        <p>Create professional logos tailored to your brand identity.</p>
+                        <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 mb-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-        <div class="card">
-          <img src="logomaker.webp" class="card-img-top" alt="Auto Google Ads Clicker Automation">
-          <div class="card-body">
-            <h5 class="card-title">Logo Maker Service</h5>
-            <p class="card-text">The Logo Maker Service at Alfido Tech offers innovative, custom logo design solutions
-              tailored to your brand's unique identity. Leveraging modern design tools and creative expertise, Alfido
-              Tech provides professional, memorable logos that convey brand values and capture audience attention. From
-              concept to completion, the service emphasizes quality, originality, and brand alignment, ensuring logos
-              that stand out across digital and print platforms.</p>
-            <div class="col-md-12 text-center mt-4">
-              <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-envelope service-icon"></i>
+                        <h5 class="card-title mt-3">Email Marketing Service</h5>
+                        <p>Engage and convert leads with effective email campaigns.</p>
+                        <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6 mb-4 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
-        <div class="card">
-          <img src="seo.webp" class="card-img-top" alt="SEO Optimization Services">
-          <div class="card-body">
-            <h5 class="card-title" id="SEO">SEO Optimization Services</h5>
-            <p class="card-text">Maximize your website's reach and visibility with our SEO Optimization Services at
-              Alfido Tech. Our comprehensive service improves search engine rankings, drives organic traffic, and
-              enhances online visibility, ensuring your brand is seen by the right audience. With targeted keyword
-              research, on-page and off-page optimization, technical SEO, and analytics, we help businesses achieve
-              sustainable growth and higher engagement rates. Let us optimize your site for success in today’s digital
-              marketplace.</p>
-            <div class="col-md-12 text-center mt-4">
-              <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+            <div class="col-lg-4 col-md-6">
+                <div class="card service-card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-share-alt service-icon"></i>
+                        <h5 class="card-title mt-3">Social Media Marketing Service</h5>
+                        <p>Grow your online presence with expert marketing strategies.</p>
+                        <button onclick="sendEmail()" class="btn btn-primary">Contact Us</button>
+                    </div>
+                </div>
             </div>
-          </div>
-
         </div>
-      </div>
-    </div>
-  </div>
-
+    </div> <br>
 
 
 
