@@ -153,6 +153,24 @@
             background-color: #f8f9fa;
             padding: 20px 0;
         }
+        .blog-header {
+      background: linear-gradient(to right, #111827, #1f2937);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .blog-content {
+      padding: 40px 20px;
+    }
+    .blog-img {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .highlight {
+      color: #00cc66;
+      font-weight: bold;
+    }
     </style>
 </head>
 
@@ -220,13 +238,35 @@
     </div>
     <br>
     
-    <section id="rss">
-  <h2>Subscribe to Our Blog</h2>
-  <p>Get the latest updates and articles directly to your favorite RSS reader:</p>
-  <a href="https://www.alfidotech.com/rss.xml" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/Feed-icon.svg" alt="RSS Icon" style="width: 40px; height: 40px;">
-  </a>
-</section>
+    <div class="blog-header">
+        <h1>We're in the Top 10 Startups of Hyderabad!</h1>
+        <p class="lead">Alfido Tech recognized by HackerNoon in Startups of the Year 2024 🚀</p>
+      </div>
+    
+      <div class="container blog-content">
+        <div class="row">
+          <div class="col-md-8 mx-auto">
+            <img src="img/Alfidoaw.png" alt="Alfido Tech Award" class="blog-img mb-4" />
+            <p>We are incredibly proud to announce that <span class="highlight">Alfido Tech</span> has been recognized as one of the <strong>Top 10 Startups in Hyderabad, Telangana, India</strong> by <strong>HackerNoon</strong> in their prestigious <em>Startups of the Year 2024</em> campaign.</p>
+    
+            <p>This recognition is not just a badge — it's a reflection of our team’s hard work, innovative thinking, and relentless dedication to delivering cutting-edge technology solutions that make a real impact.</p>
+    
+            <p>At Alfido Tech, our mission has always been to empower businesses and individuals through smart, scalable, and sustainable technology. This milestone motivates us even more to continue growing, innovating, and serving our community with pride.</p>
+    
+            <p>We thank our amazing team, clients, partners, and well-wishers who’ve supported us throughout this journey. The best is yet to come! 🙌</p>
+    
+            <div class="mt-4">
+              <button id="shareBtn" class="btn btn-success">Share This News</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <script>
+        document.getElementById("shareBtn").addEventListener("click", function () {
+          alert("You can now share this blog on your social media and let the world know!");
+        });
+      </script>
 
 
     <!-- Main Content Section -->
