@@ -160,6 +160,10 @@
         </select>
       </div>
       <div class="mb-3">
+        <label for="Startdate" class="form-label">Internship Start Date</label>
+        <input type="date" id="startDateInput" class="form-control" required>
+      </div>
+      <div class="mb-3">
         <label for="internshipMonth" class="form-label">Internship Duration</label>
         <select id="internshipMonth" class="form-select" required>
           <option value="" disabled selected>Select Your Duration...</option>
@@ -215,7 +219,7 @@
       </div>
       <div class="internship-details">
         <p><b>Duration:</b> <span id="displayMonth"></span></p>
-        <p><b>Starting Date:</b> 01/07/2025</p>
+        <p><b>Starting Date:</b> <span id="displayStartDate"></span></p>
       </div>
       <p>Sincerely,</p>
 
@@ -264,6 +268,7 @@
       document.getElementById('displayName').textContent = name;
       document.getElementById('displayDomain').textContent = internshipDomain;
       document.getElementById('displayMonth').textContent = internshipMonth;
+      document.getElementById('displayStartDate').textContent = document.getElementById('startDateInput').value;
 
       document.getElementById('offerLetter').style.display = 'block';
       document.getElementById('downloadButton').style.display = 'inline';
