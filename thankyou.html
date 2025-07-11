@@ -37,7 +37,13 @@
 
         p {
             font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .info-message {
+            font-size: 1rem;
             margin-bottom: 30px;
+            color: #333;
         }
 
         .btn-custom {
@@ -66,7 +72,7 @@
                 transform: translateY(0);
             }
         }
-        /* Adjustments for WhatsApp button */
+
         #whatsapp-btn {
             position: fixed;
             bottom: 20px;
@@ -77,7 +83,18 @@
         #whatsapp-btn img {
             width: 80px;
             height: 90px;
-            alt: "Contact us on WhatsApp";
+        }
+
+        .group-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        .group-link:hover {
+            color: #0056b3;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -85,13 +102,18 @@
     <div class="thank-you-container">
         <h1>Thank You</h1>
         <p>Your Certificate will be sent to your email ID soon (within 24 hours).</p>
+        <p class="info-message">
+            Please join this WhatsApp group and share the required details for the certificate:<br>
+            Name: -----??<br>
+            Domain: -----??<br>
+            <a href="https://chat.whatsapp.com/Hp9ZmkcxPWKBU6Jj28AEpp" target="_blank" class="btn btn-custom mt-3">Join Group</a>
+        </p>
         <a href="https://www.alfidotech.com/" class="btn btn-custom mt-3">Back to Home</a>
     </div>
 
     <div id="whatsapp-btn">
         <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank">
-            <img src="https://th.bing.com/th/id/R.35ffa6e353468280a59e5b4672b8aba0?rik=7hSGUWDIrp%2bhLg&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f04%2fWhatsApp-PNG-Picture.png&ehk=deet7YvWTlFf4Xe0LZBhIsS4NJ84GeEnFqKz44GkR%2bo%3d&risl=&pid=ImgRaw&r=0"
-                alt="WhatsApp" class="img-fluid bi bi-whatsapp">
+            <img src="https://th.bing.com/th/id/R.35ffa6e353468280a59e5b4672b8aba0?rik=7hSGUWDIrp%2bhLg&riu=http%3a%2f%2fwww.pngall.com%2fwp-content%2fuploads%2f2016%2f04%2fWhatsApp-PNG-Picture.png&ehk=deet7YvWTlFf4Xe0LZBhIsS4NJ84GeEnFqKz44GkR%2bo%3d&risl=&pid=ImgRaw&r=0" alt="WhatsApp" class="img-fluid">
         </a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
