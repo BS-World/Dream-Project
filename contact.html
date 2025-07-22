@@ -522,7 +522,7 @@
                       <hr class="mb-4 mt-0 d-inline-block mx-auto"
                           style="width: 60px; background-color: #221152; height: 2px" />
                       <p><i class="fas fa-home mr-3"></i> Hyderabad, Telangana</p>
-                      <p><i class="fas fa-envelope mr-3"></i> alfidotech@gmail.com</p>
+                      <p><i class="fas fa-envelope mr-3"></i>info@alfidotech.com</p>
                       <p><i class="fas fa-phone mr-3"></i> +91 9977465250</p>
                       <p><i class="fas fa-print mr-3"></i></p>
                   </div>
@@ -584,39 +584,7 @@
     }
   </script>
 
-  <script>
-    // Function to search and highlight text on the page
-    function searchPage(event) {
-      event.preventDefault(); // Prevent form from submitting
-
-      // Get the search query and clear previous highlights
-      const query = document.getElementById('searchInput').value.trim().toLowerCase();
-      clearHighlights();
-
-      if (query) {
-        // Find all text elements in the content section
-        const elements = document.querySelectorAll('.content p, .content h2, .content h5, .content h1, .content h3, .content h4, .content h6');
-        elements.forEach(element => {
-          const text = element.innerHTML;
-          const regex = new RegExp(`(${query})`, 'gi');
-
-          // Highlight matches by wrapping them in a span with a highlight class
-          const highlightedText = text.replace(regex, '<span class="bg-warning text-dark">$1</span>');
-          element.innerHTML = highlightedText;
-        });
-      }
-    }
-
-    // Function to clear previous highlights
-    function clearHighlights() {
-      const highlightedElements = document.querySelectorAll('.bg-warning.text-dark');
-      highlightedElements.forEach(element => {
-        const parent = element.parentNode;
-        parent.replaceChild(document.createTextNode(element.textContent), element);
-        parent.normalize(); // Merge adjacent text nodes
-      });
-    }
-  </script>
+  
 </body>
 
 </html>
