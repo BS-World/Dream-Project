@@ -264,12 +264,18 @@
       const today = new Date().toLocaleDateString();
       const internshipMonth = document.getElementById('internshipMonth').value;
 
-      document.getElementById('date').textContent = today;
+    //   document.getElementById('date').textContent = today;
       document.getElementById('displayCandidateId').textContent = candidateId; // Show the user input Candidate ID
       document.getElementById('displayName').textContent = name;
       document.getElementById('displayDomain').textContent = internshipDomain;
       document.getElementById('displayMonth').textContent = internshipMonth;
-      document.getElementById('displayStartDate').textContent = document.getElementById('startDateInput').value;
+    const startDateValue = document.getElementById('startDateInput').value;
+    if (startDateValue) {
+      const [year, month, day] = startDateValue.split('-');
+      document.getElementById('displayStartDate').textContent = `${day}/${month}/${year}`;
+    } else {
+      document.getElementById('displayStartDate').textContent = '';
+    }
 
       document.getElementById('offerLetter').style.display = 'block';
       document.getElementById('downloadButton').style.display = 'inline';
@@ -291,4 +297,5 @@
 </body>
 
 </html>
+
 
