@@ -197,10 +197,11 @@
           <img src="Logo 2.png" alt="Alfido Tech Logo" width="260">
         </div>
         <div class="date-section ">
+        
           <p class="mb-1">Hyderabad, Telangana, India</p>
           <p class="mb-1">internship@alfidotech.com</p>
           <p class="mb-1">www.alfidotech.com</p>
-          <p><b>Date:</b> <span id="date"></span></p>         
+          <p><b>Date:</b> <span id="displayStartDate1"></span></p>         
         </div>
       </div>
       
@@ -261,25 +262,27 @@
       const name = document.getElementById('name').value;
       const internshipDomain = document.getElementById('internshipDomain').value;
       const candidateId = document.getElementById('candidateIdInput').value;
-      const today = new Date().toLocaleDateString();
       const internshipMonth = document.getElementById('internshipMonth').value;
 
-    //   document.getElementById('date').textContent = today;
       document.getElementById('displayCandidateId').textContent = candidateId; // Show the user input Candidate ID
       document.getElementById('displayName').textContent = name;
       document.getElementById('displayDomain').textContent = internshipDomain;
       document.getElementById('displayMonth').textContent = internshipMonth;
-    const startDateValue = document.getElementById('startDateInput').value;
-    if (startDateValue) {
-      const [year, month, day] = startDateValue.split('-');
-      document.getElementById('displayStartDate').textContent = `${day}/${month}/${year}`;
-    } else {
-      document.getElementById('displayStartDate').textContent = '';
-    }
+
+      const startDateValue = document.getElementById('startDateInput').value;
+      if (startDateValue) {
+        const [year, month, day] = startDateValue.split('-');
+        document.getElementById('displayStartDate').textContent = `${day}/${month}/${year}`;
+        document.getElementById('displayStartDate1').textContent = `${day}/${month}/${year}`;
+      } else {
+        document.getElementById('displayStartDate').textContent = '';
+        document.getElementById('displayStartDate1').textContent = '';
+      }
 
       document.getElementById('offerLetter').style.display = 'block';
       document.getElementById('downloadButton').style.display = 'inline';
     }
+    
 
     function downloadPDF() {
       const offerLetter = document.getElementById('offerLetter');
@@ -297,5 +300,4 @@
 </body>
 
 </html>
-
 
