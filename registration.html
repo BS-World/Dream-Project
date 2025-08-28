@@ -396,15 +396,9 @@
   </div>
 </div>
 
-
-  
-
-  <!-- Footer -->
-  <!-- <footer class="bg-dark text-white pt-4">
-    <div class="container text-center">
-      <p>© 2023 - 2025 Alfido Tech. All rights reserved. | <a href="privacy.html" class="text-white">Privacy Policy</a> | <a href="Terms&Conditions.html" class="text-white">Terms</a></p>
-    </div>
-  </footer> -->
+<!-- The previous script and footer code here are redundant and should be removed.
+Popup functionality is already implemented above with openPopup() and closePopup() called on form submit.
+No extra code is needed here. -->
 
 <div class="">
 
@@ -566,12 +560,55 @@
 
   <!-- Popup + Form JS -->
   <script>
+  // Show timer popup first, then success popup after submit
+
+  // Create timer popup dynamically
+  function showTimerPopup() {
+    // Remove if already exists
+    let old = document.getElementById('timerPopupOverlay');
+    if (old) old.remove();
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'timerPopupOverlay';
+    overlay.className = 'popup-overlay show';
+    overlay.style.display = 'flex';
+
+    // Create popup box
+    const box = document.createElement('div');
+    box.className = 'popup-box';
+    box.innerHTML = `
+      <div style="font-size:48px; color:#007bff; margin-bottom:10px;">
+        <i class="fa-solid fa-hourglass-half"></i>
+      </div>
+      <h3 class="mb-3">Processing...</h3>
+      <div id="timerCount" style="font-size:2rem; font-weight:bold;">Please wait...</div>
+      <div class="text-muted mt-2">Please wait while we submit your registration.</div>
+    `;
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
+  }
+
+  function closeTimerPopup() {
+    const overlay = document.getElementById('timerPopupOverlay');
+    if (overlay) {
+      overlay.classList.remove('show');
+      overlay.classList.add('hide');
+      setTimeout(() => {
+        overlay.remove();
+      }, 500);
+    }
+  }
+
   function openPopup() {
     const popup = document.getElementById('popupOverlay');
-    popup.classList.remove("hide");
-    popup.classList.add("show");
+    setTimeout(() => {
+      popup.style.display = "flex";
+      popup.classList.remove("hide");
+      popup.classList.add("show");
+    }, 1);
 
-    // Auto-close after 5 sec
+    // Auto-close after 9 sec
     setTimeout(() => {
       closePopup();
     }, 9000);
@@ -582,15 +619,21 @@
     popup.classList.remove("show");
     popup.classList.add("hide");
 
-    // Wait for fade-out animation before hiding completely
     setTimeout(() => {
       popup.style.display = "none";
-      document.getElementById("registrationForm").reset(); // clear form after close
+      document.getElementById("registrationForm").reset();
     }, 500);
   }
 
+  // Only handle submit once
+  let isSubmitting = false;
   document.getElementById("registrationForm").addEventListener("submit", function (event) {
     event.preventDefault();
+    if (isSubmitting) return;
+    isSubmitting = true;
+
+    // Show timer popup
+    showTimerPopup();
 
     const formData = {
       fullName: document.getElementById("fullName").value,
@@ -603,6 +646,7 @@
       passingYear: document.getElementById("passingYear").value
     };
 
+    // Submit data, then show popup
     fetch("https://script.google.com/macros/s/AKfycbyGIXd1UBnB34TSkE9Ath2dCyCEgIsG_YFe6GqyXeZ9qKISuYoyl42CuVdBBWM9-wE/exec", {
       method: "POST",
       mode: "no-cors",
@@ -610,10 +654,18 @@
       headers: { "Content-Type": "application/json" }
     })
     .then(() => {
-      openPopup(); // show popup
+      closeTimerPopup();
+      openPopup(); // show success popup
+      isSubmitting = false;
     })
-    .catch(err => console.error("Error:", err));
+    .catch(err => {
+      closeTimerPopup();
+      openPopup(); // still show popup on error
+      console.error("Error:", err);
+      isSubmitting = false;
+    });
   });
+
 </script>
 
 </body>
