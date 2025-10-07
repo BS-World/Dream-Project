@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internship Report Card Generator | Alfido Tech</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: #f4f7fb;
+            font-family: "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        .card-container {
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .report-card {
+            background: white;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 6px 18px rgba(20, 20, 50, 0.06);
+            margin-bottom: 20px;
+        }
+
+        .watermark {
+            position: absolute;
+            opacity: 0.06;
+            z-index: 0;
+            pointer-events: none;
+            right: 40px;
+            top: 120px;
+            transform: rotate(-12deg);
+            font-size: 60px;
+        }
+
+        .signature {
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .table thead th {
+            vertical-align: middle;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        /* small print */
+        .meta {
+            font-size: 13px;
+            color: #555;
+        }
+
+        .btn-small {
+            padding: .35rem .6rem;
+            font-size: .85rem;
+        }
+
+        .signature-row img {
+            object-fit: contain;
+            margin: 0 8px;
+        }
+
+        .qr-holder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .qr-holder img.qrImage {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 2px;
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container card-container">
+        <div class="report-card">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div>
+                    <img src="https://www.alfidotech.com/Logo%202.png" alt="Logo" style="height:60px;">
+                </div>
+                <div class="text-end">
+                    <h5 class="mb-0">Internship Report Card Generator</h5>
+                    <div class="meta">Alfido Tech — Generate weekly-wise report cards & download PDF</div>
+                </div>
+            </div>
+
+            <form id="singleForm" class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">Full Name</label>
+                    <input id="name" class="form-control" placeholder="e.g. Ravi Kumar" required>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">Candidate ID</label>
+                    <input id="candidateId" class="form-control" placeholder="e.g. BS/REG/00001" required>
+                </div>
+                <div class="col-md-5">
+                    <label class="form-label">Domain</label>
+                    <select id="domain" class="form-select" required>
+                        <option value="" disabled selected>Select domain...</option>
+                        <!-- domain list inspired from your uploaded LOR file -->
+                        <option>Frontend Developer</option>
+                        <option>UX/UI Design</option>
+                        <option>React.JS</option>
+                        <option>Python Developer</option>
+                        <option>C++/C Programming</option>
+                        <option>Java Developer</option>
+                        <option>Data Science</option>
+                        <option>Digital Marketing</option>
+                        <option>Machine Learning</option>
+                        <option>Artificial Intelligence</option>
+                        <option>Cybersecurity</option>
+                        <option>Data Analytics</option>
+                        <option>Business Analytics</option>
+                        <option>Android Developer</option>
+                        <option>Web Development</option>
+                        <option>.NET Developer</option>
+                        <option>VLSI</option>
+                        <option>Embedded Systems</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label class="form-label">Start Date</label>
+                    <input id="startDate" type="date" class="form-control" required>
+                </div>
+                <div class="col-md-3">
+                    <label class="form-label">End Date</label>
+                    <input id="endDate" type="date" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Certificate / Post Link</label>
+                    <input id="certLink" class="form-control" placeholder="http(s)://... (optional)">
+                </div>
+
+                <div class="col-12 d-flex gap-2">
+                    <button type="button" class="btn btn-primary" id="generateSingle">Generate Report</button>
+                    <input id="csvFile" type="file" accept=".csv" class="form-control-file" style="max-width:260px;">
+                    <button type="button" class="btn btn-outline-secondary btn-small" id="generateFromCSV">Generate from
+                        CSV</button>
+                    <button type="button" class="btn btn-success ms-auto" id="downloadAllPdf"
+                        style="display:none;">Download Current PDF</button>
+                </div>
+                <div class="col-12 mt-2">
+                    <small class="text-muted">CSV format columns (header row required):
+                        <code>Name,CandidateID,Domain,StartDate,EndDate,CertificateLink</code></small>
+                </div>
+            </form>
+        </div>
+
+        <!-- Reports will be rendered here -->
+        <div id="reportsOutput"></div>
+
+        <div class="text-end mb-5">
+            <small class="text-muted">Tip: upload a CSV to bulk-generate multiple report cards.</small>
+        </div>
+    </div>
+
+    <!-- html2pdf for PDF download -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        /**********************
+         * Topic bank per domain
+         * You can edit these arrays to match your actual weekly syllabus
+         **********************/
+        const topicsByDomain = {
+            "Frontend Developer": ["Introduction", "HTML Basics", "CSS Basics", "Bootstrap", "Responsive Design", "JavaScript Basics", "DOM Manipulation", "Forms & Validation", "Projects & Review"],
+            "UX/UI Design": ["Intro to UX", "Design Principles", "Wireframing", "Figma Basics", "Prototyping", "User Testing", "Visual Design", "Design Systems"],
+            "React.JS": ["React Intro", "JSX & Components", "State & Props", "Hooks", "Routing", "State Management", "API Integration", "Deploy"],
+            "Python Developer": ["Python Basics", "Data Types", "OOP", "File I/O", "Packages", "Flask Intro", "DB Integration", "Project Work"],
+            "C++/C Programming": ["Intro C/C++", "Control Flow", "Functions", "Pointers", "OOP", "STL Basics", "File I/O", "Algorithms"],
+            "Java Developer": ["Java Basics", "OOP", "Collections", "JDBC", "Servlets", "Spring Intro", "REST APIs", "Project"],
+            "Data Science": ["Intro DS", "Data Cleaning", "Pandas", "Visualization", "Statistics", "ML Intro", "Modeling", "Evaluation"],
+            "Machine Learning": ["ML Intro", "Regression", "Classification", "Clustering", "Feature Engineering", "Model Selection", "Deployment"],
+            "Artificial Intelligence": ["AI Intro", "Search", "Knowledge Rep", "Planning", "Neural Networks", "NLP Basics"],
+            "Digital Marketing": ["DM Intro", "SEO", "Content Strategy", "Social Media", "Ads", "Analytics"],
+            "Cybersecurity": ["Intro Sec", "Networking Basics", "Threats", "Encryption", "Vulnerabilities", "Pen Testing"],
+            "Data Analytics": ["Intro DA", "Excel", "SQL", "Pivots", "Visualization", "Dashboards"],
+            "Business Analytics": ["Intro BA", "Requirement Gathering", "KPI", "Modelling", "Reporting"],
+            "Android Developer": ["Android Intro", "Layouts", "Activities", "Intents", "RecyclerView", "API Integration"],
+            "Web Development": ["Web Intro", "Frontend Basics", "Backend Basics", "APIs", "Deployment"],
+            ".NET Developer": [".NET Intro", "C# Basics", "ASP.NET", "Entity Framework"],
+            "VLSI": ["VLSI Intro", "Digital Design", "Verilog Basics", "Synthesis"],
+            "Embedded Systems": ["Intro", "Microcontrollers", "C for Embedded", "Peripherals"]
+        };
+
+        /**********************
+         * deterministic PRNG using candidate id as seed
+         **********************/
+        function seededRandom(seed) {
+            // convert string seed to number deterministically
+            let h = 2166136261 >>> 0;
+            for (let i = 0; i < seed.length; i++) {
+                h = Math.imul(h ^ seed.charCodeAt(i), 16777619);
+            }
+            return function () {
+                h += 0x6D2B79F5 >>> 0;
+                let t = Math.imul(h ^ (h >>> 15), 1 | h);
+                t ^= t + Math.imul(t ^ (t >>> 7), 61 | t);
+                return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+            }
+        }
+
+        /**********************
+         * helpers for date arithmetic
+         **********************/
+        function parseDateISO(s) {
+            // expects "YYYY-MM-DD"
+            const [y, m, d] = s.split("-");
+            return new Date(Number(y), Number(m) - 1, Number(d));
+        }
+        function fmtDate(d) {
+            const dd = String(d.getDate()).padStart(2, '0');
+            const mm = String(d.getMonth() + 1).padStart(2, '0');
+            const yyyy = d.getFullYear();
+            return `${dd}/${mm}/${yyyy}`;
+        }
+        function addDays(d, n) {
+            const x = new Date(d);
+            x.setDate(x.getDate() + n);
+            return x;
+        }
+
+        /**********************
+         * create weekly breakdown given start & end
+         * Weeks are 7-day windows starting from startDate (week 1 = start..start+6)
+         **********************/
+        function createWeeklyBreakdown(startDateStr, endDateStr, domain, seed) {
+            const start = parseDateISO(startDateStr);
+            const end = parseDateISO(endDateStr);
+            if (end < start) return [];
+
+            const topics = topicsByDomain[domain] || ["Introduction", "Theory", "Practical", "Project"];
+            const rand = seededRandom(seed || domain + startDateStr + endDateStr);
+
+            const days = [];
+            for (let d = new Date(start); d <= end; d = addDays(d, 1)) {
+                days.push(new Date(d));
+            }
+
+            // chunk into weeks of 7 days
+            const weeks = [];
+            for (let i = 0; i < days.length; i += 7) {
+                const chunk = days.slice(i, i + 7);
+                const weekNo = Math.floor(i / 7) + 1;
+                const entries = chunk.map((date, idx) => {
+                    // topic cycles through topics list
+                    const topic = topics[(i + idx) % topics.length];
+                    // marks deterministic choice
+                    const r = rand();
+                    let marks, remark;
+                    if (r < 0.15) { marks = Math.floor(40 + r * 100); remark = "Needs Improvement"; }
+                    else if (r < 0.5) { marks = Math.floor(60 + r * 50); remark = "Average"; }
+                    else if (r < 0.85) { marks = Math.floor(70 + r * 30); remark = "Good"; }
+                    else { marks = Math.floor(85 + r * 15); remark = "Excellent"; }
+
+                    return {
+                        date: new Date(date),
+                        topic,
+                        marks,
+                        remark
+                    };
+                });
+                weeks.push({ weekNo, entries, startDate: chunk[0], endDate: chunk[chunk.length - 1] });
+            }
+            return weeks;
+        }
+
+        /**********************
+         * render a single report card DOM
+         **********************/
+        function renderReportCard(data) {
+            // data: { name, candidateId, domain, startDate, endDate, certLink }
+            const weeks = createWeeklyBreakdown(data.startDate, data.endDate, data.domain, data.candidateId || data.name);
+            const wrapper = document.createElement('div');
+            wrapper.className = 'report-card';
+
+            // header
+            wrapper.innerHTML = `
+        <div style="position:relative;">
+          <div class="watermark">ALFIDO TECH</div>
+
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <img src="https://www.alfidotech.com/Logo%202.png" alt="logo" style="height:56px;">
+            </div>
+            <div class="text-end">
+              <h4 class="mb-0">${escapeHtml(data.name)}</h4>
+              <div class="meta">${escapeHtml(data.domain)}</div>
+              <div class="meta">Candidate ID: <b>${escapeHtml(data.candidateId)}</b></div>
+              <div class="meta">Period: <b>${fmtDate(parseDateISO(data.startDate))}</b> - <b>${fmtDate(parseDateISO(data.endDate))}</b></div>
+              ${data.certLink ? `<div class="meta">Cert/Link: <a href="${escapeHtmlAttr(data.certLink)}" target="_blank">View</a></div>` : ''}
+            </div>
+          </div>
+
+          <div class="text-center my-4">
+            <h2 class="mb-3" style="color: #2c3e50; font-weight: 600;">Report Card</h2>
+          </div>
+          <hr>
+        </div>
+      `;
+
+            // for each week, create table
+            weeks.forEach(week => {
+                const weekTitle = document.createElement('div');
+                weekTitle.className = 'mb-2';
+                weekTitle.innerHTML = `<h6 class="mb-1">Week ${week.weekNo} — ${fmtDate(week.startDate)} to ${fmtDate(week.endDate)}</h6>`;
+
+                const table = document.createElement('table');
+                table.className = 'table table-sm table-bordered';
+                table.innerHTML = `
+          <thead class="table-light">
+            <tr>
+              <th style="width:120px">Date</th>
+              <th>Topic / Activity</th>
+              <th style="width:100px">Marks</th>
+              <th style="width:160px">Remarks</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        `;
+                const tbody = table.querySelector('tbody');
+                week.entries.forEach(e => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<td>${fmtDate(e.date)}</td><td>${escapeHtml(e.topic)}</td><td>${e.marks}</td><td>${escapeHtml(e.remark)}</td>`;
+                    tbody.appendChild(tr);
+                });
+
+                wrapper.appendChild(weekTitle);
+                wrapper.appendChild(table);
+            });
+
+            // last page: signature / seal section (keeps it in the same wrapper but classed to allow page break in PDF)
+            // last page: signature / seal section
+            const lastDiv = document.createElement('div');
+            lastDiv.className = 'mt-4 pt-3';
+            lastDiv.style.borderTop = '1px dashed #ddd';
+            lastDiv.innerHTML = `
+  <div class="signature-row d-flex flex-wrap align-items-center justify-content-between mt-3 text-center">
+      <div class="signature-item1">
+          <img src="img/new1.jpg" alt="Founder Signature" style="height:70px;">
+          <p class="mt-1"><b>Founder & CEO</b></p>
+      </div>
+      <div class="signature-item">
+          <img src="stampa.png" alt="Seal" style="height:70px;">
+      </div>
+      <div class="signature-item">
+          <img src="aicte.png" alt="AICTE Logo" style="height:70px;">
+      </div>
+      <div class="signature-item qr-holder">
+          <canvas class="qrCanvas"></canvas>
+          <p class="meta mt-1">Scan to Verify</p>
+      </div>
+      <div class="signature-item">
+          <img src="MSME Logo.png" alt="MSME Logo" style="height:70px;">
+      </div>
+  </div>
+  <div class="mt-3 meta">Generated on: ${fmtDate(new Date())}</div>
+`;
+            wrapper.appendChild(lastDiv);
+
+            // Generate QR dynamically if certificate link exists
+            if (data.certLink) {
+                const qrCanvas = lastDiv.querySelector(".qrCanvas");
+                const qr = new QRious({
+                    element: qrCanvas,
+                    value: data.certLink,
+                    size: 80
+                });
+            }
+
+            wrapper.appendChild(lastDiv);
+
+            // add a hidden page-break sentinel to ensure PDF pages split after each report
+            const pb = document.createElement('div');
+            pb.className = 'page-break';
+            wrapper.appendChild(pb);
+
+            return wrapper;
+        }
+
+        /**********************
+         * escape helpers
+         **********************/
+        function escapeHtml(str) {
+            if (!str && str !== 0) return '';
+            return String(str).replace(/[&<>"']/g, function (m) {
+                return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m];
+            });
+        }
+        function escapeHtmlAttr(s) { return escapeHtml(s).replace(/"/g, "&quot;"); }
+
+        /**********************
+         * generate single / multiple reports
+         **********************/
+        document.getElementById('generateSingle').addEventListener('click', () => {
+            const name = document.getElementById('name').value.trim();
+            const candidateId = document.getElementById('candidateId').value.trim();
+            const domain = document.getElementById('domain').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const certLink = document.getElementById('certLink').value.trim();
+
+            if (!name || !candidateId || !domain || !startDate || !endDate) {
+                alert('Please fill all required fields.');
+                return;
+            }
+
+            const data = { name, candidateId, domain, startDate, endDate, certLink };
+            const output = document.getElementById('reportsOutput');
+            output.innerHTML = ''; // clear
+            output.appendChild(renderReportCard(data));
+            document.getElementById('downloadAllPdf').style.display = 'inline-block';
+            // store for PDF
+            window.currentReportHtml = output.innerHTML;
+        });
+
+        /**********************
+         * CSV parsing & bulk generation
+         **********************/
+        document.getElementById('generateFromCSV').addEventListener('click', () => {
+            const f = document.getElementById('csvFile').files[0];
+            if (!f) { alert('Please choose a CSV file (with header).'); return; }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                try {
+                    const text = e.target.result;
+                    const rows = csvToObjects(text);
+                    if (!rows.length) { alert('No data rows found in CSV.'); return; }
+                    const output = document.getElementById('reportsOutput');
+                    output.innerHTML = '';
+                    rows.forEach(row => {
+                        // expect headers: Name,CandidateID,Domain,StartDate,EndDate,CertificateLink
+                        const name = row.Name || row.name || row.FullName || row["Full Name"];
+                        const candidateId = row.CandidateID || row.CandidateId || row["C.ID"] || row["Candidate Id"] || row["Candidate ID"];
+                        const domain = row.Domain || row.domain;
+                        const startDate = row.StartDate || row["Start Date"] || row.start;
+                        const endDate = row.EndDate || row["End Date"] || row.end;
+                        const certLink = row.CertificateLink || row.CertLink || row["Certificate Link"] || row.cert;
+
+                        if (!name || !candidateId || !domain || !startDate || !endDate) {
+                            // skip invalid rows but continue
+                            console.warn('Skipping invalid CSV row', row);
+                            return;
+                        }
+                        const data = { name, candidateId, domain, startDate, endDate, certLink };
+                        output.appendChild(renderReportCard(data));
+                    });
+                    document.getElementById('downloadAllPdf').style.display = 'inline-block';
+                    window.currentReportHtml = output.innerHTML;
+                } catch (err) {
+                    console.error(err);
+                    alert('Failed to parse CSV: ' + err.message);
+                }
+            };
+            reader.readAsText(f, 'UTF-8');
+        });
+
+        /**********************
+         * CSV -> array of objects (simple parser)
+         * Accepts commas & quoted fields, basic handling
+         **********************/
+        function csvToObjects(csvText) {
+            // split lines, handle \r\n or \n
+            const lines = csvText.trim().split(/\r?\n/).map(l => l.trim()).filter(l => l.length > 0);
+            if (!lines.length) return [];
+            // parse header
+            const header = parseCsvLine(lines[0]);
+            const objs = [];
+            for (let i = 1; i < lines.length; i++) {
+                const parts = parseCsvLine(lines[i]);
+                // skip empty line
+                if (parts.length === 0) continue;
+                const obj = {};
+                for (let j = 0; j < header.length; j++) {
+                    obj[header[j].trim()] = parts[j] === undefined ? '' : parts[j].trim();
+                }
+                objs.push(obj);
+            }
+            return objs;
+        }
+
+        function parseCsvLine(line) {
+            const res = [];
+            let cur = '', inQuotes = false;
+            for (let i = 0; i < line.length; i++) {
+                const ch = line[i];
+                if (inQuotes) {
+                    if (ch === '"') {
+                        if (line[i + 1] === '"') { cur += '"'; i++; } // escaped quote
+                        else inQuotes = false;
+                    } else cur += ch;
+                } else {
+                    if (ch === '"') inQuotes = true;
+                    else if (ch === ',') { res.push(cur); cur = ''; }
+                    else cur += ch;
+                }
+            }
+            res.push(cur);
+            return res;
+        }
+
+        /**********************
+         * download current report area as PDF
+         **********************/
+        document.getElementById('downloadAllPdf').addEventListener('click', () => {
+            const output = document.getElementById('reportsOutput');
+            if (!output.innerHTML.trim()) {
+                alert('No report to download. Generate a report first.');
+                return;
+            }
+
+            // Convert all QR canvases to <img> tags before generating PDF
+            const qrCanvases = output.querySelectorAll('.qrCanvas');
+            qrCanvases.forEach(canvas => {
+                const img = document.createElement('img');
+                img.src = canvas.toDataURL("image/png");
+                img.width = canvas.width;
+                img.height = canvas.height;
+                img.alt = "QR Code";
+                img.className = "qrImage";
+                canvas.replaceWith(img);
+            });
+
+            // Prepare & download PDF
+            const clone = output.cloneNode(true);
+            const opt = {
+                margin: [0.4, 0.4, 0.4, 0.4],
+                filename: 'Internship_Report_Cards.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            const temp = document.createElement('div');
+            temp.style.padding = '12px';
+            temp.style.background = '#fff';
+            temp.appendChild(clone);
+            html2pdf().set(opt).from(temp).save();
+        });
+
+        // simple small helper to load sample data quickly (uncomment if you want sample)
+        // document.addEventListener('DOMContentLoaded', () => { /* optional sample fill */ });
+
+    </script>
+
+
+</body>
+
+</html>
