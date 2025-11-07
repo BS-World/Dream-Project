@@ -68,19 +68,23 @@
         }
 
         .signature-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+    }
 
-        .signature-item img {
-            width: 100px;
-        }
+    .signature-item {
+      text-align: center;
+    }
 
-        .signature-item1 img {
-            width: 150px;
-        }
+    .signature-item img {
+      width: 100px;
+    }
+
+    .signature-item1 img {
+      width: 150px;
+    }
 
         .header {
             display: flex;
@@ -88,6 +92,17 @@
             align-items: center;
             border-bottom: 3px solid #000;
             padding-bottom: 15px;
+        }
+
+        .signature-row img {
+            object-fit: contain;
+            margin: 0 8px;
+        }
+
+        .qr-holder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
@@ -124,9 +139,12 @@
                     <option value="Android Developer">Android Developer</option>
                     <option value="Web Development">Web Development</option>
                     <option value=".NET Developer">.NET Developer</option>
-                    <option value="Human Resource(HR)">Human Resource(HR)</option>
                     <option value="Very Large Scale Integration (VLSI)">Very Large Scale Integration (VLSI)</option>
                     <option value="Embedded Systems">Embedded Systems</option>
+                    <option value="Human Resource(HR)">Human Resource(HR)</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="Cloud Engineer">Cloud Engineer</option>
+
                 </select>
             </div>
             <div class="mb-3">
@@ -139,7 +157,8 @@
             </div>
             <div class="mb-3">
                 <label for="candidateIdInput" class="form-label">Candidate ID (C.ID)</label>
-                <input type="text" id="candidateIdInput" class="form-control" placeholder="Enter your Candidate ID (Exmple :- BS/REG/00000)" required>
+                <input type="text" id="candidateIdInput" class="form-control"
+                    placeholder="Enter your Candidate ID (Exmple :- BS/REG/00000)" required>
             </div>
             <button type="button" class="btn btn-primary" onclick="generateLOR()">Submit</button>
         </form>
@@ -212,6 +231,7 @@
                 <div class="signature-item">
                     <img src="aicte.png" alt="AICTE Logo">
                 </div>
+                
                 <div class="signature-item">
                     <img src="qr.jpg" alt="QR Code for Verification">
                 </div>
@@ -265,6 +285,8 @@
             html2pdf().set(options).from(lorLetter).save();
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
 </body>
 
 </html>
