@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alfido Tech Services — Excel Download</title>
+
+  <!-- Bootstrap for layout + FontAwesome for icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* ===== Base & Theme ===== */
+    :root{
+      --bg:#0f1221;
+      --card:#0f1724aa;
+      --glass: rgba(255,255,255,0.06);
+      --accent1: #6b0f1a; /* deep maroon */
+      --accent2: #a21a37; /* lighter maroon */
+      --muted: #adb5bd;
+      --glass-border: rgba(255,255,255,0.05);
+    }
+    html,body{height:100%; background:
+      radial-gradient(1200px 400px at 10% 10%, rgba(162,26,55,0.12), transparent 6%),
+      radial-gradient(1000px 300px at 90% 90%, rgba(107,15,26,0.08), transparent 6%),
+      var(--bg); color:#e9eef8; font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,"Helvetica Neue",Arial;}
+    .container {padding-top:48px; padding-bottom:48px;}
+
+    /* ===== Header / Brand ===== */
+    .brand {
+      display:flex; gap:.9rem; align-items:center;
+      padding:1rem 1.1rem; border-radius:14px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 6px 30px rgba(10,10,15,0.55);
+      backdrop-filter: blur(8px) saturate(120%);
+      margin-bottom:20px;
+      animation: floatIn .6s ease both;
+    }
+    .brand .logo {
+      width:62px; height:62px; border-radius:12px;
+      display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(135deg,var(--accent1),var(--accent2));
+      box-shadow: 0 6px 18px rgba(162,26,55,0.18);
+      overflow:hidden; flex-shrink:0;
+    }
+    .brand .logo img {width:100%; height:100%; object-fit:cover;}
+    .brand h1 {margin:0; font-size:1.05rem; letter-spacing:.2px;}
+    .brand p {margin:0; color:var(--muted); font-size:.86rem;}
+
+    /* ===== Card ===== */
+    .card-premium {
+      border-radius:16px; padding:1.25rem; border:1px solid var(--glass-border);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 10px 40px rgba(6,10,20,0.6);
+    }
+
+    .file-meta {color:var(--muted); font-size:.9rem;}
+    .btn-cta {
+      background: linear-gradient(90deg,var(--accent1),var(--accent2));
+      border: none; color:white; padding:.675rem 1.05rem; font-weight:600;
+      border-radius:12px; min-width:170px;
+      box-shadow: 0 8px 22px rgba(162,26,55,0.18);
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s;
+    }
+    .btn-cta:hover { transform: translateY(-4px); filter:brightness(1.03); box-shadow:0 14px 46px rgba(162,26,55,0.26); }
+    .btn-outline-ghost {
+      border-radius:12px; padding:.6rem .9rem; border:1px solid rgba(255,255,255,0.06);
+      background:transparent; color:var(--muted); min-width:150px;
+    }
+    .micro {font-size:.82rem; color:var(--muted); margin-top:.5rem;}
+
+    /* small animated icon */
+    .icon-blob { display:inline-flex; align-items:center; gap:.5rem; }
+
+    /* footer */
+    .footer-note {color:var(--muted); font-size:.82rem; margin-top:12px;}
+
+    /* graceful entrance */
+    @keyframes floatIn {
+      from {opacity:0; transform: translateY(10px) scale(.995);}
+      to {opacity:1; transform: translateY(0) scale(1);}
+    }
+
+    /* subtle pulse to download CTA when auto param present */
+    .pulse {
+      animation: pulseGlow 1.6s infinite ease-in-out;
+      box-shadow: 0 10px 30px rgba(162,26,55,0.14);
+    }
+    @keyframes pulseGlow {
+      0% { transform: translateY(0); box-shadow: 0 8px 20px rgba(162,26,55,0.12); }
+      50% { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(162,26,55,0.22); }
+      100% { transform: translateY(0); box-shadow: 0 8px 20px rgba(162,26,55,0.12); }
+    }
+
+    /* responsive tweaks */
+    @media (max-width:576px) {
+      .brand {padding:.75rem}
+      .brand .logo{width:50px; height:50px;}
+      .btn-cta {min-width:140px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- BRAND -->
+    <div class="brand">
+      <div class="logo" id="logoWrap" title="Alfido Tech Services logo">
+        <!-- Replace image URL via JS config or put your logo here -->
+        <img id="brandLogo" src="" alt="Alfido Tech Services Logo" />
+      </div>
+      <div>
+        <h1 id="brandName">Alfido Tech Services</h1>
+        <p id="brandSub">Delivering reliable Services & internship training certificates </p>
+        <p class="micro" id="operatorName">Operator: <strong>Bhanupratap Biswas</strong></p>
+      </div>
+      <div class="ms-auto text-end">
+        <span class="small text-muted">Secure download</span><br/>
+        <span class="small text-muted">Encrypted session ready</span>
+      </div>
+    </div>
+
+    <!-- MAIN CARD -->
+    <div class="card-premium">
+      <div class="d-flex align-items-start gap-3">
+        <div class="flex-grow-1">
+          <h3 style="margin:0 0 .15rem 0;">Download Excel / Open Online</h3>
+          <div class="file-meta">Get the spreadsheet as <strong>.xlsx</strong> or view it in Google Sheets.</div>
+        </div>
+        <div class="text-end">
+          <div class="icon-blob">
+            <i class="fa-solid fa-file-excel" style="font-size:1.5rem; color: white;"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4 gx-2">
+        <div class="col-sm-6 mb-2 d-grid">
+          <button id="downloadBtn" class="btn btn-cta"> <i class="fa-solid fa-download me-2"></i> Download Excel</button>
+        </div>
+        <div class="col-sm-6 mb-2 d-grid">
+          <a id="openBtn" class="btn btn-outline-ghost" target="_blank" rel="noopener"><i class="fa-solid fa-link me-2"></i> Open in Google Sheets</a>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap align-items-center justify-content-between mt-3">
+        <div>
+          <div class="file-meta">Google Sheet ID: <code id="sheetId" style="color:#dfe7f8;"></code></div>
+          <div class="footer-note">Make sure sheet sharing is set to <strong>Anyone with the link — Viewer</strong> for direct download to work.</div>
+        </div>
+
+        <div class="text-end">
+          <div class="small file-meta">Auto-download after payment: <code>?auto=1</code></div>
+          <div class="micro">You can add this page as the Payment Success URL.</div>
+        </div>
+      </div>
+
+      <div id="message" class="mt-3"></div>
+    </div>
+
+    <div class="text-center mt-3 small text-muted">© <span id="brandYear"></span> Alfido Tech Services • Designed for secure certificate delivery</div>
+  </div>
+
+  <!-- ===== Script: Configuration and Behavior ===== -->
+  <script>
+    /***********************
+      CONFIG - please edit
+    ***********************/
+    const SHEET_ID = "1ws254s5ZjfbgYTP7RHHbNGxpiVH28t8Qmt0p0CRKu6A"; // <-- put your sheet id
+    const GID = ""; // optional sheet tab id, e.g. "0"
+    const LOGO_URL = "https://www.alfidotech.com/logo.png"; // <-- replace with your logo URL
+    const OPERATOR_NAME = "Bhanupratap Biswas"; // operator / issuer name shown near brand
+    /***********************/
+
+    // Derived URLs
+    const exportUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=xlsx${GID ? "&gid="+GID : ""}`;
+    const openUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit`;
+
+    // DOM refs
+    const downloadBtn = document.getElementById('downloadBtn');
+    const openBtn = document.getElementById('openBtn');
+    const message = document.getElementById('message');
+    const sheetIdEl = document.getElementById('sheetId');
+    const brandLogo = document.getElementById('brandLogo');
+    const operatorNameEl = document.getElementById('operatorName');
+    const brandYear = document.getElementById('brandYear');
+
+    // Init UI text
+    sheetIdEl.textContent = SHEET_ID;
+    openBtn.href = openUrl;
+    brandLogo.src = LOGO_URL;
+    operatorNameEl.innerHTML = `Operator: <strong>${OPERATOR_NAME}</strong>`;
+    brandYear.textContent = new Date().getFullYear();
+
+    // Download function (fetch -> blob -> download)
+    async function downloadXLSX() {
+      // UI feedback
+      message.innerHTML = `<div class="alert alert-info py-2" role="status"><i class="fa-solid fa-spinner fa-spin me-2"></i>Preparing download…</div>`;
+      // Add pulse effect to CTA briefly
+      downloadBtn.classList.add('pulse');
+      try {
+        const res = await fetch(exportUrl, { mode: 'cors' });
+        if (!res.ok) throw new Error('Fetch failed, status ' + res.status);
+        const blob = await res.blob();
+        const filename = `alfido_sheet_${new Date().toISOString().slice(0,19).replace(/[:T]/g,'-')}.xlsx`;
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        message.innerHTML = `<div class="alert alert-success py-2" role="status"><i class="fa-solid fa-check me-2"></i>Download started.</div>`;
+      } catch (err) {
+        console.error(err);
+        message.innerHTML = `<div class="alert alert-danger py-2" role="alert"><i class="fa-solid fa-triangle-exclamation me-2"></i>Download failed: ${err.message}. Ensure sharing = "Anyone with the link — Viewer".</div>`;
+        // fallback: open export url in new tab for manual Save As
+        const openFallback = confirm("Automatic download failed. Open the export URL in a new tab to save manually?");
+        if (openFallback) window.open(exportUrl, '_blank');
+      } finally {
+        setTimeout(()=>downloadBtn.classList.remove('pulse'), 900);
+      }
+    }
+
+    // Click handlers
+    downloadBtn.addEventListener('click', downloadXLSX);
+    openBtn.addEventListener('click', ()=>{ /* anchor handles it */ });
+
+    // Auto-download support: if ?auto=1 in URL
+    function shouldAuto() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('auto') === '1' || params.get('autodownload') === '1';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // if auto param set — give small delay so brand animation is visible
+      if (shouldAuto()) {
+        setTimeout(()=> {
+          // highlight CTA visually and start download
+          downloadBtn.classList.add('pulse');
+          downloadXLSX();
+        }, 700);
+      }
+    });
+
+    // (Optional) Small security note: if you plan to embed this link directly in a payment gateway,
+    // consider adding a unique token param (e.g. ?token=XXXX) and validating server-side before redirecting.
+  </script>
+</body>
+</html>
