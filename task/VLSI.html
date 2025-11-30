@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VLSI — Internship Tasks</title>
+    <link rel="icon" type="image/png" href="Logo.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="VLSI Internship Tasks: Objective, features, technologies, and 4 hands-on tasks covering RTL design, synthesis, STA, DFT, and physical verification. Build VLSI fundamentals with practical assignments.">
+    <meta name="keywords" content="VLSI, Internship, RTL, Synthesis, STA, DFT, Physical Verification, Verilog, Synopsys, Cadence, ModelSim, SPICE, PrimeTime, Digital Design, Tasks">
+    <meta name="author" content="Alfido Tech">
+    
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
+  <style>
+    body{font-family: "Poppins", sans-serif; background:#f5f7fb; color:#0f1724}
+    .hero{background: linear-gradient(135deg,#071029,#dD242a); color:#fff; padding:44px 0; border-radius:0 0 20px 20px}
+    .card-custom{border-radius:12px; box-shadow:0 8px 30px rgba(2,6,23,0.06)}
+    .badge-tech{background:#eef2ff;color:#dD242a}
+    .task-num{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;font-weight:700}
+    pre{white-space:pre-wrap}
+
+    body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9fafc;
+            color: #1e293b;
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand img {
+            height: 45px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color .3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #dD242a !important;
+        }
+  </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="Logo 2.png" alt="Alfido Tech"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Internship</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship
+                                    Registration</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task
+                                    Submission</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+                            <li><a class="dropdown-item "
+                                    href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
+                            <li><a class="dropdown-item active" href="https://www.alfidotech.com/task.html">Tasks</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact
+                            Us</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="https://www.alfidotech.com/certification.html">Certification</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><br><br><br>
+
+  <header class="hero text-center">
+    <div class="container">
+      <h1 class="mb-1">Very Large Scale Integration (VLSI) — Internship Tasks</h1>
+      <p class="mb-0">Objective, Features, Technologies and 4 hands-on tasks to build VLSI fundamentals</p>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="card card-custom p-4">
+
+      <h4>Objective</h4>
+      <p>
+        Provide interns with hands-on experience in digital VLSI design flow — from RTL design and simulation to
+        synthesis, verification, and basic physical design checks. Emphasis on low-power, timing closure, and testability.
+      </p>
+      <hr>
+
+      <h4>Features</h4>
+      <ul>
+        <li>RTL coding & functional simulation</li>
+        <li>Synthesis and gate-level verification</li>
+        <li>Static Timing Analysis (STA) and timing closure</li>
+        <li>Basic floorplanning & place-and-route concepts</li>
+        <li>Design for Testability (DFT) and basic scan insertion</li>
+      </ul>
+      <hr>
+
+      <h4>Technologies & Tools</h4>
+      <div class="mb-3">
+        <span class="badge badge-tech px-3 py-2 me-2">Verilog / SystemVerilog</span>
+        <span class="badge badge-tech px-3 py-2 me-2">Cadence / Synopsys</span>
+        <span class="badge badge-tech px-3 py-2 me-2">ModelSim / VCS</span>
+        <span class="badge badge-tech px-3 py-2 me-2">SPICE / NGSPICE</span>
+        <span class="badge badge-tech px-3 py-2">Primetime (STA)</span>
+      </div>
+      <hr>
+
+      <h4 class="mb-3">Tasks (4)</h4>
+      <div class="accordion" id="vlsiTasks">
+
+        <!-- Task 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="v1">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#task1" aria-expanded="false" aria-controls="task1">
+              <div class="task-num me-3">1</div>
+              RTL Design & Functional Simulation (Verilog)
+            </button>
+          </h2>
+          <div id="task1" class="accordion-collapse collapse" aria-labelledby="v1" data-bs-parent="#vlsiTasks">
+            <div class="accordion-body">
+              <h6>Goal</h6>
+              <p>Write RTL for a small digital block (e.g., 8-bit ALU or simple RISC datapath) and verify functionality with testbenches.</p>
+
+              <h6>Requirements</h6>
+              <ul>
+                <li>Create synthesizable Verilog/SystemVerilog modules</li>
+                <li>Write comprehensive testbench with directed and random tests</li>
+                <li>Simulate using ModelSim/GTKWave or any simulator</li>
+              </ul>
+
+              <h6>Deliverables</h6>
+              <ol>
+                <li>RTL source files and testbench</li>
+                <li>Simulation wave screenshots and short explanation of coverage</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="v2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#task2" aria-expanded="false" aria-controls="task2">
+              <div class="task-num me-3">2</div>
+              Synthesis & Gate-Level Simulation
+            </button>
+          </h2>
+          <div id="task2" class="accordion-collapse collapse" aria-labelledby="v2" data-bs-parent="#vlsiTasks">
+            <div class="accordion-body">
+              <h6>Goal</h6>
+              <p>Synthesize RTL to a gate-level netlist using an academic flow or open-source tool and perform gate-level simulation.</p>
+
+              <h6>Requirements</h6>
+              <ul>
+                <li>Use Synopsys DC / Yosys (open-source) for synthesis</li>
+                <li>Generate netlist and perform gate-level simulation with timing if available</li>
+                <li>Compare RTL vs gate-level behavior</li>
+              </ul>
+
+              <h6>Deliverables</h6>
+              <ol>
+                <li>Synthesis script & generated netlist</li>
+                <li>Simulation logs showing equivalence</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="v3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#task3" aria-expanded="false" aria-controls="task3">
+              <div class="task-num me-3">3</div>
+              Static Timing Analysis (STA) & Timing Closure
+            </button>
+          </h2>
+          <div id="task3" class="accordion-collapse collapse" aria-labelledby="v3" data-bs-parent="#vlsiTasks">
+            <div class="accordion-body">
+              <h6>Goal</h6>
+              <p>Run basic STA (clock, setup/hold checks) on synthesized netlist using timing libraries or representative delays.</p>
+
+              <h6>Requirements</h6>
+              <ul>
+                <li>Prepare timing constraints (SDC) — clocks, I/O delays</li>
+                <li>Use PrimeTime / open-source alternatives for STA</li>
+                <li>Identify timing violations and propose fixes (pipelining, re-synthesis)</li>
+              </ul>
+
+              <h6>Deliverables</h6>
+              <ol>
+                <li>Timing report with worst negative slack (if any)</li>
+                <li>Short write-up describing steps to fix violations</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="v4">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#task4" aria-expanded="false" aria-controls="task4">
+              <div class="task-num me-3">4</div>
+              DFT & Basic Physical Verification (LVS/DRC concepts)
+            </button>
+          </h2>
+          <div id="task4" class="accordion-collapse collapse" aria-labelledby="v4" data-bs-parent="#vlsiTasks">
+            <div class="accordion-body">
+              <h6>Goal</h6>
+              <p>Introduce Design for Testability (scan insertion) and understand layout vs schematic checks (LVS/DRC) at a conceptual or tool-driven level.</p>
+
+              <h6>Requirements</h6>
+              <ul>
+                <li>Apply basic scan chain insertion using DFT tool or describe manual approach</li>
+                <li>Explain LVS/DRC steps and, if tools available, run checks on a sample layout</li>
+                <li>Discuss test coverage and stuck-at faults</li>
+              </ul>
+
+              <h6>Deliverables</h6>
+              <ol>
+                <li>DFT plan and any scripts used (or a detailed report if tool not available)</li>
+                <li>Report describing LVS/DRC steps and outcomes</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <small class="text-muted">Suggested duration: 4–8 weeks for the full set (can be split into milestones).</small>
+        <div>
+          <button id="copyVlsi" class="btn btn-outline-primary btn-sm me-2">Copy Tasks</button>
+          <a href="#" id="downloadVlsi" class="btn btn-primary btn-sm">Download (TXT)</a>
+        </div>
+      </div>
+
+      <!-- Task Documentation & Submission Instructions -->
+    <h4>How to Submit Your Tasks</h4>
+    <ol>
+        <li>
+            <strong>For each task:</strong>
+            <ul>
+                <li>Create a separate document (DOC, DOCX, or PDF) for <b>each task</b> (Task 1, Task 2, Task 3, Task 4).</li>
+                <li>Add all required screenshots, code snippets, commands, and links as per the deliverables.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Upload your documents:</strong>
+            <ul>
+                <li>Upload each task document to <b>Google Drive</b> or <b>GitHub</b> (create a public repository or shareable folder).</li>
+                <li>Make sure the sharing permissions allow anyone with the link to view your files.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Submit your links:</strong>
+            <ul>
+                <li>Copy the public links for each task document.</li>
+                <li>Go to the <a href="https://www.alfidotech.com/submission.html" target="_blank">Task Submission</a> page.</li>
+                <li>Paste your document links in the submission form, clearly mentioning the task number for each link.</li>
+            </ul>
+        </li>
+    </ol>
+    <p class="text-success"><b>Tip:</b> Organize your files and links clearly for faster review and feedback!</p>
+
+      <div class="text-center mt-5">
+        <a href="https://www.alfidotech.com/submission.html" target="_blank" >
+            <button class="btn btn-primary btn-sm" >Submit Your Task</button></a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function buildPlainTextVLSI(){
+      const lines = [];
+      lines.push('VLSI — Tasks');
+      lines.push('');
+      lines.push('Objective: Provide hands-on experience in RTL -> synthesis -> STA -> DFT.');
+      lines.push('');
+      lines.push('Features: RTL, synthesis, STA, floorplanning, DFT.');
+      lines.push('');
+      lines.push('Technologies: Verilog, Synopsys/Cadence, ModelSim, SPICE, PrimeTime.');
+      lines.push('');
+      lines.push('Tasks:');
+      lines.push('1) RTL Design & Functional Simulation - Write RTL (e.g., 8-bit ALU), testbench and simulate.');
+      lines.push('2) Synthesis & Gate-Level Simulation - Synthesize RTL, generate netlist and run gate-level sim.');
+      lines.push('3) Static Timing Analysis - Prepare SDC, run STA and fix violations.');
+      lines.push('4) DFT & Physical Verification - Plan scan insertion and describe/run LVS/DRC steps.');
+      return lines.join('\\n');
+    }
+
+    document.getElementById('copyVlsi').addEventListener('click', async () => {
+      const txt = buildPlainTextVLSI();
+      try{
+        await navigator.clipboard.writeText(txt);
+        alert('VLSI tasks copied to clipboard');
+      }catch(e){
+        prompt('Copy the tasks (select & copy):', txt);
+      }
+    });
+
+    document.getElementById('downloadVlsi').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const txt = buildPlainTextVLSI();
+      const blob = new Blob([txt], {type: 'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'vlsi_tasks.txt';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+  </script>
+
+</body>
+</html>
