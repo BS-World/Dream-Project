@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Embedded Systems - Tasks</title>
+    <link rel="icon" type="image/png" href="Logo.png"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Embedded Systems Internship Tasks: Objective, features, technologies, and 4 practical hands-on tasks for microcontroller programming, sensor interfacing, real-time control, data logging, and IoT.">
+    <meta name="keywords" content="Embedded Systems, Internship, Arduino, ESP32, STM32, IoT, Microcontroller, Tasks, Sensors, Actuators, Data Logging, PWM, LCD, SD Card">
+    <meta name="author" content="Alfido Tech">
+    
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
+  <style>
+    body{font-family: "Poppins", sans-serif; background: #f4f7fb; color:#0f1724}
+    .hero{background: linear-gradient(135deg,#0f1724,#dD242a);color:#fff;padding:48px 0;border-radius:0 0 28px 28px}
+    .card-custom{border-radius:14px;box-shadow:0 8px 30px rgba(15,23,36,0.06)}
+    .badge-tech{background:#eef2ff;color:#dD242a}
+    .task-num{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;font-weight:700}
+    pre{white-space:pre-wrap}
+    body {
+            font-family: 'Poppins', sans-serif;
+            background: #f9fafc;
+            color: #1e293b;
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand img {
+            height: 45px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color .3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #dD242a !important;
+        }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="Logo 2.png" alt="Alfido Tech"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Internship</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship
+                                    Registration</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task
+                                    Submission</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+                            <li><a class="dropdown-item "
+                                    href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
+                            <li><a class="dropdown-item active" href="https://www.alfidotech.com/task.html">Tasks</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact
+                            Us</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="https://www.alfidotech.com/certification.html">Certification</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav><br><br><br>
+  <header class="hero">
+    <div class="container text-center">
+      <h1 class="mb-2">Embedded Systems — Internship Tasks</h1>
+      <p class="mb-0">Objective, Features, Technologies and 4 practical tasks for interns.</p>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="card card-custom p-4">
+          <h4 class="mb-3">Objective</h4>
+          <p>
+            Learn the fundamentals of embedded systems design through hands-on tasks: microcontroller programming,
+            interfacing sensors and actuators, real-time control, and simple IoT connectivity. By the end of these
+            tasks interns will be able to design, implement, and test small embedded projects and document results.
+          </p>
+
+          <hr>
+
+          <h4 class="mb-3">Features</h4>
+          <ul>
+            <li>Hands-on microcontroller programming (Arduino / STM32 / ESP32)</li>
+            <li>Sensor & actuator interfacing (GPIO, ADC, PWM, I2C, SPI, UART)</li>
+            <li>Basic real-time behavior using timers and interrupts</li>
+            <li>Simple data logging and visualization (serial / web)</li>
+            <li>Optional wireless connectivity (Wi‑Fi / Bluetooth) for IoT workflows</li>
+          </ul>
+
+          <hr>
+
+          <h4 class="mb-3">Technologies</h4>
+          <div class="mb-3">
+            <span class="badge badge-tech px-3 py-2 me-2">C / C++</span>
+            <span class="badge badge-tech px-3 py-2 me-2">Arduino IDE / PlatformIO</span>
+            <span class="badge badge-tech px-3 py-2 me-2">ESP32 / STM32 / AVR</span>
+            <span class="badge badge-tech px-3 py-2">I2C, SPI, UART</span>
+          </div>
+
+          <hr>
+
+          <h4 class="mb-3">Tasks (4)</h4>
+
+          <!-- Tasks Accordion -->
+          <div class="accordion" id="tasksAccordion">
+
+            <!-- Task 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#taskOne" aria-expanded="false" aria-controls="taskOne">
+                  <div class="d-flex align-items-center me-3">
+                    <div class="task-num me-3">1</div>
+                  </div>
+                  Task 1 — Temperature Monitoring & LCD Display
+                </button>
+              </h2>
+              <div id="taskOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#tasksAccordion">
+                <div class="accordion-body">
+                  <h6>Goal</h6>
+                  <p>Read temperature from a sensor and display current value on a 16x2 LCD. Log readings over serial.</p>
+
+                  <h6>Requirements</h6>
+                  <ul>
+                    <li>Hardware: Arduino UNO, LM35/DS18B20, 16x2 I2C LCD, breadboard, wires</li>
+                    <li>Software: Arduino IDE, <code>LiquidCrystal_I2C</code> (or equivalent)</li>
+                  </ul>
+
+                  <h6>Deliverables</h6>
+                  <ol>
+                    <li>Working circuit & Arduino sketch.</li>
+                    <li>Short video (30–60s) showing live reading on LCD.</li>
+                    <li>One-page README with wiring diagram and explanation.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+
+            <!-- Task 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#taskTwo" aria-expanded="false" aria-controls="taskTwo">
+                  <div class="d-flex align-items-center me-3">
+                    <div class="task-num me-3">2</div>
+                  </div>
+                  Task 2 — Motor Control with PWM & Obstacle Detection
+                </button>
+              </h2>
+              <div id="taskTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#tasksAccordion">
+                <div class="accordion-body">
+                  <h6>Goal</h6>
+                  <p>Control DC motor speed using PWM and stop when an ultrasonic sensor detects an obstacle.</p>
+
+                  <h6>Requirements</h6>
+                  <ul>
+                    <li>Hardware: Arduino/ESP32, L293D or motor driver, DC motor, HC-SR04 ultrasonic sensor</li>
+                    <li>Software: Arduino IDE, use hardware PWM pins</li>
+                  </ul>
+
+                  <h6>Deliverables</h6>
+                  <ol>
+                    <li>Code implementing PWM speed control and obstacle stop.</li>
+                    <li>Wiring diagram and brief test results (distance vs response).</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+
+            <!-- Task 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#taskThree" aria-expanded="false" aria-controls="taskThree">
+                  <div class="d-flex align-items-center me-3">
+                    <div class="task-num me-3">3</div>
+                  </div>
+                  Task 3 — Data Logger: Sensor → SD Card
+                </button>
+              </h2>
+              <div id="taskThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tasksAccordion">
+                <div class="accordion-body">
+                  <h6>Goal</h6>
+                  <p>Collect sensor data (e.g., temperature and light) and save timestamped entries to an SD card (CSV).</p>
+
+                  <h6>Requirements</h6>
+                  <ul>
+                    <li>Hardware: Arduino with SPI, SD card module, RTC module (DS1307/DS3231) optional</li>
+                    <li>Software: <code>SD.h</code>, <code>SPI.h</code>, optional <code>RTClib</code></li>
+                  </ul>
+
+                  <h6>Deliverables</h6>
+                  <ol>
+                    <li>CSV file from SD showing at least 100 samples.</li>
+                    <li>Code and explanation of sampling rate and power considerations.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+
+            <!-- Task 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#taskFour" aria-expanded="false" aria-controls="taskFour">
+                  <div class="d-flex align-items-center me-3">
+                    <div class="task-num me-3">4</div>
+                  </div>
+                  Task 4 — Simple IoT: ESP32 Web Dashboard
+                </button>
+              </h2>
+              <div id="taskFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#tasksAccordion">
+                <div class="accordion-body">
+                  <h6>Goal</h6>
+                  <p>Create a basic web dashboard served by an ESP32 that shows live sensor data and allows toggling a digital output (LED/relay).</p>
+
+                  <h6>Requirements</h6>
+                  <ul>
+                    <li>Hardware: ESP32, sensor (e.g., DHT11/DHT22), LED/relay</li>
+                    <li>Software: ESP32 core for Arduino, <code>WiFi.h</code>, <code>ESPAsyncWebServer</code> or <code>WebServer</code></li>
+                  </ul>
+
+                  <h6>Deliverables</h6>
+                  <ol>
+                    <li>ESP32 sketch with embedded HTML/JS for dashboard.</li>
+                    <li>Screenshot of dashboard and short demo notes.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <hr>
+
+          <div class="text-center mt-5">
+        <a href="https://www.alfidotech.com/submission.html" target="_blank" >
+            <button class="btn btn-primary btn-sm" >Submit Your Task</button></a>
+    </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-4">
+            <small class="text-muted">Suggested duration: 4–6 weeks for the full set (can be separated into smaller milestones).</small>
+            <div>
+              <button id="copyTasks" class="btn btn-outline-primary btn-sm me-2"><i class="fa fa-copy"></i> Copy Tasks</button>
+              <a href="#" id="downloadBtn" class="btn btn-primary btn-sm">Download (TXT)</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="card card-custom p-3">
+          <h5>Quick Resources</h5>
+          <ul>
+            <li><a href="https://www.arduino.cc/" target="_blank">Arduino</a></li>
+            <li><a href="https://docs.espressif.com/" target="_blank">ESP32 Docs</a></li>
+            <li><a href="https://platformio.org/" target="_blank">PlatformIO</a></li>
+            <li><a href="https://www.arduino.cc/reference/en/" target="_blank">Arduino Reference</a></li>
+          </ul>
+        </div>
+
+        <div class="card card-custom p-3 mt-3">
+          <h6>Evaluation Checklist</h6>
+          <ol>
+            <li>Code compiles and runs.</li>
+            <li>Proper wiring and safety checks.</li>
+            <li>Documentation (README + wiring diagram).</li>
+            <li>Short demo (video or GIF) or live demo session.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="https://www.alfidotech.com/submission.html" target="_blank" >
+            <button class="btn btn-primary btn-sm" >Submit Your Task</button></a>
+    </div>
+    </div>
+  </main>
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Build a plain-text version of the tasks for 'copy' and 'download'
+    function buildPlainText(){
+      const title = 'Embedded Systems — Tasks\n\n';
+      const sections = [];
+      sections.push('Objective:\nLearn the fundamentals of embedded systems design through hands-on tasks.');
+      sections.push('\nFeatures:\n- Microcontroller programming\n- Sensor & actuator interfacing\n- Real-time control\n- Data logging & basic IoT');
+      sections.push('\nTechnologies:\nC/C++, Arduino IDE, ESP32/STM32, I2C/SPI/UART');
+
+      // Task details
+      sections.push('\nTasks:\n1) Temperature Monitoring & LCD Display - Read sensor and show value on 16x2 LCD.\n2) Motor Control with PWM & Obstacle Detection - Control motor and stop on obstacle.\n3) Data Logger to SD Card - Save timestamped sensor data to CSV.\n4) Simple IoT (ESP32) - Serve dashboard and toggle outputs.');
+
+      return title + sections.join('\n\n');
+    }
+
+    document.getElementById('copyTasks').addEventListener('click', async () => {
+      const txt = buildPlainText();
+      try{
+        await navigator.clipboard.writeText(txt);
+        alert('Tasks copied to clipboard');
+      }catch(e){
+        prompt('Copy tasks text (select and copy manually):', txt);
+      }
+    });
+
+    document.getElementById('downloadBtn').addEventListener('click', (e) =>{
+      e.preventDefault();
+      const txt = buildPlainText();
+      const blob = new Blob([txt], {type: 'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'embedded_systems_tasks.txt';
+      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
