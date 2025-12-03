@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Business Analytics — Alfido Tech Internship Tasks</title>
+  <meta name="description" content="Business Analytics Internship Tasks — practical assignments using curated Kaggle datasets for sales, segmentation, forecasting and reporting.">
+  <link rel="shortcut icon" type="image/png" href="Logo.png"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
+
+  <style>
+    body{font-family:"Poppins",sans-serif;background:#f4f7fb;color:#0f1724}
+    .hero{background:linear-gradient(135deg,#0d0514,#dD242a);color:#fff;padding:44px 0;border-radius:0 0 20px 20px}
+    .card-custom{border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.08)}
+    .badge-tech{background:#efe8ff;color:#4b0082}
+    .task-num{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;font-weight:700}
+    .tool-badge{background:#fff;border:1px solid #e6e6e6;padding:6px 10px;border-radius:8px;margin-right:6px}
+    .navbar { background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .navbar-brand img { height: 45px; }
+    .nav-link { font-weight: 500; transition: color .3s; }
+    .nav-link:hover, .nav-link.active { color: #dD242a !important; }
+    pre{white-space:pre-wrap}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="https://www.alfidotech.com/Logo%202.png" alt="Alfido Tech"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Internship</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship Registration</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task Submission</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
+            <li><a class="dropdown-item active" href="https://www.alfidotech.com/task.html">Tasks</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/certification.html">Certification</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br><br><br>
+
+<header class="hero text-center">
+  <div class="container">
+    <h1 class="mb-1">Business Analytics — Alfido Tech Internship Tasks</h1>
+    <p class="mb-0">Practical dataset-driven tasks: cleaning, segmentation, forecasting, and business reporting</p>
+  </div>
+</header>
+
+<main class="container my-5">
+  <div class="card card-custom p-4">
+
+    <h4>Objective</h4>
+    <p>Train interns to turn raw business data into actionable insights: clean data, segment customers, forecast demand, and produce executive reports suitable for Alfido Tech stakeholders.</p>
+    <hr>
+
+    <h4>Features</h4>
+    <ul>
+      <li>Data cleaning and validation</li>
+      <li>Segmentation and RFM analysis</li>
+      <li>Time-series forecasting and scenario planning</li>
+      <li>Executive-level reporting with visuals and recommendations</li>
+    </ul>
+    <hr>
+
+    <h4>Tools</h4>
+    <div class="mb-3">
+      <span class="tool-badge">Excel / Google Sheets</span>
+      <span class="tool-badge">Python (Pandas / Statsmodels)</span>
+      <span class="tool-badge">Tableau / Power BI</span>
+      <span class="tool-badge">SQL</span>
+    </div>
+    <hr>
+
+    <h4>Beginner Level Tasks</h4>
+    <ul>
+      <li>Download any dataset and inspect for missing values, duplicates and inconsistent data types.</li>
+      <li>Create a cleaned version and document the cleaning steps in a README.</li>
+      <li>Produce 3 charts showing core business metrics and write a short insight for each.</li>
+    </ul>
+    <hr>
+
+    <p class="text-primary fw-bold">Note: Complete <u>any 3 tasks</u> out of the 4 main tasks below.</p>
+
+    <h4 class="mb-3">Tasks (4)</h4>
+    <div class="accordion" id="baTasks">
+
+      <!-- Task 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="b1">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task1">
+            <div class="task-num me-3">1</div>
+            Sales Data Cleaning & Analysis
+          </button>
+        </h2>
+        <div id="task1" class="accordion-collapse collapse" data-bs-parent="#baTasks">
+          <div class="accordion-body">
+            <h6>Dataset</h6>
+            <p><a href="https://www.kaggle.com/datasets/kyanyoga/sample-sales-data" target="_blank">https://www.kaggle.com/datasets/kyanyoga/sample-sales-data</a></p>
+
+            <h6>Goal</h6>
+            <p>Clean the sales dataset, derive core sales KPIs and highlight data quality issues. Produce insights on sales by region, product and time.</p>
+
+            <h6>Requirements</h6>
+            <ul>
+              <li>Data cleaning: missing values, date parsing, inconsistent categories</li>
+              <li>Compute KPIs: total sales, avg order value, top products, monthly trend</li>
+              <li>Visualize sales trends and provide 5 actionable recommendations</li>
+            </ul>
+
+            <h6>Deliverables</h6>
+            <ol>
+              <li>Cleaned dataset (CSV) and notebook/Excel with steps</li>
+              <li>PDF summary with charts and recommendations</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="b2">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task2">
+            <div class="task-num me-3">2</div>
+            Customer Segmentation
+          </button>
+        </h2>
+        <div id="task2" class="accordion-collapse collapse" data-bs-parent="#baTasks">
+          <div class="accordion-body">
+            <h6>Dataset</h6>
+            <p><a href="https://www.kaggle.com/datasets/vetrirah/customer" target="_blank">https://www.kaggle.com/datasets/vetrirah/customer</a></p>
+
+            <h6>Goal</h6>
+            <p>Segment customers using RFM analysis or clustering and profile each segment for targeted marketing.</p>
+
+            <h6>Requirements</h6>
+            <ul>
+              <li>Compute RFM metrics and create segments or use KMeans clustering</li>
+              <li>Profile segments by key metrics (avg order, frequency, recency)</li>
+              <li>Recommend 3 targeted strategies for high-value segments</li>
+            </ul>
+
+            <h6>Deliverables</h6>
+            <ol>
+              <li>Notebook or Excel with segmentation steps and output</li>
+              <li>Slide or PDF with segment profiles and recommendations</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="b3">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task3">
+            <div class="task-num me-3">3</div>
+            Sales Forecasting Model
+          </button>
+        </h2>
+        <div id="task3" class="accordion-collapse collapse" data-bs-parent="#baTasks">
+          <div class="accordion-body">
+            <h6>Dataset</h6>
+            <p><a href="https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption" target="_blank">https://www.kaggle.com/datasets/robikscube/hourly-energy-consumption</a></p>
+
+            <h6>Goal</h6>
+            <p>Use the hourly time-series dataset to build a forecasting model (aggregate to daily/monthly if needed) and predict future demand or sales.</p>
+
+            <h6>Requirements</h6>
+            <ul>
+              <li>Prepare time-series (resample/aggregate) and handle missing timestamps</li>
+              <li>Apply a forecasting method (Prophet/ARIMA/ETS) and evaluate using MAPĒ/MAE</li>
+              <li>Provide scenario-based forecasts and confidence intervals</li>
+            </ul>
+
+            <h6>Deliverables</h6>
+            <ol>
+              <li>Notebook with preprocessing, model and forecast plots</li>
+              <li>Short report interpreting forecasts and suggested business actions</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="b4">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task4">
+            <div class="task-num me-3">4</div>
+            Business Insights Report
+          </button>
+        </h2>
+        <div id="task4" class="accordion-collapse collapse" data-bs-parent="#baTasks">
+          <div class="accordion-body">
+            <h6>Dataset</h6>
+            <p><a href="https://www.kaggle.com/datasets/nuts17/business-insights" target="_blank">https://www.kaggle.com/datasets/nuts17/business-insights</a></p>
+
+            <h6>Goal</h6>
+            <p>Create a polished business insights report combining visualizations and strategic recommendations tailored for Alfido Tech leadership.</p>
+
+            <h6>Requirements</h6>
+            <ul>
+              <li>Perform EDA and produce 6–8 high-quality visuals</li>
+              <li>Write an executive summary with 5 prioritized recommendations</li>
+              <li>Provide supporting data tables and assumptions</li>
+            </ul>
+
+            <h6>Deliverables</h6>
+            <ol>
+              <li>PDF report or PPT with visuals and findings</li>
+              <li>Notebook/Excel with analysis steps and raw outputs</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <h4>How to Submit Your Tasks</h4>
+    <ol>
+      <li>
+        <strong>For each task:</strong>
+        <ul>
+          <li>Create a separate document (DOC, PDF) or notebook with code, visuals and a 1-page executive summary.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Upload artifacts:</strong>
+        <ul>
+          <li>Upload notebooks & files to GitHub; dashboards to Tableau Public or Power BI; large files to Google Drive with public links.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Submit links:</strong>
+        <ul>
+          <li>Go to the <a href="https://www.alfidotech.com/submission.html" target="_blank">Task Submission</a> page and paste your links, clearly mentioning the task numbers.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p class="text-success"><b>Tip:</b> Use clear visuals, document assumptions, and link recommendations to measurable KPIs for Alfido Tech.</p>
+
+    <div class="text-center mt-4">
+      <a href="https://www.alfidotech.com/submission.html" target="_blank"><button class="btn btn-primary btn-sm">Submit Your Task</button></a>
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
