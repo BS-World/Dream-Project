@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Machine Learning — Alfido Tech Internship Tasks</title>
+  <meta name="description" content="Machine Learning Internship Tasks at Alfido Tech: practical ML projects with beginner warmups and submission instructions.">
+  <meta name="author" content="Alfido Tech">
+  <link rel="shortcut icon" type="image/png" href="Logo.png"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
+
+
+  <style>
+    body{font-family:"Poppins",sans-serif;background:#f4f7fb;color:#0f1724}
+    /* Dark -> Red hero gradient as requested */
+    .hero{background:linear-gradient(135deg,#080708,#dD242a);color:#fff;padding:44px 0;border-radius:0 0 20px 20px}
+    .card-custom{border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.08)}
+    .badge-tech{background:#efe8ff;color:#4b0082}
+    .task-num{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;font-weight:700}
+    .tool-badge{background:#fff;border:1px solid #e6e6e6;padding:6px 10px;border-radius:8px;margin-right:6px}
+    .navbar { background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .navbar-brand img { height: 45px; }
+    .nav-link { font-weight: 500; transition: color .3s; }
+    .nav-link:hover, .nav-link.active { color: #dD242a !important; }
+    pre{white-space:pre-wrap}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="https://www.alfidotech.com/Logo%202.png" alt="Alfido Tech"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Internship</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship Registration</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task Submission</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
+            <li><a class="dropdown-item active" href="https://www.alfidotech.com/task.html">Tasks</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
+            <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/certification.html">Certification</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br><br><br>
+
+<header class="hero text-center">
+  <div class="container">
+    <h1 class="mb-1">Machine Learning — Alfido Tech Internship Tasks</h1>
+    <p class="mb-0">Practical ML projects: classification, regression and real-world modeling using curated Kaggle datasets</p>
+  </div>
+</header>
+
+<main class="container my-5">
+  <div class="card card-custom p-4">
+
+    <h4>Objective</h4>
+    <p>Give interns hands-on experience with classic machine learning workflows: data preprocessing, feature engineering, model training, evaluation and simple deployment-ready artifacts.</p>
+    <hr>
+
+    <h4>Features</h4>
+    <ul>
+      <li>Supervised learning projects (classification & regression)</li>
+      <li>Model evaluation and comparison</li>
+      <li>Feature engineering and preprocessing best practices</li>
+      <li>Notebook-based reproducible work and clear reporting</li>
+    </ul>
+    <hr>
+
+    <h4>Tools</h4>
+    <div class="mb-3">
+      <span class="tool-badge">Python (scikit-learn)</span>
+      <span class="tool-badge">Pandas / NumPy</span>
+      <span class="tool-badge">Jupyter / Colab</span>
+      <span class="tool-badge">Matplotlib / Seaborn</span>
+      <span class="tool-badge">Joblib / Pickle (model save)</span>
+    </div>
+    <hr>
+
+    <h4>Beginner Level Tasks</h4>
+    <ul>
+      <li>Set up Python environment and open a Colab/Jupyter notebook.</li>
+      <li>Load CSV dataset and show basic EDA: head, info, describe, missing values.</li>
+      <li>Visualize relationships using 4 plots (scatter, boxplot, histogram, pairplot or bar chart).</li>
+      <li>Train a simple baseline model (e.g., Logistic Regression for classification, Linear Regression for regression) and report metrics.</li>
+    </ul>
+    <hr>
+
+    <p class="text-primary fw-bold">Note: Out of the 4 main tasks below, you are required to complete <u>any 3 tasks</u>.</p>
+
+    <h4 class="mb-3">Tasks (4)</h4>
+    <div class="accordion" id="mlTasks">
+
+      <!-- Task 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="m1">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task1">
+            <div class="task-num me-3">1</div>
+            Iris Classification
+          </button>
+        </h2>
+        <div id="task1" class="accordion-collapse collapse" data-bs-parent="#mlTasks">
+          <div class="accordion-body">
+            <h6>Dataset</h6>
+            <p><a href="https://www.kaggle.com/datasets/bhanupratapbiswas/iris-classification-dataset" target="_blank">https://www.kaggle.com/datasets/bhanupratapbiswas/iris-classification-dataset</a></p>
+
+            <h6>Goal</h6>
+            <p>Build a classification model to predict iris species using classic features (sepal/petal length & width).</p>
+
+            <h6>Requirements</h6>
+            <ul>
+              <li>Perform EDA and visualize class separability</li>
+              <li>Train & compare algorithms (k-NN, Logistic Regression, Decision Tree)</li>
+              <li>Report metrics: accuracy, confusion matrix, precision/recall</li>
+              <li>Save best model (pickle/joblib) and include example inference code</li>
+            </ul>
+
+            <h6>Deliverables</h6>
+            <ol>
+              <li>Notebook with code & plots</li>
+              <li>Saved model file and README with inference example</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="m2">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task2">
+            <div class="task-num me-3">2</div>
+            House Price Prediction
+          </button>
+        </h2>
+        <div id="task2" class="accordion-collapse collapse" data-bs-parent="#mlTasks">
+          <div class="accordion-body">
+            <h6>Dataset</h6>
+            <p><a href="https://www.kaggle.com/datasets/bhanupratapbiswas/house-price-prediction" target="_blank">https://www.kaggle.com/datasets/bhanupratapbiswas/house-price-prediction</a></p>
+
+            <h6>Goal</h6>
+            <p>Build a regression model to predict house prices. Focus on feature engineering, handling missing values and model selection.</p>
+
+            <h6>Requirements</h6>
+            <ul>
+              <li>Perform EDA and feature transformations (log, encoding, scaling)</li>
+              <li>Compare models: Linear Regression, Random Forest, Gradient Boosting</li>
+              <li>Report RMSE/MAE and residual analysis</li>
+              <li>Provide a small notebook cell showing how to use the model for prediction</li>
+            </ul>
+
+            <h6>Deliverables</h6>
+            <ol>
+              <li>Notebook with preprocessing, models and evaluation</li>
+              <li>Saved model and instructions to run predictions</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="m3">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task3">
+            <div class="task-num me-3">3</div>
+            Titanic Survival Prediction
+          </button>
+        </h2>
+        <div id="task3" class="accordion-collapse collapse" data-bs-parent="#mlTasks">
+          <div class="accordion-body">
+            <h6>Dataset</h6>
+            <p><a href="https://www.kaggle.com/datasets/bhanupratapbiswas/titanic-survival-datasets" target="_blank">https://www.kaggle.com/datasets/bhanupratapbiswas/titanic-survival-datasets</a></p>
+
+            <h6>Goal</h6>
+            <p>Predict survival on the Titanic using passenger attributes. Emphasize feature creation (title, family size), missing value strategies and model explainability.</p>
+
+            <h6>Requirements</h6>
+            <ul>
+              <li>Feature engineering: extract titles, family size, cabin presence</li>
+              <li>Handle missing data (age, cabin) and encode categorical variables</li>
+              <li>Train classification models and use SHAP or feature importance for explanation</li>
+              <li>Provide final metrics and an inference example</li>
+            </ul>
+
+            <h6>Deliverables</h6>
+            <ol>
+              <li>Notebook with preprocessing, models, and explanations</li>
+              <li>Saved model and README with inference example</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task 4 (Optional) -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="m4">
+          <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task4">
+            <div class="task-num me-3">4</div>
+            Capstone — Mini ML Use Case (Optional)
+          </button>
+        </h2>
+        <div id="task4" class="accordion-collapse collapse" data-bs-parent="#mlTasks">
+          <div class="accordion-body">
+            <h6>Goal</h6>
+            <p>Combine datasets or choose a small real-world problem to deliver an end-to-end ML pipeline with clear business insights.</p>
+            <h6>Deliverables</h6>
+            <ol>
+              <li>Notebook + README</li>
+              <li>PPT/PDF summary of approach and action items</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <h4>How to Submit Your Tasks</h4>
+    <ol>
+      <li>
+        <strong>For each task:</strong>
+        <ul>
+          <li>Create a separate document (DOC/PDF) including notebook link, model file, screenshots, and a 1‑page executive summary.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Upload artifacts:</strong>
+        <ul>
+          <li>Push notebooks & code to GitHub; upload large files to Google Drive and ensure sharing permissions.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Submit links:</strong>
+        <ul>
+          <li>Go to the <a href="https://www.alfidotech.com/submission.html" target="_blank">Task Submission</a> page and paste your links clearly mentioning task numbers.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p class="text-success"><b>Tip:</b> Keep notebooks well-structured with markdown sections and a README listing package versions and exact commands to reproduce results.</p>
+
+    <div class="text-center mt-4">
+      <a href="https://www.alfidotech.com/submission.html" target="_blank"><button class="btn btn-primary btn-sm">Submit Your Task</button></a>
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
