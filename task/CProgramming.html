@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>C / C++ Programming — Alfido Tech Internship Tasks</title>
+  <meta name="description" content="C and C++ Programming Internship Tasks — Objective, Features, Tools, Beginner tasks, practical assignments and submission instructions.">
+  <link rel="shortcut icon" type="image/png" href="Logo.png"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
+
+  <style>
+    body{font-family:"Poppins",sans-serif;background:#f4f7fb;color:#0f1724}
+    /* Alfido Tech theme (purple -> red) */
+    .hero{background:linear-gradient(135deg,#170622,#dD242a);color:#fff;padding:44px 0;border-radius:0 0 20px 20px}
+    .card-custom{border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.08)}
+    .badge-tech{background:#efe8ff;color:#4b0082}
+    .task-num{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;font-weight:700}
+    .tool-badge{background:#fff;border:1px solid #e6e6e6;padding:6px 10px;border-radius:8px;margin-right:6px}
+    .navbar { background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .navbar-brand img { height: 45px; }
+    .nav-link { font-weight: 500; transition: color .3s; }
+    .nav-link:hover, .nav-link.active { color: #dD242a !important; }
+    pre{white-space:pre-wrap}
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="https://www.alfidotech.com/Logo%202.png" alt="Alfido Tech"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">Internship</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship Registration</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task Submission</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
+              <li><a class="dropdown-item active" href="https://www.alfidotech.com/task.html">Tasks</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/certification.html">Certification</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br><br><br>
+
+  <!-- Hero -->
+  <header class="hero text-center">
+    <div class="container">
+      <h1 class="mb-1">C / C++ Programming — Internship Tasks</h1>
+      <p class="mb-0">Objective, Features, Tools, Beginner tasks and 4 practical assignments</p>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <div class="card card-custom p-4">
+
+      <!-- Objective -->
+      <h4>Objective</h4>
+      <p>
+        Provide interns with strong foundational skills in C and C++ programming: problem solving, data structures,
+        memory management, OOP (C++), and building small real-world programs. Emphasis on clean code, testing and documentation.
+      </p>
+      <hr>
+
+      <!-- Features -->
+      <h4>Features</h4>
+      <ul>
+        <li>Core C fundamentals: pointers, arrays, strings, file I/O</li>
+        <li>C++ features: classes, STL (vectors, maps), OOP</li>
+        <li>Algorithmic problem solving and complexity awareness</li>
+        <li>Debugging with gdb and unit testing basics</li>
+        <li>Build tools: Makefile / CMake and packaging</li>
+      </ul>
+      <hr>
+
+      <!-- Tools -->
+      <h4>Tools</h4>
+      <div class="mb-3">
+        <span class="tool-badge">GCC / G++</span>
+        <span class="tool-badge">Clang</span>
+        <span class="tool-badge">CMake / Makefile</span>
+        <span class="tool-badge">GDB (debugger)</span>
+        <span class="tool-badge">Valgrind (memory checks)</span>
+        <span class="tool-badge">Git & GitHub</span>
+      </div>
+      <hr>
+
+      <!-- Beginner tasks -->
+      <h4>Beginner Level Tasks</h4>
+      <ul>
+        <li>Write a C program to print Fibonacci series and demonstrate iterative vs recursive approach.</li>
+        <li>Create a C++ class that models a Bank Account (deposit, withdraw, display balance).</li>
+        <li>Build a program to read a text file and count word frequencies (use map in C++ or hash table in C).</li>
+        <li>Compile and run small programs using GCC/G++ and create a simple Makefile to build them.</li>
+      </ul>
+      <hr>
+
+      <p class="text-primary fw-bold">
+        Note: Out of the 4 main tasks below, you are required to complete <u>any 3 tasks</u>.
+      </p>
+
+      <!-- Main Tasks -->
+      <h4 class="mb-3">Tasks (4)</h4>
+      <div class="accordion" id="cppTasks">
+
+        <!-- Task 1 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="c1">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task1">
+              <div class="task-num me-3">1</div>
+              Data Structures Implementation (C/C++)
+            </button>
+          </h2>
+          <div id="task1" class="accordion-collapse collapse" data-bs-parent="#cppTasks">
+            <div class="accordion-body">
+              <h6>Goal</h6>
+              <p>Implement core data structures from scratch: linked list, stack, queue, and binary search tree.</p>
+
+              <h6>Requirements</h6>
+              <ul>
+                <li>Implement at least two DS in C or C++ with insert/delete/search</li>
+                <li>Write small driver programs to demonstrate functionality</li>
+                <li>Include complexity analysis comments</li>
+              </ul>
+
+              <h6>Deliverables</h6>
+              <ol>
+                <li>GitHub repo with source code and README</li>
+                <li>Sample input/output and short explanation</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task 2 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="c2">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task2">
+              <div class="task-num me-3">2</div>
+              Algorithms & Problem Solving (Sorting / Searching / Greedy)
+            </button>
+          </h2>
+          <div id="task2" class="accordion-collapse collapse" data-bs-parent="#cppTasks">
+            <div class="accordion-body">
+              <h6>Goal</h6>
+              <p>Solve algorithmic problems demonstrating sorting, searching, and greedy/dynamic approaches.</p>
+
+              <h6>Requirements</h6>
+              <ul>
+                <li>Implement at least 3 problems (e.g., quicksort/mergesort, binary search, knapsack or interval scheduling)</li>
+                <li>Include test cases and measure runtime for different input sizes</li>
+              </ul>
+
+              <h6>Deliverables</h6>
+              <ol>
+                <li>Source files and test inputs</li>
+                <li>Report with algorithm choice and complexity</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="c3">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task3">
+              <div class="task-num me-3">3</div>
+              System Programming / File I/O & Processes
+            </button>
+          </h2>
+          <div id="task3" class="accordion-collapse collapse" data-bs-parent="#cppTasks">
+            <div class="accordion-body">
+              <h6>Goal</h6>
+              <p>Build a small system utility demonstrating file handling, process creation, or inter-process communication.</p>
+
+              <h6>Requirements</h6>
+              <ul>
+                <li>Examples: simple shell (command runner), log rotator, or producer-consumer using pipes</li>
+                <li>Handle errors gracefully and document edge cases</li>
+              </ul>
+
+              <h6>Deliverables</h6>
+              <ol>
+                <li>Source code with instructions to compile and run</li>
+                <li>Screenshots or sample runs</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <!-- Task 4 -->
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="c4">
+            <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#task4">
+              <div class="task-num me-3">4</div>
+              C++ Project — OOP & STL (Mini Application)
+            </button>
+          </h2>
+          <div id="task4" class="accordion-collapse collapse" data-bs-parent="#cppTasks">
+            <div class="accordion-body">
+              <h6>Goal</h6>
+              <p>Build a small C++ application using classes, inheritance, STL containers and file persistence.</p>
+
+              <h6>Requirements</h6>
+              <ul>
+                <li>Example: Library Management, Student Grade System, Inventory Manager</li>
+                <li>Use classes, inheritance (if applicable), and STL (vector/map/set)</li>
+                <li>Provide a Makefile or CMake and basic unit tests</li>
+              </ul>
+
+              <h6>Deliverables</h6>
+              <ol>
+                <li>GitHub repo with code, build instructions and sample data</li>
+                <li>Short README explaining design decisions</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <hr>
+
+      <!-- Submission Instructions -->
+      <h4>How to Submit Your Tasks</h4>
+      <ol>
+        <li>
+          <strong>For each task:</strong>
+          <ul>
+            <li>Create a separate document (DOC, DOCX or PDF) describing the task, compile/run commands, and include screenshots and sample input/output.</li>
+            <li>Include a README with exact build commands (gcc/g++, make, or cmake) and environment notes.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Upload artifacts:</strong>
+          <ul>
+            <li>Push code to GitHub and share the repository link.</li>
+            <li>Upload large files to Google Drive (if any) and ensure view permissions.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Submit links:</strong>
+          <ul>
+            <li>Go to the <a href="https://www.alfidotech.com/submission.html" target="_blank">Task Submission</a> page.</li>
+            <li>Paste your GitHub and document links clearly mentioning task numbers.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <p class="text-success"><b>Tip:</b> Provide reproducible build steps and include sample test inputs so reviewers can run your code quickly.</p>
+
+      <!-- Submit Button -->
+      <div class="text-center mt-4">
+        <a href="https://www.alfidotech.com/submission.html" target="_blank">
+          <button class="btn btn-primary btn-sm">Submit Your Task</button>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
