@@ -15,13 +15,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <!-- Google Tag Manager -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-HKXWNH34MG');
-  </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
 
     <!-- Meta Information -->
     <meta name="keywords"
@@ -63,6 +63,21 @@
             background: radial-gradient(circle at top left, #e0f1ff 0, #f3f5fb 45%, #eef1ff 100%);
             color: var(--text-main);
         }
+
+        .letter-inner {
+            position: relative !important;
+        }
+
+        .watermark {
+            position: absolute;
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0.2;
+            z-index: 0;
+            pointer-events: none;
+        }
+
 
         /* Sticky top download bar */
         .top-download-bar {
@@ -525,8 +540,8 @@
                         class="bg-primary text-white" title="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://www.alfidotech.com/" target="_blank"
-                        class="bg-success text-white" title="WhatsApp Community">
+                    <a href="https://www.alfidotech.com/" target="_blank" class="bg-success text-white"
+                        title="WhatsApp Community">
                         <i class="fab fa-home"></i>
                     </a>
                     <a href="https://www.whatsapp.com/channel/0029Va9oTsF1CYoKbCt5TJ41" target="_blank"
@@ -627,14 +642,14 @@
         <div class="letter-outer">
             <div class="letter-paper" id="letterWrapper" style="display:none;">
 
-                <!-- Watermark (behind) -->
-                <div class="watermark">
-                    <img src="https://www.alfidotech.com/logo.png" alt="Alfido Tech Watermark">
-                </div>
+
 
                 <!-- A4 content -->
                 <div id="offerLetter">
                     <div class="letter-inner">
+                        <div class="watermark">
+                            <img src="https://www.alfidotech.com/logo.png" alt="Watermark">
+                        </div>
 
                         <!-- TOP SECTION -->
                         <div>
@@ -791,7 +806,7 @@
                 margin: 0,
                 filename: 'internship_Offer_Letter.pdf',
                 image: { type: 'jpeg', quality: 1.0 },
-                html2canvas: { scale: 2, useCORS: true },
+                html2canvas: { scale: 3, useCORS: true },
                 jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }
             };
             html2pdf().set(options).from(offerLetter).save();
