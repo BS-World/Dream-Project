@@ -2,291 +2,842 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Letter of Recommendation Generator | Alfido Tech</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Meta Information -->
-    <meta name="keywords"
-        content="Letter of Recommendation, LOR, Alfido Tech, Internship, IT Internship, Recommendation Letter">
-    <meta name="author" content="Alfido Tech">
-    <meta name="description"
-        content="Generate a professional Letter of Recommendation (LOR) for your internship at Alfido Tech.">
+  <title>LOR Generator | Alfido Tech</title>
 
-    <!-- Favicon and Manifest -->
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="theme-color" content="#ffffff" />
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4efe3;
-        }
+  <!-- Google Tag Manager (optional, same as offer page) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-HKXWNH34MG');
+  </script>
 
-        .container {
-            max-width: 800px;
-            border: 2px solid #007bff;
-            padding: 20px;
-            margin: 30px auto;
-            border-radius: 8px;
-            background-color: #fff;
-        }
+  <!-- Meta Information -->
+  <meta name="keywords"
+        content="Internship, Alfido Tech, Letter of Recommendation, LOR, Remote IT Internship, Internship Certificate, Recommendation Letter">
+  <meta name="author" content="Alfido Tech">
+  <meta name="description"
+        content="Generate a professional Letter of Recommendation (LOR) for interns at Alfido Tech with domain-wise details.">
 
-        .watermark {
-            position: absolute;
-            /* inside LOR content only */
-            top: 55%;
-            /* slightly lower so it doesn't touch header */
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0.2;
-            z-index: 0;
-            pointer-events: none;
-        }
+  <!-- Favicon and Manifest -->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+  <meta name="msapplication-TileColor" content="#da532c" />
+  <meta name="theme-color" content="#ffffff" />
 
-        .watermark img {
-            max-width: 500px;
-            width: 100%;
-        }
-
-        /* Ensure text content is above watermark */
-        #lorLetter {
-            position: relative;
-            z-index: 1;
-        }
-
-        .title {
-            text-align: center;
-            font-size: 26px;
-            color: #d43635;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-
-        .signature-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
+  <style>
+    :root {
+      --primary: #0052cc;
+      --primary-soft: #e3edff;
+      --accent: #19c3ff;
+      --bg: #f3f5fb;
+      --card-bg: #ffffff;
+      --text-main: #1f2933;
+      --text-muted: #607086;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.18);
+      --shadow-card: 0 10px 30px rgba(15, 23, 42, 0.12);
+      --border-blue: #f3f5f8eb;
+      --title-red: #d43635;
     }
 
-    .signature-item {
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e0f1ff 0, #f3f5fb 45%, #eef1ff 100%);
+      color: var(--text-main);
+    }
+
+    .letter-inner {
+      position: relative !important;
+    }
+
+    /* Sticky top download bar */
+    .top-download-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      padding: 6px 0;
+      box-shadow: 0 4px 15px rgba(15, 23, 42, 0.25);
+    }
+
+    .top-download-bar .btn {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    /* Page Container */
+    .page-wrapper {
+      max-width: 1120px;
+      margin: 30px auto 50px;
+      padding: 0 15px;
+    }
+
+    .page-header {
       text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .page-header h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--primary);
+    }
+
+    .page-header p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .sub-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 12px;
+      border-radius: 999px;
+      background: rgba(25, 195, 255, 0.1);
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    /* Info + Form grid */
+    .info-form-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 900px) {
+      .info-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    /* Info Card */
+    .info-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 22px 24px;
+      border: 1px solid #e1e7f5;
+      backdrop-filter: blur(10px);
+    }
+
+    .info-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+
+    .info-logo img {
+      max-width: 170px;
+      height: auto;
+    }
+
+    .info-points {
+      list-style: none;
+      padding-left: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 14px 0 6px;
+    }
+
+    .info-points li {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .info-points li i {
+      font-size: 11px;
+      margin-top: 3px;
+      color: var(--primary);
+    }
+
+    .info-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .info-meta span {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .social-row a {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .social-row a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.25);
+    }
+
+    /* Form Card */
+    .form-card {
+      background: linear-gradient(135deg, rgba(0, 82, 204, 0.06), rgba(25, 195, 255, 0.12));
+      border-radius: var(--radius-lg);
+      padding: 22px 24px 24px;
+      box-shadow: var(--shadow-card);
+      border: 1px solid rgba(0, 82, 204, 0.14);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .form-card::before {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.85) 0, rgba(255, 255, 255, 0) 65%);
+      top: -80px;
+      right: -40px;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .form-card h2 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--primary);
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-card p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .form-control,
+    .form-select {
+      font-size: 13px;
+      border-radius: 10px;
+      border: 1px solid #c7d2f3;
+      box-shadow: none !important;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--primary);
+    }
+
+    .btn-primary-main {
+      background: var(--primary);
+      border-color: var(--primary);
+      border-radius: 999px;
+      font-weight: 600;
+      padding: 9px 16px;
+      font-size: 14px;
+    }
+
+    .btn-primary-main:hover {
+      background: #0041a3;
+      border-color: #0041a3;
+    }
+
+    /* Offer Letter outer */
+    .letter-outer {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .letter-paper {
+      width: 100%;
+      max-width: 820px;
+      background: #f7f7fb;
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      padding: 18px;
+      border: 1px solid #e3e7f3;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .letter-paper {
+        padding: 10px;
+        border-radius: 18px;
+      }
+    }
+
+    /* ##### A4 SIZE CONTENT (PAGE) ##### */
+    #lorLetter {
+      position: relative;
+      width: 794px;
+      max-width: 100%;
+      min-height: 1123px;
+      margin: 0 auto;
+      background: transparent;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+    }
+
+    /* Blue bordered card */
+    .letter-inner {
+      position: relative;
+      z-index: 1;
+      background: #ffffff;
+      border: 2px solid var(--border-blue);
+      border-radius: 18px;
+      padding: 26px 40px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 100%;
+    }
+
+    /* Watermark behind content */
+    .watermark {
+      position: absolute;
+      top: 52%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .watermark img {
+      max-width: 420px;
+      width: 100%;
+    }
+
+    /* Header */
+    .letter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+
+    .letter-header img {
+      max-width: 220px;
+      height: auto;
+    }
+
+    .letter-contact {
+      text-align: right;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .letter-contact p {
+      margin-bottom: 2px;
+    }
+
+    .letter-contact b {
+      color: var(--text-main);
+    }
+
+    /* Black line under header */
+    .top-divider {
+      border-top: 2px solid #000;
+      margin: 4px 0 10px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--title-red);
+      margin: 10px 0 16px;
+    }
+
+    .content {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #2f3b4c;
+    }
+
+    .content p {
+      margin-bottom: 8px;
+    }
+
+    .internship-details {
+      font-size: 13px;
+      margin: 10px 0 14px;
+    }
+
+    .internship-details p {
+      margin: 0 0 3px;
+    }
+
+    .letter-footer-text {
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .signature-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .signature-item,
+    .signature-item1 {
+      text-align: center;
+      font-size: 11px;
     }
 
     .signature-item img {
-      width: 100px;
+      max-width: 80px;
+      height: auto;
     }
 
     .signature-item1 img {
-      width: 150px;
+      max-width: 115px;
     }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid #000;
-            padding-bottom: 15px;
-        }
+    .signature-item1 p {
+      margin-top: 4px;
+      font-size: 12px;
+    }
 
-        .signature-row img {
-            object-fit: contain;
-            margin: 0 8px;
-        }
-
-        .qr-holder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    </style>
+    #downloadButton {
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header-logo text-center">
-            <img src="Logo 2.png" alt="Alfido Tech Logo" width="260">
-        </div>
-        <h3 class="text-center mb-4">Letter of Recommendation Form</h3>
 
-        <form id="lorForm">
-            <div class="mb-3">
-                <label for="name" class="form-label">Full Name</label>
-                <input type="text" id="name" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="internshipDomain" class="form-label">Internship Domain</label>
-                <select id="internshipDomain" class="form-select" required>
-                    <option value="" disabled selected>Select Your Domain...</option>
-                    <option value="Frontend Developer">Frontend Developer</option>
-                    <option value="UX/UI Design">UX/UI Design</option>
-                    <option value="React.JS">React.JS</option>
-                    <option value="Python Developer">Python Developer</option>
-                    <option value="C++/C Programming">C++/C Programming</option>
-                    <option value="Java Developer">Java Developer</option>
-                    <option value="Data Science">Data Science</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Machine Learning">Machine Learning</option>
-                    <option value="Artificial Intelligence">Artificial Intelligence</option>
-                    <option value="Cybersecurity">Cybersecurity</option>
-                    <option value="Data Analytics">Data Analytics</option>
-                    <option value="Business Analytics">Business Analytics</option>
-                    <option value="Android Developer">Android Developer</option>
-                    <option value="Web Development">Web Development</option>
-                    <option value=".NET Developer">.NET Developer</option>
-                    <option value="Very Large Scale Integration (VLSI)">Very Large Scale Integration (VLSI)</option>
-                    <option value="Embedded Systems">Embedded Systems</option>
-                    <option value="Human Resource(HR)">Human Resource(HR)</option>
-                    <option value="Cloud Computing">Cloud Computing</option>
-                    <option value="Cloud Engineer">Cloud Engineer</option>
+  <!-- Sticky Top Download Bar -->
+  <div class="top-download-bar text-center">
+    <button id="topDownloadBtn" class="btn btn-sm btn-light text-primary fw-semibold px-4" style="display:none;"
+            onclick="downloadPDF()">
+      <i class="fa-solid fa-download me-1"></i> Download LOR
+    </button>
+  </div>
 
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="startDateInput" class="form-label">Internship Start Date</label>
-                <input type="date" id="startDateInput" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="endDateInput" class="form-label">Internship End Date</label>
-                <input type="date" id="endDateInput" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="candidateIdInput" class="form-label">Candidate ID (C.ID)</label>
-                <input type="text" id="candidateIdInput" class="form-control"
-                    placeholder="Enter your Candidate ID (Exmple :- BS/REG/00000)" required>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="generateLOR()">Submit</button>
-        </form>
+  <div class="page-wrapper">
 
-        <div class="mt-3">
-            <button id="downloadButton" class="btn btn-success" style="display: none;" onclick="downloadPDF()">Download
-                LOR</button>
-        </div>
-
-        <!-- LOR Template -->
-        <div class="container mt-4" id="lorLetter" style="display: none;">
-
-            <!-- Watermark -->
-            <div class="watermark">
-                <img src="https://www.alfidotech.com/logo.png" alt="Alfido Tech Watermark">
-            </div>
-
-            <div class="d-flex justify-content-between align-items-center header">
-                <div class="header-logo">
-                    <img src="Logo 2.png" alt="Alfido Tech Logo" width="260">
-                </div>
-                <div class="date-section">
-                    <p class="mb-1">Hyderabad, Telangana, India</p>
-                    <p class="mb-1">internship@alfidotech.com</p>
-                    <p class="mb-1">www.alfidotech.com</p>
-                    <p><b>Date:</b> <span id="displayEndDate1"></span></p>
-                </div>
-            </div>
-
-            <div class="title">Letter of Recommendation</div>
-
-            <div class="content">
-                <p><b>To Whom It May Concern,</b></p>
-
-                <p>This is to certify that <strong><span id="displayName"></span></strong> (Candidate ID:
-                    <span id="displayCandidateId"></span>) successfully completed their internship in the domain of
-                    <strong><span id="displayDomain"></span></strong> at <strong>Alfido Tech</strong> from
-                    <strong><span id="displayStartDate"></span> to <span id="displayEndDate"></span></strong>.
-                </p>
-
-                <p>During the internship, <span id="displayName2"></span> demonstrated strong technical skills,
-                    quick learning ability, and a professional attitude. They contributed effectively to assigned
-                    projects, collaborated well with team members, and consistently delivered quality work on time.</p>
-
-                <p>They also showed proficiency in relevant tools, frameworks, and methodologies, while actively
-                    participating in brainstorming sessions and offering innovative ideas. Their adaptability to new
-                    challenges and dedication to achieving project goals were commendable.</p>
-
-                <p>In addition, <span id="displayName2"></span> maintained excellent communication with peers and
-                    mentors,
-                    showed a positive approach towards feedback, and handled responsibilities with minimal supervision.
-                    Their proactive mindset and willingness to explore creative solutions greatly benefited the projects
-                    they were involved in.</p>
-
-                <p>Based on their performance, we confidently recommend <span id="displayName3"></span> for future
-                    academic or professional opportunities. We wish them continued success in their career ahead.</p>
-
-                <p>Sincerely,</p>
-            </div>
-
-            <!-- Signature Row -->
-            <div class="signature-row">
-                <div class="signature-item1">
-                    <img src="img/new1.jpg" alt="Founder Signature">
-                    <p><b>Founder & CEO</b></p>
-                </div>
-                <div class="signature-item">
-                    <img src="stampa.png" alt="Seal">
-                </div>
-                <div class="signature-item">
-                    <img src="aicte.png" alt="AICTE Logo">
-                </div>
-                
-                <div class="signature-item">
-                    <img src="qr.jpg" alt="QR Code for Verification">
-                </div>
-                <div class="signature-item">
-                    <img src="MSME Logo.png" alt="MSME Logo">
-                </div>
-            </div>
-        </div>
+    <div class="page-header">
+      <div class="sub-tag">
+        <i class="fa-solid fa-certificate"></i>
+        Internship Documentation Portal
+      </div>
+      <h1>Alfido Tech LOR Generator</h1>
+      <p>Generate a professional Letter of Recommendation (LOR) for your internship at Alfido Tech.</p>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-    <script>
-        function generateLOR() {
-            const name = document.getElementById('name').value;
-            const internshipDomain = document.getElementById('internshipDomain').value;
-            const candidateId = document.getElementById('candidateIdInput').value;
+    <div class="info-form-grid">
 
-            document.getElementById('displayCandidateId').textContent = candidateId;
-            document.getElementById('displayName').textContent = name;
-            document.getElementById('displayName2').textContent = name;
-            document.getElementById('displayName3').textContent = name;
-            document.getElementById('displayDomain').textContent = internshipDomain;
+      <!-- LEFT SIDE INFO -->
+      <div class="info-card">
+        <div class="info-logo">
+          <img src="Logo 2.png" alt="Alfido Tech Logo">
+        </div>
 
-            const startDateValue = document.getElementById('startDateInput').value;
-            const endDateValue = document.getElementById('endDateInput').value;
+        <h2 class="fs-6 fw-semibold mb-1">About this LOR</h2>
+        <ul class="info-points">
+          <li>
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Based on your completed internship and performance at Alfido Tech.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Auto-fills your name, domain, duration, and internship dates in the LOR.</span>
+          </li>
+          <li>
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Download a clean, A4-sized PDF suitable for academic and professional use.</span>
+          </li>
+        </ul>
 
-            if (startDateValue) {
-                const [year, month, day] = startDateValue.split('-');
-                document.getElementById('displayStartDate').textContent = `${day}/${month}/${year}`;
-            }
+        <div class="info-meta">
+          <span><i class="fa-solid fa-globe me-1"></i>Remote Internship</span>
+          <span><i class="fa-solid fa-clock me-1"></i>Task-Based Learning</span>
+          <span><i class="fa-solid fa-award me-1"></i>Performance-Based LOR</span>
+        </div>
 
-            if (endDateValue) {
-                const [year, month, day] = endDateValue.split('-');
-                document.getElementById('displayEndDate').textContent = `${day}/${month}/${year}`;
-                document.getElementById('displayEndDate1').textContent = `${day}/${month}/${year}`;
-            }
+        <div class="mt-3 small text-muted">
+          For any queries, contact:<br>
+          <strong>internship@alfidotech.com</strong>
+        </div>
 
-            document.getElementById('lorLetter').style.display = 'block';
-            document.getElementById('downloadButton').style.display = 'inline';
-        }
+        <div class="social-row">
+          <a href="https://www.linkedin.com/company/alfido-tech/" target="_blank" class="bg-primary text-white"
+             title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.alfidotech.com/" target="_blank" class="bg-success text-white" title="Website">
+            <i class="fa-solid fa-home"></i>
+          </a>
+          <a href="https://www.whatsapp.com/channel/0029Va9oTsF1CYoKbCt5TJ41" target="_blank"
+             class="bg-warning text-dark" title="WhatsApp Channel">
+            <i class="fas fa-bullhorn"></i>
+          </a>
+          <a href="https://t.me/+s9WykS4sL7hlN2I1" target="_blank" class="bg-info text-white" title="Telegram">
+            <i class="fab fa-telegram-plane"></i>
+          </a>
+        </div>
+      </div>
 
-        function downloadPDF() {
-            const lorLetter = document.getElementById('lorLetter');
-            const options = {
-                margin: 0.5,
-                filename: 'Letter_of_Recommendation.pdf',
-                image: { type: 'jpeg', quality: 1.0 },
-                html2canvas: { scale: 3, useCORS: true },
-                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-            };
-            html2pdf().set(options).from(lorLetter).save();
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+      <!-- RIGHT SIDE FORM -->
+      <div class="form-card">
+        <h2>Intern Details</h2>
+        <p>Use the same details that appear on your offer letter and completion records.</p>
+
+        <form id="lorForm">
+          <div class="mb-2">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter intern full name" required>
+          </div>
+
+          <div class="mb-2">
+            <label for="internshipDomain" class="form-label">Internship Domain</label>
+            <select id="internshipDomain" class="form-select" required>
+              <option value="" disabled selected>Select domain...</option>
+
+              <option value="Frontend Developer">Frontend Developer</option>
+              <option value="UX/UI Design">UX/UI Design</option>
+              <option value="React.JS">React.JS</option>
+              <option value="MERN Stack Developer">MERN Stack Developer</option>
+              <option value="Python Developer">Python Developer</option>
+              <option value="Web Development">Web Development</option>
+              <option value="C++/C Programming">C++/C Programming</option>
+              <option value="Java Developer">Java Developer</option>
+              <option value=".NET Developer">.NET Developer</option>
+
+              <option value="Data Analytics">Data Analytics</option>
+              <option value="Business Analytics">Business Analytics</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Machine Learning">Machine Learning</option>
+              <option value="Artificial Intelligence">Artificial Intelligence</option>
+
+              <option value="Digital Marketing">Digital Marketing</option>
+              <option value="Cybersecurity">Cybersecurity</option>
+
+              <option value="Android Developer">Android Developer</option>
+              <option value="Embedded Systems">Embedded Systems</option>
+              <option value="Very Large Scale Integration (VLSI)">Very Large Scale Integration (VLSI)</option>
+
+              <option value="Cloud Computing">Cloud Computing</option>
+              <option value="Cloud Engineer">Cloud Engineer</option>
+
+              <option value="DevOps">DevOps</option>
+              <option value="Human Resource(HR)">Human Resource(HR)</option>
+            </select>
+          </div>
+
+          <div class="mb-2">
+            <label for="startDateInput" class="form-label">Internship Start Date</label>
+            <input type="date" id="startDateInput" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label for="endDateInput" class="form-label">Internship End Date</label>
+            <input type="date" id="endDateInput" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label for="internshipMonth" class="form-label">Internship Duration</label>
+            <select id="internshipMonth" class="form-select" required>
+              <option value="" disabled selected>Select duration...</option>
+              <option value="1 Month">1 Month</option>
+              <option value="2 Months">2 Months</option>
+              <option value="45 Days">45 Days</option>
+              <option value="4 Months">4 Months</option>
+              <option value="6 Months">6 Months</option>
+            </select>
+          </div>
+
+          <div class="mb-2">
+            <label for="candidateIdInput" class="form-label">Candidate ID (C.ID)</label>
+            <input type="text" id="candidateIdInput" class="form-control"
+                   placeholder="Enter Candidate ID (as in records)" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="performanceInput" class="form-label">Performance Level</label>
+            <select id="performanceInput" class="form-select" required>
+              <option value="" disabled selected>Select performance...</option>
+              <option value="outstanding">Outstanding</option>
+              <option value="excellent">Excellent</option>
+              <option value="very good">Very Good</option>
+              <option value="good">Good</option>
+            </select>
+          </div>
+
+          <button type="button" class="btn btn-primary-main w-100" onclick="generateLOR()">
+            <i class="fa-solid fa-file-lines me-1"></i> Generate LOR
+          </button>
+        </form>
+
+        <button id="downloadButton" class="btn btn-success w-100 mt-2" style="display:none;"
+                onclick="downloadPDF()">
+          <i class="fa-solid fa-download me-1"></i> Download LOR (PDF)
+        </button>
+      </div>
+    </div>
+
+    <!-- LOR PREVIEW (A4) -->
+    <div class="letter-outer">
+      <div class="letter-paper" id="letterWrapper" style="display:none;">
+
+        <!-- A4 content -->
+        <div id="lorLetter">
+          <div class="letter-inner">
+            <div class="watermark">
+              <img src="https://www.alfidotech.com/logo.png" alt="Watermark">
+            </div>
+
+            <!-- TOP SECTION -->
+            <div>
+              <div class="letter-header">
+                <div class="header-logo">
+                  <img src="Logo 2.png" alt="Alfido Tech Logo">
+                </div>
+                <div class="letter-contact">
+                  <p>Hyderabad, Telangana, India</p>
+                  <p>internship@alfidotech.com</p>
+                  <p>www.alfidotech.com</p>
+                  <p><b>Date:</b> <span id="displayLorDate"></span></p>
+                </div>
+              </div>
+
+              <div class="top-divider"></div>
+
+              <div class="title">Letter of Recommendation</div>
+
+              <div class="content">
+                <p>To Whom It May Concern,</p>
+
+                <p>This is to formally recommend <b><span id="displayName"></span></b>
+                  (Candidate ID: <b><span id="displayCandidateId"></span></b>) for future academic or professional
+                  opportunities. <span id="heSheText1">He/She</span> successfully completed a
+                  <b><span id="displayMonth"></span></b> remote internship in the role of
+                  <b><span id="displayDomain"></span> Intern</b> at <b>Alfido Tech</b> from
+                  <b><span id="displayStartDate"></span></b> to <b><span id="displayEndDate"></span></b>.
+                </p>
+
+                <p>During this period, <span id="heSheText2">he/she</span> worked on a series of
+                  <b>task-based assignments and real-world projects</b> relevant to the chosen domain. These tasks were
+                  designed to simulate practical industry scenarios, and <span id="heSheText3">the intern</span>
+                  consistently demonstrated the ability to understand requirements, deliver quality work, and adhere to
+                  timelines in a remote working environment.</p>
+
+                <p><span id="heSheText4">He/She</span> exhibited
+                  <span id="performanceLine"></span>
+                  throughout the internship. <span id="heSheText5">The intern</span> showed a proactive approach to
+                  learning, regularly sought clarification when needed, and effectively incorporated feedback to improve
+                  the quality of deliverables.</p>
+
+                <p>In addition to technical growth, <span id="heSheText6">he/she</span> displayed strong professional
+                  values such as discipline, responsibility, and clear communication. <span id="heSheText7">He/She</span>
+                  coordinated well with mentors and peers, maintained a positive attitude, and contributed meaningfully
+                  to the ongoing activities of the internship program.</p>
+
+                <p>Based on <span id="heSheText8">his/her</span> overall performance, we can confidently state that
+                  <span id="heSheText9">the candidate</span> has developed a solid foundation in
+                  <b><span id="displayDomain2"></span></b> and is well-prepared to take up future roles in the
+                  technology and professional ecosystem. We believe that <span id="heSheText10">he/she</span> will be an
+                  asset to any organization or institution that may offer <span id="heSheText11">him/her</span> an
+                  opportunity.</p>
+
+                <p>This Letter of Recommendation is being issued upon the request of the candidate to support
+                  <span id="heSheText12">his/her</span> future academic, internship, or job applications.</p>
+
+                <p>If you require any further information or wish to verify the details of this internship, please feel
+                  free to contact us at <b>internship@alfidotech.com</b>.</p>
+
+                <p><b>We extend our best wishes to <span id="displayName2"></span> for a successful career ahead.</b></p>
+              </div>
+
+              <div class="letter-footer-text">
+                <p>Sincerely,</p>
+              </div>
+            </div>
+
+            <!-- BOTTOM SIGNATURES -->
+            <div class="signature-row">
+              <div class="signature-item1">
+                <img src="img/new1.jpg" alt="Founder Signature">
+                <p><b>Founder &amp; CEO</b></p>
+              </div>
+              <div class="signature-item">
+                <img src="stampa.png" alt="Seal">
+              </div>
+              <div class="signature-item">
+                <img src="aicte.png" alt="AICTE Logo">
+              </div>
+              <div class="signature-item">
+                <img src="img/iso.png" alt="ISO Logo">
+              </div>
+              <div class="signature-item">
+                <img src="qr.jpg" alt="QR Code for Verification">
+              </div>
+              <div class="signature-item">
+                <img src="MSME Logo.png" alt="MSME Logo">
+              </div>
+            </div>
+            <br><br><br>
+
+          </div> <!-- /.letter-inner -->
+        </div> <!-- /#lorLetter -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <script>
+    function generateLOR() {
+      const name = document.getElementById('name').value.trim();
+      const domain = document.getElementById('internshipDomain').value;
+      const candidateId = document.getElementById('candidateIdInput').value.trim();
+      const duration = document.getElementById('internshipMonth').value;
+      const startDate = document.getElementById('startDateInput').value;
+      const endDate = document.getElementById('endDateInput').value;
+      const performance = document.getElementById('performanceInput').value;
+
+      if (!name || !domain || !candidateId || !duration || !startDate || !endDate || !performance) {
+        alert("Please fill all fields before generating the LOR.");
+        return;
+      }
+
+      // Basic fields
+      document.getElementById('displayName').textContent = name;
+      document.getElementById('displayName2').textContent = name;
+      document.getElementById('displayDomain').textContent = domain;
+      document.getElementById('displayDomain2').textContent = domain;
+      document.getElementById('displayCandidateId').textContent = candidateId;
+      document.getElementById('displayMonth').textContent = duration;
+
+      // Date formatting dd/mm/yyyy
+      function formatDate(value) {
+        const [y, m, d] = value.split("-");
+        return `${d}/${m}/${y}`;
+      }
+      const startFormatted = formatDate(startDate);
+      const endFormatted = formatDate(endDate);
+
+      document.getElementById('displayStartDate').textContent = startFormatted;
+      document.getElementById('displayEndDate').textContent = endFormatted;
+
+      // LOR date = today's date (or end date) – here using end date
+      document.getElementById('displayLorDate').textContent = endFormatted;
+
+      // Performance line
+      let perfText = "a consistently good level of performance";
+      if (performance === "outstanding") {
+        perfText = "an outstanding level of performance, consistently exceeding expectations";
+      } else if (performance === "excellent") {
+        perfText = "an excellent level of performance, frequently exceeding expectations";
+      } else if (performance === "very good") {
+        perfText = "a very good level of performance, meeting expectations with high quality work";
+      }
+      document.getElementById('performanceLine').textContent = perfText;
+
+      // Pronouns – default gender-neutral “he/she”
+      const pronoun = "he/she";
+      const pronounCap = "He/She";
+      const possessive = "his/her";
+      const candidateWord = "the candidate";
+
+      const map = {
+        heSheText1: pronounCap,
+        heSheText2: pronoun,
+        heSheText3: "the intern",
+        heSheText4: pronounCap,
+        heSheText5: "the intern",
+        heSheText6: pronoun,
+        heSheText7: pronounCap,
+        heSheText8: possessive,
+        heSheText9: candidateWord,
+        heSheText10: pronounCap,
+        heSheText11: pronoun,
+        heSheText12: possessive
+      };
+      Object.keys(map).forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.textContent = map[id];
+      });
+
+      // Show preview & download buttons
+      document.getElementById('letterWrapper').style.display = 'block';
+      document.getElementById('downloadButton').style.display = 'block';
+      document.getElementById('topDownloadBtn').style.display = 'inline-block';
+
+      document.getElementById('letterWrapper').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function downloadPDF() {
+      const lorLetter = document.getElementById('lorLetter');
+      const options = {
+        margin: 0,
+        filename: 'Internship_Letter_of_Recommendation.pdf',
+        image: { type: 'jpeg', quality: 1.0 },
+        html2canvas: { scale: 3, useCORS: true },
+        jsPDF: { unit: 'pt', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(options).from(lorLetter).save();
+    }
+  </script>
 
 </body>
-
 </html>
