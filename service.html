@@ -2,45 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services | Alfido Tech</title>
-
 
     <!-- SEO Meta -->
     <meta name="description"
-        content="Discover Alfido Tech's professional IT services in India including development, SEO, marketing, and more.">
-    <meta name="keywords" content="IT Services India, Alfido Tech, SEO, Development, Marketing, Internship">
-    <meta name="author" content="Alfido Tech">
+        content="Discover Alfido Tech's professional IT services including automation, web development, SEO, logo design, email and social media marketing.">
+    <meta name="keywords"
+        content="Alfido Tech services, IT services, web development, SEO, email marketing, social media marketing, logo design">
+    <meta name="author" content="Alfido Tech" />
+    <link rel="canonical" href="https://www.alfidotech.com/service.html" />
 
 
-    <!-- Open Graph for Social Cards -->
+    <!-- OG -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.alfidotech.com/service.html">
-    <meta property="og:title" content="Alfido Tech - Professional IT Services in India">
-    <meta property="og:description"
-        content="Explore Alfido Tech's services in IT development, SEO, marketing, and more.">
-    <meta property="og:image" content="https://www.alfidotech.com/logo.png">
-
-    <!-- Favicon for browsers -->
-    <link rel="icon" type="image/png" sizes="32x32" href="https://www.alfidotech.com/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://www.alfidotech.com/favicon-16x16.png">
-
-    <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="https://www.alfidotech.com/apple-touch-icon.png">
-
-    <!-- Android Chrome -->
-    <link rel="icon" type="image/png" sizes="192x192" href="https://www.alfidotech.com/android-chrome-192x192.png">
-
-    <!-- Manifest -->
-    <link rel="manifest" href="https://www.alfidotech.com/site.webmanifest">
-
+    <meta property="og:title" content="Alfido Tech - IT Services">
+    <meta property="og:description" content="Automation, development and digital marketing services by Alfido Tech.">
+    <meta property="og:image" content="https://www.alfidotech.com/logo1.png">
+    <meta property="og:image:alt" content="Alfido Tech Logo">
+    <meta property="og:site_name" content="Alfido Tech">
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alfido Tech - Professional IT Services in India">
-    <meta name="twitter:description"
-        content="Explore Alfido Tech's services in IT development, SEO, marketing, and more.">
-    <meta name="twitter:image" content="https://www.alfidotech.com/logo.png">
+    <meta name="twitter:title" content="Alfido Tech - IT Services">
+    <meta name="twitter:description" content="Automation, development and digital marketing services by Alfido Tech.">
+    <meta name="twitter:image" content="https://www.alfidotech.com/logo1.png">
+    <meta name="twitter:image:alt" content="Alfido Tech Logo">
+    
+
 
     <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
@@ -51,6 +41,16 @@
         gtag('config', 'G-HKXWNH34MG');
     </script>
 
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="https://www.alfidotech.com/logo.png" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        referrerpolicy="no-referrer" />
 
     <!-- JSON-LD Schema for India Services -->
     <script type="application/ld+json">
@@ -85,468 +85,950 @@
 ]
 }
 </script>
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #f9f9fb;
-            color: #1e313d;
+        :root {
+            --brand-primary: #dd242a;
+            --brand-primary-soft: rgba(221, 36, 42, 0.7);
+            --brand-secondary: #ffffff;
+            --bg-deep: #050509;
+            --bg-card: rgba(10, 10, 16, 0.88);
+            --bg-card-soft: rgba(15, 15, 23, 0.65);
+            --border-soft: rgba(255, 255, 255, 0.14);
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --radius-2xl: 22px;
+            --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.85);
         }
 
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1a0004, var(--bg-deep));
+            color: var(--text-main);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        main {
+            flex: 1;
+            padding-bottom: 4rem;
+            margin-top: 80px;
+            /* fixed navbar offset */
+        }
+
+        /* ==== RED GLOW BLOBS (same as index) ==== */
+        .gradient-blob {
+            position: fixed;
+            width: 520px;
+            height: 520px;
+            border-radius: 999px;
+            filter: blur(90px);
+            opacity: 0.5;
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: -1;
+            animation: blobMove 35s infinite alternate ease-in-out;
+        }
+
+        .blob-1 {
+            background: radial-gradient(circle, #ff4b4b, #dd242a);
+            top: -120px;
+            left: -120px;
+        }
+
+        .blob-2 {
+            background: radial-gradient(circle, #dd242a, #7f1d1d);
+            bottom: -160px;
+            right: -120px;
+            animation-delay: -10s;
+        }
+
+        @keyframes blobMove {
+            0% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate3d(40px, -20px, 0) scale(1.08);
+            }
+
+            100% {
+                transform: translate3d(-20px, 30px, 0) scale(1.04);
+            }
+        }
+
+        /* ==== GLASS & BORDER GRADIENT (same tone as index) ==== */
+        .glass {
+            background: linear-gradient(135deg,
+                    var(--bg-card),
+                    var(--bg-card-soft));
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .border-gradient {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            padding: 1px;
+            background: linear-gradient(135deg,
+                    rgba(221, 36, 42, 0.9),
+                    rgba(255, 255, 255, 0.6));
+        }
+
+        .border-gradient>.glass-inner {
+            border-radius: inherit;
+            background: radial-gradient(circle at top left, #111015, #050509);
+            padding: 1.4rem;
+            height: 100%;
+        }
+
+        /* ==== NAVBAR (white, same as index) ==== */
         .navbar {
-            background: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            background-color: #ffffff !important;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            z-index: 50;
         }
 
         .navbar-brand img {
-            height: 42px;
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(221, 36, 42, 0.8));
         }
 
-        .nav-link {
+        .navbar .nav-link {
+            color: #0e1a2b !important;
+            font-size: 0.92rem;
+            font-weight: 600;
+            padding: 12px 16px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #dd242a !important;
+        }
+
+        .navbar .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0.2rem;
+            width: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #ffffff, #dd242a);
+            transition: width 0.2s ease-out;
+        }
+
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link.active::after {
+            width: 60%;
+        }
+
+        .navbar .dropdown-menu {
+            border-radius: 18px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            background-color: #ffffff;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+            padding: 0.4rem;
+        }
+
+        .dropdown-menu .dropdown-item {
             font-weight: 500;
-            transition: color .3s;
+            padding: 10px 16px;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: #dD242a !important;
+        .dropdown-menu .dropdown-item:hover,
+        .dropdown-item.active {
+            background: #dd242a !important;
+            color: #fff !important;
         }
 
+        .navbar-toggler {
+            border: none;
+        }
+
+        .navbar-toggler-icon {
+            background-image: none;
+            width: 24px;
+            height: 2px;
+            background-color: #111827;
+            position: relative;
+        }
+
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 2px;
+            background-color: #111827;
+            transition: transform 0.2s ease;
+        }
+
+        .navbar-toggler-icon::before {
+            top: -7px;
+        }
+
+        .navbar-toggler-icon::after {
+            top: 7px;
+        }
+
+        /* ==== HERO (service-specific, on dark bg) ==== */
         .hero {
-            background: linear-gradient(135deg, #dD242a, #1e313d);
-            padding: 120px 20px;
-            text-align: center;
-            color: #fff;
-            border-bottom-left-radius: 80px;
-            border-bottom-right-radius: 80px;
+            padding: 5rem 1.25rem 3.5rem;
+        }
+
+        .hero-inner {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(5, 5, 10, 0.98);
+            border: 1px solid var(--brand-primary-soft);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #fecaca;
+            margin-bottom: 0.7rem;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: clamp(2.1rem, 2.7vw + 1rem, 2.8rem);
             font-weight: 700;
-            animation: fadeDown 1.2s ease;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero h1 span {
+            background-image: linear-gradient(120deg,
+                    #ffffff,
+                    #fecaca,
+                    #dd242a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .hero p {
-            font-size: 1.1rem;
-            animation: fadeUp 1.5s ease;
+            color: var(--text-muted);
+            max-width: 40rem;
+            margin: 0.25rem auto 0.5rem;
+            font-size: 0.95rem;
         }
 
-        @keyframes fadeDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ==== SECTION BASE ==== */
+        .section {
+            padding: 2.5rem 1.25rem 0;
         }
 
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .service-card {
-            border: none;
-            border-radius: 20px;
-            background: #fff;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: transform .4s, box-shadow .4s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-
-        .service-icon {
-            font-size: 2.5rem;
-            color: #dD242a;
-            margin-bottom: 15px;
-            transition: transform .4s;
-        }
-
-        .service-card:hover .service-icon {
-            transform: rotate(12deg) scale(1.2);
-        }
-
-        .form-section {
-            background: #fff;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            margin-top: 60px;
-        }
-
-        footer {
-            background: #1e313d;
-            color: #fff;
-            padding: 60px 20px 30px;
-            margin-top: 60px;
-            border-top-left-radius: 60px;
-            border-top-right-radius: 60px;
-        }
-
-        footer a {
-            color: #bbb;
-            text-decoration: none;
-            transition: color .3s;
-        }
-
-        footer a:hover {
-            color: #fff;
-        }
-
-        .social-icons a {
-            font-size: 1.3rem;
-            margin: 0 10px;
-            transition: transform .3s;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.2);
-        }
-
-        .whatsapp-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25d366;
-            border-radius: 50%;
-            width: 65px;
-            height: 65px;
+        .section-header {
             display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 1rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .section-eyebrow {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #fecaca;
+        }
+
+        .section-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            max-width: 30rem;
+        }
+
+        /* ==== SHOWCASE CARDS ==== */
+        .showcase-frame {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(7, 7, 12, 0.95);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .showcase-frame iframe {
+            border: 0;
+            border-radius: 18px;
+        }
+
+        /* ==== SERVICE GLASS CARDS ==== */
+        .service-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 999px;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
-            transition: transform .3s, background .3s;
+            background: radial-gradient(circle at 30% 0, #ff4b4b, #1f0204);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+            margin-bottom: 0.6rem;
+            font-size: 1.2rem;
         }
 
-        .whatsapp-btn:hover {
-            transform: scale(1.15);
-            background: #20c659;
+        .domain-title {
+            font-size: 1.02rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .domain-text {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .service-link {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #fecaca;
+        }
+
+        .service-link i {
+            font-size: 0.9rem;
+        }
+
+        /* ==== FORM SECTION ==== */
+        .form-section .form-control,
+        .form-section textarea,
+        .form-section select {
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.7);
+            font-size: 0.92rem;
+            background: rgba(5, 5, 10, 0.9);
+            color: #e5e7eb;
+        }
+
+        .form-section textarea {
+            border-radius: 18px;
+        }
+
+        .form-section .form-control::placeholder,
+        .form-section textarea::placeholder {
+            color: #6b7280;
+        }
+
+        .btn-gradient {
+            border-radius: 999px;
+            padding: 0.65rem 1.6rem;
+            font-weight: 600;
+            font-size: 0.96rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            color: #ffffff;
+            background-image: linear-gradient(135deg,
+                    #ff4b4b,
+                    #dd242a,
+                    #7f1d1d);
+            box-shadow: 0 12px 32px rgba(221, 36, 42, 0.7);
+        }
+
+        .btn-gradient span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-gradient::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 0 0,
+                    rgba(255, 255, 255, 0.8),
+                    transparent 45%);
+            opacity: 0;
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            transform: translate3d(-20%, -40%, 0);
+        }
+
+        .btn-gradient:hover::before {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        /* FOOTER THEME */
+        .bg-black {
+            background-color: #020617 !important;
+        }
+
+        .text-primary {
+            color: var(--brand-primary) !important;
+        }
+
+        .btn-outline-primary {
+            color: var(--brand-primary);
+            border-color: var(--brand-primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--brand-primary);
+            color: #fff;
+        }
+
+        /* WHATSAPP FLOAT */
+        #whatsapp-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 60;
+        }
+
+        #whatsapp-btn img {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            animation: pulse 2.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 991.98px) {
+            .hero {
+                padding-top: 4.5rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .hero {
+                padding-top: 4.2rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="Logo 2.png" alt="Alfido Tech"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="https://www.alfidotech.com/service.html">Services</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Internship</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship Registration</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task Submission</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/certification.html">Certification</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <div class="page-wrapper">
+        <!-- same red blobs as index -->
+        <div class="gradient-blob blob-1"></div>
+        <div class="gradient-blob blob-2"></div>
 
-    
+        <!-- NAVBAR (same as index, Services active) -->
+        <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="https://www.alfidotech.com/">
+                    <img src="Logo 2.png" alt="Alfido Tech">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="container">
-            <h1>Discover Our Range of Services</h1>
-            <p>Start your journey today and gain practical experience in the tech world!</p>
-        </div>
-    </section>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.alfidotech.com/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://www.alfidotech.com/service.html">Services</a>
+                        </li>
 
-    <!-- Showcase Websites Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Showcase Websites</h2>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <iframe src="https://www.chalodriver.in/" width="100%" height="350" style="border:0; border-radius:12px;" title="Showcase Website 1"></iframe>
-                        <div class="mt-2 text-center">
-                            <a href="https://www.chalodriver.in/" target="_blank" class="btn btn-outline-primary btn-sm">Visit Website</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <iframe src="https://bs-world.github.io/Sabji-Bazaar/" width="100%" height="350" style="border:0; border-radius:12px;" title="Showcase Website 1"></iframe>
-                        <div class="mt-2 text-center">
-                            <a href="https://bs-world.github.io/Sabji-Bazaar/" target="_blank" class="btn btn-outline-primary btn-sm">Visit Website</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <iframe src="https://bs-world.github.io/kaalin/" width="100%" height="350" style="border:0; border-radius:12px;" title="Showcase Website 2"></iframe>
-                        <div class="mt-2 text-center">
-                            <a href="https://bs-world.github.io/kaalin/" target="_blank" class="btn btn-outline-primary btn-sm">Visit Website</a>
-                        </div>
-                    </div>
-                </div>
-            </div> <br>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <iframe src="https://bs-world.github.io/AC-service-near-me/" width="100%" height="350" style="border:0; border-radius:12px;" title="Showcase Website 1"></iframe>
-                        <div class="mt-2 text-center">
-                            <a href="https://bs-world.github.io/AC-service-near-me/" target="_blank" class="btn btn-outline-primary btn-sm">Visit Website</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card p-3">
-                        <iframe src="https://bs-world.github.io/Hostal/" width="100%" height="350" style="border:0; border-radius:12px;" title="Showcase Website 2"></iframe>
-                        <div class="mt-2 text-center">
-                            <a href="https://bs-world.github.io/Hostal/" target="_blank" class="btn btn-outline-primary btn-sm">Visit Website</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Internship
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm">
+                                <li><a class="dropdown-item"
+                                        href="https://www.alfidotech.com/registration.html">Internship Registration</a>
+                                </li>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer
+                                        Letter</a></li>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task
+                                        Submission</a></li>
+                                <li><a class="dropdown-item"
+                                        href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/internProfile.html">Intern
+                                        Profile</a></li>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a>
+                                </li>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code
+                                        Editor</a></li>
+                            </ul>
+                        </li>
 
-        
-    </section></div>
-
-    <!-- Services -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card service-card p-4 text-center">
-                        <i class="fas fa-robot service-icon"></i>
-                        <h5 class="fw-bold">Auto Google Ads Clicker Automation</h5>
-                        <p>Automate ad clicks and maximize your ROI efficiently with advanced automation solutions.</p>
-                        <a href="mailto:service@alfidotech.com" class="text-danger fw-bold">Learn More <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card service-card p-4 text-center">
-                        <i class="fas fa-paint-brush service-icon"></i>
-                        <h5 class="fw-bold">Design & Development Services</h5>
-                        <p>Custom website and app design tailored to your business needs with modern solutions.</p>
-                        <a href="mailto:service@alfidotech.com" class="text-danger fw-bold">Learn More <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card service-card p-4 text-center">
-                        <i class="fas fa-search service-icon"></i>
-                        <h5 class="fw-bold">SEO Optimization Services</h5>
-                        <p>Enhance your website's visibility with proven SEO techniques and strategies.</p>
-                        <a href="mailto:service@alfidotech.com" class="text-danger fw-bold">Learn More <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card service-card p-4 text-center">
-                        <i class="fas fa-palette service-icon"></i>
-                        <h5 class="fw-bold">Logo Maker Service</h5>
-                        <p>Create professional logos tailored to your brand identity with our expert design team.</p>
-                        <a href="mailto:service@alfidotech.com" class="text-danger fw-bold">Learn More <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card service-card p-4 text-center">
-                        <i class="fas fa-envelope service-icon"></i>
-                        <h5 class="fw-bold">Email Marketing Service</h5>
-                        <p>Engage and convert leads with effective email campaigns and marketing strategies.</p>
-                        <a href="mailto:service@alfidotech.com" class="text-danger fw-bold">Learn More <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card service-card p-4 text-center">
-                        <i class="fas fa-share-alt service-icon"></i>
-                        <h5 class="fw-bold">Social Media Marketing Service</h5>
-                        <p>Grow your online presence with expert marketing strategies and social media management.</p>
-                        <a href="mailto:service@alfidotech.com" class="text-danger fw-bold">Learn More <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-
-    <!-- Service Form -->
-    <div class="form-section mt-5">
-        <h3 class="mb-4 text-center">Request a Service</h3>
-        <form id="serviceForm">
-            <div class="row g-3">
-                <div class="col-md-6">
-                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6">
-                    <input type="email" class="form-control" id="email" placeholder="Your Email" required>
-                </div>
-                <div class="col-md-6">
-                    <input type="text" class="form-control" id="phone" placeholder="Your Phone" required>
-                </div>
-                <div class="col-md-6">
-                    <select class="form-control" id="service" required>
-                        <option value="" disabled selected>Select a Service</option>
-                        <option>Auto Google Ads Clicker Automation</option>
-                        <option>Web Development Services</option>
-                        <option>SEO Optimization Services</option>
-                        <option>Logo Maker Service</option>
-                        <option>Email Marketing Service</option>
-                        <option>Social Media Marketing Service</option>
-                    </select>
-                </div>
-                <div class="col-12">
-                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
-                </div>
-                <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-danger px-5">Submit</button>
-                </div>
-            </div>
-        </form>
-    </div>
-    </div>
-    </section>
-
-    <!-- ================= Footer Start ================= -->
-    <footer class="bg-black text-light pt-5 pb-3 mt-5">
-        <div class="container">
-            <div class="row gy-4">
-
-                <!-- About -->
-                <div class="col-md-4">
-                    <h5 class="fw-bold text-white mb-3">Alfido Tech</h5>
-                    <p class="text-light">
-                        Empowering students & professionals with certified internships, training, and skill-building
-                        opportunities.
-                    </p>
-                    <p><i class="fas fa-map-marker-alt text-primary me-2"></i> Hyderabad, Telangana</p>
-                    <p><i class="fas fa-envelope text-primary me-2"></i>
-                        <a href="mailto:info@alfidotech.com"
-                            class="text-light text-decoration-none">info@alfidotech.com</a>
-                    </p>
-                    <p><i class="fas fa-phone text-primary me-2"></i>
-                        <a href="tel:+919977465250" class="text-light text-decoration-none">+91 9977465250</a>
-                    </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="col-md-4">
-                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.alfidotech.com/privacy.html" class="text-light text-decoration-none"><i
-                                    class="fas fa-angle-right me-2"></i> Privacy Policy</a></li>
-                        <li><a href="https://www.alfidotech.com/Terms&Conditions.html"
-                                class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i> Terms &
-                                Conditions</a></li>
-                        <li><a href="https://www.alfidotech.com/Return_policy.html"
-                                class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>
-                                Cancellation & Refund Policy</a></li>
-                        <li><a href="https://api.whatsapp.com/send?phone=919977465250"
-                                class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i> Contact
+                        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact
                                 Us</a></li>
+                        <li class="nav-item"><a class="nav-link"
+                                href="https://www.alfidotech.com/certification.html">Certification</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a>
+                        </li>
                     </ul>
                 </div>
+            </div>
+        </nav>
 
-                <!-- Social Media -->
-                <div class="col-md-4">
-                    <h5 class="fw-bold text-white mb-3">Follow Us</h5>
-                    <div class="d-flex flex-wrap gap-2">
-
-                        <a href="https://www.linkedin.com/company/alfido-tech/" target="_blank"
-                            class="btn btn-outline-primary rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-
-                        <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank"
-                            class="btn btn-outline-success rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-
-                        <a href="https://www.whatsapp.com/channel/0029Va9oTsF1CYoKbCt5TJ41" target="_blank"
-                            class="btn btn-outline-warning rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:22px;">
-                            <i class="fas fa-bullhorn"></i>
-                        </a>
-
-                        <a href="https://t.me/+s9WykS4sL7hlN2I1" target="_blank"
-                            class="btn btn-outline-info rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-
-                        <a href="https://www.instagram.com/alfido_tech/" target="_blank"
-                            class="btn btn-outline-danger rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-
-                        <a href="https://twitter.com/alfidotech" target="_blank"
-                            class="btn btn-outline-dark rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:22px;">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-
+        <!-- MAIN -->
+        <main>
+            <!-- HERO -->
+            <section class="hero">
+                <div class="container">
+                    <div class="glass hero-inner text-center reveal">
+                        <div class="hero-badge">
+                            <i class="ri-briefcase-4-line"></i> IT & Digital Services by Alfido Tech
+                        </div>
+                        <h1>
+                            Smart <span>digital solutions</span> for modern businesses.
+                        </h1>
+                        <p>
+                            From automation and custom web development to SEO, logo design, email & social media
+                            marketing – Alfido Tech helps you build and grow your online presence.
+                        </p>
                     </div>
                 </div>
+            </section>
 
+            <!-- SHOWCASE WEBSITES -->
+            <section id="showcase" class="section">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <div>
+                            <div class="section-eyebrow">Showcase</div>
+                            <h2 class="section-title">Recent live projects.</h2>
+                        </div>
+                        <p class="section-description">
+                            A glimpse of websites and landing pages designed & developed by Alfido Tech
+                            for different business use cases.
+                        </p>
+                    </div>
+
+                    <div class="row g-4 justify-content-center">
+                        <div class="col-md-6 reveal">
+                            <div class="showcase-frame glass p-3">
+                                <iframe src="https://www.chalodriver.in/" width="100%" height="350"
+                                    title="Chalo Driver - Showcase"></iframe>
+                                <div class="mt-3 text-center">
+                                    <a href="https://www.chalodriver.in/" target="_blank"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-4">
+                                        Visit Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 reveal">
+                            <div class="showcase-frame glass p-3">
+                                <iframe src="https://bs-world.github.io/Sabji-Bazaar/" width="100%" height="350"
+                                    title="Sabji Bazaar - Showcase"></iframe>
+                                <div class="mt-3 text-center">
+                                    <a href="https://bs-world.github.io/Sabji-Bazaar/" target="_blank"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-4">
+                                        Visit Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 reveal">
+                            <div class="showcase-frame glass p-3">
+                                <iframe src="https://bs-world.github.io/kaalin/" width="100%" height="350"
+                                    title="Kaalin - Showcase"></iframe>
+                                <div class="mt-3 text-center">
+                                    <a href="https://bs-world.github.io/kaalin/" target="_blank"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-4">
+                                        Visit Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row g-4 justify-content-center mt-2">
+                        <div class="col-md-6 reveal">
+                            <div class="showcase-frame glass p-3">
+                                <iframe src="https://bs-world.github.io/AC-service-near-me/" width="100%" height="350"
+                                    title="AC Service - Showcase"></iframe>
+                                <div class="mt-3 text-center">
+                                    <a href="https://bs-world.github.io/AC-service-near-me/" target="_blank"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-4">
+                                        Visit Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 reveal">
+                            <div class="showcase-frame glass p-3">
+                                <iframe src="https://bs-world.github.io/Hostal/" width="100%" height="350"
+                                    title="Hostel - Showcase"></iframe>
+                                <div class="mt-3 text-center">
+                                    <a href="https://bs-world.github.io/Hostal/" target="_blank"
+                                        class="btn btn-outline-danger btn-sm rounded-pill px-4">
+                                        Visit Website
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICES GRID -->
+            <section id="services" class="section">
+                <div class="container">
+                    <div class="section-header reveal">
+                        <div>
+                            <div class="section-eyebrow">Services</div>
+                            <h2 class="section-title">What Alfido Tech can do for you.</h2>
+                        </div>
+                        <p class="section-description">
+                            Tailored solutions for startups, SMEs and enterprises to help them automate,
+                            scale and build a strong digital brand.
+                        </p>
+                    </div>
+
+                    <div class="row g-3 g-md-4">
+                        <div class="col-md-4 reveal">
+                            <div class="glass h-100 p-4 text-start">
+                                <div class="service-icon">
+                                    <i class="ri-advertisement-line"></i>
+                                </div>
+                                <h5 class="domain-title mb-1">Auto Google Ads Clicker Automation</h5>
+                                <p class="domain-text">
+                                    Smart automation to monitor and optimize campaign performance, improve CTR
+                                    and reduce manual repetitive work.
+                                </p>
+                                <a href="mailto:service@alfidotech.com" class="service-link">
+                                    Learn more <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 reveal">
+                            <div class="glass h-100 p-4 text-start">
+                                <div class="service-icon">
+                                    <i class="ri-global-line"></i>
+                                </div>
+                                <h5 class="domain-title mb-1">Web Design & Development</h5>
+                                <p class="domain-text">
+                                    Conversion-focused websites and web apps – from landing pages to complex dashboards,
+                                    built with modern tech stack.
+                                </p>
+                                <a href="mailto:service@alfidotech.com" class="service-link">
+                                    View case studies <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 reveal">
+                            <div class="glass h-100 p-4 text-start">
+                                <div class="service-icon">
+                                    <i class="ri-search-eye-line"></i>
+                                </div>
+                                <h5 class="domain-title mb-1">SEO Optimization Services</h5>
+                                <p class="domain-text">
+                                    Technical SEO, on-page optimization and content strategy to improve search rankings
+                                    and organic traffic.
+                                </p>
+                                <a href="mailto:service@alfidotech.com" class="service-link">
+                                    Boost my SEO <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 reveal">
+                            <div class="glass h-100 p-4 text-start">
+                                <div class="service-icon">
+                                    <i class="ri-palette-line"></i>
+                                </div>
+                                <h5 class="domain-title mb-1">Logo Maker & Branding</h5>
+                                <p class="domain-text">
+                                    Clean, professional logos and brand kits designed to match your business identity
+                                    and target audience.
+                                </p>
+                                <a href="mailto:service@alfidotech.com" class="service-link">
+                                    Design my logo <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 reveal">
+                            <div class="glass h-100 p-4 text-start">
+                                <div class="service-icon">
+                                    <i class="ri-mail-line"></i>
+                                </div>
+                                <h5 class="domain-title mb-1">Email Marketing Service</h5>
+                                <p class="domain-text">
+                                    Automated campaigns, newsletters and drip journeys that nurture leads and
+                                    engage your customer base.
+                                </p>
+                                <a href="mailto:service@alfidotech.com" class="service-link">
+                                    Plan campaigns <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 reveal">
+                            <div class="glass h-100 p-4 text-start">
+                                <div class="service-icon">
+                                    <i class="ri-share-line"></i>
+                                </div>
+                                <h5 class="domain-title mb-1">Social Media Marketing</h5>
+                                <p class="domain-text">
+                                    Content, creatives and paid ads on major platforms to build awareness and
+                                    drive quality traffic to your business.
+                                </p>
+                                <a href="mailto:service@alfidotech.com" class="service-link">
+                                    Grow my socials <i class="ri-arrow-right-up-line"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SERVICE REQUEST FORM -->
+            <section id="request" class="section">
+                <div class="container form-section reveal">
+                    <div class="glass p-4 p-md-5">
+                        <h3 class="mb-3 text-center">Request a Service</h3>
+                        <p class="text-center text-muted mb-4" style="font-size:0.9rem;">
+                            Share your requirement and our team will contact you with the best approach,
+                            timeline and pricing.
+                        </p>
+
+                        <form id="serviceForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" id="email" placeholder="Your Email"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="phone" placeholder="Your Phone"
+                                        required>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" id="service" required>
+                                        <option value="" disabled selected>Select a Service</option>
+                                        <option>Auto Google Ads Clicker Automation</option>
+                                        <option>Web Design & Development</option>
+                                        <option>SEO Optimization Services</option>
+                                        <option>Logo Maker & Branding</option>
+                                        <option>Email Marketing Service</option>
+                                        <option>Social Media Marketing Service</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <textarea class="form-control" id="message" rows="4"
+                                        placeholder="Share your requirements or project details" required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn-gradient px-5">
+                                        <span>Submit Request</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER (same as aapka code) -->
+        <footer class="bg-black text-light pt-5 pb-3 mt-5">
+            <div class="container">
+                <div class="row gy-4">
+
+                    <!-- About -->
+                    <div class="col-md-4">
+                        <h5 class="fw-bold text-white mb-3">Alfido Tech</h5>
+                        <p class="text-light">
+                            Empowering students & professionals with certified internships, training, and skill-building
+                            opportunities.
+                        </p>
+                        <p><i class="fas fa-map-marker-alt text-primary me-2"></i> Hyderabad, Telangana</p>
+                        <p><i class="fas fa-envelope text-primary me-2"></i>
+                            <a href="mailto:info@alfidotech.com"
+                                class="text-light text-decoration-none">info@alfidotech.com</a>
+                        </p>
+                        <p><i class="fas fa-phone text-primary me-2"></i>
+                            <a href="tel:+919977465250" class="text-light text-decoration-none">+91 9977465250</a>
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-4">
+                        <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.alfidotech.com/privacy.html"
+                                    class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>
+                                    Privacy Policy</a></li>
+                            <li><a href="https://www.alfidotech.com/Terms&Conditions.html"
+                                    class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>
+                                    Terms &
+                                    Conditions</a></li>
+                            <li><a href="https://www.alfidotech.com/Return_policy.html"
+                                    class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>
+                                    Cancellation & Refund Policy</a></li>
+                            <li><a href="https://api.whatsapp.com/send?phone=919977465250"
+                                    class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>
+                                    Contact
+                                    Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="col-md-4">
+                        <h5 class="fw-bold text-white mb-3">Follow Us</h5>
+                        <div class="d-flex flex-wrap gap-2">
+
+                            <a href="https://www.linkedin.com/company/alfido-tech/" target="_blank"
+                                class="btn btn-outline-primary rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+
+                            <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank"
+                                class="btn btn-outline-success rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+
+                            <a href="https://www.whatsapp.com/channel/0029Va9oTsF1CYoKbCt5TJ41" target="_blank"
+                                class="btn btn-outline-warning rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:22px;">
+                                <i class="fas fa-bullhorn"></i>
+                            </a>
+
+                            <a href="https://t.me/+s9WykS4sL7hlN2I1" target="_blank"
+                                class="btn btn-outline-info rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/alfido_tech/" target="_blank"
+                                class="btn btn-outline-danger rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+
+                            <a href="https://twitter.com/alfidotech" target="_blank"
+                                class="btn btn-outline-dark rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:22px;">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="border-secondary my-4">
+
+                <!-- Copyright -->
+                <div class="text-center text-muted">
+                    <p class="mb-0 text-primary">© 2025 <b>Alfido Tech</b>. All Rights Reserved.</p>
+                    <small>Made with ❤️ in India</small>
+                </div>
             </div>
+        </footer>
 
-            <hr class="border-secondary my-4">
-
-            <!-- Copyright -->
-            <div class="text-center text-muted">
-                <p class="mb-0 text-primary">© 2025 <b>Alfido Tech</b>. All Rights Reserved.</p>
-                <small>Made with ❤️ in India</small>
-            </div>
+        <!-- WhatsApp Button -->
+        <div id="whatsapp-btn">
+            <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank">
+                <img src="https://www.pngall.com/wp-content/uploads/2016/04/WhatsApp-PNG-Picture.png" alt="WhatsApp">
+            </a>
         </div>
-    </footer>
-    <!-- ================= Footer End ================= -->
+    </div>
 
-    <!-- WhatsApp Button -->
-    <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank" class="whatsapp-btn">
-        <i class="fab fa-whatsapp fa-2x text-white"></i>
-    </a>
-
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Scroll reveal
+        const revealEls = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
+        revealEls.forEach((el) => observer.observe(el));
+
+        // WhatsApp submit
         $("#serviceForm").on("submit", function (e) {
             e.preventDefault();
             let name = $("#name").val();
@@ -555,11 +1037,14 @@
             let service = $("#service").val();
             let message = $("#message").val();
 
+            let text =
+                `New Service Request:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}` +
+                `%0AService: ${service}%0AMessage: ${message}`;
 
-            let text = `New Service Request:%0AName: ${name}%0AEmail: ${email}%0APhone: ${phone}%0AService: ${service}%0AMessage: ${message}`;
-
-
-            window.open(`https://api.whatsapp.com/send?phone=919977465250&text=${text}`, "_blank");
+            window.open(
+                `https://api.whatsapp.com/send?phone=919977465250&text=${text}`,
+                "_blank"
+            );
         });
     </script>
 </body>
