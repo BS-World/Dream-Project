@@ -70,15 +70,16 @@
   </url>
 
   <url>
-    <loc>https://www.alfidotech.com/Terms&Conditions.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
+  <loc>https://www.alfidotech.com/Terms&amp;Conditions.html</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.4</priority>
+</url>
 
-  <url>
-    <loc>https://www.alfidotech.com/Cancellation&Refund.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
-  </url>
+<url>
+  <loc>https://www.alfidotech.com/Cancellation&amp;Refund.html</loc>
+  <changefreq>yearly</changefreq>
+  <priority>0.4</priority>
+</url>
+
 
 </urlset>
