@@ -56,4 +56,29 @@
   <url><loc>https://www.alfidotech.com/profile.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://www.alfidotech.com/editor.html</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 
+  <!-- Policy Pages -->
+  <url>
+    <loc>https://www.alfidotech.com/disclaimer.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.alfidotech.com/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.alfidotech.com/Terms&Conditions.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.alfidotech.com/Cancellation&Refund.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
 </urlset>
