@@ -1,4 +1,54 @@
+############################
+# GOOGLE ADSENSE CRAWLERS #
+############################
+
+# AdSense page & content scanning
+User-agent: Mediapartners-Google
+Allow: /
+
+# Google Ads landing page quality checks
+User-agent: AdsBot-Google
+Allow: /
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+####################
+# GOOGLE SEO BOT   #
+####################
+User-agent: Googlebot
+Allow: /
+
+########################
+# GLOBAL USER-AGENTS   #
+########################
 User-agent: *
-Disallow: 
+Disallow:
+
+###################################
+# BLOCK ONLY NON-SEO / RISKY AREAS
+###################################
 Disallow: /cgi-bin/
+Disallow: /admin/
+Disallow: /config/
+Disallow: /database/
+Disallow: /db/
+Disallow: /private/
+Disallow: /backup/
+Disallow: /logs/
+Disallow: /tmp/
+Disallow: /test/
+Disallow: /draft/
+Disallow: /old/
+
+###################################
+# ALLOW ALL PUBLIC ASSETS         #
+###################################
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /assets/
+
+##################
+# SITEMAP SECTION
+##################
 Sitemap: https://www.alfidotech.com/sitemap.xml
