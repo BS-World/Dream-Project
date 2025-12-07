@@ -13,7 +13,7 @@
 
     <meta name="keywords"
         content="Remote IT Internship 2025, IT Internship for Freshers, Alfido Tech Internship, Python Developer Internship, Java Developer Internship, Frontend Developer Internship, Data Science Internship, Data Analyst Internship, Machine Learning Internship, UI/UX Internship, React Internship, Business Analyst Internship, Cybersecurity Internship, Digital Marketing Internship, Artificial Intelligence Internship, Android Development Internship, .Net Developer Internship, C/C++ Programming Internship, Work from Home Internship, Data Analyst Tech Internship for Students, Summer Internship 2025, Online IT Training with Internship Certificate">
-    <meta name="author" content="Bhanupratap Biswas">
+    <meta name="author" content="Alfido Tech">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.alfidotech.com/">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -94,7 +94,6 @@
         gtag('config', 'G-HKXWNH34MG');
     </script>
     <!-- Google Tag Manager End -->
-
 
     <!-- JSON-LD Schema for Alfido Tech (Optimized & Combined) -->
     <script type="application/ld+json">
@@ -248,1138 +247,2165 @@
     <!-- End JSON-LD Schema -->
 
 
-    <!-- Tailwind CSS -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./output.css">
-    <link rel="stylesheet" href="./style1.css">
 
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://www.alfidotech.com/logo.png" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Font Awesome (for footer icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        referrerpolicy="no-referrer" />
+
+    <style>
+        :root {
+            --brand-primary: #dd242a;
+            --brand-primary-soft: rgba(221, 36, 42, 0.7);
+            --brand-secondary: #ffffff;
+            --bg-deep: #050509;
+            --bg-card: rgba(10, 10, 16, 0.88);
+            --bg-card-soft: rgba(15, 15, 23, 0.65);
+            --border-soft: rgba(255, 255, 255, 0.14);
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --radius-2xl: 22px;
+            --shadow-soft: 0 24px 60px rgba(0, 0, 0, 0.85);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #1a0004, var(--bg-deep));
+            color: var(--text-main);
+            min-height: 100vh;
+            scroll-behavior: smooth;
+        }
+
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        main {
+            flex: 1;
+            padding-bottom: 4rem;
+            margin-top: 80px;
+            /* offset for fixed-top navbar */
+        }
+
+        /* ==== RED GLOW BLOBS ==== */
+        .gradient-blob {
+            position: fixed;
+            width: 520px;
+            height: 520px;
+            border-radius: 999px;
+            filter: blur(90px);
+            opacity: 0.5;
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: -1;
+            animation: blobMove 35s infinite alternate ease-in-out;
+        }
+
+        .blob-1 {
+            background: radial-gradient(circle, #ff4b4b, #dd242a);
+            top: -120px;
+            left: -120px;
+        }
+
+        .blob-2 {
+            background: radial-gradient(circle, #dd242a, #7f1d1d);
+            bottom: -160px;
+            right: -120px;
+            animation-delay: -10s;
+        }
+
+        @keyframes blobMove {
+            0% {
+                transform: translate3d(0, 0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate3d(40px, -20px, 0) scale(1.08);
+            }
+
+            100% {
+                transform: translate3d(-20px, 30px, 0) scale(1.04);
+            }
+        }
+
+        /* ==== GLASS & BORDER GRADIENT ==== */
+        .glass {
+            background: linear-gradient(135deg,
+                    var(--bg-card),
+                    var(--bg-card-soft));
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--border-soft);
+            box-shadow: var(--shadow-soft);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .border-gradient {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            padding: 1px;
+            background: linear-gradient(135deg,
+                    rgba(221, 36, 42, 0.9),
+                    rgba(255, 255, 255, 0.6));
+        }
+
+        .border-gradient>.glass-inner {
+            border-radius: inherit;
+            background: radial-gradient(circle at top left, #111015, #050509);
+            padding: 1.4rem;
+            height: 100%;
+        }
+
+        /* ==== NAVBAR (YOUR NAVBAR, DARK THEME TWEAKS) ==== */
+        .navbar {
+            background: linear-gradient(to bottom,
+                    rgba(5, 5, 9, 0.96),
+                    rgba(5, 5, 9, 0.9));
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+            z-index: 50;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0 0 10px rgba(221, 36, 42, 0.8));
+        }
+
+        .navbar .nav-link {
+            font-size: 0.92rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            position: relative;
+            padding-inline: 0.9rem;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #ffffff;
+        }
+
+        .navbar .nav-link::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 0.2rem;
+            width: 0;
+            height: 2px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #ffffff, #dd242a);
+            transition: width 0.2s ease-out;
+        }
+
+        .navbar .nav-link:hover::after,
+        .navbar .nav-link.active::after {
+            width: 60%;
+        }
+
+        .navbar .dropdown-menu {
+            border-radius: 18px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            background-color: #020617;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+            padding: 0.4rem;
+        }
+
+        .navbar .dropdown-item {
+            font-size: 0.86rem;
+            border-radius: 999px;
+            padding: 0.35rem 0.8rem;
+            color: #e5e7eb;
+        }
+
+        .navbar .dropdown-item.active,
+        .navbar .dropdown-item:hover {
+            background: var(--brand-primary);
+            color: #ffffff;
+        }
+
+        .navbar-toggler {
+            border: none;
+        }
+
+        /* ==== BUTTONS ==== */
+        .btn-gradient {
+            border-radius: 999px;
+            padding: 0.65rem 1.4rem;
+            font-weight: 600;
+            font-size: 0.96rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            color: #ffffff;
+            background-image: linear-gradient(135deg,
+                    #ff4b4b,
+                    #dd242a,
+                    #7f1d1d);
+            box-shadow: 0 12px 32px rgba(221, 36, 42, 0.7);
+        }
+
+        .btn-gradient span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .btn-gradient::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 0 0,
+                    rgba(255, 255, 255, 0.8),
+                    transparent 45%);
+            opacity: 0;
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+            transform: translate3d(-20%, -40%, 0);
+        }
+
+        .btn-gradient:hover::before {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .btn-ghost {
+            border-radius: 999px;
+            padding: 0.6rem 1.4rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            background: rgba(5, 5, 10, 0.85);
+            color: var(--text-main);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--brand-primary);
+            color: var(--text-main);
+            box-shadow: 0 0 0 1px rgba(221, 36, 42, 0.6);
+            background: rgba(5, 5, 10, 0.98);
+        }
+
+        /* ==== HERO ==== */
+        .hero {
+            padding: 5.5rem 1.25rem 4rem;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+            gap: 2.75rem;
+            align-items: center;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(5, 5, 10, 0.98);
+            border: 1px solid var(--brand-primary-soft);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #fecaca;
+        }
+
+        .badge-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 999px;
+            background: radial-gradient(circle, #22c55e, #22c55e 45%, transparent 46%);
+            box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.22);
+        }
+
+        .hero-title {
+            font-size: clamp(2.3rem, 3vw + 1rem, 3.4rem);
+            line-height: 1.08;
+            margin: 1.1rem 0 0.7rem;
+        }
+
+        .hero-title span.gradient {
+            background-image: linear-gradient(120deg,
+                    #ffffff,
+                    #fecaca,
+                    #dd242a);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-sub {
+            max-width: 35rem;
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.4rem;
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.8rem;
+            font-size: 0.86rem;
+            color: var(--text-muted);
+        }
+
+        .hero-meta strong {
+            display: block;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        /* Right side hero visual */
+        .hero-right {
+            position: relative;
+        }
+
+        .hero-orbit {
+            position: relative;
+            aspect-ratio: 4 / 3.2;
+            border-radius: 32px;
+            overflow: hidden;
+            padding: 1.4rem;
+            background: radial-gradient(circle at top, #141217, #050509);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-ring {
+            position: absolute;
+            inset: 20%;
+            border-radius: 999px;
+            border: 1px dashed rgba(248, 113, 113, 0.5);
+            animation: spin 35s linear infinite;
+            pointer-events: none;
+        }
+
+        .hero-ring:nth-child(2) {
+            inset: 28%;
+            border-style: solid;
+            border-color: rgba(220, 38, 38, 0.6);
+            animation-duration: 50s;
+            animation-direction: reverse;
+        }
+
+        .hero-ring:nth-child(3) {
+            inset: 36%;
+            border-style: dotted;
+            border-color: rgba(248, 250, 252, 0.8);
+            animation-duration: 65s;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hero-floating-card {
+            position: absolute;
+            top: 10%;
+            left: -5%;
+            min-width: 220px;
+            padding: 0.85rem 1rem;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(7, 7, 12, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.9);
+            animation: float 7s ease-in-out infinite alternate;
+        }
+
+        .hero-floating-card.bottom {
+            top: auto;
+            bottom: 0;
+            left: auto;
+            right: -5%;
+            animation-delay: -2.2s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(10px, -18px, 0);
+            }
+        }
+
+        .hero-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin-top: auto;
+            position: absolute;
+            bottom: 1.4rem;
+            left: 1.6rem;
+            right: 1.6rem;
+        }
+
+        .metric {
+            padding: 0.7rem 0.75rem;
+            border-radius: 16px;
+            background: rgba(9, 9, 14, 0.92);
+            font-size: 0.78rem;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--text-main);
+        }
+
+        /* ==== SECTIONS ==== */
+        .section {
+            padding: 2.5rem 1.25rem 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 1rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .section-eyebrow {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #fecaca;
+        }
+
+        .section-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            max-width: 30rem;
+        }
+
+        /* Internship / service tags */
+        .tag-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            padding: 0.25rem 0.65rem;
+            border-radius: 999px;
+            background: rgba(10, 10, 16, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 0.74rem;
+            color: #fee2e2;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin-top: 0.65rem;
+        }
+
+        .domain-title {
+            font-size: 1.02rem;
+            margin-bottom: 0.15rem;
+        }
+
+        .domain-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* Service icon */
+        .service-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at 30% 0, #ff4b4b, #1f0204);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+            margin-bottom: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        /* Why Alfido */
+        .check-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.75rem 0 0;
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            border-radius: 999px;
+            background: rgba(34, 197, 94, 0.14);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #4ade80;
+        }
+
+        .contact-cta {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .contact-item {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-item i {
+            font-size: 1.1rem;
+            color: var(--brand-primary);
+        }
+
+        /* Generic footer style (still used, but your footer content is below) */
+        footer a {
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer bg black utility */
+        .bg-black {
+            background-color: #020617 !important;
+        }
+
+        .text-primary {
+            color: var(--brand-primary) !important;
+        }
+
+        .btn-outline-primary {
+            color: var(--brand-primary);
+            border-color: var(--brand-primary);
+        }
+
+        .btn-outline-primary:hover {
+            background-color: var(--brand-primary);
+            color: #fff;
+        }
+
+        /* ====== WHATSAPP FLOAT BUTTON ====== */
+        #whatsapp-btn {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 60;
+        }
+
+        #whatsapp-btn img {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+            animation: pulse 2.2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+            }
+        }
+
+        /* Scroll reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .reveal.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==== RESPONSIVE ==== */
+        @media (max-width: 991.98px) {
+            .hero {
+                padding-top: 4.5rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-right {
+                order: -1;
+            }
+
+            .hero-orbit {
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .hero-floating-card {
+                left: 4%;
+            }
+
+            .hero-floating-card.bottom {
+                right: 4%;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .hero {
+                padding-top: 4.2rem;
+            }
+
+            .hero-title {
+                font-size: 2.05rem;
+            }
+
+            .hero-meta {
+                gap: 1rem;
+                font-size: 0.82rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .contact-cta {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-metrics {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                row-gap: 0.6rem;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .hero-orbit {
+                padding: 1.1rem;
+            }
+
+            .hero-metrics {
+                position: static;
+                margin-top: 1.2rem;
+            }
+
+            .hero-floating-card,
+            .hero-floating-card.bottom {
+                position: static;
+                margin-bottom: 0.75rem;
+            }
+
+            .metric {
+                padding: 0.6rem 0.65rem;
+            }
+        }
+
+
+        .navbar .nav-link {
+            color: #0E1A2B !important;
+            /* navy blue from logo */
+            font-weight: 600;
+            padding: 12px 16px;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+            color: #DD242A !important;
+            /* brand red */
+        }
+
+        .dropdown-menu .dropdown-item {
+            font-weight: 500;
+            padding: 10px 16px;
+        }
+
+        .dropdown-menu .dropdown-item:hover,
+        .dropdown-item.active {
+            background: #DD242A !important;
+            color: #fff !important;
+        }
+
+        /* ==== ABOUT & STATS EXTRA STYLES ==== */
+.gradient-text {
+    background-image: linear-gradient(120deg, #ffffff, #fecaca, #dd242a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.about-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(37, 99, 235, 0.12);
+    color: #bfdbfe;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.about-subtext {
+    font-size: 0.94rem;
+    color: var(--text-muted);
+}
+
+.progress-track {
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(148, 163, 184, 0.35);
+    overflow: hidden;
+}
+
+.progress-bar-soft {
+    height: 6px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #2563eb, #4f46e5);
+}
+
+.progress-bar-soft.green {
+    background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+.progress-bar-soft.purple {
+    background: linear-gradient(90deg, #7c3aed, #4f46e5);
+}
+
+.stat-card {
+    border-radius: var(--radius-2xl);
+    background: radial-gradient(circle at top, #111827, #020617);
+    border: 1px solid rgba(148, 163, 184, 0.35);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
+}
+
+.stat-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-inline: auto;
+    margin-bottom: 0.9rem;
+    font-size: 1.6rem;
+}
+
+.stat-icon.blue {
+    background: rgba(59, 130, 246, 0.16);
+    color: #60a5fa;
+}
+
+.stat-icon.green {
+    background: rgba(22, 163, 74, 0.16);
+    color: #4ade80;
+}
+
+.stat-icon.purple {
+    background: rgba(147, 51, 234, 0.16);
+    color: #c4b5fd;
+}
+
+.stat-icon.orange {
+    background: rgba(249, 115, 22, 0.16);
+    color: #fdba74;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Chalo Driver branding block */
+.branding-block img {
+    max-height: 60px;
+    object-fit: contain;
+}
+
+.branding-block figcaption {
+    font-size: 0.9rem;
+}
+
+    </style>
 
 </head>
 
 <body>
-    <header class="bg-white shadow-md py-4 text-slate-800 font-medium fixed top-0 left-0 right-0 z-50 h-[70px]">
-        <div class=" mx-auto flex justify-between items-center px-6">
-            <div class="text-2xl font-bold transition-transform hover:scale-105 duration-300">
-                <img src="Logo 2.png" alt="Alfido Tech"
-                    title="Alfido Tech – IT Services, Internships, and Business Consulting" class="h-10">
-            </div>
+    <div class="page-wrapper">
+        <!-- Red gradient blobs -->
+        <div class="gradient-blob blob-1"></div>
+        <div class="gradient-blob blob-2"></div>
 
-            <!-- Mobile menu toggle button -->
-            <button type="button" id="mobile-menu-button"
-                class="lg:hidden focus:outline-none text-blue-700 cursor-pointer" aria-label="Toggle mobile menu">
-                <span id="bars">
-                    <i class="fas fa-bars text-xl"></i>
-                </span>
-                <span id="close" class="hidden">
-                    <i class="fas fa-times text-xl"></i>
-                </span>
-            </button>
+        <!-- ===== NAVBAR (YOUR CODE) ===== -->
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top shadow-sm" style="background:#ffffff;">
+            <div class="container">
 
-            <!-- Desktop Navigation Menu -->
-            <nav class="hidden lg:block">
-                <ul class="flex gap-6 transition-all duration-300">
-                    <li>
-                        <a href="https://www.alfidotech.com/"
-                            class="nav-link active inline-block py-2 px-1 text-blue-700 font-medium relative after:content-[''] after:absolute after:w-full after:scale-x-100 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-600">Home</a>
-                    </li>
-                    <li>
-                        <a href="https://www.alfidotech.com/service.html"
-                            class="nav-link inline-block py-2 px-1 text-slate-700 hover:text-blue-700 transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-600 hover:after:scale-x-100 after:transition-transform after:duration-300">Services</a>
-                    </li>
-                    <li class="relative group">
-                        <span
-                            class="nav-link inline-block py-2 px-1 text-slate-700 hover:text-blue-700 cursor-pointer transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-600 group-hover:after:scale-x-100 after:transition-transform after:duration-300">
-                            Internship <i class="fas fa-chevron-down text-xs ml-1"></i>
-                        </span>
-                        <!-- Dropdown menu for internship options -->
-                        <div
-                            class="absolute left-0 w-64 bg-white rounded-md shadow-lg hidden group-hover:block transition-all duration-300 transform origin-top scale-0 group-hover:scale-100 z-10 border border-slate-100">
-                            <ul class="p-2">
-                                <li class="hover:bg-slate-200 rounded-md transition-all duration-300">
-                                    <a href="https://www.alfidotech.com/registration.html"
-                                        class="block px-4 py-2 text-sm text-slate-700 hover:text-blue-700">Internship
-                                        Registration</a>
-                                </li>
-                                <li class="hover:bg-slate-200 rounded-md transition-all duration-300">
-                                    <a href="https://www.alfidotech.com/offer.html"
-                                        class="block px-4 py-2 text-sm text-slate-700 hover:text-blue-700"
-                                        target="_blank">Offer
-                                        Letter</a>
-                                </li>
-                                <li class="hover:bg-slate-200 rounded-md transition-all duration-300">
-                                    <a href="https://www.alfidotech.com/submission.html"
-                                        class="block px-4 py-2 text-sm text-slate-700 hover:text-blue-700">Task
-                                        Submission</a>
-                                </li>
-                                <li class="hover:bg-slate-200 rounded-md transition-all duration-300">
-                                    <a href="https://www.alfidotech.com/certificate.html"
-                                        class="block px-4 py-2 text-sm text-slate-700 hover:text-blue-700">Certificate</a>
-                                </li>
-                                <li class="hover:bg-slate-200 rounded-md transition-all duration-300">
-                                    <a href="https://www.alfidotech.com/internProfile.html"
-                                        class="block px-4 py-2 text-sm text-slate-700 hover:text-blue-700">Intern
-                                        Profile</a>
-                                </li>
-                                <li class="hover:bg-slate-200 rounded-md transition-all duration-300">
-                                    <a href="https://www.alfidotech.com/task.html"
-                                        class="block px-4 py-2 text-sm text-slate-700 hover:text-blue-700">Tasks</a>
-                                </li>
-                                <li class="hover:bg-slate-200 rounded-md transition-all duration-300">
-                                    <a href="https://www.alfidotech.com/profile.html"
-                                        class="block px-4 py-2 text-sm text-slate-700 hover:text-blue-700">Profile</a>
-                                </li>
-                                <li class="hover:bg-slate-200 rounded-md transition-all duration-300">
-                                    <a href="https://www.alfidotech.com/editor.html"
-                                        class="block px-4 py-2 text-sm text-slate-700 hover:text-blue-700"
-                                        target="_blank">Code
-                                        Editor</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="https://www.alfidotech.com/contact.html"
-                            class="nav-link inline-block py-2 px-1 text-slate-700 hover:text-blue-700 transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-600 hover:after:scale-x-100 after:transition-transform after:duration-300">Contact
-                            Us</a>
-                    </li>
-                    <li>
-                        <a href="https://www.alfidotech.com/certification.html"
-                            class="nav-link inline-block py-2 px-1 text-slate-700 hover:text-blue-700 transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-600 hover:after:scale-x-100 after:transition-transform after:duration-300">Certification</a>
-                    </li>
-                    <li>
-                        <a href="https://www.alfidotech.com/blog.html"
-                            class="nav-link inline-block py-2 px-1 text-slate-700 hover:text-blue-700 transition-colors duration-300 relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-blue-600 hover:after:scale-x-100 after:transition-transform after:duration-300">Blog</a>
-                    </li>
-                </ul>
-            </nav>
+                <!-- Logo visible on white background -->
+                <a class="navbar-brand" href="https://www.alfidotech.com/">
+                    <img src="Logo 2.png" alt="Alfido Tech" style="height:48px;">
+                </a>
 
-        </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu"
-            class="lg:hidden bg-white shadow-lg border-slate-100 translate-x-full transition-all duration-300  mt-4">
-            <div class="p-4">
-                <ul class="space-y-3">
-                    <li>
-                        <a href="https://www.alfidotech.com/"
-                            class="block py-3 px-4 text-blue-700 bg-blue-50 rounded-md font-medium">Home</a>
-                    </li>
-                    <li>
-                        <a href="https://www.alfidotech.com/service.html"
-                            class="block py-3 px-4 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-all duration-200">Services</a>
-                    </li>
-                    <li class="relative">
-                        <div class="flex justify-between items-center cursor-pointer py-3 px-4 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-all duration-200"
-                            id="internship-dropdown-toggle">
-                            <span>Internship</span>
-                            <i class="fas fa-chevron-down text-sm"></i>
-                        </div>
-                        <div id="internship-dropdown"
-                            class="hidden bg-slate-50 p-3 my-1 rounded-md border border-slate-100 ml-2">
-                            <ul class="space-y-2">
-                                <li><a href="https://www.alfidotech.com/registration.html"
-                                        class="block py-2 text-sm text-slate-700 hover:text-blue-700 hover:bg-blue-100 rounded px-3 transition-all duration-200">Internship
-                                        Registration</a></li>
-                                <li><a href="https://www.alfidotech.com/offer.html"
-                                        class="block py-2 text-sm text-slate-700 hover:text-blue-700 hover:bg-blue-100 rounded px-3 transition-all duration-200">Offer
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+
+                        <!-- Normal Links -->
+                        <li class="nav-item">
+                            <a class="nav-link active" href="https://www.alfidotech.com/">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Internship
+                            </a>
+                            <ul class="dropdown-menu border-0 shadow-sm">
+                                <li><a class="dropdown-item"
+                                        href="https://www.alfidotech.com/registration.html">Internship Registration</a>
+                                </li>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer
                                         Letter</a></li>
-                                <li><a href="https://www.alfidotech.com/submission.html"
-                                        class="block py-2 text-sm text-slate-700 hover:text-blue-700 hover:bg-blue-100 rounded px-3 transition-all duration-200">Task
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task
                                         Submission</a></li>
-                                <li><a href="https://www.alfidotech.com/certificate.html"
-                                        class="block py-2 text-sm text-slate-700 hover:text-blue-700 hover:bg-blue-100 rounded px-3 transition-all duration-200">Certificate</a>
-                                </li>
-                                <li><a href="https://www.alfidotech.com/internProfile.html"
-                                        class="block py-2 text-sm text-slate-700 hover:text-blue-700 hover:bg-blue-100 rounded px-3 transition-all duration-200">Intern
+                                <li><a class="dropdown-item"
+                                        href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/internProfile.html">Intern
                                         Profile</a></li>
-                                <li><a href="https://www.alfidotech.com/task.html"
-                                        class="block py-2 text-sm text-slate-700 hover:text-blue-700 hover:bg-blue-100 rounded px-3 transition-all duration-200">Tasks</a>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a>
                                 </li>
-                                <li><a href="https://www.alfidotech.com/profile.html"
-                                        class="block py-2 text-sm text-slate-700 hover:text-blue-700 hover:bg-blue-100 rounded px-3 transition-all duration-200">Profile</a>
-                                </li>
-                                <li><a href="https://www.alfidotech.com/editor.html"
-                                        class="block py-2 text-sm text-slate-700 hover:text-blue-700 hover:bg-blue-100 rounded px-3 transition-all duration-200">Code
+                                <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code
                                         Editor</a></li>
                             </ul>
-                        </div>
-                    </li>
-                    <li><a href="https://www.alfidotech.com/contact.html"
-                            class="block py-3 px-4 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-all duration-200">Contact
-                            Us</a></li>
-                    <li><a href="https://www.alfidotech.com/certification.html"
-                            class="block py-3 px-4 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-all duration-200">Certification</a>
-                    </li>
-                    <li><a href="https://www.alfidotech.com/blog.html"
-                            class="block py-3 px-4 text-slate-700 hover:text-blue-700 hover:bg-blue-50 rounded-md transition-all duration-200">Blog</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </header>
-    <main class="container mx-auto px-6 py-20 rounded-lg">
-        <!-- hero section -->
-        <section class="bg-gradient-to-br from-blue-50 to-indigo-50 py-14 rounded-lg animated-border">
-            <div class="relative mx-auto px-6">
-                <div class="flex items-center gap-2 absolute -top-10 left-5">
-                    <img src="./assets/images/Logo 2.png" alt="Alfido Tech Logo"
-                        title="Alfido Tech – IT Services, Internships, and Business Consulting" class="h-10 ">
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact Us</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.alfidotech.com/certification.html">Certification</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a>
+                        </li>
+
+                    </ul>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="flex flex-col items-start justify-center space-y-6">
-                        <h1 class="text-5xl font-bold text-gray-900 leading-tight">
-                            Alfido Tech<span class="gradient-text "> Internship</span>
+            </div>
+        </nav>
+
+
+        <!-- HERO -->
+        <main id="top">
+            <section class="hero container">
+                <div class="hero-grid">
+                    <!-- LEFT -->
+                    <div class="hero-left reveal">
+                        <div class="badge-pill">
+                            <span class="badge-dot"></span>
+                            AICTE Approved Remote IT Internships
+                        </div>
+                        <h1 class="hero-title">
+                            Kickstart your <span class="gradient">Tech Career</span> with
+                            Alfido Tech.
                         </h1>
-                        <p id="tagline"
-                            class="text-sm font-semibold w-[80%] text-wrap text-gray-600 leading-relaxed h-[3rem] glow-effect">
+                        <p class="hero-sub">
+                            Gain real project experience in
+                            <strong>AI, Data Science, Web Development, Cybersecurity</strong>
+                            and more – mentored by industry experts, from anywhere in India.
                         </p>
 
-                        <div class="flex gap-4">
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="px-8 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-lg font-semibold hover:from-indigo-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover-scale">
-                               Apply Now
+                        <div class="hero-actions">
+                            <a href="https://www.alfidotech.com/registration.html" class="btn btn-gradient">
+                                <span>Start Internship</span>
                             </a>
-                            <a href="https://www.alfidotech.com/certification.html"
-                                class="px-8 py-3 bg-white text-indigo-600 rounded-lg font-semibold hover:bg-indigo-50 transition-all duration-300 border-2 border-indigo-600 hover-scale">
-                                Learn More
+                            <a href="https://www.alfidotech.com/service.html" class="btn btn-ghost">
+                                Our Services
                             </a>
                         </div>
-                        <div class="flex items-center gap-8 pt-4">
-                            <div class="flex flex-col stat-card p-4 rounded-lg">
-                                <span class="text-3xl font-bold gradient-text">12124+</span>
-                                <span class="text-gray-600">Interns Applied</span>
-                            </div>
 
-                            <div class="flex flex-col stat-card p-4 rounded-lg">
-                                <span class="text-3xl font-bold gradient-text">95%</span>
-                                <span class="text-gray-600">Success Rate</span>
+                        <div class="hero-meta">
+                            <div>
+                                <strong>12,000+ Interns</strong>
+                                from 1,000+ colleges have trusted Alfido Tech.
+                            </div>
+                            <div>
+                                <strong>95% Success Rate</strong>
+                                interns complete tasks & earn certificates.
                             </div>
                         </div>
                     </div>
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
-                        <div class="relative">
-                            <img src="./assets/images/hero-image-1.png" alt="Alfido Tech 1"
-                                title="Alfido Tech – IT Services, Internships, and Business Consulting"
-                                class="w-full h-full object-cover rounded-2xl shadow-2xl transform  transition-transform duration-500 hover-scale">
-                        </div>
-                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-xl hover-scale">
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-graduation-cap text-blue-600 text-xl"></i>
+
+                    <!-- RIGHT -->
+                    <div class="hero-right reveal">
+                        <div class="hero-orbit">
+                            <div class="hero-ring"></div>
+                            <div class="hero-ring"></div>
+                            <div class="hero-ring"></div>
+
+                            <div class="hero-floating-card">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <div>
+                                        <div class="small text-uppercase text-secondary">
+                                            Active Interns
+                                        </div>
+                                        <div class="fw-semibold text-light">1,200+ Today</div>
+                                    </div>
+                                    <span class="badge-pill" style="border-color:#22c55e;">
+                                        <span class="badge-dot"></span> Live
+                                    </span>
                                 </div>
+                                <p class="mb-0 mt-2 small text-secondary">
+                                    Work on tasks in AI, Web Dev, Cloud, Data & more.
+                                </p>
+                            </div>
+
+                            <div class="hero-floating-card bottom">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="service-icon" style="margin-bottom:0; font-size:1.3rem;">
+                                        <i class="ri-shield-star-line"></i>
+                                    </div>
+                                    <div>
+                                        <div class="small text-uppercase text-secondary">
+                                            Verified Certificate
+                                        </div>
+                                        <div class="fw-semibold text-light">ISO & AICTE Linked</div>
+                                    </div>
+                                </div>
+                                <p class="mb-0 mt-1 small text-secondary">
+                                    Each certificate can be verified via Alfido Tech portal.
+                                </p>
+                            </div>
+
+                            <div class="hero-metrics">
+                                <div class="metric">
+                                    <strong>AI & ML</strong>
+                                    <span class="small text-secondary">Future-ready projects</span>
+                                </div>
+                                <div class="metric">
+                                    <strong>Web & App</strong>
+                                    <span class="small text-secondary">Full-stack tracks</span>
+                                </div>
+                                <div class="metric">
+                                    <strong>Data & Cloud</strong>
+                                    <span class="small text-secondary">Analytics & DevOps</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INTERNSHIP DOMAINS -->
+            <section id="internships" class="section container">
+                <div class="section-header reveal">
+                    <div>
+                        <div class="section-eyebrow">Internship Domains</div>
+                        <h2 class="section-title">Build skills that companies hire for.</h2>
+                    </div>
+                    <p class="section-description">
+                        Choose from multiple domains and work on structured, real-world
+                        tasks – not just theory. All programs end with an industry-recognized
+                        certificate from Alfido Tech.
+                    </p>
+                </div>
+
+                <div class="row g-3 g-md-4">
+                    <!-- Frontend Developer -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-code-s-slash-line"></i> Web Development
+                                </div>
+                                <h3 class="domain-title">Frontend Developer</h3>
+                                <p class="domain-text">
+                                    Build responsive user interfaces with HTML, CSS and JavaScript,
+                                    focusing on performance, accessibility and modern UI patterns.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">HTML &amp; CSS</span>
+                                    <span class="tag-pill">JavaScript</span>
+                                    <span class="tag-pill">Responsive UI</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View curriculum <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- React.JS -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-code-s-slash-line"></i> React.JS
+                                </div>
+                                <h3 class="domain-title">React.js Developer</h3>
+                                <p class="domain-text">
+                                    Learn component-based architecture, hooks, routing and state
+                                    management to build dynamic single-page applications.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">React</span>
+                                    <span class="tag-pill">SPA</span>
+                                    <span class="tag-pill">Hooks</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        Explore React track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MERN Stack Developer -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-code-s-slash-line"></i> Full Stack
+                                </div>
+                                <h3 class="domain-title">MERN Stack Developer</h3>
+                                <p class="domain-text">
+                                    Build full-stack applications using MongoDB, Express, React and
+                                    Node.js with REST APIs and authentication.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">MongoDB</span>
+                                    <span class="tag-pill">Express</span>
+                                    <span class="tag-pill">React &amp; Node</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View MERN roadmap <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Python Developer -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-code-s-slash-line"></i> Programming
+                                </div>
+                                <h3 class="domain-title">Python Developer</h3>
+                                <p class="domain-text">
+                                    Master Python fundamentals, scripting, automation and back-end
+                                    concepts with real-world mini projects.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">OOP</span>
+                                    <span class="tag-pill">APIs</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        Explore Python track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- C/C++ Programming -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-code-s-slash-line"></i> Programming
+                                </div>
+                                <h3 class="domain-title">C / C++ Programming</h3>
+                                <p class="domain-text">
+                                    Strengthen logic building and low-level programming with
+                                    pointers, memory management and OOP concepts.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">C Language</span>
+                                    <span class="tag-pill">C++</span>
+                                    <span class="tag-pill">DSA</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View C/C++ modules <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Java Developer -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-code-s-slash-line"></i> Java
+                                </div>
+                                <h3 class="domain-title">Java Developer</h3>
+                                <p class="domain-text">
+                                    Learn core Java, OOP, collections and basic backend development
+                                    with servlets or Spring fundamentals.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">Core Java</span>
+                                    <span class="tag-pill">OOP</span>
+                                    <span class="tag-pill">Backend</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View Java track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- .NET Developer -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-code-s-slash-line"></i> .NET
+                                </div>
+                                <h3 class="domain-title">.NET Developer</h3>
+                                <p class="domain-text">
+                                    Build secure web applications with ASP.NET, C# and SQL Server,
+                                    covering MVC and basic API concepts.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">ASP.NET</span>
+                                    <span class="tag-pill">C#</span>
+                                    <span class="tag-pill">SQL Server</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View .NET syllabus <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Analytics -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-bar-chart-2-line"></i> Data
+                                </div>
+                                <h3 class="domain-title">Data Analytics</h3>
+                                <p class="domain-text">
+                                    Learn how to clean, analyze and visualize data using Excel,
+                                    SQL and dashboards.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">Excel</span>
+                                    <span class="tag-pill">SQL</span>
+                                    <span class="tag-pill">Visualization</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        Explore Data Analytics <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Business Analytics -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-pie-chart-2-line"></i> Analytics
+                                </div>
+                                <h3 class="domain-title">Business Analytics</h3>
+                                <p class="domain-text">
+                                    Combine data analysis with business KPIs, reporting and
+                                    decision-making dashboards.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">KPIs</span>
+                                    <span class="tag-pill">Dashboards</span>
+                                    <span class="tag-pill">Insights</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View BA modules <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Science -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-brain-line"></i> Data Science
+                                </div>
+                                <h3 class="domain-title">Data Science</h3>
+                                <p class="domain-text">
+                                    Work on end-to-end projects using Python, statistics and ML to
+                                    extract insights from complex datasets.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">Stats</span>
+                                    <span class="tag-pill">Projects</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        Explore DS track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Artificial Intelligence -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-brain-line"></i> AI
+                                </div>
+                                <h3 class="domain-title">Artificial Intelligence</h3>
+                                <p class="domain-text">
+                                    Learn the basics of AI, search algorithms, NLP or computer
+                                    vision with Python frameworks.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">AI Concepts</span>
+                                    <span class="tag-pill">Python</span>
+                                    <span class="tag-pill">NLP / CV</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View AI modules <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Digital Marketing -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-advertisement-line"></i> Marketing
+                                </div>
+                                <h3 class="domain-title">Digital Marketing</h3>
+                                <p class="domain-text">
+                                    Learn SEO, social media marketing, paid ads and content
+                                    strategy to grow brands online.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">SEO</span>
+                                    <span class="tag-pill">Social Media</span>
+                                    <span class="tag-pill">Ads</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        Explore DM track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Machine Learning -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-brain-line"></i> ML
+                                </div>
+                                <h3 class="domain-title">Machine Learning</h3>
+                                <p class="domain-text">
+                                    Implement ML models such as regression, classification and
+                                    clustering with real datasets.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">Supervised</span>
+                                    <span class="tag-pill">Unsupervised</span>
+                                    <span class="tag-pill">Modeling</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View ML modules <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cybersecurity -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-shield-keyhole-line"></i> Security
+                                </div>
+                                <h3 class="domain-title">Cybersecurity</h3>
+                                <p class="domain-text">
+                                    Understand security fundamentals, vulnerabilities, basic
+                                    ethical hacking and secure configurations.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">Network Sec</span>
+                                    <span class="tag-pill">VAPT Basics</span>
+                                    <span class="tag-pill">Tools</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        Explore Cyber track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- UX/UI Design -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-layout-4-line"></i> Design
+                                </div>
+                                <h3 class="domain-title">UX / UI Design</h3>
+                                <p class="domain-text">
+                                    Learn user research, wireframing, prototyping and design
+                                    systems using popular tools.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">Figma / XD</span>
+                                    <span class="tag-pill">Wireframes</span>
+                                    <span class="tag-pill">User Flows</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View UX/UI track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Android Developer -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-android-line"></i> Mobile
+                                </div>
+                                <h3 class="domain-title">Android Developer</h3>
+                                <p class="domain-text">
+                                    Build Android apps with Java/Kotlin, activities, layouts and
+                                    basic API integration.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">Android Studio</span>
+                                    <span class="tag-pill">Java/Kotlin</span>
+                                    <span class="tag-pill">UI Layouts</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        Explore Android track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- VLSI -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-cpu-line"></i> VLSI
+                                </div>
+                                <h3 class="domain-title">Very Large Scale Integration (VLSI)</h3>
+                                <p class="domain-text">
+                                    Get exposure to digital design, HDL basics and chip-level
+                                    design workflows.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">HDL Basics</span>
+                                    <span class="tag-pill">Digital Logic</span>
+                                    <span class="tag-pill">Design Flow</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View VLSI modules <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Systems -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-cpu-line"></i> Embedded
+                                </div>
+                                <h3 class="domain-title">Embedded Systems</h3>
+                                <p class="domain-text">
+                                    Learn microcontrollers, C programming for embedded, sensors and
+                                    basic hardware interfacing.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">MCUs</span>
+                                    <span class="tag-pill">Embedded C</span>
+                                    <span class="tag-pill">I/O &amp; Sensors</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        Explore Embedded track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cloud Computing -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-cloud-line"></i> Cloud
+                                </div>
+                                <h3 class="domain-title">Cloud Computing</h3>
+                                <p class="domain-text">
+                                    Understand cloud basics, services models and deploy simple
+                                    workloads on popular cloud platforms.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">IaaS / PaaS</span>
+                                    <span class="tag-pill">Cloud Basics</span>
+                                    <span class="tag-pill">Deployments</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        View Cloud track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DevOps -->
+                    <div class="col-md-4 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 d-flex flex-column">
+                                <div class="tag-pill mb-2">
+                                    <i class="ri-settings-3-line"></i> DevOps
+                                </div>
+                                <h3 class="domain-title">DevOps</h3>
+                                <p class="domain-text">
+                                    Learn CI/CD, version control, container basics and automation
+                                    for modern software delivery.
+                                </p>
+                                <div class="tags">
+                                    <span class="tag-pill">Git &amp; CI/CD</span>
+                                    <span class="tag-pill">Docker Basics</span>
+                                    <span class="tag-pill">Automation</span>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="https://www.alfidotech.com/registration.html"
+                                        class="small text-decoration-none" style="color:#dd242a;">
+                                        Explore DevOps track <i class="ri-arrow-right-up-line"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- SERVICES -->
+            <section id="services" class="section container">
+                <div class="section-header reveal">
+                    <div>
+                        <div class="section-eyebrow">Services</div>
+                        <h2 class="section-title">Digital solutions by Alfido Tech.</h2>
+                    </div>
+                    <p class="section-description">
+                        Beyond internships, we deliver AI automation, cloud solutions,
+                        digital marketing and more – to help businesses grow in the digital
+                        era.
+                    </p>
+                </div>
+
+                <div class="row g-3 g-md-4">
+                    <div class="col-md-4 reveal">
+                        <div class="glass h-100 p-3 p-md-4">
+                            <div class="service-icon">
+                                <i class="ri-advertisement-line"></i>
+                            </div>
+                            <h3 class="domain-title mb-1">
+                                Auto Google Ads Clicker Automation
+                            </h3>
+                            <p class="domain-text">
+                                Smart automation that optimizes ad campaigns, improves click
+                                ratios and helps you reduce manual operations.
+                            </p>
+                            <a href="https://www.alfidotech.com/service.html" class="small text-decoration-none"
+                                style="color:#fecaca;">
+                                Learn more <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 reveal">
+                        <div class="glass h-100 p-3 p-md-4">
+                            <div class="service-icon">
+                                <i class="ri-global-line"></i>
+                            </div>
+                            <h3 class="domain-title mb-1">Web & App Development</h3>
+                            <p class="domain-text">
+                                From landing pages to complex dashboards – Alfido Tech builds
+                                scalable, modern digital products for your business.
+                            </p>
+                            <a href="https://www.alfidotech.com/services.html" class="small text-decoration-none"
+                                style="color:#fecaca;">
+                                View case studies <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 reveal">
+                        <div class="glass h-100 p-3 p-md-4">
+                            <div class="service-icon">
+                                <i class="ri-bar-chart-2-line"></i>
+                            </div>
+                            <h3 class="domain-title mb-1">Data Analytics & Automation</h3>
+                            <p class="domain-text">
+                                Turn your raw data into dashboards, reports and automations that
+                                save time and drive better decisions.
+                            </p>
+                            <a href="https://www.alfidotech.com/services.html" class="small text-decoration-none"
+                                style="color:#fecaca;">
+                                Talk to our team <i class="ri-arrow-right-up-line"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+                        <!-- ABOUT US -->
+            <section id="about" class="section container">
+                <div class="row g-3 g-md-4 align-items-center">
+                    <!-- About content -->
+                    <div class="col-lg-6 reveal">
+                        <div class="glass p-3 p-md-4 h-100">
+                            <div class="about-badge mb-3">
+                                About Us
+                            </div>
+                            <h2 class="section-title mb-3">
+                                Empowering digital solutions with
+                                <span class="gradient-text">5+ years</span> of expertise.
+                            </h2>
+                            <p class="about-subtext mb-3">
+                                In today’s fast-paced digital landscape, experience fuels innovation.
+                                At <strong>Alfido Tech</strong>, we bring over five years of dedicated
+                                expertise to the forefront of digital transformation. Our tailored
+                                solutions empower students, brands and businesses to grow with
+                                better technology, better design, and better execution.
+                            </p>
+                            <p class="about-subtext mb-0">
+                                From <strong>remote internships</strong> to
+                                <strong>IT services, automation & digital products</strong>, we focus
+                                on practical outcomes – not just theory.
+                            </p>
+
+                            <!-- skill stats -->
+                            <div class="mt-4">
+                                <!-- IT Services -->
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h4 class="mb-0" style="font-size:1rem;">IT Services</h4>
+                                        <span class="fw-semibold" style="color:#60a5fa;">75%</span>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-bar-soft" style="width:75%;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Business Consulting -->
+                                <div class="mb-3">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h4 class="mb-0" style="font-size:1rem;">Business Consulting</h4>
+                                        <span class="fw-semibold" style="color:#4ade80;">60%</span>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-bar-soft green" style="width:60%;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Design & Development -->
                                 <div>
-                                    <p class="text-sm font-semibold text-gray-900">Expert Mentors</p>
-                                    <p class="text-xs text-gray-600">24/7 Support</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- AICTE Approval Section -->
-        <section class="py-16 bg-white">
-            <div class=" mx-auto ">
-                <div class="flex flex-col items-center justify-center text-center space-y-8">
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
-                        <div class="relative bg-white p-6 rounded-2xl shadow-xl hover-scale aicte-shine">
-                            <img src="./assets/images/aicte.png" alt="AICTE Logo" title="AICTE Approved Internships"
-                                class="h-30 mx-auto mb-4">
-                            <h2 class="text-3xl font-bold text-gray-900 mb-4">
-                                <span class="gradient-text ">AICTE Approved</span> Internships
-                            </h2>
-                            <p class="text-gray-600 max-w-2xl mx-auto">
-                                Our internship programs are officially approved by the All India Council for Technical
-                                Education (AICTE), ensuring quality education and industry-relevant training.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover-scale border border-blue-100 aicte-card">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 aicte-icon">
-                                <i class="fas fa-certificate text-blue-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Certified Programs</h3>
-                            <p class="text-gray-600">Industry-recognized certifications that add value to your resume
-                            </p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover-scale border border-blue-100 aicte-card">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 aicte-icon">
-                                <i class="fas fa-graduation-cap text-blue-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Professional Certification</h3>
-                            <p class="text-gray-600">Structured curriculum following AICTE guidelines and standards</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover-scale border border-blue-100 aicte-card">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 aicte-icon">
-                                <i class="fas fa-building text-blue-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Industry Connect</h3>
-                            <p class="text-gray-600">Direct exposure to real-world projects and industry experts</p>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </section>
-
-        <section class="py-16 bg-white">
-            <div class=" mx-auto ">
-                <div class="flex flex-col items-center justify-center text-center space-y-8">
-
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover-scale border border-blue-100 aicte-card">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 aicte-icon">
-                                <i class="fas fa-check-circle fa-3x icon-check text-blue-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Apply</h3>
-                            <p class="text-gray-600">Submit your application online.
-                            </p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover-scale border border-blue-100 aicte-card">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 aicte-icon">
-                                <i class="fas fa-envelope-open-text fa-3x icon-check text-blue-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Get Offer Letter & Tasks/Projects</h3>
-                            <p class="text-gray-600">Receive your offer letter and assigned Tasks/Projects.</p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-xl shadow-lg hover-scale border border-blue-100 aicte-card">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 aicte-icon">
-                                <i class="fas fa-award fa-3x icon-check text-blue-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-2">Get Certificate</h3>
-                            <p class="text-gray-600">Earn a certificate of completion.</p>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Internship Domains Section -->
-        <section class="py-16 bg-gradient-to-b  ">
-            <div class=" mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        <span class="gradient-text ">Explore Our Internship Domains</span>
-                    </h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Apply now to kickstart your tech career with hands-on experience!
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Frontend Developer Card -->
-                    <div class="internship-card frontend-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-code text-blue-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Frontend Developer</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a Frontend Developer Intern! Kickstart
-                                your web development career with hands-on experience in building responsive,
-                                user-friendly interfaces using HTML, CSS, and JavaScript.</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Android Developer Card -->
-                    <div class="internship-card android-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fab fa-android text-green-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Android Developer</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as an Android Developer Intern and jumpstart
-                                your career in mobile app development! This internship provides hands-on experience in
-                                creating innovative Android applications.</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-green-600 hover:text-green-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- React.js Card -->
-                    <div class="internship-card react-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fab fa-react text-cyan-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">React.js</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a React.js Developer Intern and take your
-                                first step into the world of web development! This internship provides hands-on
-                                experience in building dynamic user interfaces.</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-cyan-600 hover:text-cyan-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Java Developer Card -->
-                    <div class="internship-card java-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fab fa-java text-red-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Java Developer</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a Java Developer Intern and kickstart your
-                                journey in software development! This internship offers hands-on experience in building
-                                robust Java applications.</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-red-600 hover:text-red-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Python Developer Card -->
-                    <div class="internship-card python-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fab fa-python text-yellow-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Python Developer</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a Python Developer Intern and kickstart
-                                your career in tech! This internship offers hands-on experience in developing Python
-                                applications.</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Data Analyst Card -->
-                    <div class="internship-card data-analyst-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-chart-bar text-purple-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Data Analyst</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a Data Analyst Intern and take your first
-                                step into the world of data analysis! This internship provides the opportunity to work
-                                with real data.</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Data Science Card -->
-                    <div class="internship-card data-science-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-brain text-indigo-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Data Science</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a Data Science Intern and launch your
-                                career in the dynamic field of data Science! This internship provides hands-on
-                                experience in analyzing data.</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- .NET Developer Card -->
-                    <div class="internship-card dotnet-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fab fa-microsoft text-blue-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">.NET Developer</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a .NET Developer and advance your career
-                                in software development! This role offers an opportunity to work on cutting-edge
-                                applications.</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- UX/UI Design Card -->
-                    <div class="internship-card uxui-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-paint-brush text-pink-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">UX/UI Design</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a UX/UI Design Intern and take the first
-                                step in your design career! This internship provides hands-on experience in creating
-                                user-centered designs.</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- C++/C Programming Card -->
-                    <div class="internship-card java-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-laptop-code text-red-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">C++/C Programming</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a C++/C Programming Intern and strengthen
-                                your foundation in system-level and performance-oriented programming!</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-red-600 hover:text-red-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Business Analytics Card -->
-                    <div class="internship-card uxui-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-briefcase text-pink-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Business Analytics</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a Business Analytics Intern and gain
-                                practical experience in analyzing business data to make impactful decisions!</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Artificial Intelligence Card -->
-                    <div class="internship-card data-science-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-robot text-indigo-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Artificial Intelligence</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as an AI Intern and gain hands-on experience
-                                working on intelligent systems and cutting-edge AI projects!</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-indigo-600 hover:text-indigo-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Digital Marketing Card -->
-                    <div class="internship-card python-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-bullhorn text-yellow-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Digital Marketing</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a Digital Marketing Intern and develop
-                                skills in SEO, content creation, and online advertising to boost brand visibility!</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-yellow-600 hover:text-yellow-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Machine Learning Card -->
-                    <div class="internship-card android-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-brain text-green-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Machine Learning</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a Machine Learning Intern and work on
-                                real-world prediction models and intelligent data-driven solutions!</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-green-600 hover:text-green-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Cybersecurity Card -->
-                    <div class="internship-card java-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4 internship-icon">
-                                <i class="fas fa-shield-alt text-red-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Cybersecurity</h3>
-                            <p class="text-gray-600 mb-4">Join Alfido Tech as a Cybersecurity Intern and learn to
-                                protect systems, identify vulnerabilities, and strengthen security frameworks!</p>
-                            <a href="https://www.alfidotech.com/registration.html"
-                                class="inline-flex items-center text-red-600 hover:text-red-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section class="py-16 bg-gradient-to-b ">
-            <div class=" mx-auto ">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl font-bold text-gray-900 mb-4">
-                        <span class="gradient-text ">Discover Our Range of Services</span>
-                    </h2>
-                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Start your journey today and gain practical experience in the tech world!
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Auto Google Ads Clicker -->
-                    <div class="service-card ads-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mb-4 service-icon">
-                                <i class="fas fa-robot text-orange-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Auto Google Ads Clicker Automation</h3>
-                            <p class="text-gray-600 mb-4">Automate ad clicks and maximize your ROI efficiently with our
-                                advanced automation solutions.</p>
-                            <a href="https://www.alfidotech.com/contact.html"
-                                class="inline-flex items-center text-orange-600 hover:text-orange-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Design & Development -->
-                    <div class="service-card design-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 service-icon">
-                                <i class="fas fa-paint-brush text-blue-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Design & Development Services</h3>
-                            <p class="text-gray-600 mb-4">Custom website and app design tailored to your business needs
-                                with modern solutions.</p>
-                            <a href="https://www.alfidotech.com/contact.html"
-                                class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- SEO Optimization -->
-                    <div class="service-card seo-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mb-4 service-icon">
-                                <i class="fas fa-search text-green-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">SEO Optimization Services</h3>
-                            <p class="text-gray-600 mb-4">Enhance your website's visibility with proven SEO techniques
-                                and strategies.</p>
-                            <a href="https://www.alfidotech.com/contact.html"
-                                class="inline-flex items-center text-green-600 hover:text-green-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Logo Maker -->
-                    <div class="service-card logo-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 service-icon">
-                                <i class="fas fa-palette text-purple-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Logo Maker Service</h3>
-                            <p class="text-gray-600 mb-4">Create professional logos tailored to your brand identity with
-                                our expert design team.</p>
-                            <a href="https://www.alfidotech.com/contact.html"
-                                class="inline-flex items-center text-purple-600 hover:text-purple-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Email Marketing -->
-                    <div class="service-card email-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mb-4 service-icon">
-                                <i class="fas fa-envelope text-red-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Email Marketing Service</h3>
-                            <p class="text-gray-600 mb-4">Engage and convert leads with effective email campaigns and
-                                marketing strategies.</p>
-                            <a href="https://www.alfidotech.com/contact.html"
-                                class="inline-flex items-center text-red-600 hover:text-red-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Social Media Marketing -->
-                    <div class="service-card social-card rounded-xl shadow-lg overflow-hidden hover-scale">
-                        <div class="p-6">
-                            <div
-                                class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mb-4 service-icon">
-                                <i class="fas fa-share-alt text-pink-600 text-xl"></i>
-                            </div>
-                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Social Media Marketing Service</h3>
-                            <p class="text-gray-600 mb-4">Grow your online presence with expert marketing strategies and
-                                social media management.</p>
-                            <a href="https://www.alfidotech.com/contact.html"
-                                class="inline-flex items-center text-pink-600 hover:text-pink-700 font-semibold">
-                                Learn More <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Us Section -->
-        <section class="py-12 md:py-20 bg-gradient-to-b  relative overflow-hidden">
-            <!-- Background decorative elements -->
-
-            <div
-                class="absolute top-[50%] left-[40%] w-72 h-72 bg-indigo-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob">
-            </div>
-            <div class=" mx-auto px-4 md:px-6 relative">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- About Content and Stats -->
-                    <div class="space-y-10">
-                        <!-- About Content -->
-                        <div class="space-y-6">
-                            <div class="inline-block">
-                                <span
-                                    class="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-semibold">About
-                                    Us</span>
-                            </div>
-                            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                                Empowering Digital Solutions with <span class="gradient-text">5+ Years</span> of
-                                Expertise
-                            </h2>
-                            <p class="text-gray-600 leading-relaxed text-base md:text-lg">
-                                In today's fast-paced digital landscape, experience fuels innovation. At Alfido Tech, we
-                                bring over five years of dedicated expertise to the forefront of digital transformation.
-                                Our tailored solutions are designed to empower businesses, entrepreneurs, and
-                                organizations,
-                                helping you achieve greater operational efficiency and accelerate growth.
-                            </p>
-                        </div>
-
-                        <!-- Skills Stats -->
-                        <div class="grid grid-cols-1 gap-6">
-                            <div class="    ">
-                                <div class="flex justify-between items-center mb-3">
-                                    <h4 class="text-lg font-semibold text-gray-900">IT Services</h4>
-                                    <span class="text-blue-600 font-bold text-xl">75%</span>
-                                </div>
-                                <div class="w-full bg-gray-100 rounded-full h-3">
-                                    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 h-3 rounded-full progress-bar"
-                                        style="width: 75%"></div>
-                                </div>
-                            </div>
-
-                            <div class="    ">
-                                <div class="flex justify-between items-center mb-3">
-                                    <h4 class="text-lg font-semibold text-gray-900">Business Consulting</h4>
-                                    <span class="text-green-600 font-bold text-xl">60%</span>
-                                </div>
-                                <div class="w-full bg-gray-100 rounded-full h-3">
-                                    <div class="bg-gradient-to-r from-green-600 to-emerald-600 h-3 rounded-full progress-bar"
-                                        style="width: 60%"></div>
-                                </div>
-                            </div>
-
-                            <div class="   ">
-                                <div class="flex justify-between items-center mb-3">
-                                    <h4 class="text-lg font-semibold text-gray-900">Design & Development</h4>
-                                    <span class="text-purple-600 font-bold text-xl">95%</span>
-                                </div>
-                                <div class="w-full bg-gray-100 rounded-full h-3">
-                                    <div class="bg-gradient-to-r from-purple-600 to-indigo-600 h-3 rounded-full progress-bar"
-                                        style="width: 95%"></div>
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <h4 class="mb-0" style="font-size:1rem;">Design &amp; Development</h4>
+                                        <span class="fw-semibold" style="color:#a855f7;">95%</span>
+                                    </div>
+                                    <div class="progress-track">
+                                        <div class="progress-bar-soft purple" style="width:95%;"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- About Image -->
-                    <div class="relative">
-                        <div class="absolute -inset-4 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
-                        <div
-                            class="relative rounded-2xl overflow-hidden shadow-2xl hover-scale transform transition-all duration-500">
-                            <img src="./assets/images/alfido Tech.webp" alt="Alfido Tech Team"
-                                title="Alfido Tech IT Services, Internships, and Business Consulting"
-                                class="w-full h-[400px] object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                            <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
-                                <h3 class="text-xl font-semibold mb-2">Our Team</h3>
-                                <p class="text-sm opacity-90">Dedicated professionals committed to your success</p>
+                    <!-- Image side -->
+                    <div class="col-lg-6 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 p-0 overflow-hidden position-relative">
+                                <div class="position-absolute w-75 h-75 rounded-circle"
+                                     style="background:rgba(59,130,246,0.12); filter:blur(40px); top:-10%; right:-10%;"></div>
+                                <img src="./assets/images/alfido Tech.webp"
+                                     alt="Alfido Tech Team"
+                                     title="Alfido Tech IT Services, Internships, and Business Consulting"
+                                     class="w-100" style="height:360px; object-fit:cover; border-radius:inherit;">
+                                <div class="position-absolute bottom-0 start-0 end-0 p-3 p-md-4"
+                                     style="background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);">
+                                    <h3 class="mb-1" style="font-size:1.1rem;">Our Team</h3>
+                                    <p class="mb-0" style="font-size:0.85rem; color:#e5e7eb;">
+                                        Dedicated professionals working behind the scenes to make
+                                        your internships, products & business experiences better.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Statistics Section -->
-        <section class="py-16  relative overflow-hidden">
-            <!-- Background decorative elements -->
-
-
-            <div class=" mx-auto px-4 md:px-6 relative">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- STATISTICS -->
+            <section class="section container">
+                <div class="row g-3 g-md-4">
                     <!-- Years Experience -->
-                    <div
-                        class="stat-card bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
-                        <div
-                            class="icon-container w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-calendar-alt text-blue-600 text-2xl"></i>
+                    <div class="col-md-6 col-lg-3 reveal">
+                        <div class="stat-card p-3 p-md-4 text-center h-100">
+                            <div class="stat-icon blue">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="stat-number mb-1">
+                                <span class="counter" data-target="5">5</span><span>+</span>
+                            </div>
+                            <p class="stat-label mb-0">Years Experience</p>
                         </div>
-                        <div class="text-4xl font-bold text-gray-900 mb-2">
-                            <span class="counter" data-target="5">0</span>
-                            <span class="text-blue-600">+</span>
-                        </div>
-                        <p class="text-gray-600 font-medium">Years Experience</p>
                     </div>
 
                     <!-- Team Members -->
-                    <div
-                        class="stat-card bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
-                        <div
-                            class="icon-container w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-users text-green-600 text-2xl"></i>
+                    <div class="col-md-6 col-lg-3 reveal">
+                        <div class="stat-card p-3 p-md-4 text-center h-100">
+                            <div class="stat-icon green">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-number mb-1">
+                                <span class="counter" data-target="19">19</span><span>+</span>
+                            </div>
+                            <p class="stat-label mb-0">Team Members</p>
                         </div>
-                        <div class="text-4xl font-bold text-gray-900 mb-2">
-                            <span class="counter" data-target="19">0</span>
-                            <span class="text-green-600">+</span>
-                        </div>
-                        <p class="text-gray-600 font-medium">Team Members</p>
                     </div>
 
                     <!-- Satisfied Clients -->
-                    <div
-                        class="stat-card bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
-                        <div
-                            class="icon-container w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-smile text-purple-600 text-2xl"></i>
+                    <div class="col-md-6 col-lg-3 reveal">
+                        <div class="stat-card p-3 p-md-4 text-center h-100">
+                            <div class="stat-icon purple">
+                                <i class="fas fa-smile"></i>
+                            </div>
+                            <div class="stat-number mb-1">
+                                <span class="counter" data-target="1901">1901</span><span>+</span>
+                            </div>
+                            <p class="stat-label mb-0">Satisfied Clients</p>
                         </div>
-                        <div class="text-4xl font-bold text-gray-900 mb-2">
-                            <span class="counter" data-target="1901">0</span>
-                            <span class="text-purple-600">+</span>
-                        </div>
-                        <p class="text-gray-600 font-medium">Satisfied Clients</p>
                     </div>
 
                     <!-- Completed Projects -->
-                    <div
-                        class="stat-card bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-gray-100 text-center">
-                        <div
-                            class="icon-container w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-project-diagram text-orange-600 text-2xl"></i>
+                    <div class="col-md-6 col-lg-3 reveal">
+                        <div class="stat-card p-3 p-md-4 text-center h-100">
+                            <div class="stat-icon orange">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="stat-number mb-1">
+                                <span class="counter" data-target="1965">1965</span><span>+</span>
+                            </div>
+                            <p class="stat-label mb-0">Completed Projects</p>
                         </div>
-                        <div class="text-4xl font-bold text-gray-900 mb-2">
-                            <span class="counter" data-target="1965">0</span>
-                            <span class="text-orange-600">+</span>
-                        </div>
-                        <p class="text-gray-600 font-medium">Completed Projects</p>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Alfido Tech Branding for Chalo Driver -->
-        <div class="mx-auto my-5 text-center">
-            <a href="https://www.chalodriver.in/" target="_blank" rel="noopener" class="no-underline">
-                <figure>
-                    <img src="https://www.chalodriver.in/img/logon.png" alt="Chalo Driver Official Logo"
-                        class="mx-auto h-[60px] object-contain" style="max-height:60px;">
-                    <figcaption class="mt-2 font-semibold text-gray-500">
-                        <span class="text-gray-900 font-bold">Chalo Driver</span> — Owned, Designed &amp; Founded by
-                        <a href="https://www.alfidotech.com" target="_blank" rel="noopener"
-                            class="font-bold text-gray-900 hover:text-blue-700 transition-colors">Alfido Tech</a>
-                    </figcaption>
-                </figure>
+            <!-- Alfido Tech Branding for Chalo Driver -->
+            <!-- <section class="section container">
+                <div class="branding-block text-center reveal">
+                    <a href="https://www.chalodriver.in/" target="_blank" rel="noopener">
+                        <figure class="m-0">
+                            <img src="https://www.chalodriver.in/img/logon.png"
+                                 alt="Chalo Driver Official Logo"
+                                 class="mx-auto d-block">
+                            <figcaption class="mt-2">
+                                <span class="fw-bold text-light">Chalo Driver</span>
+                                <span class="text-secondary"> — Owned, Designed &amp; Founded by </span>
+                                <a href="https://www.alfidotech.com" target="_blank" rel="noopener"
+                                   class="fw-bold text-decoration-none" style="color:#f97373;">
+                                    Alfido Tech
+                                </a>
+                            </figcaption>
+                        </figure>
+                    </a>
+                </div>
+            </section> -->
+
+
+            <!-- WHY ALFIDO -->
+            <section id="why-alfido" class="section container">
+                <div class="row g-3 g-md-4 align-items-stretch">
+                    <div class="col-md-6 reveal">
+                        <div class="glass h-100 p-3 p-md-4">
+                            <div class="section-eyebrow mb-1">Why Alfido Tech</div>
+                            <h2 class="section-title mb-2">
+                                Designed for students. Trusted by industry.
+                            </h2>
+                            <p class="domain-text mb-3">
+                                Alfido Tech is built by engineers for future engineers. Our
+                                programs are structured to give you resume-ready skills, not just
+                                participation certificates.
+                            </p>
+                            <ul class="check-list">
+                                <li>
+                                    <span class="check-icon">
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    Structured tasks & projects – no random assignments.
+                                </li>
+                                <li>
+                                    <span class="check-icon">
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    AICTE-aligned internships with verified certificates.
+                                </li>
+                                <li>
+                                    <span class="check-icon">
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    24/7 online support for queries & guidance.
+                                </li>
+                                <li>
+                                    <span class="check-icon">
+                                        <i class="ri-check-line"></i>
+                                    </span>
+                                    Remote-friendly: complete everything from home.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 reveal">
+                        <div class="border-gradient h-100">
+                            <div class="glass-inner h-100 contact-cta">
+                                <div>
+                                    <div class="section-eyebrow mb-1">Apply in 3 steps</div>
+                                    <h2 class="section-title mb-2">
+                                        Simple, transparent & fast onboarding.
+                                    </h2>
+                                    <ol class="check-list" style="list-style: none; padding:0;">
+                                        <li>
+                                            <span class="check-icon">
+                                                <i class="ri-number-1"></i>
+                                            </span>
+                                            Fill the online internship application form.
+                                        </li>
+                                        <li>
+                                            <span class="check-icon">
+                                                <i class="ri-number-2"></i>
+                                            </span>
+                                            Receive offer letter & tasks directly on your email.
+                                        </li>
+                                        <li>
+                                            <span class="check-icon">
+                                                <i class="ri-number-3"></i>
+                                            </span>
+                                            Complete tasks, submit projects & download certificate.
+                                        </li>
+                                    </ol>
+                                    <div class="mt-3">
+                                        <a href="https://www.alfidotech.com/registration.html" class="btn btn-gradient">
+                                            <span>Apply Now</span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="section-eyebrow mb-1">Trusted Metrics</div>
+                                    <div class="glass p-3">
+                                        <div class="d-flex justify-content-between small mb-2">
+                                            <span>Intern satisfaction</span>
+                                            <span>4.7 / 5</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar" role="progressbar"
+                                                style="width: 94%; background: linear-gradient(90deg,#22c55e,#a3e635);">
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between small mt-3 mb-2">
+                                            <span>Offer letter to certificate completion</span>
+                                            <span>95%</span>
+                                        </div>
+                                        <div class="progress" style="height: 6px;">
+                                            <div class="progress-bar" role="progressbar"
+                                                style="width: 95%; background: linear-gradient(90deg,#fecaca,#dd242a);">
+                                            </div>
+                                        </div>
+
+                                        <p class="small text-secondary mt-3 mb-0">
+                                            Data based on internal internship records and feedback of
+                                            previous cohorts.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT / FOOTER CTA -->
+            <section id="contact" class="section container">
+                <div class="glass p-3 p-md-4 reveal">
+                    <div class="contact-cta">
+                        <div>
+                            <div class="section-eyebrow mb-1">Contact</div>
+                            <h2 class="section-title mb-2">Let’s grow together.</h2>
+                            <p class="domain-text mb-3">
+                                Have questions about internships, services, or partnerships?
+                                Reach out to us – we’ll get back within 24 hours.
+                            </p>
+
+                            <div class="contact-item">
+                                <i class="ri-mail-line"></i>
+                                <span>support@alfidotech.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="ri-global-line"></i>
+                                <span>www.alfidotech.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="ri-map-pin-line"></i>
+                                <span>Hyderabad, Telangana, India</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <form action="mailto:support@alfidotech.com" method="post" enctype="text/plain">
+                                <div class="mb-2">
+                                    <label class="form-label small">Full Name</label>
+                                    <input type="text" class="form-control form-control-sm" name="name" required
+                                        placeholder="Enter your name" />
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label small">Email</label>
+                                    <input type="email" class="form-control form-control-sm" name="email" required
+                                        placeholder="you@example.com" />
+                                </div>
+                                <div class="mb-2">
+                                    <label class="form-label small">Message</label>
+                                    <textarea class="form-control form-control-sm" rows="3" name="message"
+                                        placeholder="Tell us how we can help you"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-gradient mt-1 w-100">
+                                    <span>Send Message</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- ====== FOOTER (YOUR FOOTER) ====== -->
+        <!-- ================= Footer Start ================= -->
+        <footer class="bg-black text-light pt-5 pb-3 mt-5">
+            <div class="container">
+                <div class="row gy-4">
+
+                    <!-- About -->
+                    <div class="col-md-4">
+                        <h5 class="fw-bold text-white mb-3">Alfido Tech</h5>
+                        <p class="text-light">
+                            Empowering students & professionals with certified internships, training, and skill-building
+                            opportunities.
+                        </p>
+                        <p><i class="fas fa-map-marker-alt text-primary me-2"></i> Hyderabad, Telangana</p>
+                        <p><i class="fas fa-envelope text-primary me-2"></i>
+                            <a href="mailto:info@alfidotech.com"
+                                class="text-light text-decoration-none">info@alfidotech.com</a>
+                        </p>
+                        <p><i class="fas fa-phone text-primary me-2"></i>
+                            <a href="tel:+919977465250" class="text-light text-decoration-none">+91 9977465250</a>
+                        </p>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="col-md-4">
+                        <h5 class="fw-bold text-white mb-3">Quick Links</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.alfidotech.com/privacy.html"
+                                    class="text-light text-decoration-none">
+                                    <i class="fas fa-angle-right me-2"></i> Privacy Policy</a></li>
+                            <li><a href="https://www.alfidotech.com/Terms&Conditions.html"
+                                    class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>
+                                    Terms &
+                                    Conditions</a></li>
+                            <li><a href="https://www.alfidotech.com/Return_policy.html"
+                                    class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>
+                                    Cancellation & Refund Policy</a></li>
+                            <li><a href="https://api.whatsapp.com/send?phone=919977465250"
+                                    class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>
+                                    Contact
+                                    Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="col-md-4">
+                        <h5 class="fw-bold text-white mb-3">Follow Us</h5>
+                        <div class="d-flex flex-wrap gap-2">
+
+                            <a href="https://www.linkedin.com/company/alfido-tech/" target="_blank"
+                                class="btn btn-outline-primary rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+
+                            <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank"
+                                class="btn btn-outline-success rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+
+                            <a href="https://www.whatsapp.com/channel/0029Va9oTsF1CYoKbCt5TJ41" target="_blank"
+                                class="btn btn-outline-warning rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:22px;">
+                                <i class="fas fa-bullhorn"></i>
+                            </a>
+
+                            <a href="https://t.me/+s9WykS4sL7hlN2I1" target="_blank"
+                                class="btn btn-outline-info rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+
+                            <a href="https://www.instagram.com/alfido_tech/" target="_blank"
+                                class="btn btn-outline-danger rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+
+                            <a href="https://twitter.com/alfidotech" target="_blank"
+                                class="btn btn-outline-dark rounded-circle shadow-sm"
+                                style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:22px;">
+                                <i class="fab fa-x-twitter"></i>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <hr class="border-secondary my-4">
+
+                <!-- Copyright -->
+                <div class="text-center text-muted">
+                    <p class="mb-0 text-primary">© 2025 <b>Alfido Tech</b>. All Rights Reserved.</p>
+                    <small>Made with ❤️ in India</small>
+                </div>
+            </div>
+        </footer>
+        <!-- ================= Footer End ================= -->
+
+        <!-- WhatsApp Button -->
+        <div id="whatsapp-btn">
+            <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank">
+                <img src="https://www.pngall.com/wp-content/uploads/2016/04/WhatsApp-PNG-Picture.png" alt="WhatsApp">
             </a>
         </div>
-
-
-    </main>
-    <!-- WhatsApp Chat Button -->
-    <div class="fixed bottom-4 right-4 z-50">
-        <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank" rel="noopener noreferrer"
-            aria-label="Chat on WhatsApp">
-            <div class="bg-white p-3 rounded-full shadow-lg">
-                <img src="./assets/images/whatsapp.png" alt="WhatsApp" title="whatsapp"
-                    class="w-8 h-8 lg:w-10 lg:h-10 transition-transform transform hover:scale-110">
-            </div>
-        </a>
     </div>
-    <!-- Footer section -->
-    <footer
-        class="bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-950 text-white pb-6 pt-10 mt-4 relative overflow-hidden">
-        <!-- Decorative elements -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-10 left-10 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl animate-blob"></div>
-            <div
-                class="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-purple-500/5 blur-3xl animate-blob animation-delay-2000">
-            </div>
-            <div
-                class="absolute top-1/2 left-1/2 w-64 h-64 rounded-full bg-indigo-500/5 blur-3xl animate-blob animation-delay-4000">
-            </div>
-        </div>
 
-
-        <!-- Main footer content -->
-        <div class=" mx-auto px-4 md:px-6 relative z-10">
-            <!-- Footer grid layout -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                <!-- Company Info Section -->
-                <div class="space-y-4">
-                    <div class="flex items-center gap-2">
-                        <img src="./assets/images/Logo 2.png" alt="Alfido Tech bg-gray"
-                            title="Alfido Tech  IT Services, Internships, and Business Consulting"
-                            class="h-10 rounded bg-gray-100 p-1">
-
-                    </div>
-                    <div class="w-[300px] md:w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-500"></div>
-                    <p class="text-slate-300 text-sm leading-relaxed">Alfido Tech offers digital solutions in custom
-                        software
-                        development, social media marketing, SEO, and Google Ads optimization to boost online presence
-                        and engagement.</p>
-                    <div class="flex gap-4">
-                        <a href="https://www.facebook.com/profile.php?id=61552559429791"
-                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-500 transition-all duration-300"
-                            target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="https://x.com/alfidotech"
-                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-black transition-all duration-300"
-                            target="_blank">
-                            <i class="fab fa-x"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/alfido-tech/"
-                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-blue-700 transition-all duration-300"
-                            target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://www.instagram.com/alfido_tech/"
-                            class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gradient-to-r from-purple-500 via-pink-500 to-yellow-500 transition-all duration-300"
-                            target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Products Section -->
-                <div class="space-y-4">
-                    <h3
-                        class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">
-                        Products</h3>
-                    <div class="w-[300px] md:w-16 h-1 bg-gradient-to-r from-indigo-500 to-purple-500"></div>
-                    <ul class="space-y-3">
-                        <li class="group">
-                            <a href="https://www.alfidotech.com/service.html"
-                                class="text-slate-300 group-hover:text-white transition-colors duration-200 text-sm flex items-center">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Design & Development
-                            </a>
-                        </li>
-                        <li class="group">
-                            <a href="https://www.alfidotech.com/service.html"
-                                class="text-slate-300 group-hover:text-white transition-colors duration-200 text-sm flex items-center">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Social Media Marketing
-                            </a>
-                        </li>
-                        <li class="group">
-                            <a href="https://www.alfidotech.com/service.html"
-                                class="text-slate-300 group-hover:text-white transition-colors duration-200 text-sm flex items-center">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                SEO Optimization
-                            </a>
-                        </li>
-                        <li class="group">
-                            <a href="https://www.alfidotech.com/service.html"
-                                class="text-slate-300 group-hover:text-white transition-colors duration-200 text-sm flex items-center">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Google Ads Management
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Useful Links Section -->
-                <div class="space-y-4">
-                    <h3
-                        class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-                        Useful Links</h3>
-                    <div class="w-[300px] md:w-16 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></div>
-                    <ul class="space-y-3">
-                        <li class="group">
-                            <a href="https://www.alfidotech.com/"
-                                class="text-slate-300 group-hover:text-white transition-colors duration-200 text-sm flex items-center">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Home
-                            </a>
-                        </li>
-                        <li class="group">
-                            <a href="https://www.alfidotech.com/contact.html"
-                                class="text-slate-300 group-hover:text-white transition-colors duration-200 text-sm flex items-center">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                About Us
-                            </a>
-                        </li>
-                        <li class="group">
-                            <a href="https://www.alfidotech.com/service.html"
-                                class="text-slate-300 group-hover:text-white transition-colors duration-200 text-sm flex items-center">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Services
-                            </a>
-                        </li>
-                        <li class="group">
-                            <a href="https://www.alfidotech.com/Terms&Conditions.html"
-                                class="text-slate-300 group-hover:text-white transition-colors duration-200 text-sm flex items-center">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Terms of Service
-                            </a>
-                        </li>
-                        <li class="group">
-                            <a href="https://www.alfidotech.com/privacy.html"
-                                class="text-slate-300 group-hover:text-white transition-colors duration-200 text-sm flex items-center">
-                                <i
-                                    class="fas fa-chevron-right text-xs mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></i>
-                                Privacy Policy
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Contact Section -->
-                <div class="space-y-4">
-                    <h3
-                        class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-400">
-                        Contact</h3>
-                    <div class="w-[300px] md:w-16 h-1 bg-gradient-to-r from-pink-500 to-red-500"></div>
-                    <ul class="space-y-4">
-                        <li class="flex items-start space-x-3 group">
-                            <div
-                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-blue-500 transition-all duration-300">
-                                <i class="fas fa-map-marker-alt text-pink-400 group-hover:text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-semibold text-white/90">Address</h4>
-                                <span
-                                    class="text-slate-300 text-sm group-hover:text-white transition-colors duration-300">Indore,
-                                    Madhya Pradesh</span>
-                            </div>
-                        </li>
-                        <li class="flex items-center space-x-3 group">
-                            <div
-                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-blue-500 transition-all duration-300">
-                                <i class="fas fa-envelope text-pink-400 group-hover:text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-semibold text-white/90">Email</h4>
-                                <span
-                                    class="text-slate-300 text-sm group-hover:text-white transition-colors duration-300">info@alfidotech.com</span>
-                            </div>
-                        </li>
-                        <li class="flex items-center space-x-3 group">
-                            <div
-                                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-blue-500 transition-all duration-300">
-                                <i class="fas fa-phone-alt text-pink-400 group-hover:text-white"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-sm font-semibold text-white/90">Phone</h4>
-                                <span
-                                    class="text-slate-300 text-sm group-hover:text-white transition-colors duration-300">+91
-                                    9977465250</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Copyright and legal links -->
-            <div class="pt-6 border-t border-slate-800">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-slate-400 text-sm">&copy;2023 - 2025 Alfido Tech. All rights reserved.</p>
-                    <div class="flex gap-6">
-                        <a href="#"
-                            class="text-slate-400 hover:text-white transition-colors duration-300 text-sm">Privacy
-                            Policy</a>
-                        <a href="#" class="text-slate-400 hover:text-white transition-colors duration-300 text-sm">Terms
-                            of Conditions</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Register service worker for caching
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').catch(() => { });
-            });
-        }
-    </script>
+        // Scroll reveal animation
+        const revealEls = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.2 }
+        );
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="script.jquery.js"></script>
-    <script src="typewriter.js"></script>
+        revealEls.forEach((el) => observer.observe(el));
+    </script>
+    <script>
+  // simple counter animation
+  const counters = document.querySelectorAll(".counter");
+  const speed = 400; // lower = faster
+
+  const runCounter = (entry) => {
+    const el = entry.target;
+    const target = +el.getAttribute("data-target");
+    const update = () => {
+      const current = +el.innerText.replace("+", "");
+      const inc = Math.max(1, Math.floor(target / speed));
+      if (current < target) {
+        el.innerText = current + inc;
+        requestAnimationFrame(update);
+      } else {
+        el.innerText = target;
+      }
+    };
+    update();
+  };
+
+  const counterObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          runCounter(entry);
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  counters.forEach((c) => counterObserver.observe(c));
+</script>
+
 </body>
 
 </html>
