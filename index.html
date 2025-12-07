@@ -245,6 +245,73 @@
 }
 </script>
     <!-- End JSON-LD Schema -->
+    <!-- FAQPage JSON-LD Schema -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Alfido Tech's Remote IT Internship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alfido Tech's Remote IT Internship is a structured online program where you work on real-world tasks with guided resources and basic mentor support. You can complete all tasks from your own laptop or PC at home, without visiting any physical office."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the internship completely work from home (remote)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the internship is 100% remote or work from home. All tasks, submissions, meetings and communication are done online. You only need a stable internet connection, a laptop or PC, and basic tools like VS Code, Google Drive and GitHub."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the duration of the internship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The typical duration of the internship is between 1 to 3 months, depending on the domain. Your Offer Letter will clearly mention the duration, tasks and submission deadlines. We can also help align the duration with your college requirements if needed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this a paid internship or unpaid?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The internship is primarily learning-focused and training-based, where you work on real projects and tasks. In some cases, performance-based opportunities or referrals may be provided, but by default there is no guaranteed stipend. The main focus is your skills, projects and a verified certificate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I receive an Internship Certificate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, interns who successfully complete their tasks receive an official Alfido Tech Internship Certificate. The certificate includes your name, domain, duration and completion date, and can be verified online through our Certificate Verification Portal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can apply for the internship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any student or fresher interested in IT, Computer Science, Data, Design, Marketing or related domains can apply. B.Tech, B.Sc, BCA, MCA, Diploma, MBA students and working professionals are welcome. For some domains like Data Science or Machine Learning, basic programming knowledge is helpful."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I apply for the internship?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To apply, visit the official Alfido Tech website and open the Internship Registration page, choose your domain, and fill in your details and WhatsApp number correctly. After submitting the form, you will receive updates about your Offer Letter and next steps on your registered contact details. For any issues, you can contact our team via WhatsApp or the Contact page."
+      }
+    }
+  ]
+}
+    </script>
+    <!-- End FAQPage JSON-LD Schema -->
+
 
 
 
@@ -992,116 +1059,69 @@
             background: #DD242A !important;
             color: #fff !important;
         }
+    
+        /* ==== FAQ SECTION ==== */
+        .faq-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(248, 113, 113, 0.16);
+            color: #fecaca;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
 
-        /* ==== ABOUT & STATS EXTRA STYLES ==== */
-.gradient-text {
-    background-image: linear-gradient(120deg, #ffffff, #fecaca, #dd242a);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
+        .faq-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
 
-.about-badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.25rem 0.9rem;
-    border-radius: 999px;
-    background: rgba(37, 99, 235, 0.12);
-    color: #bfdbfe;
-    font-size: 0.78rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
+        .faq-intro {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            max-width: 34rem;
+        }
 
-.about-subtext {
-    font-size: 0.94rem;
-    color: var(--text-muted);
-}
+        .faq-accordion .accordion-item {
+            background: transparent;
+            border: none;
+            margin-bottom: 0.6rem;
+        }
 
-.progress-track {
-    width: 100%;
-    height: 6px;
-    border-radius: 999px;
-    background: rgba(148, 163, 184, 0.35);
-    overflow: hidden;
-}
+        .faq-accordion .accordion-button {
+            border-radius: 999px !important;
+            background: rgba(15, 23, 42, 0.8);
+            color: #f9fafb;
+            font-size: 0.92rem;
+            font-weight: 500;
+            padding: 0.65rem 1rem;
+            border: 1px solid rgba(148, 163, 184, 0.45);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7);
+        }
 
-.progress-bar-soft {
-    height: 6px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, #2563eb, #4f46e5);
-}
+        .faq-accordion .accordion-button:not(.collapsed) {
+            background: radial-gradient(circle at 0 0, #dc2626, #020617);
+            color: #fff;
+            border-color: rgba(248, 250, 252, 0.4);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+        }
 
-.progress-bar-soft.green {
-    background: linear-gradient(90deg, #16a34a, #22c55e);
-}
+        .faq-accordion .accordion-button:focus {
+            box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.6);
+        }
 
-.progress-bar-soft.purple {
-    background: linear-gradient(90deg, #7c3aed, #4f46e5);
-}
-
-.stat-card {
-    border-radius: var(--radius-2xl);
-    background: radial-gradient(circle at top, #111827, #020617);
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.9);
-}
-
-.stat-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-inline: auto;
-    margin-bottom: 0.9rem;
-    font-size: 1.6rem;
-}
-
-.stat-icon.blue {
-    background: rgba(59, 130, 246, 0.16);
-    color: #60a5fa;
-}
-
-.stat-icon.green {
-    background: rgba(22, 163, 74, 0.16);
-    color: #4ade80;
-}
-
-.stat-icon.purple {
-    background: rgba(147, 51, 234, 0.16);
-    color: #c4b5fd;
-}
-
-.stat-icon.orange {
-    background: rgba(249, 115, 22, 0.16);
-    color: #fdba74;
-}
-
-.stat-number {
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-}
-
-.stat-label {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-}
-
-/* Chalo Driver branding block */
-.branding-block img {
-    max-height: 60px;
-    object-fit: contain;
-}
-
-.branding-block figcaption {
-    font-size: 0.9rem;
-}
-
-    </style>
+        .faq-accordion .accordion-body {
+            border-radius: 18px;
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            font-size: 0.88rem;
+            color: #e5e7eb;
+            margin-top: 0.4rem;
+        }
+</style>
 
 </head>
 
@@ -1121,7 +1141,7 @@
                     <img src="Logo 2.png" alt="Alfido Tech" style="height:48px;">
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -1883,7 +1903,7 @@
                                 From landing pages to complex dashboards – Alfido Tech builds
                                 scalable, modern digital products for your business.
                             </p>
-                            <a href="https://www.alfidotech.com/services.html" class="small text-decoration-none"
+                            <a href="https://www.alfidotech.com/service.html" class="small text-decoration-none"
                                 style="color:#fecaca;">
                                 View case studies <i class="ri-arrow-right-up-line"></i>
                             </a>
@@ -1900,7 +1920,7 @@
                                 Turn your raw data into dashboards, reports and automations that
                                 save time and drive better decisions.
                             </p>
-                            <a href="https://www.alfidotech.com/services.html" class="small text-decoration-none"
+                            <a href="https://www.alfidotech.com/service.html" class="small text-decoration-none"
                                 style="color:#fecaca;">
                                 Talk to our team <i class="ri-arrow-right-up-line"></i>
                             </a>
@@ -1908,173 +1928,6 @@
                     </div>
                 </div>
             </section>
-
-                        <!-- ABOUT US -->
-            <section id="about" class="section container">
-                <div class="row g-3 g-md-4 align-items-center">
-                    <!-- About content -->
-                    <div class="col-lg-6 reveal">
-                        <div class="glass p-3 p-md-4 h-100">
-                            <div class="about-badge mb-3">
-                                About Us
-                            </div>
-                            <h2 class="section-title mb-3">
-                                Empowering digital solutions with
-                                <span class="gradient-text">5+ years</span> of expertise.
-                            </h2>
-                            <p class="about-subtext mb-3">
-                                In today’s fast-paced digital landscape, experience fuels innovation.
-                                At <strong>Alfido Tech</strong>, we bring over five years of dedicated
-                                expertise to the forefront of digital transformation. Our tailored
-                                solutions empower students, brands and businesses to grow with
-                                better technology, better design, and better execution.
-                            </p>
-                            <p class="about-subtext mb-0">
-                                From <strong>remote internships</strong> to
-                                <strong>IT services, automation & digital products</strong>, we focus
-                                on practical outcomes – not just theory.
-                            </p>
-
-                            <!-- skill stats -->
-                            <div class="mt-4">
-                                <!-- IT Services -->
-                                <div class="mb-3">
-                                    <div class="d-flex justify-content-between align-items-center mb-1">
-                                        <h4 class="mb-0" style="font-size:1rem;">IT Services</h4>
-                                        <span class="fw-semibold" style="color:#60a5fa;">75%</span>
-                                    </div>
-                                    <div class="progress-track">
-                                        <div class="progress-bar-soft" style="width:75%;"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Business Consulting -->
-                                <div class="mb-3">
-                                    <div class="d-flex justify-content-between align-items-center mb-1">
-                                        <h4 class="mb-0" style="font-size:1rem;">Business Consulting</h4>
-                                        <span class="fw-semibold" style="color:#4ade80;">60%</span>
-                                    </div>
-                                    <div class="progress-track">
-                                        <div class="progress-bar-soft green" style="width:60%;"></div>
-                                    </div>
-                                </div>
-
-                                <!-- Design & Development -->
-                                <div>
-                                    <div class="d-flex justify-content-between align-items-center mb-1">
-                                        <h4 class="mb-0" style="font-size:1rem;">Design &amp; Development</h4>
-                                        <span class="fw-semibold" style="color:#a855f7;">95%</span>
-                                    </div>
-                                    <div class="progress-track">
-                                        <div class="progress-bar-soft purple" style="width:95%;"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Image side -->
-                    <div class="col-lg-6 reveal">
-                        <div class="border-gradient h-100">
-                            <div class="glass-inner h-100 p-0 overflow-hidden position-relative">
-                                <div class="position-absolute w-75 h-75 rounded-circle"
-                                     style="background:rgba(59,130,246,0.12); filter:blur(40px); top:-10%; right:-10%;"></div>
-                                <img src="./assets/images/alfido Tech.webp"
-                                     alt="Alfido Tech Team"
-                                     title="Alfido Tech IT Services, Internships, and Business Consulting"
-                                     class="w-100" style="height:360px; object-fit:cover; border-radius:inherit;">
-                                <div class="position-absolute bottom-0 start-0 end-0 p-3 p-md-4"
-                                     style="background:linear-gradient(to top,rgba(0,0,0,0.75),transparent);">
-                                    <h3 class="mb-1" style="font-size:1.1rem;">Our Team</h3>
-                                    <p class="mb-0" style="font-size:0.85rem; color:#e5e7eb;">
-                                        Dedicated professionals working behind the scenes to make
-                                        your internships, products & business experiences better.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- STATISTICS -->
-            <section class="section container">
-                <div class="row g-3 g-md-4">
-                    <!-- Years Experience -->
-                    <div class="col-md-6 col-lg-3 reveal">
-                        <div class="stat-card p-3 p-md-4 text-center h-100">
-                            <div class="stat-icon blue">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <div class="stat-number mb-1">
-                                <span class="counter" data-target="5">5</span><span>+</span>
-                            </div>
-                            <p class="stat-label mb-0">Years Experience</p>
-                        </div>
-                    </div>
-
-                    <!-- Team Members -->
-                    <div class="col-md-6 col-lg-3 reveal">
-                        <div class="stat-card p-3 p-md-4 text-center h-100">
-                            <div class="stat-icon green">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="stat-number mb-1">
-                                <span class="counter" data-target="19">19</span><span>+</span>
-                            </div>
-                            <p class="stat-label mb-0">Team Members</p>
-                        </div>
-                    </div>
-
-                    <!-- Satisfied Clients -->
-                    <div class="col-md-6 col-lg-3 reveal">
-                        <div class="stat-card p-3 p-md-4 text-center h-100">
-                            <div class="stat-icon purple">
-                                <i class="fas fa-smile"></i>
-                            </div>
-                            <div class="stat-number mb-1">
-                                <span class="counter" data-target="1901">1901</span><span>+</span>
-                            </div>
-                            <p class="stat-label mb-0">Satisfied Clients</p>
-                        </div>
-                    </div>
-
-                    <!-- Completed Projects -->
-                    <div class="col-md-6 col-lg-3 reveal">
-                        <div class="stat-card p-3 p-md-4 text-center h-100">
-                            <div class="stat-icon orange">
-                                <i class="fas fa-project-diagram"></i>
-                            </div>
-                            <div class="stat-number mb-1">
-                                <span class="counter" data-target="1965">1965</span><span>+</span>
-                            </div>
-                            <p class="stat-label mb-0">Completed Projects</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Alfido Tech Branding for Chalo Driver -->
-            <!-- <section class="section container">
-                <div class="branding-block text-center reveal">
-                    <a href="https://www.chalodriver.in/" target="_blank" rel="noopener">
-                        <figure class="m-0">
-                            <img src="https://www.chalodriver.in/img/logon.png"
-                                 alt="Chalo Driver Official Logo"
-                                 class="mx-auto d-block">
-                            <figcaption class="mt-2">
-                                <span class="fw-bold text-light">Chalo Driver</span>
-                                <span class="text-secondary"> — Owned, Designed &amp; Founded by </span>
-                                <a href="https://www.alfidotech.com" target="_blank" rel="noopener"
-                                   class="fw-bold text-decoration-none" style="color:#f97373;">
-                                    Alfido Tech
-                                </a>
-                            </figcaption>
-                        </figure>
-                    </a>
-                </div>
-            </section> -->
-
 
             <!-- WHY ALFIDO -->
             <section id="why-alfido" class="section container">
@@ -2240,7 +2093,194 @@
                     </div>
                 </div>
             </section>
-        </main>
+        
+        <!-- FAQ SECTION -->
+        <section id="faq" class="section container">
+            <div class="row g-3 g-md-4 align-items-start">
+                <div class="col-lg-4 reveal">
+                    <div class="glass p-3 p-md-4 h-100">
+                        <div class="faq-badge mb-2">
+                            FAQ
+                        </div>
+                        <h2 class="faq-title mb-2">
+                            Frequently asked questions.
+                        </h2>
+                        <p class="faq-intro mb-3">
+                            Here are answers to the most common questions about our remote internship:
+                            work mode, duration, eligibility, and certificates. Please read this once
+                            before applying.
+                        </p>
+                        <p class="faq-intro mb-0" style="font-size:0.84rem;">
+                            If you still have any questions, you can always reach us via the
+                            <a href="https://www.alfidotech.com/contact.html"
+                               class="text-decoration-none" style="color:#fca5a5;">
+                                Contact Us
+                            </a>
+                            page or WhatsApp.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-8 reveal">
+                    <div class="faq-accordion accordion" id="faqAccordion">
+                        <!-- Q1 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq-heading-1">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq-collapse-1"
+                                        aria-expanded="false" aria-controls="faq-collapse-1">
+                                    1. What is Alfido Tech's Remote IT Internship?
+                                </button>
+                            </h3>
+                            <div id="faq-collapse-1" class="accordion-collapse collapse"
+                                 aria-labelledby="faq-heading-1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Alfido Tech's Remote IT Internship is a structured online program
+                                    where you work on real-world tasks with guided resources and basic
+                                    mentor support. You can complete all tasks from your own laptop/PC
+                                    at home – there is no need to visit any physical office.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq-heading-2">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq-collapse-2"
+                                        aria-expanded="false" aria-controls="faq-collapse-2">
+                                    2. Is the internship completely work from home (remote)?
+                                </button>
+                            </h3>
+                            <div id="faq-collapse-2" class="accordion-collapse collapse"
+                                 aria-labelledby="faq-heading-2" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, the internship is <strong>100% remote / work from home</strong>.
+                                    All tasks, submissions, meetings and communication are done online.
+                                    You only need a stable internet connection, a laptop/PC, and basic
+                                    tools like VS Code, Google Drive and GitHub.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq-heading-3">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq-collapse-3"
+                                        aria-expanded="false" aria-controls="faq-collapse-3">
+                                    3. What is the duration of the internship?
+                                </button>
+                            </h3>
+                            <div id="faq-collapse-3" class="accordion-collapse collapse"
+                                 aria-labelledby="faq-heading-3" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    The typical duration is between <strong>1 to 3 months</strong>,
+                                    depending on the domain. Your Offer Letter clearly mentions the
+                                    duration, tasks and submission deadlines. We can also help you align
+                                    the duration with your college requirements if needed.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq-heading-4">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq-collapse-4"
+                                        aria-expanded="false" aria-controls="faq-collapse-4">
+                                    4. Is this a paid internship or unpaid?
+                                </button>
+                            </h3>
+                            <div id="faq-collapse-4" class="accordion-collapse collapse"
+                                 aria-labelledby="faq-heading-4" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    This internship is primarily <strong>learning-focused and
+                                    training-based</strong>, where you work on real projects and tasks.
+                                    In some cases, performance-based opportunities or referrals may be
+                                    provided, but by default there is <strong>no guaranteed stipend</strong>.
+                                    The main focus is your skills, projects, and a verified certificate.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq-heading-5">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq-collapse-5"
+                                        aria-expanded="false" aria-controls="faq-collapse-5">
+                                    5. Will I receive an Internship Certificate?
+                                </button>
+                            </h3>
+                            <div id="faq-collapse-5" class="accordion-collapse collapse"
+                                 aria-labelledby="faq-heading-5" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes. Interns who successfully complete their tasks receive an
+                                    <strong>official Alfido Tech Internship Certificate</strong>. The
+                                    certificate includes your name, domain, duration and completion date.
+                                    It can also be verified online using our
+                                    <strong>Certificate Verification Portal</strong>.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq-heading-6">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq-collapse-6"
+                                        aria-expanded="false" aria-controls="faq-collapse-6">
+                                    6. Who can apply? Are freshers or non-IT students eligible?
+                                </button>
+                            </h3>
+                            <div id="faq-collapse-6" class="accordion-collapse collapse"
+                                 aria-labelledby="faq-heading-6" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Any student or fresher interested in <strong>IT, Computer Science,
+                                    Data, Design, Marketing or related domains</strong> can apply.
+                                    B.Tech, B.Sc, BCA, MCA, Diploma, MBA students and working
+                                    professionals are welcome. For some domains (like Data Science or ML),
+                                    basic programming knowledge is helpful but not always mandatory.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="accordion-item">
+                            <h3 class="accordion-header" id="faq-heading-7">
+                                <button class="accordion-button collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq-collapse-7"
+                                        aria-expanded="false" aria-controls="faq-collapse-7">
+                                    7. How can I apply for the internship?
+                                </button>
+                            </h3>
+                            <div id="faq-collapse-7" class="accordion-collapse collapse"
+                                 aria-labelledby="faq-heading-7" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Applying is simple:
+                                    <ol class="mt-2 mb-1 ps-3">
+                                        <li>Visit the official Alfido Tech website and open the
+                                            <a href="https://www.alfidotech.com/registration.html"
+                                               class="text-decoration-none" style="color:#fca5a5;">
+                                                Internship Registration
+                                            </a> page.</li>
+                                        <li>Choose your <strong>domain</strong> and fill your basic
+                                            details and WhatsApp number correctly.</li>
+                                        <li>Submit the form. You will receive updates about your
+                                            Offer Letter and next steps on your registered contact details.</li>
+                                    </ol>
+                                    For any issues during registration, you can contact our support team
+                                    via WhatsApp or the Contact page.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+</main>
 
         <!-- ====== FOOTER (YOUR FOOTER) ====== -->
         <!-- ================= Footer Start ================= -->
@@ -2346,13 +2386,13 @@
         <!-- WhatsApp Button -->
         <div id="whatsapp-btn">
             <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank">
-                <img src="https://www.pngall.com/wp-content/uploads/2016/04/WhatsApp-PNG-Picture.png" alt="WhatsApp">
+                <img src="https://www.pngall.com/wp-content/uploads/2016/04/WhatsApp-PNG-Picture.png" alt="WhatsApp" loading="lazy" decoding="async">
             </a>
         </div>
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Scroll reveal animation
         const revealEls = document.querySelectorAll(".reveal");
@@ -2370,42 +2410,6 @@
 
         revealEls.forEach((el) => observer.observe(el));
     </script>
-    <script>
-  // simple counter animation
-  const counters = document.querySelectorAll(".counter");
-  const speed = 400; // lower = faster
-
-  const runCounter = (entry) => {
-    const el = entry.target;
-    const target = +el.getAttribute("data-target");
-    const update = () => {
-      const current = +el.innerText.replace("+", "");
-      const inc = Math.max(1, Math.floor(target / speed));
-      if (current < target) {
-        el.innerText = current + inc;
-        requestAnimationFrame(update);
-      } else {
-        el.innerText = target;
-      }
-    };
-    update();
-  };
-
-  const counterObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          runCounter(entry);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.4 }
-  );
-
-  counters.forEach((c) => counterObserver.observe(c));
-</script>
-
 </body>
 
 </html>
