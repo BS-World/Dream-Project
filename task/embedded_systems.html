@@ -336,6 +336,13 @@
     </div>
   </main>
 
+  <div id="footer"></div>
+<script>
+  fetch("/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
   
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
