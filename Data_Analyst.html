@@ -240,9 +240,12 @@
         </a>
     </div>
 
-    <div class="footer">
-        <p>© 2025 Alfido Tech. All rights reserved.</p>
-    </div>
+    <div id="footer"></div>
+<script>
+  fetch("/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
 </div>
 
 <div id="whatsapp-btn">
@@ -255,3 +258,4 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
