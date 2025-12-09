@@ -279,103 +279,12 @@
     </div>
 
 
-    <!-- Footer -->
-   <!-- ================= Footer Start ================= -->
-    <footer class="bg-black text-light pt-5 pb-3 mt-5">
-        <div class="container">
-            <div class="row gy-4">
-
-                <!-- About -->
-                <div class="col-md-4">
-                    <h5 class="fw-bold text-white mb-3">Alfido Tech</h5>
-                    <p class="text-light">
-                        Empowering students & professionals with certified internships, training, and skill-building
-                        opportunities.
-                    </p>
-                    <p><i class="fas fa-map-marker-alt text-primary me-2"></i> Hyderabad, Telangana</p>
-                    <p><i class="fas fa-envelope text-primary me-2"></i>
-                        <a href="mailto:info@alfidotech.com"
-                            class="text-light text-decoration-none">info@alfidotech.com</a>
-                    </p>
-                    <p><i class="fas fa-phone text-primary me-2"></i>
-                        <a href="tel:+919977465250" class="text-light text-decoration-none">+91 9977465250</a>
-                    </p>
-                </div>
-
-                <!-- Quick Links -->
-                <div class="col-md-4">
-                    <h5 class="fw-bold text-white mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.alfidotech.com/privacy.html" class="text-light text-decoration-none"><i
-                                    class="fas fa-angle-right me-2"></i> Privacy Policy</a></li>
-                        <li><a href="https://www.alfidotech.com/Terms&Conditions.html"
-                                class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i> Terms &
-                                Conditions</a></li>
-                        <li><a href="https://www.alfidotech.com/Return_policy.html"
-                                class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i>
-                                Cancellation & Refund Policy</a></li>
-                        <li><a href="https://api.whatsapp.com/send?phone=919977465250"
-                                class="text-light text-decoration-none"><i class="fas fa-angle-right me-2"></i> Contact
-                                Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Social Media -->
-                <div class="col-md-4">
-                    <h5 class="fw-bold text-white mb-3">Follow Us</h5>
-                    <div class="d-flex flex-wrap gap-2">
-
-                        <a href="https://www.linkedin.com/company/alfido-tech/" target="_blank"
-                            class="btn btn-outline-primary rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-
-                        <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank"
-                            class="btn btn-outline-success rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-
-                        <a href="https://www.whatsapp.com/channel/0029Va9oTsF1CYoKbCt5TJ41" target="_blank"
-                            class="btn btn-outline-warning rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:22px;">
-                            <i class="fas fa-bullhorn"></i>
-                        </a>
-
-                        <a href="https://t.me/+s9WykS4sL7hlN2I1" target="_blank"
-                            class="btn btn-outline-info rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-
-                        <a href="https://www.instagram.com/alfido_tech/" target="_blank"
-                            class="btn btn-outline-danger rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:24px;">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-
-                        <a href="https://twitter.com/alfidotech" target="_blank"
-                            class="btn btn-outline-dark rounded-circle shadow-sm"
-                            style="width:60px; height:60px; display:flex; align-items:center; justify-content:center; font-size:22px;">
-                            <i class="fab fa-x-twitter"></i>
-                        </a>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <hr class="border-secondary my-4">
-
-            <!-- Copyright -->
-            <div class="text-center text-muted">
-                <p class="mb-0 text-primary">© 2025 <b>Alfido Tech</b>. All Rights Reserved.</p>
-                <small>Made with ❤️ in India</small>
-            </div>
-        </div>
-    </footer>
-    <!-- ================= Footer End ================= -->
+   <div id="footer"></div>
+<script>
+  fetch("/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
 
   <!-- WhatsApp Button -->
   <div id="whatsapp-btn">
@@ -485,3 +394,4 @@
 </body>
 
 </html>
+
