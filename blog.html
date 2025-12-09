@@ -1,480 +1,317 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Alfido Tech — insights, tutorials, and product updates from Alfido Tech.">
-    <title>Alfido Tech Blog</title>
-    <!-- SEO meta tags -->
-    <meta name="keywords"
-        content="Alfido Tech, engineering blog, web development, cloud, devops, tutorials, product updates, IT, UX, career, SEO, startup, software engineering">
-    <meta name="author" content="Alfido Tech">
-    <link rel="canonical" href="https://www.alfidotech.com/blog.html">
-    <meta property="og:title" content="Alfido Tech Blog">
-    <meta property="og:description"
-        content="Engineering ideas, tutorials & product news from Alfido Tech. Deep dives, how-tos, and short reads about web development, cloud, devops, and startup life.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.alfidotech.com/blog.html">
-    <meta property="og:image" content="https://picsum.photos/1600/600?grayscale">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Alfido Tech Blog">
-    <meta name="twitter:description" content="Engineering ideas, tutorials & product news from Alfido Tech.">
-    <meta name="twitter:image" content="https://picsum.photos/1600/600?grayscale">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-HKXWNH34MG');
-    </script>
-
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfido Tech Blog – IT, AI & Technology Articles</title>
 
     <style>
-        :root {
-            --brand: #d32f2f;
-            /* red-ish Alfido accent */
-            --muted-bg: #f8f9fa;
-        }
-
         body {
-            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+            font-family: "Poppins", sans-serif;
+            background: #f4f7fb;
+            color: #0f1724
         }
 
-        /* Hero */
         .hero {
-            background: linear-gradient(180deg, rgba(211, 47, 47, .95) 0%, rgba(211, 47, 47, .85) 60%), url('https://picsum.photos/1600/600?grayscale') center/cover no-repeat;
-            color: white;
-            padding: 4.5rem 0;
+            background: linear-gradient(135deg, #100f11, #dD242a);
+            color: #fff;
+            padding: 60px 0;
+            border-radius: 0 0 20px 20px
         }
 
-        /* Glassy cards */
-        .post-card {
-            backdrop-filter: blur(6px) saturate(120%);
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.82));
-            border-radius: 16px;
-            box-shadow: 0 6px 18px rgba(15, 15, 15, 0.08);
-            overflow: hidden;
-            transition: transform .18s ease, box-shadow .18s ease;
-        }
-
-        .post-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 30px rgba(15, 15, 15, 0.12);
-        }
-
-        .post-image {
-            height: 160px;
-            object-fit: cover;
-            width: 100%;
-        }
-
-        /* Sidebar */
-        .sidebar-card {
+        .card-custom {
             border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.08)
         }
 
-        /* Footer */
-        footer {
-            background: #0f1724;
-            color: #dbeafe;
-            padding: 2.25rem 0;
+        .badge-tech {
+            background: #efe8ff;
+            color: #4b0082
         }
 
-        /* Small utilities */
-        .badge-category {
-            background: rgba(0, 0, 0, 0.06);
-            color: inherit;
-            border-radius: 8px;
-            padding: .25rem .5rem;
-            font-size: .78rem
+        .task-num {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            font-weight: 700
         }
 
-        @media (max-width:767px) {
-            .post-image {
-                height: 140px
-            }
+        /* Navbar copied exactly from your attached file */
+        .navbar {
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand img {
+            height: 45px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color .3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #dD242a !important;
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand img {
+            height: 45px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color .3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #dD242a !important;
         }
     </style>
+    <style>
+  body {
+    padding-top: 80px; /* navbar height ke hisaab se adjust kar sakte ho */
+  }
+</style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-                <span class="fs-5 fw-bold" style="color:var(--brand)">Alfido Tech</span>
-                <small class="text-muted">Blog</small>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
-                aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="Logo 2.png" alt="Alfido Tech"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navmenu">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="https://www.alfidotech.com/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#posts">Articles</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="btn btn-outline-primary ms-2" href="#subscribe">Subscribe</a></li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Internship</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship
+                                    Registration</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task
+                                    Submission</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+                            <li><a class="dropdown-item "
+                                    href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact
+                            Us</a></li>
+                    <li class="nav-item"><a class="nav-link"
+                            href="https://www.alfidotech.com/certification.html">Certification</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="https://www.alfidotech.com/blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- HERO -->
-    <header class="hero mb-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7">
-                    <h1 class="display-5 fw-bold">Engineering ideas, tutorials & product news from Alfido Tech</h1>
-                    <p class="lead my-3">Deep dives, how-tos, and short reads about web development, cloud, devops, and
-                        startup life.</p>
-
-                    <div class="d-flex gap-2">
-                        <a class="btn btn-light btn-lg" href="#posts"><i class="bi bi-journal-text me-2"></i>Read
-                            latest</a>
-                        <a class="btn btn-outline-light btn-lg" href="#subscribe"><i
-                                class="bi bi-envelope-paper me-2"></i>Subscribe</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 d-none d-lg-block text-end">
-                    <img src="https://picsum.photos/420/280?blur=2" alt="hero" class="img-fluid rounded shadow-sm">
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main class="container mb-5">
-        <div class="row g-4">
-
-            <!-- POSTS LIST -->
-            <section id="posts" class="col-lg-8">
-                <!-- Search & filters -->
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <div class="input-group w-75">
-                        <span class="input-group-text" id="search-addon"><i class="bi bi-search"></i></span>
-                        <input id="searchInput" type="search" class="form-control"
-                            placeholder="Search posts, e.g. React, Docker, CSS" aria-label="Search"
-                            aria-describedby="search-addon">
-                    </div>
-
-                    <div>
-                        <select id="sortSelect" class="form-select">
-                            <option value="new">Newest</option>
-                            <option value="old">Oldest</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div id="postsGrid" class="row g-3"></div>
-
-                <!-- Pagination -->
-                <nav class="mt-4" aria-label="Page navigation">
-                    <ul id="pagination" class="pagination justify-content-center"></ul>
-                </nav>
-            </section>
-
-            <!-- SIDEBAR -->
-            <aside class="col-lg-4">
-                <div class="card sidebar-card p-3 mb-3">
-                    <h5 class="mb-2">Categories</h5>
-                    <div id="categories" class="d-flex flex-wrap gap-2"></div>
-                </div>
-
-                <div class="card sidebar-card p-3 mb-3">
-                    <h5 class="mb-2">Recent posts</h5>
-                    <ul id="recentList" class="list-unstyled mb-0"></ul>
-                </div>
-
-                <div class="card sidebar-card p-3">
-                    <h5 class="mb-2">About Alfido Tech</h5>
-                    <p class="small text-muted">Alfido Tech builds simple tools for modern engineers. We publish
-                        tutorials, product updates, and career advice.</p>
-                    <div class="d-grid gap-2">
-                        <a class="btn btn-sm btn-outline-primary" href="#subscribe">Get updates</a>
-                        <a class="btn btn-sm btn-outline-secondary" href="#about">Learn more</a>
-                    </div>
-                </div>
-            </aside>
-
-        </div>
-    </main>
-
-    <!-- SUBSCRIBE SECTION -->
-    <section id="subscribe" class="py-5 bg-light border-top">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-8">
-                    <h4 class="mb-1">Get monthly updates from Alfido Tech</h4>
-                    <p class="small text-muted mb-0">No spam — just useful tutorials and product news.</p>
-                </div>
-                <div class="col-md-4">
-                    <form id="subscribeForm" class="d-flex gap-2">
-                        <input type="email" class="form-control" placeholder="Your email" required>
-                        <button class="btn btn-primary" type="submit">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <section class="hero text-center">
+        <h1 class="fw-bold display-4">Alfido Tech Blog</h1>
+        <p class="mt-3 fs-5">Deep insights on IT, AI, Cybersecurity, Cloud & Alfido Tech Innovations</p>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="mt-5">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-            <div class="mb-3 mb-md-0">
-                <strong>Alfido Tech</strong> — © <span id="year"></span>
-            </div>
-            <div class="d-flex gap-3">
-                <a class="text-muted" href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-                <a class="text-muted" href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                <a class="text-muted" href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
-            </div>
-        </div>
-    </footer>
+    <div class="container my-5">
 
-    <!-- Post Modal (full content) -->
-    <div class="modal fade" id="postModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 id="modalTitle" class="modal-title"></h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p id="modalMeta" class="text-muted small"></p>
-                    <img id="modalImage" src="" alt="" class="img-fluid rounded mb-3">
-                    <div id="modalBody"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+        <!-- SECTION: IT INSIGHTS -->
+        <h2 class="fw-bold mb-4 text-danger">🔥 Latest IT Industry Insights</h2>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">1. The IT Industry in 2025 – What’s Changing?</h3>
+            <p>
+                The IT sector is moving at lightning speed. With modern tools, automation, and AI-driven development,
+                companies are rewriting the rules of software development.
+            </p>
 
-    <script>
-        // ======= Sample posts data (replace with your own backend later) =======
-        const posts = [
-            { id: 34, title: "Introduction to REST APIs", summary: "Learn the basics of RESTful API design and usage.", category: "Web", author: "Alfido Team", date: "2025-09-26", image: "https://picsum.photos/600/400?random=34", content: "<p>REST APIs use HTTP methods and status codes to enable communication between clients and servers. Understand endpoints, verbs, and best practices for scalable APIs.</p>" },
-            { id: 35, title: "Effective Remote Work for Engineers", summary: "Tips to stay productive and connected while working remotely.", category: "Career", author: "Lina", date: "2025-09-27", image: "https://picsum.photos/600/400?random=35", content: "<p>Set clear goals, communicate proactively, and use the right tools to succeed in remote engineering roles.</p>" },
-            { id: 36, title: "Intro to SRE: Site Reliability Engineering", summary: "What is SRE and how does it improve uptime?", category: "DevOps", author: "Sanjay", date: "2025-09-28", image: "https://picsum.photos/600/400?random=36", content: "<p>SRE combines software engineering and IT operations to build reliable, scalable systems. Learn about SLIs, SLOs, and error budgets.</p>" },
-            { id: 37, title: "Figma for Developers: Collaboration Tips", summary: "How devs can get the most out of Figma.", category: "UX", author: "Priya", date: "2025-09-29", image: "https://picsum.photos/600/400?random=37", content: "<p>Use Figma's inspect mode, design tokens, and version history to streamline handoff and feedback between designers and developers.</p>" },
-            { id: 31, title: "IT Infrastructure Basics", summary: "Understanding the foundation of modern IT systems.", category: "IT", author: "Alfido Team", date: "2025-09-23", image: "https://picsum.photos/600/400?random=31", content: "<p>IT infrastructure includes hardware, software, networks, and facilities that support business operations. Learn about servers, storage, networking, and best practices for reliability and scalability.</p>" },
-            { id: 32, title: "Network Security Essentials for IT Teams", summary: "Protect your organization with these core security practices.", category: "IT", author: "Priya", date: "2025-09-24", image: "https://picsum.photos/600/400?random=32", content: "<p>Implement firewalls, regular patching, access controls, and employee training to secure your IT environment against threats.</p>" },
-            { id: 33, title: "IT Helpdesk Automation: Tools & Tips", summary: "Streamline support with modern ITSM solutions.", category: "IT", author: "Rohit", date: "2025-09-25", image: "https://picsum.photos/600/400?random=33", content: "<p>Automate ticketing, use chatbots, and integrate knowledge bases to improve IT support efficiency and user satisfaction.</p>" },
-            { id: 26, title: "Mastering Async/Await in JavaScript", summary: "Write cleaner asynchronous code with async/await.", category: "Web", author: "Priya", date: "2025-09-18", image: "https://picsum.photos/600/400?random=26", content: "<p>Async/await makes asynchronous code easier to read and maintain. Learn how to handle promises and errors effectively.</p>" },
-            { id: 27, title: "Cloud Cost Optimization Strategies", summary: "Reduce your cloud bill without sacrificing performance.", category: "Cloud", author: "Sanjay", date: "2025-09-19", image: "https://picsum.photos/600/400?random=27", content: "<p>Monitor usage, right-size resources, and leverage reserved instances to optimize cloud costs.</p>" },
-            { id: 28, title: "Designing for Dark Mode", summary: "Tips for building interfaces that look great in dark mode.", category: "UX", author: "Lina", date: "2025-09-17", image: "https://picsum.photos/600/400?random=28", content: "<p>Use accessible color palettes, test contrast, and respect user preferences for a seamless dark mode experience.</p>" },
-            { id: 29, title: "Continuous Deployment with GitHub Actions", summary: "Automate your deployments for faster releases.", category: "DevOps", author: "Alfido Team", date: "2025-09-21", image: "https://picsum.photos/600/400?random=29", content: "<p>Set up workflows to build, test, and deploy your code automatically using GitHub Actions.</p>" },
-            { id: 30, title: "Building Your Personal Brand as a Developer", summary: "Grow your career by sharing your work and story.", category: "Career", author: "Rohit", date: "2025-09-22", image: "https://picsum.photos/600/400?random=30", content: "<p>Blogging, open source, and networking can help you stand out and attract new opportunities.</p>" },
-            { id: 18, title: "How to Write Clean JavaScript", summary: "Best practices for readable, maintainable JS code.", category: "Web", author: "Lina", date: "2025-09-12", image: "https://picsum.photos/600/400?random=18", content: "<p>Use meaningful variable names, keep functions small, and document your code for clarity.</p>" },
-            { id: 19, title: "Scaling PostgreSQL for Startups", summary: "Tips to keep your database fast as you grow.", category: "Cloud", author: "Sanjay", date: "2025-08-28", image: "https://picsum.photos/600/400?random=19", content: "<p>Index wisely, monitor slow queries, and use connection pooling to scale PostgreSQL efficiently.</p>" },
-            { id: 20, title: "A/B Testing for Product Teams", summary: "How to run experiments that drive growth.", category: "Product", author: "Rohit", date: "2025-07-15", image: "https://picsum.photos/600/400?random=20", content: "<p>Set clear hypotheses, segment users, and measure impact with statistical rigor.</p>" },
-            { id: 21, title: "Getting Started with Docker Compose", summary: "Simplify local development with multi-container setups.", category: "DevOps", author: "Alfido Team", date: "2025-06-25", image: "https://picsum.photos/600/400?random=21", content: "<p>Docker Compose lets you define and run multi-container Docker apps easily. Learn the basics here.</p>" },
-            { id: 22, title: "Design Tokens: The Future of Theming", summary: "Centralize your design system with tokens.", category: "UX", author: "Priya", date: "2025-09-14", image: "https://picsum.photos/600/400?random=22", content: "<p>Design tokens help teams keep colors, spacing, and typography consistent across platforms.</p>" },
-            { id: 23, title: "How Alfido Tech Uses Open Source", summary: "Why we contribute and how it shapes our products.", category: "About", author: "Alfido Team", date: "2025-09-16", image: "https://picsum.photos/600/400?random=23", content: "<p>Open source accelerates innovation and builds community. We share our tools and learn from others.</p>" },
-            { id: 24, title: "Landing Your First Tech Job: Resume Tips", summary: "What hiring managers look for in junior resumes.", category: "Career", author: "Alfido HR", date: "2025-09-13", image: "https://picsum.photos/600/400?random=24", content: "<p>Highlight real projects, quantify your impact, and tailor your resume to each job description.</p>" },
-            { id: 25, title: "Web Accessibility Checklist 2025", summary: "Ensure your site is usable by everyone.", category: "UX", author: "Lina", date: "2025-09-11", image: "https://picsum.photos/600/400?random=25", content: "<p>Use semantic HTML, provide alt text, and test with screen readers for better accessibility.</p>" },
-            {
-                id: 0, title: "About Alfido Tech", summary: "Who we are, what we build, and our mission.", category: "About", author: "Alfido Team", date: "2025-09-15", image: "https://picsum.photos/600/400?random=0", content: `<p>Alfido Tech is a modern engineering company focused on building simple, powerful tools for developers and startups. Our team is passionate about web development, cloud infrastructure, and product design.</p>
-        <ul>
-            <li>We publish tutorials, guides, and product updates to help engineers grow.</li>
-            <li>Our products are used by teams worldwide to ship faster and scale reliably.</li>
-            <li>We believe in open source, continuous learning, and a collaborative tech community.</li>
-        </ul>
-        <p>Follow our blog for the latest insights, and join us as we build the future of engineering!</p>`},
-            { id: 1, title: "Deploying a Node.js API with GitHub Actions", summary: "Step-by-step guide to build CI/CD for Node APIs.", category: "DevOps", author: "Alfido Team", date: "2025-09-20", image: "https://picsum.photos/600/400?random=1", content: `<p>In this guide we'll create a GitHub Actions workflow to test and deploy a Node.js API. We'll cover secrets, environments, and versioning.</p><h3>Step 1 — Test</h3><p>Run unit tests on each push...</p>` },
-            { id: 2, title: "React 18 patterns for faster apps", summary: "Tiny patterns that improve performance in React 18.", category: "Web", author: "Priya", date: "2025-08-10", image: "https://picsum.photos/600/400?random=2", content: "<p>Use transitions, useDeferredValue, and careful lazy-loading to speed up perceived performance.</p>" },
-            { id: 3, title: "Intro to Terraform for Teams", summary: "Manage infrastructure with readable, testable code.", category: "Cloud", author: "Sanjay", date: "2024-12-15", image: "https://picsum.photos/600/400?random=3", content: "<p>Terraform helps teams keep infra reproducible...</p>" },
-            { id: 4, title: "Designing accessible forms", summary: "Make forms that everyone can use.", category: "UX", author: "Alfido Team", date: "2025-02-07", image: "https://picsum.photos/600/400?random=4", content: "<p>Labels, ARIA, and keyboard navigation are essential when designing forms.</p>" },
-            { id: 5, title: "Why small teams win at product discovery", summary: "A tactical playbook for testing new features.", category: "Product", author: "Rohit", date: "2024-11-01", image: "https://picsum.photos/600/400?random=5", content: "<p>Fast experiments, clear metrics, and strong customer interviews are key.</p>" },
-            { id: 6, title: "Kubernetes networking demystified", summary: "Understanding services, ingress, and network policies.", category: "Cloud", author: "Alfido Team", date: "2025-03-22", image: "https://picsum.photos/600/400?random=6", content: "<p>Kubernetes networking can be complex. This article breaks down the core concepts.</p>" },
-            { id: 7, title: "CSS Grid vs Flexbox: When to use which", summary: "A practical guide to modern CSS layout techniques.", category: "Web", author: "Lina", date: "2025-01-30", image: "https://picsum.photos/600/400?random=7", content: "<p>Both CSS Grid and Flexbox have their strengths. Learn when to use each.</p>" },
-            { id: 8, title: "Building a serverless backend with AWS Lambda", summary: "Create scalable APIs without managing servers.", category: "Cloud", author: "Sanjay", date: "2024-10-18", image: "https://picsum.photos/600/400?random=8", content: "<p>Serverless architectures can reduce operational overhead...</p>" },
-            { id: 9, title: "Effective code reviews: Best practices", summary: "How to give and receive feedback that improves code quality.", category: "DevOps", author: "Alfido Team", date: "2025-04-05", image: "https://picsum.photos/600/400?random=9", content: "<p>Code reviews are essential for maintaining quality. Here are some tips...</p>" },
-            { id: 10, title: "Optimizing images for the web", summary: "Techniques to reduce load times without sacrificing quality.", category: "Web", author: "Priya", date: "2025-06-12", image: "https://picsum.photos/600/400?random=10", content: "<p>Use modern formats, compression, and responsive images to speed up your site.</p>" },
-            { id: 11, title: "Monitoring with Prometheus and Grafana", summary: "Visualize and alert on your infrastructure metrics.", category: "DevOps", author: "Lina", date: "2025-05-18", image: "https://picsum.photos/600/400?random=11", content: "<p>Prometheus and Grafana make it easy to collect, store, and visualize metrics from your apps and servers.</p>" },
-            { id: 12, title: "TypeScript tips for large codebases", summary: "How to scale TypeScript projects with confidence.", category: "Web", author: "Priya", date: "2025-07-02", image: "https://picsum.photos/600/400?random=12", content: "<p>Leverage advanced types, strict configs, and modularization to keep your TypeScript codebase healthy.</p>" },
-            { id: 13, title: "Secrets management in CI/CD pipelines", summary: "Keep your credentials safe in automated workflows.", category: "DevOps", author: "Sanjay", date: "2025-03-01", image: "https://picsum.photos/600/400?random=13", content: "<p>Learn best practices for storing and accessing secrets in CI/CD using tools like GitHub Secrets and Vault.</p>" },
-            { id: 14, title: "Building multi-region apps on AWS", summary: "Strategies for high availability and low latency.", category: "Cloud", author: "Alfido Team", date: "2025-08-22", image: "https://picsum.photos/600/400?random=14", content: "<p>Deploying across multiple AWS regions can improve uptime and performance for global users.</p>" },
-            { id: 15, title: "User onboarding UX patterns", summary: "Design flows that help users succeed from day one.", category: "UX", author: "Rohit", date: "2025-01-12", image: "https://picsum.photos/600/400?random=15", content: "<p>Great onboarding increases retention. Use tooltips, progress bars, and contextual help to guide new users.</p>" },
-            {
-                id: 16,
-                title: "How to Land an Internship at Alfido Tech",
-                summary: "A guide for students and freshers to join Alfido Tech's internship program.",
-                category: "Career",
-                author: "Alfido HR",
-                date: "2025-09-01",
-                image: "https://picsum.photos/600/400?random=16",
-                content: `<p>Alfido Tech offers hands-on internships for students passionate about web, cloud, and product engineering. Here’s how to apply and stand out:</p>
             <ul>
-                <li>Build a strong GitHub profile with real projects.</li>
-                <li>Write about your learning journey (blogging helps SEO and your resume).</li>
-                <li>Showcase teamwork and communication skills.</li>
-                <li>Apply via our careers page and connect on LinkedIn.</li>
+                <li>Shift to low-code and no-code platforms</li>
+                <li>AI-assisted debugging & auto code generation</li>
+                <li>Next-gen cloud-native app ecosystems</li>
+                <li>Full-stack developers becoming “AI-augmented engineers”</li>
             </ul>
-            <p>Interns at Alfido Tech work on real products, contribute to open source, and learn from experienced mentors. Start your journey today!</p>`
-            },
-            {
-                id: 17,
-                title: "SEO Growth Tips from Alfido Tech Interns",
-                summary: "How our interns help boost organic traffic and brand visibility.",
-                category: "SEO",
-                author: "Priya",
-                date: "2025-09-10",
-                image: "https://picsum.photos/600/400?random=17",
-                content: `<p>Interns at Alfido Tech play a key role in growing our SEO. Here’s what they do:</p>
-            <ol>
-                <li>Research trending keywords in tech and engineering.</li>
-                <li>Write high-quality, original blog posts and tutorials.</li>
-                <li>Optimize on-page elements: titles, meta descriptions, and images.</li>
-                <li>Promote content on social media and developer forums.</li>
-            </ol>
-            <p>Want to learn SEO hands-on? Join our internship program and help us grow!</p>`
-            },
 
+            <p>
+                Enterprises aim for **scalable infrastructures**, **automation of workflows**, and **zero downtime
+                deployment**.
+                The demand for Cloud, Cybersecurity and AI skills is at an all-time high.
+            </p>
+        </div>
 
-        ];
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">2. DevOps & Cloud Engineering – The Future Backbone</h3>
+            <p>
+                As businesses accelerate digital transformation, DevOps and cloud engineering are becoming core IT
+                pillars.
+                Tools such as Docker, Kubernetes, Terraform, and GitHub Actions rule modern pipelines.
+            </p>
 
-        // ======= Globals =======
-        const PAGE_SIZE = 4;
-        let currentPage = 1;
-        let filtered = posts.slice();
+            <p><b>Key Concepts Every Engineer Must Know:</b></p>
+            <ul>
+                <li>Infrastructure as Code (IaC)</li>
+                <li>Scalable microservices deployment</li>
+                <li>Cloud security standards</li>
+                <li>Multi-cloud systems</li>
+            </ul>
+        </div>
 
-        // ======= Utilities =======
-        function formatDate(d) {
-            const dt = new Date(d);
-            return dt.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
-        }
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">3. Cybersecurity Threats 2025 – Awareness for All</h3>
+            <p>
+                With cyber-attacks rising globally, organizations now deploy AI-driven security systems, threat
+                intelligence,
+                and Zero-Trust architecture.
+            </p>
 
-        // ======= Render functions =======
-        function renderPosts() {
-            const start = (currentPage - 1) * PAGE_SIZE;
-            const pageItems = filtered.slice(start, start + PAGE_SIZE);
-            const grid = document.getElementById('postsGrid');
-            grid.innerHTML = '';
-            if (pageItems.length === 0) {
-                grid.innerHTML = '<div class="col-12"><div class="alert alert-info">No posts found.</div></div>';
-                renderPagination();
-                return;
-            }
+            <ul>
+                <li>AI-generated phishing attacks</li>
+                <li>Ransomware as a service</li>
+                <li>Cloud misconfiguration vulnerability</li>
+                <li>Deepfake identity hacking</li>
+            </ul>
 
-            pageItems.forEach(p => {
-                const col = document.createElement('div');
-                col.className = 'col-md-6';
-                col.innerHTML = `
-          <article class="post-card p-0 overflow-hidden h-100">
-            <img src="${p.image}" alt="${p.title}" class="post-image">
-            <div class="p-3">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <h5 class="mb-0">${p.title}</h5>
-                <small class="text-muted">${formatDate(p.date)}</small>
-              </div>
-              <p class="small text-muted mb-2">${p.summary}</p>
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <span class="badge-category">${p.category}</span>
-                  <small class="text-muted ms-2">by ${p.author}</small>
-                </div>
-                <div>
-                  <button class="btn btn-sm btn-outline-primary" onclick="openPost(${p.id})">Read</button>
-                </div>
-              </div>
-            </div>
-          </article>
-        `;
-                grid.appendChild(col);
-            });
-            renderPagination();
-        }
+            <p><b>Cyber protection formula → MFA + Zero Trust + 24×7 Monitoring</b></p>
+        </div>
 
-        function renderCategories() {
-            const cats = Array.from(new Set(posts.map(p => p.category)));
-            const el = document.getElementById('categories');
-            el.innerHTML = '';
-            const allBtn = document.createElement('button');
-            allBtn.className = 'btn btn-sm btn-outline-secondary';
-            allBtn.textContent = 'All';
-            allBtn.onclick = () => { document.getElementById('searchInput').value = ''; filtered = posts.slice(); currentPage = 1; renderPosts(); };
-            el.appendChild(allBtn);
-            cats.forEach(c => {
-                const b = document.createElement('button');
-                b.className = 'btn btn-sm btn-outline-primary';
-                b.textContent = c;
-                b.onclick = () => { filtered = posts.filter(p => p.category === c); currentPage = 1; renderPosts(); }
-                el.appendChild(b);
-            });
-        }
+        <!-- SECTION: AI & MACHINE LEARNING -->
+        <h2 class="fw-bold mt-5 mb-4 text-danger">🤖 Artificial Intelligence & Machine Learning</h2>
 
-        function renderRecent() {
-            const recent = posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 4);
-            const ul = document.getElementById('recentList'); ul.innerHTML = '';
-            recent.forEach(r => {
-                const li = document.createElement('li');
-                li.className = 'mb-2';
-                li.innerHTML = `<a href='#' onclick='openPost(${r.id});return false;' class='text-decoration-none'><strong>${r.title}</strong><br><small class='text-muted'>${formatDate(r.date)} • ${r.category}</small></a>`;
-                ul.appendChild(li);
-            });
-        }
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">1. AI Agents – Beyond ChatGPT</h3>
+            <p>
+                AI agents can perform tasks automatically – booking tickets, updating spreadsheets, writing emails,
+                generating dashboards, and even handling customer support.
+            </p>
 
-        // ======= Pagination =======
-        function renderPagination() {
-            const total = Math.ceil(filtered.length / PAGE_SIZE);
-            const ul = document.getElementById('pagination'); ul.innerHTML = '';
-            if (total <= 1) return;
-            for (let i = 1; i <= total; i++) {
-                const li = document.createElement('li');
-                li.className = 'page-item' + (i === currentPage ? ' active' : '');
-                li.innerHTML = `<a class='page-link' href='#' onclick='gotoPage(${i});return false;'>${i}</a>`;
-                ul.appendChild(li);
-            }
-        }
-        function gotoPage(i) { currentPage = i; renderPosts(); window.scrollTo({ top: 200, behavior: 'smooth' }); }
+            <p><b>AI Agent Capabilities:</b></p>
+            <ul>
+                <li>Autonomous decision-making</li>
+                <li>Long-term memory</li>
+                <li>Multi-step workflows</li>
+                <li>Tool access (APIs, Browsers, Apps)</li>
+            </ul>
 
-        // ======= Search & sort handlers =======
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            const q = e.target.value.trim().toLowerCase();
-            filtered = posts.filter(p => (p.title + p.summary + p.category + p.author).toLowerCase().includes(q));
-            currentPage = 1; renderPosts();
-        });
+            <p>
+                Businesses are using AI agents for HR, finance, marketing, and IT automation. Productivity boosts by
+                **70%+**.
+            </p>
+        </div>
 
-        document.getElementById('sortSelect').addEventListener('change', (e) => {
-            const v = e.target.value;
-            if (v === 'new') posts.sort((a, b) => new Date(b.date) - new Date(a.date));
-            else posts.sort((a, b) => new Date(a.date) - new Date(b.date));
-            filtered = posts.slice(); currentPage = 1; renderPosts(); renderRecent();
-        });
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">2. Computer Vision – Real Use Cases</h3>
+            <p>
+                From medical diagnosis to face recognition and document verification,
+                computer vision technology has transformed industries.
+            </p>
 
-        // ======= Open post modal =======
-        function openPost(id) {
-            const p = posts.find(x => x.id === id); if (!p) return;
-            document.getElementById('modalTitle').textContent = p.title;
-            document.getElementById('modalMeta').innerHTML = `${p.author} • ${formatDate(p.date)} • <span class='badge-category'>${p.category}</span>`;
-            document.getElementById('modalImage').src = p.image;
-            document.getElementById('modalBody').innerHTML = p.content;
-            const modal = new bootstrap.Modal(document.getElementById('postModal'));
-            modal.show();
-        }
+            <ul>
+                <li>AI Palm Reading (Alfido Project)</li>
+                <li>Self-driving object tracking</li>
+                <li>Retail automated checkout</li>
+                <li>AI attendance systems</li>
+            </ul>
+        </div>
 
-        // ======= Subscribe form (demo) =======
-        document.getElementById('subscribeForm').addEventListener('submit', (e) => { e.preventDefault(); alert('Thanks! — (demo) We would save this email to the newsletter list.'); e.target.reset(); });
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">3. AI in Education – Smarter Learning Systems</h3>
+            <p>
+                Personalized content, AI quizzes, auto evaluation, emotion analysis, and progress prediction allow
+                students to
+                learn faster than ever before.
+            </p>
+        </div>
 
-        // ======= Init =======
-        function init() {
-            document.getElementById('year').textContent = new Date().getFullYear();
-            renderCategories(); renderRecent(); renderPosts();
-        }
-        init();
+        <!-- SECTION: ALFIDO TECH UPDATES -->
+        <h2 class="fw-bold mt-5 mb-4 text-danger">🌐 Alfido Tech – Innovations, Internship & Products</h2>
 
-    </script>
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">1. Alfido Tech Internship Program</h3>
+            <p>
+                Alfido Tech provides high-quality internships in <b>AI, Data Science, Web Development, Cloud,
+                    Cybersecurity, Python</b>.
+                Students work on real projects, get certificates with QR verification, and receive job assistance.
+            </p>
+
+            <p><b>Internship Deliverables:</b></p>
+            <ul>
+                <li>Project Report</li>
+                <li>Live Project Deployment</li>
+                <li>GitHub Portfolio</li>
+                <li>Official Alfido Certificate (QR Verified)</li>
+            </ul>
+        </div>
+
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">2. Alfido Certificate Verification Portal</h3>
+            <p>
+                A fully automated cloud-based certificate verification platform ensures authenticity.
+                Uses **CDN caching, QR encryption & global delivery** for instant results.
+            </p>
+        </div>
+
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">3. Alfido AI Products & Research</h3>
+            <ul>
+                <li>AI Resume Analyzer</li>
+                <li>Jarves – AI Voice Command Assistant</li>
+                <li>Palm Reading AI (Deep Learning)</li>
+                <li>Google Ads Auto Click Model</li>
+                <li>Smart Certificate Generator & Validator</li>
+            </ul>
+        </div>
+
+        <div class="card p-4 mb-4 card-custom">
+            <h3 class="fw-bold">4. Alfido Web Infrastructure</h3>
+            <p>
+                Alfido runs on **GitHub + Cloudflare CDN**, ensuring:
+            </p>
+            <ul>
+                <li>100% uptime</li>
+                <li>Lightning-fast global loading</li>
+                <li>Automatic cache optimization</li>
+                <li>Secure SSL & DDoS protection</li>
+            </ul>
+        </div>
+
+        
+
+    </div>
+    <div id="footer"></div>
+<script>
+  fetch("/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
