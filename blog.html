@@ -1,97 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alfido Tech Blog – IT, AI & Technology Articles</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="HandheldFriendly" content="true">
+    <title>Alfido Tech Blog | Stay Updated with Latest Tech News & Internships</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="title" content="Alfido Tech Blog | Latest IT News, Internships & Career Opportunities">
+    <meta name="description"
+        content="Stay updated with Alfido Tech's latest blog posts on technology trends, internships, and career opportunities in IT. Explore the latest news in tech, breaking stories, and career insights.">
+    <meta name="keywords"
+        content="tech news, IT internships, Alfido Tech, technology trends, remote internships, tech career, IT career, 2024 internships, Alfido Tech blog">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Alfido Tech Blog">
+    <link rel="canonical" href="https://www.alfidotech.com/blog.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alfido Tech Blog | Latest IT News, Internships & Career Opportunities">
+    <meta property="og:description"
+        content="Stay updated with Alfido Tech's latest blog posts on technology trends, internships, and career opportunities in IT. Explore the latest news in tech, breaking stories, and career insights."> 
+    <meta property="og:url" content="https://www.alfidotech.com/blog.html">
+    <meta property="og:site_name" content="Alfido Tech Blog">
+    <meta property="og:image" content="https://www.alfidotech.com/blog.webp">
+    <meta name="twitter:card" content="summary_large_image">   
+    
+    <!-- Favicon and Manifest -->
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.alfidotech.com/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Preload Images and Sitemap -->
+    <link rel="preload" href="Logo 2.png" as="image">
+    <link rel="preload" href="Logo 2.png" as="image">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.alfidotech.com/sitemap.xml">
+    <link rel="alternate" type="application/rss+xml" title="Alfido Tech RSS Feed" href="https://www.alfidotech.com/rss.xml">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
+        rel="stylesheet" />
+
+
+    
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
+
+    
+    
+
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+        .navbar {
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand img {
+            height: 45px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color .3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #dD242a !important;
+        }
+
+        :root {
+            --brand: #dD242a;
+            /* Alfido blue */
+            --brand-dark: #8d1014;
+            /* darker shade */
+            --ink: #0f172a;
+            --muted: #64748b;
+            --bg: #f8fafc;
+        }
+
         body {
-            font-family: "Poppins", sans-serif;
-            background: #f4f7fb;
-            color: #0f1724
+            font-family: 'Poppins', sans-serif;
+            background: #f9fafc;
+            color: #1e293b;
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: white;
+        }
+
+        /* Navbar */
+        .navbar {
+            box-shadow: 0 8px 24px rgba(2, 8, 20, .06);
+        }
+
+        .btn-brand {
+            background: linear-gradient(135deg, #dD242a, #1e313d);
+            color: #fff;
+            border: none;
+        }
+
+        .btn-brand:hover {
+            background: var(--brand-dark);
+            color: #fff;
+        }
+
+        #filterInput {
+            border-radius: 24px;
+            border: 1px solid #cbd5e1;
+            padding-left: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        iframe {
+            width: 100%;
+            min-height: 320px;
+            border: none;
+            border-radius: 8px 8px 0 0;
+            background: #f1f5f9;
+        }
+
+        .card {
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            transition: transform .2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        .btn-open {
+            background: var(--brand);
+            color: #fff;
+            border: none;
+        }
+
+        .btn-open:hover {
+            background: var(--brand-dark);
+            color: #fff;
+        }
+
+        footer {
+            background: #0b1220;
+            color: #cbd5e1;
+        }
+
+        footer a {
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
         }
 
         .hero {
-            background: linear-gradient(135deg, #100f11, #dD242a);
+            background: linear-gradient(135deg, #dD242a, #1e313d);
+            padding: 120px 20px 100px;
+            text-align: center;
             color: #fff;
-            padding: 60px 0;
-            border-radius: 0 0 20px 20px
+            border-bottom-left-radius: 80px;
+            border-bottom-right-radius: 80px;
         }
 
-        .card-custom {
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(2, 6, 23, 0.08)
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
         }
 
-        .badge-tech {
-            background: #efe8ff;
-            color: #4b0082
-        }
-
-        .task-num {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .search-box {
+            max-width: 650px;
+            margin: -40px auto 40px;
             background: #fff;
-            font-weight: 700
-        }
-
-        /* Navbar copied exactly from your attached file */
-        .navbar {
-            background: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .navbar-brand img {
-            height: 45px;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            transition: color .3s;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: #dD242a !important;
-        }
-
-        .navbar {
-            background: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .navbar-brand img {
-            height: 45px;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            transition: color .3s;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: #dD242a !important;
+            padding: 15px;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
     </style>
-    <style>
-  body {
-    padding-top: 80px; /* navbar height ke hisaab se adjust kar sakte ho */
-  }
-</style>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
@@ -116,8 +227,8 @@
                                     Submission</a></li>
                             <li><a class="dropdown-item"
                                     href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
-                            <li><a class="dropdown-item "
-                                    href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
+                            <li><a class="dropdown-item " href="https://www.alfidotech.com/internProfile.html">Intern
+                                    Profile</a></li>
                             <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
                             <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
                             <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a>
@@ -128,190 +239,297 @@
                             Us</a></li>
                     <li class="nav-item"><a class="nav-link"
                             href="https://www.alfidotech.com/certification.html">Certification</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="https://www.alfidotech.com/blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="https://www.alfidotech.com/blog.html">Blog</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- HERO -->
-    <section class="hero text-center">
-        <h1 class="fw-bold display-4">Alfido Tech Blog</h1>
-        <p class="mt-3 fs-5">Deep insights on IT, AI, Cybersecurity, Cloud & Alfido Tech Innovations</p>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>📝 Alfido Tech Blog Directory</h1>
+            <p>Explore curated articles, tech content & industry insights.</p>
+        </div>
     </section>
 
-    <div class="container my-5">
+    <!-- MAIN CONTENT -->
+    <main class="container my-4">
 
-        <!-- SECTION: IT INSIGHTS -->
-        <h2 class="fw-bold mb-4 text-danger">🔥 Latest IT Industry Insights</h2>
-
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">1. The IT Industry in 2025 – What’s Changing?</h3>
-            <p>
-                The IT sector is moving at lightning speed. With modern tools, automation, and AI-driven development,
-                companies are rewriting the rules of software development.
-            </p>
-
-            <ul>
-                <li>Shift to low-code and no-code platforms</li>
-                <li>AI-assisted debugging & auto code generation</li>
-                <li>Next-gen cloud-native app ecosystems</li>
-                <li>Full-stack developers becoming “AI-augmented engineers”</li>
-            </ul>
-
-            <p>
-                Enterprises aim for **scalable infrastructures**, **automation of workflows**, and **zero downtime
-                deployment**.
-                The demand for Cloud, Cybersecurity and AI skills is at an all-time high.
-            </p>
+        <div class="search-box">
+            <div class="input-group">
+                <input id="filterInput" type="text" class="form-control"
+                    placeholder="🔍 Search blogs, keywords, domains...">
+            </div>
         </div>
 
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">2. DevOps & Cloud Engineering – The Future Backbone</h3>
-            <p>
-                As businesses accelerate digital transformation, DevOps and cloud engineering are becoming core IT
-                pillars.
-                Tools such as Docker, Kubernetes, Terraform, and GitHub Actions rule modern pipelines.
-            </p>
+        <div id="iframeContainer" class="row"></div>
 
-            <p><b>Key Concepts Every Engineer Must Know:</b></p>
-            <ul>
-                <li>Infrastructure as Code (IaC)</li>
-                <li>Scalable microservices deployment</li>
-                <li>Cloud security standards</li>
-                <li>Multi-cloud systems</li>
-            </ul>
-        </div>
+    </main>
 
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">3. Cybersecurity Threats 2025 – Awareness for All</h3>
-            <p>
-                With cyber-attacks rising globally, organizations now deploy AI-driven security systems, threat
-                intelligence,
-                and Zero-Trust architecture.
-            </p>
-
-            <ul>
-                <li>AI-generated phishing attacks</li>
-                <li>Ransomware as a service</li>
-                <li>Cloud misconfiguration vulnerability</li>
-                <li>Deepfake identity hacking</li>
-            </ul>
-
-            <p><b>Cyber protection formula → MFA + Zero Trust + 24×7 Monitoring</b></p>
-        </div>
-
-        <!-- SECTION: AI & MACHINE LEARNING -->
-        <h2 class="fw-bold mt-5 mb-4 text-danger">🤖 Artificial Intelligence & Machine Learning</h2>
-
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">1. AI Agents – Beyond ChatGPT</h3>
-            <p>
-                AI agents can perform tasks automatically – booking tickets, updating spreadsheets, writing emails,
-                generating dashboards, and even handling customer support.
-            </p>
-
-            <p><b>AI Agent Capabilities:</b></p>
-            <ul>
-                <li>Autonomous decision-making</li>
-                <li>Long-term memory</li>
-                <li>Multi-step workflows</li>
-                <li>Tool access (APIs, Browsers, Apps)</li>
-            </ul>
-
-            <p>
-                Businesses are using AI agents for HR, finance, marketing, and IT automation. Productivity boosts by
-                **70%+**.
-            </p>
-        </div>
-
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">2. Computer Vision – Real Use Cases</h3>
-            <p>
-                From medical diagnosis to face recognition and document verification,
-                computer vision technology has transformed industries.
-            </p>
-
-            <ul>
-                <li>AI Palm Reading (Alfido Project)</li>
-                <li>Self-driving object tracking</li>
-                <li>Retail automated checkout</li>
-                <li>AI attendance systems</li>
-            </ul>
-        </div>
-
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">3. AI in Education – Smarter Learning Systems</h3>
-            <p>
-                Personalized content, AI quizzes, auto evaluation, emotion analysis, and progress prediction allow
-                students to
-                learn faster than ever before.
-            </p>
-        </div>
-
-        <!-- SECTION: ALFIDO TECH UPDATES -->
-        <h2 class="fw-bold mt-5 mb-4 text-danger">🌐 Alfido Tech – Innovations, Internship & Products</h2>
-
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">1. Alfido Tech Internship Program</h3>
-            <p>
-                Alfido Tech provides high-quality internships in <b>AI, Data Science, Web Development, Cloud,
-                    Cybersecurity, Python</b>.
-                Students work on real projects, get certificates with QR verification, and receive job assistance.
-            </p>
-
-            <p><b>Internship Deliverables:</b></p>
-            <ul>
-                <li>Project Report</li>
-                <li>Live Project Deployment</li>
-                <li>GitHub Portfolio</li>
-                <li>Official Alfido Certificate (QR Verified)</li>
-            </ul>
-        </div>
-
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">2. Alfido Certificate Verification Portal</h3>
-            <p>
-                A fully automated cloud-based certificate verification platform ensures authenticity.
-                Uses **CDN caching, QR encryption & global delivery** for instant results.
-            </p>
-        </div>
-
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">3. Alfido AI Products & Research</h3>
-            <ul>
-                <li>AI Resume Analyzer</li>
-                <li>Jarves – AI Voice Command Assistant</li>
-                <li>Palm Reading AI (Deep Learning)</li>
-                <li>Google Ads Auto Click Model</li>
-                <li>Smart Certificate Generator & Validator</li>
-            </ul>
-        </div>
-
-        <div class="card p-4 mb-4 card-custom">
-            <h3 class="fw-bold">4. Alfido Web Infrastructure</h3>
-            <p>
-                Alfido runs on **GitHub + Cloudflare CDN**, ensuring:
-            </p>
-            <ul>
-                <li>100% uptime</li>
-                <li>Lightning-fast global loading</li>
-                <li>Automatic cache optimization</li>
-                <li>Secure SSL & DDoS protection</li>
-            </ul>
-        </div>
-
-        
-
-    </div>
+    <!-- FOOTER -->
     <div id="footer"></div>
-<script>
-  fetch("/footer.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("footer").innerHTML = data);
-</script>
+    <script>
+        fetch("/footer.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        // Blog URLs (same as original)
+        const urls = [
+            "https://monicaeqec941139.pointblog.net/our-alfido-program-87460557",
+            "https://aoifehilo387308.blogdigy.com/the-alfido-internship-60295125",
+            "https://zubairqnaf783850.blog5.net/87189350/our-alfido-s-internship",
+            "https://graysonppik074735.mpeblog.com/69053020/the-alfido-tech-opportunity",
+            "https://arungzem221654.blog-gold.com/52998045/our-alfido-s-opportunity",
+            "https://alleneumy937931.aboutyoublog.com/47327535/our-alfido-s-program",
+            "https://zakariadmum679331.blognody.com/44972009/alfido-s-alfido-tech-program",
+            "https://mohamadgvjk668702.activoblog.com/46677261/the-alfido-tech-opportunity",
+            "https://mediajx.com/story26002960/alfido-s-alfido-tech-opportunity",
+            "https://bookmark-dofollow.com/story26336441/the-alfido-tech-program",
+            "https://bookmark-template.com/story26637051/the-alfido-s-opportunity",
+            "https://prbookmarkingwebsites.com/story26464802/the-alfido-s-opportunity",
+            "https://socialmediainuk.com/story24804069/the-alfido-opportunity",
+            "https://dirstop.com/story26381690/our-alfido-tech-program",
+            "https://opensocialfactory.com/story23854338/alfido-s-alfido-s-opportunity",
+            "https://ztndz.com/story26393660/the-alfido-tech-internship",
+            "https://gorillasocialwork.com/story24954648/alfido-s-alfido-tech-internship",
+            "https://socialrus.com/story22719592/alfido-s-alfido-program",
+            "https://bookmarklinking.com/story9230131/the-alfido-tech-program",
+            "https://bookmarks-hit.com/story23740880/our-alfido-internship",
+            "https://mediajx.com/story26005546/our-alfido-s-program",
+            "https://bookmark-dofollow.com/story26339043/the-alfido-tech-internship",
+            "https://bookmark-template.com/story26639738/alfido-s-alfido-s-program",
+            "https://prbookmarkingwebsites.com/story26467403/the-alfido-tech-opportunity",
+            "https://socialmediainuk.com/story24806703/our-alfido-s-internship",
+            "https://dirstop.com/story26384279/our-alfido-tech-internship",
+            "https://opensocialfactory.com/story23856993/the-alfido-opportunity",
+            "https://ztndz.com/story26396259/alfido-s-alfido-program",
+            "https://gorillasocialwork.com/story24957220/the-alfido-opportunity",
+            "https://socialrus.com/story22722193/the-alfido-tech-program",
+            "https://bookmarklinking.com/story9232624/alfido-s-alfido-program",
+            "https://bookmarks-hit.com/story23743372/our-alfido-opportunity",
+            "https://nevemylr001934.pointblog.net/our-alfido-tech-program-87475980",
+            "https://lexietzbu783706.blogdigy.com/alfido-s-alfido-program-60309839",
+            "https://laylapjpk976343.blog5.net/87204103/alfido-s-alfido-program",
+            "https://ellaidcb474954.mpeblog.com/69067618/our-alfido-internship",
+            "https://marleyiylx531189.blog-gold.com/53012960/alfido-s-alfido-tech-internship",
+            "https://reganhcbg632206.aboutyoublog.com/47342059/alfido-s-alfido-s-internship",
+            "https://poppiedjmt424846.blognody.com/44986598/our-alfido-tech-program",
+            "https://joanhnlm151051.activoblog.com/46692458/the-alfido-tech-opportunity",
+            "https://lexieydvl088013.wikipublicity.com/7782294/our_alfido_internship",
+            "https://kathrynosjd858358.wikiannouncement.com/9520461/alfido_s_alfido_opportunity",
+            "https://arunlvwa562356.wikicommunications.com/6735086/alfido_s_alfido_tech_internship",
+            "https://dianeznub990263.wikicorrespondence.com/5943361/alfido_s_alfido_program",
+            "https://tedbpij717145.wikiexpression.com/5677339/our_alfido_internship",
+            "https://albiexseu856296.wikiannouncing.com/7487096/alfido_s_alfido_internship",
+            "https://kaitlynwpxi115055.wikipresses.com/6640511/our_alfido_internship",
+            "https://lilianirly139131.wikitelevisions.com/8697799/the_alfido_s_program",
+            "https://gregorygggl380206.wikiinside.com/3136063/alfido_s_alfido_program",
+            "https://dillanekqo517802.wikimidpoint.com/6370436/the_alfido_tech_opportunity",
+            "https://mediajx.com/story26011423/the-alfido-opportunity",
+            "https://bookmark-dofollow.com/story26344929/alfido-s-alfido-program",
+            "https://bookmark-template.com/story26645587/alfido-s-alfido-tech-opportunity",
+            "https://prbookmarkingwebsites.com/story26473273/our-alfido-opportunity",
+            "https://socialmediainuk.com/story24812571/our-alfido-s-opportunity",
+            "https://dirstop.com/story26390138/the-alfido-internship",
+            "https://opensocialfactory.com/story23862893/our-alfido-s-opportunity",
+            "https://ztndz.com/story26402141/alfido-s-alfido-s-internship",
+            "https://gorillasocialwork.com/story24963094/alfido-s-alfido-s-internship",
+            "https://socialrus.com/story22727963/the-alfido-s-program",
+            "https://bookmarklinking.com/story9238343/alfido-s-alfido-internship",
+            "https://bookmarks-hit.com/story23748978/our-alfido-s-program",
+            "https://keziawddm813442.pointblog.net/the-alfido-tech-program-87503325",
+            "https://estellekqlw627568.blogdigy.com/the-alfido-opportunity-60335989",
+            "https://lexiewgxs811311.blog5.net/87230278/the-alfido-s-program",
+            "https://finnianawoy177079.mpeblog.com/69080521/the-alfido-program",
+            "https://adrianaavfc276328.blog-gold.com/53039608/the-alfido-internship",
+            "https://leayhjq018150.aboutyoublog.com/47367408/the-alfido-s-internship",
+            "https://fraserjzbh402394.blognody.com/45012465/the-alfido-tech-opportunity",
+            "https://delilahdkma205406.activoblog.com/46719028/the-alfido-internship",
+            "https://zubairxtii056548.wikipublicity.com/7786301/alfido_s_alfido_s_internship",
+            "https://laratzgv112613.wikiannouncement.com/9524478/the_alfido_internship",
+            "https://fayasps055090.wikicommunications.com/6739017/our_alfido_s_internship",
+            "https://jasperpfll072111.wikicorrespondence.com/5947328/our_alfido_program",
+            "https://nanniefsho517570.wikiexpression.com/5681339/our_alfido_s_internship",
+            "https://mariahrytz326454.wikiannouncing.com/7491082/alfido_s_alfido_s_program",
+            "https://rafaelxggz402686.wikipresses.com/6644483/our_alfido_tech_program",
+            "https://theresadgjd248754.wikitelevisions.com/8701741/alfido_s_alfido_s_opportunity",
+            "https://albertadpq315606.wikiinside.com/3140046/the_alfido_tech_internship",
+            "https://alyssawgxd573786.wikimidpoint.com/6374386/the_alfido_tech_program",
+            "https://albertxxbz217306.wikipublicity.com/7786514/the_alfido_tech_opportunity",
+            "https://nicolasyikz568215.wikiannouncement.com/9524689/the_alfido_tech_program",
+            "https://lillirtks319484.wikicommunications.com/6739232/alfido_s_alfido_s_internship",
+            "https://marvinrowk909800.wikicorrespondence.com/5947541/alfido_s_alfido_s_internship",
+            "https://barrymuok896782.wikiexpression.com/5681550/our_alfido_opportunity",
+            "https://haseebagbx091338.wikiannouncing.com/7491297/the_alfido_tech_opportunity",
+            "https://zakariavkuv653607.wikipresses.com/6644693/our_alfido_program",
+            "https://nelsonzhtg285057.wikitelevisions.com/8701956/the_alfido_tech_program",
+            "https://tiffanygnjf320151.wikiinside.com/3140258/the_alfido_s_program",
+            "https://janicekttn405855.wikimidpoint.com/6374604/the_alfido_internship",
+            "https://rebeccajnuq151902.pointblog.net/the-alfido-s-internship-87511882",
+            "https://deannaizjs446262.blogdigy.com/the-alfido-tech-opportunity-60344183",
+            "https://chiaraqlfa094462.blog5.net/87238592/our-alfido-program",
+            "https://nikolasywsz282188.mpeblog.com/69088606/alfido-s-alfido-opportunity",
+            "https://nanaqnxz721870.blog-gold.com/53047933/our-alfido-opportunity",
+            "https://imogenozgs776459.aboutyoublog.com/47375428/our-alfido-s-program",
+            "https://kathrynjeyf762645.blognody.com/45020577/alfido-s-alfido-s-internship",
+            "https://idafvos172675.activoblog.com/46727375/the-alfido-s-opportunity",
+            "https://frasersezp343418.wikipublicity.com/7787641/alfido_s_alfido_opportunity",
+            "https://franceswliw280340.wikiannouncement.com/9525812/the_alfido_tech_program",
+            "https://francesiina497810.wikicommunications.com/6740352/the_alfido_opportunity",
+            "https://idamjfs070428.wikicorrespondence.com/5948678/alfido_s_alfido_tech_program",
+            "https://keithozqh893437.wikiexpression.com/5682687/the_alfido_tech_program",
+            "https://diegovcgf374768.wikiannouncing.com/7492456/the_alfido_tech_internship",
+            "https://antonnhvw335403.wikipresses.com/6645837/the_alfido_tech_program",
+            "https://brontezuuv532476.wikitelevisions.com/8703085/alfido_s_alfido_tech_internship",
+            "https://gerardgazq907963.wikiinside.com/3141383/alfido_s_alfido_s_opportunity",
+            "https://tiffanytwdr977778.wikimidpoint.com/6375760/alfido_s_alfido_program",
+            "https://rebeccafhwy383497.pointblog.net/alfido-s-alfido-internship-87525976",
+            "https://brianpbio067413.blogdigy.com/the-alfido-s-internship-60357783",
+            "https://amienjlp847715.blog5.net/87252316/the-alfido-tech-opportunity",
+            "https://rebeccarwis513077.mpeblog.com/69102145/our-alfido-s-opportunity",
+            "https://vinnyxgqk343664.blog-gold.com/53061634/alfido-s-alfido-s-internship",
+            "https://barryskhd019276.aboutyoublog.com/47388711/the-alfido-tech-internship",
+            "https://teganzphg615420.blognody.com/45034011/the-alfido-s-opportunity",
+            "https://elodiezajl915629.activoblog.com/46740957/the-alfido-s-program",
+            "https://kallumyxhh382650.pointblog.net/our-alfido-s-program-87532205",
+            "https://imogenpknb600735.blogdigy.com/our-alfido-tech-internship-60363786",
+            "https://tomasfyyn557481.blog5.net/87258280/the-alfido-tech-internship",
+            "https://aadamvcaq374501.mpeblog.com/69108080/alfido-s-alfido-tech-opportunity",
+            "https://aishawjvt023180.blog-gold.com/53067857/the-alfido-internship",
+            "https://cyrusucsf976600.aboutyoublog.com/47394723/alfido-s-alfido-program",
+            "https://estelleqdwi178682.blognody.com/45040071/alfido-s-alfido-s-program",
+            "https://mohamadruko133767.activoblog.com/46747121/the-alfido-tech-opportunity",
+            "https://inesxfhy442326.pointblog.net/our-alfido-tech-program-87537156",
+            "https://graysonvosb408546.blogdigy.com/our-alfido-program-60368427",
+            "https://ambersjad390334.blog5.net/87262982/our-alfido-tech-internship",
+            "https://poppypqxv031041.mpeblog.com/69112702/our-alfido-s-internship",
+            "https://marcnkdk104858.blog-gold.com/53072629/our-alfido-program",
+            "https://jadarvhn367659.aboutyoublog.com/47399207/our-alfido-tech-opportunity",
+            "https://sabrinazbri804848.blognody.com/45044692/our-alfido-s-program",
+            "https://adamdedl354479.activoblog.com/46751834/alfido-s-alfido-internship",
+            "https://hamzahalvs657101.pointblog.net/the-alfido-s-internship-87545985",
+            "https://katrinaczbt335017.blogdigy.com/our-alfido-tech-internship-60376778",
+            "https://asiyagrdc726671.blog5.net/87271407/our-alfido-internship",
+            "https://joanxgiw040282.mpeblog.com/69121034/the-alfido-internship",
+            "https://mathetsfj416323.blog-gold.com/53081284/alfido-s-alfido-tech-opportunity",
+            "https://roxannwjfj285267.aboutyoublog.com/47407398/the-alfido-tech-internship",
+            "https://tedisyz215695.blognody.com/45053006/the-alfido-s-internship",
+            "https://montyjzyz448641.activoblog.com/46760416/the-alfido-program",
+            "https://mediajx.com/story26035206/our-alfido-s-opportunity",
+            "https://bookmark-dofollow.com/story26368895/our-alfido-s-program",
+            "https://bookmark-template.com/story26669967/the-alfido-s-internship",
+            "https://prbookmarkingwebsites.com/story26497183/alfido-s-alfido-s-internship",
+            "https://socialmediainuk.com/story24836839/the-alfido-opportunity",
+            "https://dirstop.com/story26413879/the-alfido-s-opportunity",
+            "https://opensocialfactory.com/story23886721/our-alfido-tech-program",
+            "https://ztndz.com/story26425761/the-alfido-tech-program",
+            "https://gorillasocialwork.com/story24986864/our-alfido-s-program",
+            "https://socialrus.com/story22751670/our-alfido-s-opportunity",
+            "https://bookmarklinking.com/story9261221/our-alfido-tech-opportunity",
+            "https://bookmarks-hit.com/story23771418/our-alfido-s-opportunity",
+            "https://mediajx.com/story26037208/the-alfido-tech-program",
+            "https://bookmark-dofollow.com/story26370939/our-alfido-s-opportunity",
+            "https://bookmark-template.com/story26672002/alfido-s-alfido-s-opportunity",
+            "https://prbookmarkingwebsites.com/story26499241/our-alfido-tech-opportunity",
+            "https://socialmediainuk.com/story24838894/our-alfido-tech-internship",
+            "https://dirstop.com/story26415914/the-alfido-program",
+            "https://opensocialfactory.com/story23888790/the-alfido-s-internship",
+            "https://ztndz.com/story26427801/our-alfido-s-opportunity",
+            "https://gorillasocialwork.com/story24988885/our-alfido-internship",
+            "https://socialrus.com/story22753669/our-alfido-tech-program",
+            "https://bookmarklinking.com/story9263219/our-alfido-tech-program",
+            "https://bookmarks-hit.com/story23773362/our-alfido-tech-program",
+            "https://mediajx.com/story26044331/the-alfido-tech-program",
+            "https://bookmark-dofollow.com/story26378099/alfido-s-alfido-tech-internship",
+            "https://bookmark-template.com/story26679174/our-alfido-tech-opportunity",
+            "https://prbookmarkingwebsites.com/story26506451/alfido-s-alfido-tech-internship",
+            "https://socialmediainuk.com/story24846050/our-alfido-tech-internship",
+            "https://dirstop.com/story26423073/the-alfido-program",
+            "https://opensocialfactory.com/story23895924/alfido-s-alfido-internship",
+            "https://ztndz.com/story26434948/the-alfido-s-internship",
+            "https://gorillasocialwork.com/story24996029/the-alfido-s-program",
+            "https://socialrus.com/story22760685/alfido-s-alfido-tech-opportunity",
+            "https://bookmarklinking.com/story9270251/alfido-s-alfido-s-program",
+            "https://bookmarks-hit.com/story23780269/the-alfido-tech-opportunity",
+            "https://mediajx.com/story26050915/our-alfido-tech-opportunity",
+            "https://bookmark-dofollow.com/story26384857/our-alfido-internship",
+            "https://bookmark-template.com/story26686130/alfido-s-alfido-s-opportunity",
+            "https://prbookmarkingwebsites.com/story26513168/our-alfido-opportunity",
+            "https://socialmediainuk.com/story24852805/alfido-s-alfido-s-opportunity",
+            "https://dirstop.com/story26429688/alfido-s-alfido-s-opportunity",
+            "https://opensocialfactory.com/story23902556/the-alfido-program",
+            "https://ztndz.com/story26441490/our-alfido-tech-program",
+            "https://gorillasocialwork.com/story25002624/the-alfido-internship",
+            "https://socialrus.com/story22767191/our-alfido-opportunity",
+            "https://bookmarklinking.com/story9276616/our-alfido-program",
+            "https://bookmarks-hit.com/story23786273/our-alfido-s-internship",
+            "https://mediajx.com/story26052859/our-alfido-internship",
+            "https://bookmark-dofollow.com/story26386812/the-alfido-internship",
+            "https://bookmark-template.com/story26688049/alfido-s-alfido-s-internship",
+            "https://prbookmarkingwebsites.com/story26515108/the-alfido-tech-internship",
+            "https://socialmediainuk.com/story24854745/the-alfido-s-program",
+            "https://dirstop.com/story26431606/the-alfido-s-internship",
+            "https://opensocialfactory.com/story23904516/the-alfido-s-opportunity",
+            "https://ztndz.com/story26443413/our-alfido-tech-program",
+            "https://gorillasocialwork.com/story25004538/our-alfido-program",
+            "https://socialrus.com/story22769078/alfido-s-alfido-tech-program",
+            "https://bookmarklinking.com/story9278467/our-alfido-s-internship",
+            "https://bookmarks-hit.com/story23788123/the-alfido-s-internship",
+            "https://mediajx.com/story26053497/the-alfido-tech-opportunity",
+            "https://bookmark-dofollow.com/story26387451/alfido-s-alfido-s-opportunity",
+            "https://bookmark-template.com/story26688693/the-alfido-s-program",
+            "https://prbookmarkingwebsites.com/story26515759/alfido-s-alfido-internship",
+            "https://socialmediainuk.com/story24855392/alfido-s-alfido-opportunity",
+            "https://dirstop.com/story26432275/alfido-s-alfido-internship",
+            "https://opensocialfactory.com/story23905178/alfido-s-alfido-s-opportunity",
+            "https://ztndz.com/story26444061/alfido-s-alfido-s-internship",
+            "https://gorillasocialwork.com/story25005190/alfido-s-alfido-internship",
+            "https://socialrus.com/story22769716/our-alfido-program",
+            "https://bookmarklinking.com/story9279093/the-alfido-internship",
+            "https://bookmarks-hit.com/story23788737/our-alfido-tech-program",
+        ];
+
+        const container = document.getElementById("iframeContainer");
+
+        function renderCards(filter = "") {
+            container.innerHTML = "";
+            const filtered = urls.filter(u => u.toLowerCase().includes(filter.toLowerCase()));
+
+            filtered.forEach(url => {
+                const hostname = new URL(url).hostname;
+
+                const col = document.createElement("div");
+                col.className = "col-lg-4 col-md-6 col-12 mb-4";
+
+                col.innerHTML = `
+        <div class="card h-100 shadow-sm">
+          <iframe src="${url}" loading="lazy"></iframe>
+          <div class="card-body">
+            <h6 class="card-title">${hostname}</h6>
+            <a href="${url}" target="_blank" class="btn btn-open btn-sm">Open</a>
+          </div>
+        </div>`;
+
+                container.appendChild(col);
+            });
+        }
+
+        renderCards();
+
+        document.getElementById("filterInput").addEventListener("input", e => {
+            renderCards(e.target.value);
+        });
+    </script>
+
 </body>
 
 </html>
