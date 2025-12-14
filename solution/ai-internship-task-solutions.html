@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Artificial Intelligence Task Solutions | Alfido Tech Internship</title>
+
+  <meta name="description"
+    content="Complete Artificial Intelligence internship task solutions by Alfido Tech. Includes Machine Learning, Deep Learning, Model Deployment and Responsible AI with clear explanation and Python code.">
+  <meta name="keywords"
+    content="AI Internship, Artificial Intelligence Tasks, Machine Learning Project, Deep Learning, Model Deployment, Responsible AI, Alfido Tech">
+  <meta name="robots" content="index, follow">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f4f7fb;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #100f11, #dD242a);
+      color: #fff;
+      padding: 55px 20px;
+      text-align: center;
+    }
+
+    .card {
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+    }
+
+    pre {
+      background: #0f172a;
+      color: #e5e7eb;
+      padding: 18px;
+      border-radius: 12px;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+
+    .print-hide {
+      display: none;
+    }
+
+    @media print {
+      .no-print {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header"></div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Artificial Intelligence – Complete Task Solutions</h1>
+    <p>Alfido Tech Internship | Step-by-Step Practical Implementation</p>
+  </section>
+
+  <div class="container my-5">
+
+    <!-- ================= TASK 1 ================= -->
+    <div class="card p-4 mb-4">
+      <h2>✅ Task 1: Machine Learning Classification</h2>
+
+      <h5>🎯 Objective</h5>
+      <p>
+        To create a supervised Machine Learning model that learns from existing data and predicts
+        output labels accurately.
+      </p>
+
+      <h5>💡 Why This Task Is Important</h5>
+      <p>
+        This task checks your understanding of basic Machine Learning workflow used in real companies:
+        data cleaning, training, testing and evaluation.
+      </p>
+
+      <h5>🔍 What the Evaluator Looks For</h5>
+      <ul>
+        <li>Correct data preprocessing</li>
+        <li>Proper train-test split</li>
+        <li>Correct use of evaluation metrics</li>
+      </ul>
+
+      <h5>🐍 Python Code</h5>
+      <pre>
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+
+# Load dataset
+data = pd.read_csv("data.csv")
+
+# Handle missing values
+data.fillna(data.mean(), inplace=True)
+
+# Separate features and target
+X = data.drop("label", axis=1)
+y = data["label"]
+
+# Feature scaling
+scaler = StandardScaler()
+X = scaler.fit_transform(X)
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+# Train model
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+# Prediction
+y_pred = model.predict(X_test)
+
+# Evaluation
+print("Accuracy:", accuracy_score(y_test, y_pred))
+print(classification_report(y_test, y_pred))
+print(confusion_matrix(y_test, y_pred))
+</pre>
+
+      <p><b>✅ Outcome:</b> The model predicts labels accurately and follows standard ML practices.</p>
+    </div>
+
+    <!-- ================= TASK 2 ================= -->
+    <div class="card p-4 mb-4">
+      <h2>✅ Task 2: Deep Learning Neural Network</h2>
+
+      <h5>🎯 Objective</h5>
+      <p>
+        To build a Deep Learning model capable of understanding complex data patterns.
+      </p>
+
+      <h5>💡 Why Deep Learning?</h5>
+      <p>
+        Deep Learning is used when traditional ML models are not enough to capture complex
+        relationships in data.
+      </p>
+
+      <h5>🐍 TensorFlow Code</h5>
+      <pre>
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.callbacks import EarlyStopping
+
+model = Sequential([
+    Dense(128, activation='relu', input_shape=(X_train.shape[1],)),
+    Dropout(0.3),
+    Dense(64, activation='relu'),
+    Dropout(0.2),
+    Dense(1, activation='sigmoid')
+])
+
+model.compile(
+    optimizer='adam',
+    loss='binary_crossentropy',
+    metrics=['accuracy']
+)
+
+early_stop = EarlyStopping(monitor='val_loss', patience=3)
+
+model.fit(
+    X_train, y_train,
+    validation_split=0.2,
+    epochs=20,
+    batch_size=32,
+    callbacks=[early_stop]
+)
+
+loss, accuracy = model.evaluate(X_test, y_test)
+print("Test Accuracy:", accuracy)
+</pre>
+
+      <p><b>✅ Outcome:</b> Neural network improves prediction accuracy over traditional ML.</p>
+    </div>
+
+    <!-- ================= TASK 3 ================= -->
+    <div class="card p-4 mb-4">
+      <h2>✅ Task 3: AI Model Deployment (Flask API)</h2>
+
+      <h5>🎯 Objective</h5>
+      <p>
+        To deploy the trained AI model so it can be used by websites or applications.
+      </p>
+
+      <h5>🌐 Industry Relevance</h5>
+      <p>
+        Deployment is mandatory in real projects — models must work outside notebooks.
+      </p>
+
+      <h5>🐍 Flask API Code</h5>
+      <pre>
+from flask import Flask, request, jsonify
+import pickle
+import numpy as np
+
+app = Flask(__name__)
+
+with open("model.pkl", "rb") as file:
+    model = pickle.load(file)
+
+@app.route("/")
+def home():
+    return "AI Model API Running"
+
+@app.route("/predict", methods=["POST"])
+def predict():
+    data = request.json["features"]
+    data = np.array(data).reshape(1, -1)
+    prediction = model.predict(data)
+    return jsonify({"prediction": int(prediction[0])})
+
+if __name__ == "__main__":
+    app.run(debug=True)
+</pre>
+
+      <p><b>✅ Outcome:</b> AI model successfully exposed as REST API.</p>
+    </div>
+
+    <!-- ================= TASK 4 ================= -->
+    <div class="card p-4 mb-4">
+      <h2>✅ Task 4: Responsible AI & Explainability</h2>
+
+      <h5>🎯 Objective</h5>
+      <p>
+        To explain AI decisions clearly and ensure transparency.
+      </p>
+
+      <h5>🐍 SHAP Code</h5>
+      <pre>
+import shap
+
+explainer = shap.Explainer(model, X_train)
+shap_values = explainer(X_test)
+
+shap.summary_plot(shap_values, X_test)
+</pre>
+
+      <p><b>✅ Outcome:</b> Model decisions are transparent and trustworthy.</p>
+    </div>
+
+    <!-- ================= PDF DOWNLOAD ================= -->
+    <div class="card p-4 text-center no-print">
+      <h3>📄 Download Internship Report</h3>
+      <p>Click below to save this complete solution as a PDF file.</p>
+      <button onclick="window.print()" class="btn btn-danger btn-lg">
+        ⬇️ Download PDF
+      </button>
+    </div>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loadHTML = (url, id) =>
+        fetch(url).then(r => r.text())
+          .then(h => document.getElementById(id).innerHTML = h);
+
+      loadHTML("/header.html", "header");
+      loadHTML("/footer.html", "footer");
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
