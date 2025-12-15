@@ -9,8 +9,7 @@
   <title>LOR Generator | Alfido Tech</title>
 
   <!-- Fonts & CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -25,10 +24,10 @@
 
   <!-- Meta Information -->
   <meta name="keywords"
-        content="Internship, Alfido Tech, Letter of Recommendation, LOR, Remote IT Internship, Internship Certificate, Recommendation Letter">
+    content="Internship, Alfido Tech, Letter of Recommendation, LOR, Remote IT Internship, Internship Certificate, Recommendation Letter">
   <meta name="author" content="Alfido Tech">
   <meta name="description"
-        content="Generate a professional Letter of Recommendation (LOR) for interns at Alfido Tech with domain-wise details.">
+    content="Generate a professional Letter of Recommendation (LOR) for interns at Alfido Tech with domain-wise details.">
 
   <!-- Favicon and Manifest -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
@@ -460,15 +459,75 @@
       font-weight: 600;
       font-size: 14px;
     }
+
+    .navbar {
+      background: #fff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .navbar-brand img {
+      height: 45px;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      transition: color .3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: #dD242a !important;
+    }
   </style>
 </head>
 
 <body>
 
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="Logo 2.png" alt="Alfido Tech"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Internship</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship
+                  Registration</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a>
+              </li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task
+                  Submission</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/internProfile.html">Intern
+                  Profile</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
+              <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact
+              Us</a></li>
+          <li class="nav-item"><a class="nav-link"
+              href="https://www.alfidotech.com/certification.html">Certification</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+<br><br><br>
+
   <!-- Sticky Top Download Bar -->
   <div class="top-download-bar text-center">
     <button id="topDownloadBtn" class="btn btn-sm btn-light text-primary fw-semibold px-4" style="display:none;"
-            onclick="downloadPDF()">
+      onclick="downloadPDF()">
       <i class="fa-solid fa-download me-1"></i> Download LOR
     </button>
   </div>
@@ -521,14 +580,14 @@
 
         <div class="social-row">
           <a href="https://www.linkedin.com/company/alfido-tech/" target="_blank" class="bg-primary text-white"
-             title="LinkedIn">
+            title="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
           <a href="https://www.alfidotech.com/" target="_blank" class="bg-success text-white" title="Website">
             <i class="fa-solid fa-home"></i>
           </a>
           <a href="https://www.whatsapp.com/channel/0029Va9oTsF1CYoKbCt5TJ41" target="_blank"
-             class="bg-warning text-dark" title="WhatsApp Channel">
+            class="bg-warning text-dark" title="WhatsApp Channel">
             <i class="fas fa-bullhorn"></i>
           </a>
           <a href="https://t.me/+s9WykS4sL7hlN2I1" target="_blank" class="bg-info text-white" title="Telegram">
@@ -609,7 +668,7 @@
           <div class="mb-2">
             <label for="candidateIdInput" class="form-label">Candidate ID (C.ID)</label>
             <input type="text" id="candidateIdInput" class="form-control"
-                   placeholder="Enter Candidate ID (as in records)" required>
+              placeholder="Enter Candidate ID (as in records)" required>
           </div>
 
           <div class="mb-3">
@@ -628,8 +687,7 @@
           </button>
         </form>
 
-        <button id="downloadButton" class="btn btn-success w-100 mt-2" style="display:none;"
-                onclick="downloadPDF()">
+        <button id="downloadButton" class="btn btn-success w-100 mt-2" style="display:none;" onclick="downloadPDF()">
           <i class="fa-solid fa-download me-1"></i> Download LOR (PDF)
         </button>
       </div>
@@ -679,16 +737,19 @@
                   <b>task-based assignments and real-world projects</b> relevant to the chosen domain. These tasks were
                   designed to simulate practical industry scenarios, and <span id="heSheText3">the intern</span>
                   consistently demonstrated the ability to understand requirements, deliver quality work, and adhere to
-                  timelines in a remote working environment.</p>
+                  timelines in a remote working environment.
+                </p>
 
                 <p><span id="heSheText4">He/She</span> exhibited
                   <span id="performanceLine"></span>
                   throughout the internship. <span id="heSheText5">The intern</span> showed a proactive approach to
                   learning, regularly sought clarification when needed, and effectively incorporated feedback to improve
-                  the quality of deliverables.</p>
+                  the quality of deliverables.
+                </p>
 
                 <p>In addition to technical growth, <span id="heSheText6">he/she</span> displayed strong professional
-                  values such as discipline, responsibility, and clear communication. <span id="heSheText7">He/She</span>
+                  values such as discipline, responsibility, and clear communication. <span
+                    id="heSheText7">He/She</span>
                   coordinated well with mentors and peers, maintained a positive attitude, and contributed meaningfully
                   to the ongoing activities of the internship program.</p>
 
@@ -697,15 +758,18 @@
                   <b><span id="displayDomain2"></span></b> and is well-prepared to take up future roles in the
                   technology and professional ecosystem. We believe that <span id="heSheText10">he/she</span> will be an
                   asset to any organization or institution that may offer <span id="heSheText11">him/her</span> an
-                  opportunity.</p>
+                  opportunity.
+                </p>
 
                 <p>This Letter of Recommendation is being issued upon the request of the candidate to support
-                  <span id="heSheText12">his/her</span> future academic, internship, or job applications.</p>
+                  <span id="heSheText12">his/her</span> future academic, internship, or job applications.
+                </p>
 
                 <p>If you require any further information or wish to verify the details of this internship, please feel
                   free to contact us at <b>internship@alfidotech.com</b>.</p>
 
-                <p><b>We extend our best wishes to <span id="displayName2"></span> for a successful career ahead.</b></p>
+                <p><b>We extend our best wishes to <span id="displayName2"></span> for a successful career ahead.</b>
+                </p>
               </div>
 
               <div class="letter-footer-text">
@@ -743,7 +807,15 @@
     </div>
   </div>
 
+  <div id="footer"></div>
+  <script>
+    fetch("/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
+
   <!-- Scripts -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
   <script>
     function generateLOR() {
@@ -839,5 +911,8 @@
     }
   </script>
 
+
+
 </body>
+
 </html>
