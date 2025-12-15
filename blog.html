@@ -20,15 +20,18 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Alfido Tech Blog | Latest IT News, Internships & Career Opportunities">
     <meta property="og:description"
-        content="Stay updated with Alfido Tech's latest blog posts on technology trends, internships, and career opportunities in IT. Explore the latest news in tech, breaking stories, and career insights."> 
+        content="Stay updated with Alfido Tech's latest blog posts on technology trends, internships, and career opportunities in IT. Explore the latest news in tech, breaking stories, and career insights.">
     <meta property="og:url" content="https://www.alfidotech.com/blog.html">
     <meta property="og:site_name" content="Alfido Tech Blog">
     <meta property="og:image" content="https://www.alfidotech.com/blog.webp">
-    <meta name="twitter:card" content="summary_large_image">   
-    
+    <meta name="twitter:card" content="summary_large_image">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Favicon and Manifest -->
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.alfidotech.com/">
+
+
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
@@ -41,7 +44,8 @@
     <link rel="preload" href="Logo 2.png" as="image">
     <link rel="preload" href="Logo 2.png" as="image">
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.alfidotech.com/sitemap.xml">
-    <link rel="alternate" type="application/rss+xml" title="Alfido Tech RSS Feed" href="https://www.alfidotech.com/rss.xml">
+    <link rel="alternate" type="application/rss+xml" title="Alfido Tech RSS Feed"
+        href="https://www.alfidotech.com/rss.xml">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -50,7 +54,7 @@
         rel="stylesheet" />
 
 
-    
+
 
     <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
@@ -61,8 +65,8 @@
         gtag('config', 'G-HKXWNH34MG');
     </script>
 
-    
-    
+
+
 
 
     <!-- Bootstrap 5 -->
@@ -132,13 +136,7 @@
             font-size: 1.05rem;
         }
 
-        iframe {
-            width: 100%;
-            min-height: 320px;
-            border: none;
-            border-radius: 8px 8px 0 0;
-            background: #f1f5f9;
-        }
+
 
         .card {
             border-radius: 10px;
@@ -495,29 +493,40 @@
             "https://gorillasocialwork.com/story25005190/alfido-s-alfido-internship",
             "https://socialrus.com/story22769716/our-alfido-program",
             "https://bookmarklinking.com/story9279093/the-alfido-internship",
-            "https://bookmarks-hit.com/story23788737/our-alfido-tech-program",
+            "https://bookmarks-hit.com/story23788737/our-alfido-tech-program"
         ];
 
         const container = document.getElementById("iframeContainer");
 
         function renderCards(filter = "") {
             container.innerHTML = "";
-            const filtered = urls.filter(u => u.toLowerCase().includes(filter.toLowerCase()));
+
+            const filtered = urls
+                .filter(u => u.toLowerCase().includes(filter.toLowerCase()))
+                .slice(0, 60); // ✅ limit to 60 links per load
 
             filtered.forEach(url => {
-                const hostname = new URL(url).hostname;
+                const hostname = new URL(url).hostname.replace("www.", "");
 
                 const col = document.createElement("div");
                 col.className = "col-lg-4 col-md-6 col-12 mb-4";
 
                 col.innerHTML = `
-        <div class="card h-100 shadow-sm">
-          <iframe src="${url}" loading="lazy"></iframe>
-          <div class="card-body">
-            <h6 class="card-title">${hostname}</h6>
-            <a href="${url}" target="_blank" class="btn btn-open btn-sm">Open</a>
+          <div class="card h-100 shadow-sm">
+            <div class="card-body d-flex flex-column">
+              <h6 class="card-title text-truncate">${hostname}</h6>
+              <p class="text-muted small flex-grow-1">
+                External article related to Alfido Tech internships & programs.
+              </p>
+              <a href="${url}"
+                 target="_blank"
+                 rel="nofollow noopener"
+                 class="btn btn-open btn-sm mt-auto">
+                 Read Article
+              </a>
+            </div>
           </div>
-        </div>`;
+        `;
 
                 container.appendChild(col);
             });
