@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Internship Report Card Generator | Alfido Tech</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Google Tag Manager End -->
     <style>
         body {
@@ -83,7 +83,7 @@
 </head>
 
 <body>
-    
+
     <div class="container card-container">
         <div class="report-card">
             <div class="d-flex justify-content-between align-items-center mb-3">
@@ -111,29 +111,30 @@
                         <option value="" disabled selected>Select domain...</option>
                         <!-- domain list inspired from your uploaded LOR file -->
                         <option>Frontend Developer</option>
-<option>React.JS</option>
-<option>MERN Stack Developer</option>
-<option>Python Developer</option>
-<option>C++/C Programming</option>
-<option>Java Developer</option>
-<option>.NET Developer</option>
+                        <option>React.JS</option>
+                        <option>MERN Stack Developer</option>
+                        <option>Python Developer</option>
+                        <option>C++/C Programming</option>
+                        <option>Java Developer</option>
+                        <option>.NET Developer</option>
 
-<option>Data Analytics</option>
-<option>Business Analytics</option>
-<option>Data Science</option>
-<option>Artificial Intelligence</option>
-<option>Machine Learning</option>
+                        <option>Data Analytics</option>
+                        <option>Business Analytics</option>
+                        <option>Data Science</option>
+                        <option>Artificial Intelligence</option>
+                        <option>Machine Learning</option>
 
-<option>Digital Marketing</option>
-<option>Cybersecurity</option>
-<option>UX/UI Design</option>
-<option>Android Developer</option>
+                        <option>Digital Marketing</option>
+                        <option>Cybersecurity</option>
+                        <option>UX/UI Design</option>
+                        <option>Android Developer</option>
+                        <option>Web Development</option>
 
-<option>Very Large Scale Integration (VLSI)</option>
-<option>Embedded Systems</option>
-<option>Cloud Computing</option>
-<option>DevOps</option>
-                        
+                        <option>Very Large Scale Integration (VLSI)</option>
+                        <option>Embedded Systems</option>
+                        <option>Cloud Computing</option>
+                        <option>DevOps</option>
+
                         <option>Human Resource(HR)</option>
                     </select>
                 </div>
@@ -183,81 +184,328 @@
          * You can edit these arrays to match your actual weekly syllabus
          **********************/
         const topicsByDomain = {
-            "Frontend Developer": ["Introduction", "HTML Basics", "CSS Basics", "Bootstrap", "Responsive Design", "JavaScript Basics", "DOM Manipulation", "Forms & Validation", "Version Control (Git)", "API Integration", "Performance Optimization", "Projects & Review"],
-            "UX/UI Design": ["Intro to UX", "Design Principles", "Wireframing", "Figma Basics", "Prototyping", "User Testing", "Visual Design", "Design Systems", "Color Theory", "Typography", "Portfolio Design"],
-            "React.JS": ["React Intro", "JSX & Components", "State & Props", "Hooks", "Routing", "State Management", "API Integration", "Context API", "Redux Toolkit", "Testing", "Optimization", "Deploy"],
-            "Python Developer": ["Python Basics", "Data Types", "OOP", "File I/O", "Packages", "Error Handling", "Flask Intro", "DB Integration", "Pandas Basics", "Automation Scripts", "Project Work"],
-            "C++/C Programming": ["Intro C/C++", "Control Flow", "Functions", "Pointers", "OOP", "STL Basics", "File I/O", "Algorithms", "Data Structures", "Debugging Techniques"],
-            "Java Developer": ["Java Basics", "OOP", "Collections", "JDBC", "Servlets", "Spring Intro", "Spring Boot", "REST APIs", "Hibernate", "Project", "Testing"],
-            "Data Science": ["Intro DS", "Data Cleaning", "Pandas", "Visualization", "Statistics", "ML Intro", "Modeling", "Evaluation", "Feature Engineering", "Deployment", "Project"],
-            "Machine Learning": ["ML Intro", "Regression", "Classification", "Clustering", "Feature Engineering", "Model Selection", "Deep Learning Intro", "TensorFlow Basics", "Deployment", "Project"],
-            "Artificial Intelligence": ["AI Intro", "Search", "Knowledge Rep", "Planning", "Neural Networks", "NLP Basics", "Computer Vision", "Reinforcement Learning", "Ethics in AI"],
-            "Digital Marketing": ["DM Intro", "SEO", "Content Strategy", "Social Media", "Ads", "Analytics", "Email Marketing", "Influencer Marketing", "Affiliate Marketing", "Video Marketing", "Google Ads", "Facebook & Instagram Ads", "Marketing Automation", "Conversion Rate Optimization (CRO)", "Landing Page Optimization", "Brand Management", "Online Reputation Management (ORM)", "Keyword Research & Competitor Analysis", "Digital Marketing Tools (Canva, SEMrush, Ahrefs)", "Campaign Planning & Execution", "Google Analytics", "YouTube Marketing", "Lead Generation"],
-            "Cybersecurity": ["Intro Sec", "Networking Basics", "Threats", "Encryption", "Vulnerabilities", "Pen Testing", "Firewalls", "Ethical Hacking", "Incident Response", "SOC Basics", "Cyber Laws"],
-            "Data Analytics": ["Intro DA", "Excel", "SQL", "Pivots", "Visualization", "Dashboards", "Power BI", "Tableau", "Data Cleaning", "Data Storytelling"],
-            "Business Analytics": ["Intro BA", "Requirement Gathering", "KPI", "Modelling", "Reporting", "Power BI", "Decision Making", "Forecasting", "Case Studies"],
-            "Android Developer": ["Android Intro", "Layouts", "Activities", "Intents", "RecyclerView", "API Integration", "Firebase", "Room Database", "Jetpack Compose", "Publishing App"],
-            "Web Development": ["Web Intro", "Frontend Basics", "Backend Basics", "Node.js", "Express.js", "MongoDB", "REST APIs", "Authentication", "Deployment", "Full Stack Project"],
-            ".NET Developer": [".NET Intro", "C# Basics", "ASP.NET", "Entity Framework", "MVC Framework", "Web API", "LINQ", "Deployment"],
-            "VLSI": ["VLSI Intro", "Digital Design", "Verilog Basics", "Synthesis", "FPGA Implementation", "Testing & Validation"],
-            "Embedded Systems": ["Intro", "Microcontrollers", "C for Embedded", "Peripherals", "RTOS Basics", "I2C/SPI Communication", "Sensors & Actuators", "Project Development"]
-            ,
+
+            "Frontend Developer": [
+                "Introduction to Web",
+                "HTML Basics",
+                "CSS Fundamentals",
+                "Bootstrap & Layouts",
+                "Responsive Design",
+                "JavaScript Basics",
+                "DOM Manipulation",
+                "Forms & Validation",
+                "Version Control (Git)",
+                "API Integration",
+                "Performance Optimization",
+                "Final Project & Review"
+            ],
+            "Web Development": [
+                "Web Fundamentals",
+                "HTML5 & CSS3",
+                "JavaScript Essentials",
+                "Responsive Web Design",
+                "Bootstrap Framework",
+                "Version Control with Git",
+                "Frontend Frameworks Overview",
+                "Backend Basics (Node.js/Express)",
+                "Database Basics (MongoDB/MySQL)",
+                "RESTful APIs",
+                "Deployment & Hosting",
+                "Final Project"
+            ],
+
+            "React.JS": [
+                "React Introduction",
+                "JSX & Components",
+                "Props & State",
+                "Event Handling",
+                "Hooks (useState, useEffect)",
+                "Routing with React Router",
+                "Context API",
+                "Redux Toolkit Basics",
+                "API Integration",
+                "Testing",
+                "Optimization",
+                "Deployment"
+            ],
+
+            "MERN Stack Developer": [
+                "Web Fundamentals",
+                "HTML, CSS & JavaScript",
+                "React Frontend",
+                "Node.js Basics",
+                "Express.js Framework",
+                "MongoDB & Mongoose",
+                "REST API Development",
+                "Authentication & Authorization",
+                "JWT & Security",
+                "Project Architecture",
+                "Deployment",
+                "Full Stack Project"
+            ],
+
+            "Python Developer": [
+                "Python Basics",
+                "Data Types & Operators",
+                "Control Flow",
+                "Functions & Modules",
+                "Object-Oriented Programming",
+                "File Handling",
+                "Exception Handling",
+                "Libraries & Packages",
+                "Flask / Django Basics",
+                "Database Integration",
+                "Automation Scripts",
+                "Final Project"
+            ],
+
+            "C++/C Programming": [
+                "Introduction to C/C++",
+                "Data Types & Operators",
+                "Control Structures",
+                "Functions",
+                "Pointers & Memory",
+                "Structures & Unions",
+                "Object-Oriented Concepts",
+                "STL Basics",
+                "File Handling",
+                "Data Structures",
+                "Debugging Techniques"
+            ],
+
+            "Java Developer": [
+                "Java Basics",
+                "OOP Concepts",
+                "Exception Handling",
+                "Collections Framework",
+                "Multithreading",
+                "JDBC",
+                "Servlets & JSP",
+                "Spring Framework",
+                "Spring Boot",
+                "REST APIs",
+                "Hibernate",
+                "Project Development"
+            ],
+
+            ".NET Developer": [
+                ".NET Framework Overview",
+                "C# Basics",
+                "OOP in C#",
+                "ASP.NET Core",
+                "MVC Architecture",
+                "Entity Framework",
+                "Web API Development",
+                "LINQ",
+                "Authentication",
+                "Deployment"
+            ],
+
+            "Data Analytics": [
+                "Introduction to Data Analytics",
+                "Excel for Analysis",
+                "SQL Fundamentals",
+                "Data Cleaning",
+                "Data Visualization",
+                "Dashboards",
+                "Power BI",
+                "Tableau",
+                "KPIs & Metrics",
+                "Data Storytelling"
+            ],
+
+            "Business Analytics": [
+                "Introduction to Business Analytics",
+                "Requirement Gathering",
+                "Business KPIs",
+                "Data Modelling",
+                "Excel & SQL",
+                "Power BI",
+                "Reporting & Insights",
+                "Forecasting",
+                "Decision Making",
+                "Case Studies"
+            ],
+
+            "Data Science": [
+                "Introduction to Data Science",
+                "Python for Data Science",
+                "Data Cleaning",
+                "Exploratory Data Analysis",
+                "Statistics",
+                "Data Visualization",
+                "Machine Learning Basics",
+                "Feature Engineering",
+                "Model Evaluation",
+                "Deployment",
+                "Capstone Project"
+            ],
+
+            "Artificial Intelligence": [
+                "Introduction to AI",
+                "Problem Solving & Search",
+                "Knowledge Representation",
+                "Planning Techniques",
+                "Neural Networks",
+                "Natural Language Processing",
+                "Computer Vision",
+                "Reinforcement Learning",
+                "Ethics in AI",
+                "AI Project"
+            ],
+
+            "Machine Learning": [
+                "Introduction to Machine Learning",
+                "Linear Regression",
+                "Logistic Regression",
+                "Classification Algorithms",
+                "Clustering Techniques",
+                "Feature Engineering",
+                "Model Selection",
+                "Deep Learning Basics",
+                "TensorFlow / PyTorch",
+                "Model Deployment",
+                "ML Project"
+            ],
+
+            "Digital Marketing": [
+                "Introduction to Digital Marketing",
+                "SEO Fundamentals",
+                "Keyword Research",
+                "Content Marketing",
+                "Social Media Marketing",
+                "Google Ads",
+                "Facebook & Instagram Ads",
+                "Email Marketing",
+                "Affiliate Marketing",
+                "Analytics & Reporting",
+                "Marketing Automation",
+                "Conversion Rate Optimization (CRO)",
+                "Online Reputation Management",
+                "Campaign Planning",
+                "Lead Generation"
+            ],
+
+            "Cybersecurity": [
+                "Introduction to Cybersecurity",
+                "Networking Basics",
+                "Types of Threats",
+                "Encryption Techniques",
+                "Vulnerabilities",
+                "Penetration Testing",
+                "Firewalls",
+                "Ethical Hacking",
+                "Incident Response",
+                "SOC Operations",
+                "Cyber Laws & Compliance"
+            ],
+
+            "UX/UI Design": [
+                "Introduction to UX/UI",
+                "Design Principles",
+                "User Research",
+                "Wireframing",
+                "Figma Basics",
+                "Prototyping",
+                "Visual Design",
+                "Color Theory",
+                "Typography",
+                "Design Systems",
+                "Usability Testing",
+                "Portfolio Design"
+            ],
+
+            "Android Developer": [
+                "Android Introduction",
+                "Android Studio Setup",
+                "Layouts & Views",
+                "Activities & Intents",
+                "RecyclerView",
+                "API Integration",
+                "Firebase",
+                "Room Database",
+                "Jetpack Components",
+                "App Testing",
+                "App Publishing"
+            ],
+
+            "Very Large Scale Integration (VLSI)": [
+                "VLSI Introduction",
+                "Digital Electronics",
+                "CMOS Fundamentals",
+                "Verilog HDL",
+                "RTL Design",
+                "Synthesis",
+                "FPGA Implementation",
+                "Timing Analysis",
+                "Testing & Validation",
+                "VLSI Project"
+            ],
+
+            "Embedded Systems": [
+                "Introduction to Embedded Systems",
+                "Microcontrollers",
+                "Embedded C Programming",
+                "GPIO & Peripherals",
+                "Timers & Interrupts",
+                "I2C / SPI / UART",
+                "Sensors & Actuators",
+                "RTOS Basics",
+                "Embedded Project"
+            ],
+
             "Cloud Computing": [
                 "Cloud Fundamentals",
-                "Virtualization & Containers",
+                "Virtualization",
                 "AWS Basics",
-                "Compute Services (EC2, Compute Engine)",
-                "Storage Services (S3, Blob Storage)",
+                "Compute Services",
+                "Storage Services",
                 "Networking & VPC",
                 "Identity & Access Management (IAM)",
-                "Serverless (Lambda, Functions)",
-                "Managed Databases (RDS, Cloud DB)",
-                "CI/CD & Infrastructure as Code",
+                "Serverless Computing",
+                "Databases in Cloud",
+                "CI/CD Pipelines",
                 "Monitoring & Logging",
                 "Security & Compliance",
                 "Cost Optimization",
-                "Cloud Architecture Patterns",
-                "Migration Strategies",
+                "Cloud Architecture",
                 "Capstone Project"
             ],
-            "Cloud Engineer": [
-                "Cloud Fundamentals",
-                "Linux & Networking for Cloud",
-                "Virtualization & Containers (Docker)",
-                "Kubernetes & Orchestration",
-                "AWS Core Services (EC2, S3, RDS)",
-                "Azure Core Services",
-                "GCP Core Services",
-                "Infrastructure as Code (Terraform)",
-                "CI/CD & DevOps Pipelines",
-                "Serverless (Lambda, Functions)",
-                "Monitoring & Logging (Prometheus, ELK)",
-                "Security & IAM Best Practices",
-                "Cost Management & Optimization",
-                "Networking & VPC Design",
-                "High Availability & Disaster Recovery",
-                "Capstone Cloud Project"
+
+            "DevOps": [
+                "DevOps Fundamentals",
+                "Linux Basics",
+                "Git & GitHub",
+                "CI/CD Concepts",
+                "Jenkins",
+                "Docker",
+                "Kubernetes",
+                "Infrastructure as Code",
+                "Monitoring & Logging",
+                "Cloud Integration",
+                "DevOps Project"
             ],
+
             "Human Resource(HR)": [
                 "HR Fundamentals",
                 "Recruitment & Selection",
-                "Employee Relations",
+                "Employee Onboarding",
                 "Performance Management",
                 "Compensation & Benefits",
                 "Training & Development",
                 "HR Analytics",
                 "Labor Laws",
-                "Organizational Behavior",
-                "HR Documentation",
                 "Employee Engagement",
                 "Talent Management",
                 "HR Policies",
+                "HR Documentation",
                 "HRIS Systems",
                 "Conflict Resolution",
                 "Leadership Development"
-            ],
+            ]
 
         };
+
 
         /**********************
          * deterministic PRNG using candidate id as seed
