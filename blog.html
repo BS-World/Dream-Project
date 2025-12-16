@@ -2,61 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="HandheldFriendly" content="true">
-    <title>Alfido Tech Blog | Stay Updated with Latest Tech News & Internships</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="title" content="Alfido Tech Blog | Latest IT News, Internships & Career Opportunities">
-    <meta name="description"
-        content="Stay updated with Alfido Tech's latest blog posts on technology trends, internships, and career opportunities in IT. Explore the latest news in tech, breaking stories, and career insights.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Alfido Tech — insights, tutorials, and product updates from Alfido Tech.">
+    <title>Alfido Tech Blog | Technology, Internships & Career Insights</title>
+    <!-- SEO meta tags -->
     <meta name="keywords"
-        content="tech news, IT internships, Alfido Tech, technology trends, remote internships, tech career, IT career, 2024 internships, Alfido Tech blog">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Alfido Tech Blog">
+        content="Alfido Tech, engineering blog, web development, cloud, devops, tutorials, product updates, IT, UX, career, SEO, startup, software engineering">
+    <meta name="author" content="Alfido Tech">
     <link rel="canonical" href="https://www.alfidotech.com/blog.html">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Alfido Tech Blog | Latest IT News, Internships & Career Opportunities">
+    <meta property="og:title" content="Alfido Tech Blog">
     <meta property="og:description"
-        content="Stay updated with Alfido Tech's latest blog posts on technology trends, internships, and career opportunities in IT. Explore the latest news in tech, breaking stories, and career insights.">
+        content="Engineering ideas, tutorials & product news from Alfido Tech. Deep dives, how-tos, and short reads about web development, cloud, devops, and startup life.">
+    <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.alfidotech.com/blog.html">
-    <meta property="og:site_name" content="Alfido Tech Blog">
-    <meta property="og:image" content="https://www.alfidotech.com/blog.webp">
+    <meta property="og:image" content="https://picsum.photos/1600/600?grayscale">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alfido Tech Blog">
+    <meta name="twitter:description" content="Engineering ideas, tutorials & product news from Alfido Tech.">
+    <meta name="twitter:image" content="https://picsum.photos/1600/600?grayscale">
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Favicon and Manifest -->
-
-
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Preload Images and Sitemap -->
-    <link rel="preload" href="Logo 2.png" as="image">
-    <link rel="preload" href="Logo 2.png" as="image">
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.alfidotech.com/sitemap.xml">
-    <link rel="alternate" type="application/rss+xml" title="Alfido Tech RSS Feed"
-        href="https://www.alfidotech.com/rss.xml">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap"
-        rel="stylesheet" />
-
-
-
-
-    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -65,12 +30,10 @@
         gtag('config', 'G-HKXWNH34MG');
     </script>
 
-
-
-
-
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
         .navbar {
@@ -93,110 +56,65 @@
         }
 
         :root {
-            --brand: #dD242a;
-            /* Alfido blue */
-            --brand-dark: #8d1014;
-            /* darker shade */
-            --ink: #0f172a;
-            --muted: #64748b;
-            --bg: #f8fafc;
+            --brand: #d32f2f;
+            /* red-ish Alfido accent */
+            --muted-bg: #f8f9fa;
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
-            background: #f9fafc;
-            color: #1e293b;
+            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
         }
 
-        header {
-            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
-            color: white;
-        }
-
-        /* Navbar */
-        .navbar {
-            box-shadow: 0 8px 24px rgba(2, 8, 20, .06);
-        }
-
-        .btn-brand {
-            background: linear-gradient(135deg, #dD242a, #1e313d);
-            color: #fff;
-            border: none;
-        }
-
-        .btn-brand:hover {
-            background: var(--brand-dark);
-            color: #fff;
-        }
-
-        #filterInput {
-            border-radius: 24px;
-            border: 1px solid #cbd5e1;
-            padding-left: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-
-
-        .card {
-            border-radius: 10px;
-            border: 1px solid #e2e8f0;
-            transition: transform .2s;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-        }
-
-        .btn-open {
-            background: var(--brand);
-            color: #fff;
-            border: none;
-        }
-
-        .btn-open:hover {
-            background: var(--brand-dark);
-            color: #fff;
-        }
-
-        footer {
-            background: #0b1220;
-            color: #cbd5e1;
-        }
-
-        footer a {
-            color: #e2e8f0;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            color: #fff;
-        }
-
+        /* Hero */
         .hero {
-            background: linear-gradient(135deg, #dD242a, #1e313d);
-            padding: 120px 20px 100px;
-            text-align: center;
-            color: #fff;
-            border-bottom-left-radius: 80px;
-            border-bottom-right-radius: 80px;
+            background: linear-gradient(180deg, rgba(211, 47, 47, .95) 0%, rgba(211, 47, 47, .85) 60%), url('https://picsum.photos/1600/600?grayscale') center/cover no-repeat;
+            color: white;
+            padding: 4.5rem 0;
         }
 
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
+        /* Glassy cards */
+        .post-card {
+            backdrop-filter: blur(6px) saturate(120%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.82));
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(15, 15, 15, 0.08);
+            overflow: hidden;
+            transition: transform .18s ease, box-shadow .18s ease;
         }
 
-        .search-box {
-            max-width: 650px;
-            margin: -40px auto 40px;
-            background: #fff;
-            padding: 15px;
-            border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        .post-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(15, 15, 15, 0.12);
+        }
+
+        .post-image {
+            height: 160px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        /* Sidebar */
+        .sidebar-card {
+            border-radius: 12px;
+        }
+
+       
+
+        /* Small utilities */
+        .badge-category {
+            background: rgba(0, 0, 0, 0.06);
+            color: inherit;
+            border-radius: 8px;
+            padding: .25rem .5rem;
+            font-size: .78rem
+        }
+
+        @media (max-width:767px) {
+            .post-image {
+                height: 140px
+            }
         }
     </style>
-
 </head>
 
 <body>
@@ -225,8 +143,8 @@
                                     Submission</a></li>
                             <li><a class="dropdown-item"
                                     href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
-                            <li><a class="dropdown-item " href="https://www.alfidotech.com/internProfile.html">Intern
-                                    Profile</a></li>
+                            <li><a class="dropdown-item "
+                                    href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
                             <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
                             <li><a class="dropdown-item" href="https://www.alfidotech.com/profile.html">Profile</a></li>
                             <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a>
@@ -237,308 +155,355 @@
                             Us</a></li>
                     <li class="nav-item"><a class="nav-link"
                             href="https://www.alfidotech.com/certification.html">Certification</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="https://www.alfidotech.com/blog.html">Blog</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="https://www.alfidotech.com/blog.html">Blog</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-
-    <!-- Hero -->
-    <section class="hero">
+    <!-- HERO -->
+    <header class="hero mb-5">
         <div class="container">
-            <h1>📝 Alfido Tech Blog Directory</h1>
-            <p>Explore curated articles, tech content & industry insights.</p>
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-5 fw-bold">Engineering ideas, tutorials & product news from Alfido Tech</h1>
+                    <p class="lead my-3">Deep dives, how-tos, and short reads about web development, cloud, devops, and
+                        startup life.</p>
+
+                    <div class="d-flex gap-2">
+                        <a class="btn btn-light btn-lg" href="#posts"><i class="bi bi-journal-text me-2"></i>Read
+                            latest</a>
+                        <a class="btn btn-outline-light btn-lg" href="#subscribe"><i
+                                class="bi bi-envelope-paper me-2"></i>Subscribe</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-end">
+                    <img src="https://picsum.photos/420/280?blur=2" alt="hero" class="img-fluid rounded shadow-sm">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container mb-5">
+        <div class="row g-4">
+
+            <!-- POSTS LIST -->
+            <section id="posts" class="col-lg-8">
+                <!-- Search & filters -->
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="input-group w-75">
+                        <span class="input-group-text" id="search-addon"><i class="bi bi-search"></i></span>
+                        <input id="searchInput" type="search" class="form-control"
+                            placeholder="Search posts, e.g. React, Docker, CSS" aria-label="Search"
+                            aria-describedby="search-addon">
+                    </div>
+
+                    <div>
+                        <select id="sortSelect" class="form-select">
+                            <option value="new">Newest</option>
+                            <option value="old">Oldest</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="postsGrid" class="row g-3"></div>
+
+                <!-- Pagination -->
+                <nav class="mt-4" aria-label="Page navigation">
+                    <ul id="pagination" class="pagination justify-content-center"></ul>
+                </nav>
+            </section>
+
+            <!-- SIDEBAR -->
+            <aside class="col-lg-4">
+                <div class="card sidebar-card p-3 mb-3">
+                    <h5 class="mb-2">Categories</h5>
+                    <div id="categories" class="d-flex flex-wrap gap-2"></div>
+                </div>
+
+                <div class="card sidebar-card p-3 mb-3">
+                    <h5 class="mb-2">Recent posts</h5>
+                    <ul id="recentList" class="list-unstyled mb-0"></ul>
+                </div>
+
+                <div class="card sidebar-card p-3">
+                    <h5 class="mb-2">About Alfido Tech</h5>
+                    <p class="small text-muted">Alfido Tech builds simple tools for modern engineers. We publish
+                        tutorials, product updates, and career advice.</p>
+                    <div class="d-grid gap-2">
+                        <a class="btn btn-sm btn-outline-primary" href="#subscribe">Get updates</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="#about">Learn more</a>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- SUBSCRIBE SECTION -->
+    <section id="subscribe" class="py-5 bg-light border-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h4 class="mb-1">Get monthly updates from Alfido Tech</h4>
+                    <p class="small text-muted mb-0">No spam — just useful tutorials and product news.</p>
+                </div>
+                <div class="col-md-4">
+                    <form id="subscribeForm" class="d-flex gap-2">
+                        <input type="email" class="form-control" placeholder="Your email" required>
+                        <button class="btn btn-primary" type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- MAIN CONTENT -->
-    <main class="container my-4">
+    <div id="footer"></div>
+    
 
-        <div class="search-box">
-            <div class="input-group">
-                <input id="filterInput" type="text" class="form-control"
-                    placeholder="🔍 Search blogs, keywords, domains...">
+    <!-- Post Modal (full content) -->
+    <div class="modal fade" id="postModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modalTitle" class="modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modalMeta" class="text-muted small"></p>
+                    <img id="modalImage" src="" alt="" class="img-fluid rounded mb-3">
+                    <div id="modalBody"></div>
+                </div>
             </div>
         </div>
+    </div>
 
-        <div id="iframeContainer" class="row"></div>
-
-    </main>
-
-    <!-- FOOTER -->
-    <div id="footer"></div>
-    <script>
-        fetch("/footer.html")
-            .then(res => res.text())
-            .then(data => document.getElementById("footer").innerHTML = data);
-    </script>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // Blog URLs (same as original)
-        const urls = [
-            "https://monicaeqec941139.pointblog.net/our-alfido-program-87460557",
-            "https://aoifehilo387308.blogdigy.com/the-alfido-internship-60295125",
-            "https://zubairqnaf783850.blog5.net/87189350/our-alfido-s-internship",
-            "https://graysonppik074735.mpeblog.com/69053020/the-alfido-tech-opportunity",
-            "https://arungzem221654.blog-gold.com/52998045/our-alfido-s-opportunity",
-            "https://alleneumy937931.aboutyoublog.com/47327535/our-alfido-s-program",
-            "https://zakariadmum679331.blognody.com/44972009/alfido-s-alfido-tech-program",
-            "https://mohamadgvjk668702.activoblog.com/46677261/the-alfido-tech-opportunity",
-            "https://mediajx.com/story26002960/alfido-s-alfido-tech-opportunity",
-            "https://bookmark-dofollow.com/story26336441/the-alfido-tech-program",
-            "https://bookmark-template.com/story26637051/the-alfido-s-opportunity",
-            "https://prbookmarkingwebsites.com/story26464802/the-alfido-s-opportunity",
-            "https://socialmediainuk.com/story24804069/the-alfido-opportunity",
-            "https://dirstop.com/story26381690/our-alfido-tech-program",
-            "https://opensocialfactory.com/story23854338/alfido-s-alfido-s-opportunity",
-            "https://ztndz.com/story26393660/the-alfido-tech-internship",
-            "https://gorillasocialwork.com/story24954648/alfido-s-alfido-tech-internship",
-            "https://socialrus.com/story22719592/alfido-s-alfido-program",
-            "https://bookmarklinking.com/story9230131/the-alfido-tech-program",
-            "https://bookmarks-hit.com/story23740880/our-alfido-internship",
-            "https://mediajx.com/story26005546/our-alfido-s-program",
-            "https://bookmark-dofollow.com/story26339043/the-alfido-tech-internship",
-            "https://bookmark-template.com/story26639738/alfido-s-alfido-s-program",
-            "https://prbookmarkingwebsites.com/story26467403/the-alfido-tech-opportunity",
-            "https://socialmediainuk.com/story24806703/our-alfido-s-internship",
-            "https://dirstop.com/story26384279/our-alfido-tech-internship",
-            "https://opensocialfactory.com/story23856993/the-alfido-opportunity",
-            "https://ztndz.com/story26396259/alfido-s-alfido-program",
-            "https://gorillasocialwork.com/story24957220/the-alfido-opportunity",
-            "https://socialrus.com/story22722193/the-alfido-tech-program",
-            "https://bookmarklinking.com/story9232624/alfido-s-alfido-program",
-            "https://bookmarks-hit.com/story23743372/our-alfido-opportunity",
-            "https://nevemylr001934.pointblog.net/our-alfido-tech-program-87475980",
-            "https://lexietzbu783706.blogdigy.com/alfido-s-alfido-program-60309839",
-            "https://laylapjpk976343.blog5.net/87204103/alfido-s-alfido-program",
-            "https://ellaidcb474954.mpeblog.com/69067618/our-alfido-internship",
-            "https://marleyiylx531189.blog-gold.com/53012960/alfido-s-alfido-tech-internship",
-            "https://reganhcbg632206.aboutyoublog.com/47342059/alfido-s-alfido-s-internship",
-            "https://poppiedjmt424846.blognody.com/44986598/our-alfido-tech-program",
-            "https://joanhnlm151051.activoblog.com/46692458/the-alfido-tech-opportunity",
-            "https://lexieydvl088013.wikipublicity.com/7782294/our_alfido_internship",
-            "https://kathrynosjd858358.wikiannouncement.com/9520461/alfido_s_alfido_opportunity",
-            "https://arunlvwa562356.wikicommunications.com/6735086/alfido_s_alfido_tech_internship",
-            "https://dianeznub990263.wikicorrespondence.com/5943361/alfido_s_alfido_program",
-            "https://tedbpij717145.wikiexpression.com/5677339/our_alfido_internship",
-            "https://albiexseu856296.wikiannouncing.com/7487096/alfido_s_alfido_internship",
-            "https://kaitlynwpxi115055.wikipresses.com/6640511/our_alfido_internship",
-            "https://lilianirly139131.wikitelevisions.com/8697799/the_alfido_s_program",
-            "https://gregorygggl380206.wikiinside.com/3136063/alfido_s_alfido_program",
-            "https://dillanekqo517802.wikimidpoint.com/6370436/the_alfido_tech_opportunity",
-            "https://mediajx.com/story26011423/the-alfido-opportunity",
-            "https://bookmark-dofollow.com/story26344929/alfido-s-alfido-program",
-            "https://bookmark-template.com/story26645587/alfido-s-alfido-tech-opportunity",
-            "https://prbookmarkingwebsites.com/story26473273/our-alfido-opportunity",
-            "https://socialmediainuk.com/story24812571/our-alfido-s-opportunity",
-            "https://dirstop.com/story26390138/the-alfido-internship",
-            "https://opensocialfactory.com/story23862893/our-alfido-s-opportunity",
-            "https://ztndz.com/story26402141/alfido-s-alfido-s-internship",
-            "https://gorillasocialwork.com/story24963094/alfido-s-alfido-s-internship",
-            "https://socialrus.com/story22727963/the-alfido-s-program",
-            "https://bookmarklinking.com/story9238343/alfido-s-alfido-internship",
-            "https://bookmarks-hit.com/story23748978/our-alfido-s-program",
-            "https://keziawddm813442.pointblog.net/the-alfido-tech-program-87503325",
-            "https://estellekqlw627568.blogdigy.com/the-alfido-opportunity-60335989",
-            "https://lexiewgxs811311.blog5.net/87230278/the-alfido-s-program",
-            "https://finnianawoy177079.mpeblog.com/69080521/the-alfido-program",
-            "https://adrianaavfc276328.blog-gold.com/53039608/the-alfido-internship",
-            "https://leayhjq018150.aboutyoublog.com/47367408/the-alfido-s-internship",
-            "https://fraserjzbh402394.blognody.com/45012465/the-alfido-tech-opportunity",
-            "https://delilahdkma205406.activoblog.com/46719028/the-alfido-internship",
-            "https://zubairxtii056548.wikipublicity.com/7786301/alfido_s_alfido_s_internship",
-            "https://laratzgv112613.wikiannouncement.com/9524478/the_alfido_internship",
-            "https://fayasps055090.wikicommunications.com/6739017/our_alfido_s_internship",
-            "https://jasperpfll072111.wikicorrespondence.com/5947328/our_alfido_program",
-            "https://nanniefsho517570.wikiexpression.com/5681339/our_alfido_s_internship",
-            "https://mariahrytz326454.wikiannouncing.com/7491082/alfido_s_alfido_s_program",
-            "https://rafaelxggz402686.wikipresses.com/6644483/our_alfido_tech_program",
-            "https://theresadgjd248754.wikitelevisions.com/8701741/alfido_s_alfido_s_opportunity",
-            "https://albertadpq315606.wikiinside.com/3140046/the_alfido_tech_internship",
-            "https://alyssawgxd573786.wikimidpoint.com/6374386/the_alfido_tech_program",
-            "https://albertxxbz217306.wikipublicity.com/7786514/the_alfido_tech_opportunity",
-            "https://nicolasyikz568215.wikiannouncement.com/9524689/the_alfido_tech_program",
-            "https://lillirtks319484.wikicommunications.com/6739232/alfido_s_alfido_s_internship",
-            "https://marvinrowk909800.wikicorrespondence.com/5947541/alfido_s_alfido_s_internship",
-            "https://barrymuok896782.wikiexpression.com/5681550/our_alfido_opportunity",
-            "https://haseebagbx091338.wikiannouncing.com/7491297/the_alfido_tech_opportunity",
-            "https://zakariavkuv653607.wikipresses.com/6644693/our_alfido_program",
-            "https://nelsonzhtg285057.wikitelevisions.com/8701956/the_alfido_tech_program",
-            "https://tiffanygnjf320151.wikiinside.com/3140258/the_alfido_s_program",
-            "https://janicekttn405855.wikimidpoint.com/6374604/the_alfido_internship",
-            "https://rebeccajnuq151902.pointblog.net/the-alfido-s-internship-87511882",
-            "https://deannaizjs446262.blogdigy.com/the-alfido-tech-opportunity-60344183",
-            "https://chiaraqlfa094462.blog5.net/87238592/our-alfido-program",
-            "https://nikolasywsz282188.mpeblog.com/69088606/alfido-s-alfido-opportunity",
-            "https://nanaqnxz721870.blog-gold.com/53047933/our-alfido-opportunity",
-            "https://imogenozgs776459.aboutyoublog.com/47375428/our-alfido-s-program",
-            "https://kathrynjeyf762645.blognody.com/45020577/alfido-s-alfido-s-internship",
-            "https://idafvos172675.activoblog.com/46727375/the-alfido-s-opportunity",
-            "https://frasersezp343418.wikipublicity.com/7787641/alfido_s_alfido_opportunity",
-            "https://franceswliw280340.wikiannouncement.com/9525812/the_alfido_tech_program",
-            "https://francesiina497810.wikicommunications.com/6740352/the_alfido_opportunity",
-            "https://idamjfs070428.wikicorrespondence.com/5948678/alfido_s_alfido_tech_program",
-            "https://keithozqh893437.wikiexpression.com/5682687/the_alfido_tech_program",
-            "https://diegovcgf374768.wikiannouncing.com/7492456/the_alfido_tech_internship",
-            "https://antonnhvw335403.wikipresses.com/6645837/the_alfido_tech_program",
-            "https://brontezuuv532476.wikitelevisions.com/8703085/alfido_s_alfido_tech_internship",
-            "https://gerardgazq907963.wikiinside.com/3141383/alfido_s_alfido_s_opportunity",
-            "https://tiffanytwdr977778.wikimidpoint.com/6375760/alfido_s_alfido_program",
-            "https://rebeccafhwy383497.pointblog.net/alfido-s-alfido-internship-87525976",
-            "https://brianpbio067413.blogdigy.com/the-alfido-s-internship-60357783",
-            "https://amienjlp847715.blog5.net/87252316/the-alfido-tech-opportunity",
-            "https://rebeccarwis513077.mpeblog.com/69102145/our-alfido-s-opportunity",
-            "https://vinnyxgqk343664.blog-gold.com/53061634/alfido-s-alfido-s-internship",
-            "https://barryskhd019276.aboutyoublog.com/47388711/the-alfido-tech-internship",
-            "https://teganzphg615420.blognody.com/45034011/the-alfido-s-opportunity",
-            "https://elodiezajl915629.activoblog.com/46740957/the-alfido-s-program",
-            "https://kallumyxhh382650.pointblog.net/our-alfido-s-program-87532205",
-            "https://imogenpknb600735.blogdigy.com/our-alfido-tech-internship-60363786",
-            "https://tomasfyyn557481.blog5.net/87258280/the-alfido-tech-internship",
-            "https://aadamvcaq374501.mpeblog.com/69108080/alfido-s-alfido-tech-opportunity",
-            "https://aishawjvt023180.blog-gold.com/53067857/the-alfido-internship",
-            "https://cyrusucsf976600.aboutyoublog.com/47394723/alfido-s-alfido-program",
-            "https://estelleqdwi178682.blognody.com/45040071/alfido-s-alfido-s-program",
-            "https://mohamadruko133767.activoblog.com/46747121/the-alfido-tech-opportunity",
-            "https://inesxfhy442326.pointblog.net/our-alfido-tech-program-87537156",
-            "https://graysonvosb408546.blogdigy.com/our-alfido-program-60368427",
-            "https://ambersjad390334.blog5.net/87262982/our-alfido-tech-internship",
-            "https://poppypqxv031041.mpeblog.com/69112702/our-alfido-s-internship",
-            "https://marcnkdk104858.blog-gold.com/53072629/our-alfido-program",
-            "https://jadarvhn367659.aboutyoublog.com/47399207/our-alfido-tech-opportunity",
-            "https://sabrinazbri804848.blognody.com/45044692/our-alfido-s-program",
-            "https://adamdedl354479.activoblog.com/46751834/alfido-s-alfido-internship",
-            "https://hamzahalvs657101.pointblog.net/the-alfido-s-internship-87545985",
-            "https://katrinaczbt335017.blogdigy.com/our-alfido-tech-internship-60376778",
-            "https://asiyagrdc726671.blog5.net/87271407/our-alfido-internship",
-            "https://joanxgiw040282.mpeblog.com/69121034/the-alfido-internship",
-            "https://mathetsfj416323.blog-gold.com/53081284/alfido-s-alfido-tech-opportunity",
-            "https://roxannwjfj285267.aboutyoublog.com/47407398/the-alfido-tech-internship",
-            "https://tedisyz215695.blognody.com/45053006/the-alfido-s-internship",
-            "https://montyjzyz448641.activoblog.com/46760416/the-alfido-program",
-            "https://mediajx.com/story26035206/our-alfido-s-opportunity",
-            "https://bookmark-dofollow.com/story26368895/our-alfido-s-program",
-            "https://bookmark-template.com/story26669967/the-alfido-s-internship",
-            "https://prbookmarkingwebsites.com/story26497183/alfido-s-alfido-s-internship",
-            "https://socialmediainuk.com/story24836839/the-alfido-opportunity",
-            "https://dirstop.com/story26413879/the-alfido-s-opportunity",
-            "https://opensocialfactory.com/story23886721/our-alfido-tech-program",
-            "https://ztndz.com/story26425761/the-alfido-tech-program",
-            "https://gorillasocialwork.com/story24986864/our-alfido-s-program",
-            "https://socialrus.com/story22751670/our-alfido-s-opportunity",
-            "https://bookmarklinking.com/story9261221/our-alfido-tech-opportunity",
-            "https://bookmarks-hit.com/story23771418/our-alfido-s-opportunity",
-            "https://mediajx.com/story26037208/the-alfido-tech-program",
-            "https://bookmark-dofollow.com/story26370939/our-alfido-s-opportunity",
-            "https://bookmark-template.com/story26672002/alfido-s-alfido-s-opportunity",
-            "https://prbookmarkingwebsites.com/story26499241/our-alfido-tech-opportunity",
-            "https://socialmediainuk.com/story24838894/our-alfido-tech-internship",
-            "https://dirstop.com/story26415914/the-alfido-program",
-            "https://opensocialfactory.com/story23888790/the-alfido-s-internship",
-            "https://ztndz.com/story26427801/our-alfido-s-opportunity",
-            "https://gorillasocialwork.com/story24988885/our-alfido-internship",
-            "https://socialrus.com/story22753669/our-alfido-tech-program",
-            "https://bookmarklinking.com/story9263219/our-alfido-tech-program",
-            "https://bookmarks-hit.com/story23773362/our-alfido-tech-program",
-            "https://mediajx.com/story26044331/the-alfido-tech-program",
-            "https://bookmark-dofollow.com/story26378099/alfido-s-alfido-tech-internship",
-            "https://bookmark-template.com/story26679174/our-alfido-tech-opportunity",
-            "https://prbookmarkingwebsites.com/story26506451/alfido-s-alfido-tech-internship",
-            "https://socialmediainuk.com/story24846050/our-alfido-tech-internship",
-            "https://dirstop.com/story26423073/the-alfido-program",
-            "https://opensocialfactory.com/story23895924/alfido-s-alfido-internship",
-            "https://ztndz.com/story26434948/the-alfido-s-internship",
-            "https://gorillasocialwork.com/story24996029/the-alfido-s-program",
-            "https://socialrus.com/story22760685/alfido-s-alfido-tech-opportunity",
-            "https://bookmarklinking.com/story9270251/alfido-s-alfido-s-program",
-            "https://bookmarks-hit.com/story23780269/the-alfido-tech-opportunity",
-            "https://mediajx.com/story26050915/our-alfido-tech-opportunity",
-            "https://bookmark-dofollow.com/story26384857/our-alfido-internship",
-            "https://bookmark-template.com/story26686130/alfido-s-alfido-s-opportunity",
-            "https://prbookmarkingwebsites.com/story26513168/our-alfido-opportunity",
-            "https://socialmediainuk.com/story24852805/alfido-s-alfido-s-opportunity",
-            "https://dirstop.com/story26429688/alfido-s-alfido-s-opportunity",
-            "https://opensocialfactory.com/story23902556/the-alfido-program",
-            "https://ztndz.com/story26441490/our-alfido-tech-program",
-            "https://gorillasocialwork.com/story25002624/the-alfido-internship",
-            "https://socialrus.com/story22767191/our-alfido-opportunity",
-            "https://bookmarklinking.com/story9276616/our-alfido-program",
-            "https://bookmarks-hit.com/story23786273/our-alfido-s-internship",
-            "https://mediajx.com/story26052859/our-alfido-internship",
-            "https://bookmark-dofollow.com/story26386812/the-alfido-internship",
-            "https://bookmark-template.com/story26688049/alfido-s-alfido-s-internship",
-            "https://prbookmarkingwebsites.com/story26515108/the-alfido-tech-internship",
-            "https://socialmediainuk.com/story24854745/the-alfido-s-program",
-            "https://dirstop.com/story26431606/the-alfido-s-internship",
-            "https://opensocialfactory.com/story23904516/the-alfido-s-opportunity",
-            "https://ztndz.com/story26443413/our-alfido-tech-program",
-            "https://gorillasocialwork.com/story25004538/our-alfido-program",
-            "https://socialrus.com/story22769078/alfido-s-alfido-tech-program",
-            "https://bookmarklinking.com/story9278467/our-alfido-s-internship",
-            "https://bookmarks-hit.com/story23788123/the-alfido-s-internship",
-            "https://mediajx.com/story26053497/the-alfido-tech-opportunity",
-            "https://bookmark-dofollow.com/story26387451/alfido-s-alfido-s-opportunity",
-            "https://bookmark-template.com/story26688693/the-alfido-s-program",
-            "https://prbookmarkingwebsites.com/story26515759/alfido-s-alfido-internship",
-            "https://socialmediainuk.com/story24855392/alfido-s-alfido-opportunity",
-            "https://dirstop.com/story26432275/alfido-s-alfido-internship",
-            "https://opensocialfactory.com/story23905178/alfido-s-alfido-s-opportunity",
-            "https://ztndz.com/story26444061/alfido-s-alfido-s-internship",
-            "https://gorillasocialwork.com/story25005190/alfido-s-alfido-internship",
-            "https://socialrus.com/story22769716/our-alfido-program",
-            "https://bookmarklinking.com/story9279093/the-alfido-internship",
-            "https://bookmarks-hit.com/story23788737/our-alfido-tech-program"
+        // ======= Sample posts data (replace with your own backend later) =======
+        const posts = [
+            { id: 34, title: "Introduction to REST APIs", summary: "Learn the basics of RESTful API design and usage.", category: "Web", author: "Alfido Team", date: "2025-09-26", image: "https://picsum.photos/600/400?random=34", content: "<p>REST APIs use HTTP methods and status codes to enable communication between clients and servers. Understand endpoints, verbs, and best practices for scalable APIs.</p>" },
+            { id: 35, title: "Effective Remote Work for Engineers", summary: "Tips to stay productive and connected while working remotely.", category: "Career", author: "Lina", date: "2025-09-27", image: "https://picsum.photos/600/400?random=35", content: "<p>Set clear goals, communicate proactively, and use the right tools to succeed in remote engineering roles.</p>" },
+            { id: 36, title: "Intro to SRE: Site Reliability Engineering", summary: "What is SRE and how does it improve uptime?", category: "DevOps", author: "Sanjay", date: "2025-09-28", image: "https://picsum.photos/600/400?random=36", content: "<p>SRE combines software engineering and IT operations to build reliable, scalable systems. Learn about SLIs, SLOs, and error budgets.</p>" },
+            { id: 37, title: "Figma for Developers: Collaboration Tips", summary: "How devs can get the most out of Figma.", category: "UX", author: "Priya", date: "2025-09-29", image: "https://picsum.photos/600/400?random=37", content: "<p>Use Figma's inspect mode, design tokens, and version history to streamline handoff and feedback between designers and developers.</p>" },
+            { id: 31, title: "IT Infrastructure Basics", summary: "Understanding the foundation of modern IT systems.", category: "IT", author: "Alfido Team", date: "2025-09-23", image: "https://picsum.photos/600/400?random=31", content: "<p>IT infrastructure includes hardware, software, networks, and facilities that support business operations. Learn about servers, storage, networking, and best practices for reliability and scalability.</p>" },
+            { id: 32, title: "Network Security Essentials for IT Teams", summary: "Protect your organization with these core security practices.", category: "IT", author: "Priya", date: "2025-09-24", image: "https://picsum.photos/600/400?random=32", content: "<p>Implement firewalls, regular patching, access controls, and employee training to secure your IT environment against threats.</p>" },
+            { id: 33, title: "IT Helpdesk Automation: Tools & Tips", summary: "Streamline support with modern ITSM solutions.", category: "IT", author: "Rohit", date: "2025-09-25", image: "https://picsum.photos/600/400?random=33", content: "<p>Automate ticketing, use chatbots, and integrate knowledge bases to improve IT support efficiency and user satisfaction.</p>" },
+            { id: 26, title: "Mastering Async/Await in JavaScript", summary: "Write cleaner asynchronous code with async/await.", category: "Web", author: "Priya", date: "2025-09-18", image: "https://picsum.photos/600/400?random=26", content: "<p>Async/await makes asynchronous code easier to read and maintain. Learn how to handle promises and errors effectively.</p>" },
+            { id: 27, title: "Cloud Cost Optimization Strategies", summary: "Reduce your cloud bill without sacrificing performance.", category: "Cloud", author: "Sanjay", date: "2025-09-19", image: "https://picsum.photos/600/400?random=27", content: "<p>Monitor usage, right-size resources, and leverage reserved instances to optimize cloud costs.</p>" },
+            { id: 28, title: "Designing for Dark Mode", summary: "Tips for building interfaces that look great in dark mode.", category: "UX", author: "Lina", date: "2025-09-17", image: "https://picsum.photos/600/400?random=28", content: "<p>Use accessible color palettes, test contrast, and respect user preferences for a seamless dark mode experience.</p>" },
+            { id: 29, title: "Continuous Deployment with GitHub Actions", summary: "Automate your deployments for faster releases.", category: "DevOps", author: "Alfido Team", date: "2025-09-21", image: "https://picsum.photos/600/400?random=29", content: "<p>Set up workflows to build, test, and deploy your code automatically using GitHub Actions.</p>" },
+            { id: 30, title: "Building Your Personal Brand as a Developer", summary: "Grow your career by sharing your work and story.", category: "Career", author: "Rohit", date: "2025-09-22", image: "https://picsum.photos/600/400?random=30", content: "<p>Blogging, open source, and networking can help you stand out and attract new opportunities.</p>" },
+            { id: 18, title: "How to Write Clean JavaScript", summary: "Best practices for readable, maintainable JS code.", category: "Web", author: "Lina", date: "2025-09-12", image: "https://picsum.photos/600/400?random=18", content: "<p>Use meaningful variable names, keep functions small, and document your code for clarity.</p>" },
+            { id: 19, title: "Scaling PostgreSQL for Startups", summary: "Tips to keep your database fast as you grow.", category: "Cloud", author: "Sanjay", date: "2025-08-28", image: "https://picsum.photos/600/400?random=19", content: "<p>Index wisely, monitor slow queries, and use connection pooling to scale PostgreSQL efficiently.</p>" },
+            { id: 20, title: "A/B Testing for Product Teams", summary: "How to run experiments that drive growth.", category: "Product", author: "Rohit", date: "2025-07-15", image: "https://picsum.photos/600/400?random=20", content: "<p>Set clear hypotheses, segment users, and measure impact with statistical rigor.</p>" },
+            { id: 21, title: "Getting Started with Docker Compose", summary: "Simplify local development with multi-container setups.", category: "DevOps", author: "Alfido Team", date: "2025-06-25", image: "https://picsum.photos/600/400?random=21", content: "<p>Docker Compose lets you define and run multi-container Docker apps easily. Learn the basics here.</p>" },
+            { id: 22, title: "Design Tokens: The Future of Theming", summary: "Centralize your design system with tokens.", category: "UX", author: "Priya", date: "2025-09-14", image: "https://picsum.photos/600/400?random=22", content: "<p>Design tokens help teams keep colors, spacing, and typography consistent across platforms.</p>" },
+            { id: 23, title: "How Alfido Tech Uses Open Source", summary: "Why we contribute and how it shapes our products.", category: "About", author: "Alfido Team", date: "2025-09-16", image: "https://picsum.photos/600/400?random=23", content: "<p>Open source accelerates innovation and builds community. We share our tools and learn from others.</p>" },
+            { id: 24, title: "Landing Your First Tech Job: Resume Tips", summary: "What hiring managers look for in junior resumes.", category: "Career", author: "Alfido HR", date: "2025-09-13", image: "https://picsum.photos/600/400?random=24", content: "<p>Highlight real projects, quantify your impact, and tailor your resume to each job description.</p>" },
+            { id: 25, title: "Web Accessibility Checklist 2025", summary: "Ensure your site is usable by everyone.", category: "UX", author: "Lina", date: "2025-09-11", image: "https://picsum.photos/600/400?random=25", content: "<p>Use semantic HTML, provide alt text, and test with screen readers for better accessibility.</p>" },
+            {
+                id: 0, title: "About Alfido Tech", summary: "Who we are, what we build, and our mission.", category: "About", author: "Alfido Team", date: "2025-09-15", image: "https://picsum.photos/600/400?random=0", content: `<p>Alfido Tech is a modern engineering company focused on building simple, powerful tools for developers and startups. Our team is passionate about web development, cloud infrastructure, and product design.</p>
+        <ul>
+            <li>We publish tutorials, guides, and product updates to help engineers grow.</li>
+            <li>Our products are used by teams worldwide to ship faster and scale reliably.</li>
+            <li>We believe in open source, continuous learning, and a collaborative tech community.</li>
+        </ul>
+        <p>Follow our blog for the latest insights, and join us as we build the future of engineering!</p>`},
+            { id: 1, title: "Deploying a Node.js API with GitHub Actions", summary: "Step-by-step guide to build CI/CD for Node APIs.", category: "DevOps", author: "Alfido Team", date: "2025-09-20", image: "https://picsum.photos/600/400?random=1", content: `<p>In this guide we'll create a GitHub Actions workflow to test and deploy a Node.js API. We'll cover secrets, environments, and versioning.</p><h3>Step 1 — Test</h3><p>Run unit tests on each push...</p>` },
+            { id: 2, title: "React 18 patterns for faster apps", summary: "Tiny patterns that improve performance in React 18.", category: "Web", author: "Priya", date: "2025-08-10", image: "https://picsum.photos/600/400?random=2", content: "<p>Use transitions, useDeferredValue, and careful lazy-loading to speed up perceived performance.</p>" },
+            { id: 3, title: "Intro to Terraform for Teams", summary: "Manage infrastructure with readable, testable code.", category: "Cloud", author: "Sanjay", date: "2024-12-15", image: "https://picsum.photos/600/400?random=3", content: "<p>Terraform helps teams keep infra reproducible...</p>" },
+            { id: 4, title: "Designing accessible forms", summary: "Make forms that everyone can use.", category: "UX", author: "Alfido Team", date: "2025-02-07", image: "https://picsum.photos/600/400?random=4", content: "<p>Labels, ARIA, and keyboard navigation are essential when designing forms.</p>" },
+            { id: 5, title: "Why small teams win at product discovery", summary: "A tactical playbook for testing new features.", category: "Product", author: "Rohit", date: "2024-11-01", image: "https://picsum.photos/600/400?random=5", content: "<p>Fast experiments, clear metrics, and strong customer interviews are key.</p>" },
+            { id: 6, title: "Kubernetes networking demystified", summary: "Understanding services, ingress, and network policies.", category: "Cloud", author: "Alfido Team", date: "2025-03-22", image: "https://picsum.photos/600/400?random=6", content: "<p>Kubernetes networking can be complex. This article breaks down the core concepts.</p>" },
+            { id: 7, title: "CSS Grid vs Flexbox: When to use which", summary: "A practical guide to modern CSS layout techniques.", category: "Web", author: "Lina", date: "2025-01-30", image: "https://picsum.photos/600/400?random=7", content: "<p>Both CSS Grid and Flexbox have their strengths. Learn when to use each.</p>" },
+            { id: 8, title: "Building a serverless backend with AWS Lambda", summary: "Create scalable APIs without managing servers.", category: "Cloud", author: "Sanjay", date: "2024-10-18", image: "https://picsum.photos/600/400?random=8", content: "<p>Serverless architectures can reduce operational overhead...</p>" },
+            { id: 9, title: "Effective code reviews: Best practices", summary: "How to give and receive feedback that improves code quality.", category: "DevOps", author: "Alfido Team", date: "2025-04-05", image: "https://picsum.photos/600/400?random=9", content: "<p>Code reviews are essential for maintaining quality. Here are some tips...</p>" },
+            { id: 10, title: "Optimizing images for the web", summary: "Techniques to reduce load times without sacrificing quality.", category: "Web", author: "Priya", date: "2025-06-12", image: "https://picsum.photos/600/400?random=10", content: "<p>Use modern formats, compression, and responsive images to speed up your site.</p>" },
+            { id: 11, title: "Monitoring with Prometheus and Grafana", summary: "Visualize and alert on your infrastructure metrics.", category: "DevOps", author: "Lina", date: "2025-05-18", image: "https://picsum.photos/600/400?random=11", content: "<p>Prometheus and Grafana make it easy to collect, store, and visualize metrics from your apps and servers.</p>" },
+            { id: 12, title: "TypeScript tips for large codebases", summary: "How to scale TypeScript projects with confidence.", category: "Web", author: "Priya", date: "2025-07-02", image: "https://picsum.photos/600/400?random=12", content: "<p>Leverage advanced types, strict configs, and modularization to keep your TypeScript codebase healthy.</p>" },
+            { id: 13, title: "Secrets management in CI/CD pipelines", summary: "Keep your credentials safe in automated workflows.", category: "DevOps", author: "Sanjay", date: "2025-03-01", image: "https://picsum.photos/600/400?random=13", content: "<p>Learn best practices for storing and accessing secrets in CI/CD using tools like GitHub Secrets and Vault.</p>" },
+            { id: 14, title: "Building multi-region apps on AWS", summary: "Strategies for high availability and low latency.", category: "Cloud", author: "Alfido Team", date: "2025-08-22", image: "https://picsum.photos/600/400?random=14", content: "<p>Deploying across multiple AWS regions can improve uptime and performance for global users.</p>" },
+            { id: 15, title: "User onboarding UX patterns", summary: "Design flows that help users succeed from day one.", category: "UX", author: "Rohit", date: "2025-01-12", image: "https://picsum.photos/600/400?random=15", content: "<p>Great onboarding increases retention. Use tooltips, progress bars, and contextual help to guide new users.</p>" },
+            {
+                id: 16,
+                title: "How to Land an Internship at Alfido Tech",
+                summary: "A guide for students and freshers to join Alfido Tech's internship program.",
+                category: "Career",
+                author: "Alfido HR",
+                date: "2025-09-01",
+                image: "https://picsum.photos/600/400?random=16",
+                content: `<p>Alfido Tech offers hands-on internships for students passionate about web, cloud, and product engineering. Here’s how to apply and stand out:</p>
+            <ul>
+                <li>Build a strong GitHub profile with real projects.</li>
+                <li>Write about your learning journey (blogging helps SEO and your resume).</li>
+                <li>Showcase teamwork and communication skills.</li>
+                <li>Apply via our careers page and connect on LinkedIn.</li>
+            </ul>
+            <p>Interns at Alfido Tech work on real products, contribute to open source, and learn from experienced mentors. Start your journey today!</p>`
+            },
+            {
+                id: 17,
+                title: "SEO Growth Tips from Alfido Tech Interns",
+                summary: "How our interns help boost organic traffic and brand visibility.",
+                category: "SEO",
+                author: "Priya",
+                date: "2025-09-10",
+                image: "https://picsum.photos/600/400?random=17",
+                content: `<p>Interns at Alfido Tech play a key role in growing our SEO. Here’s what they do:</p>
+            <ol>
+                <li>Research trending keywords in tech and engineering.</li>
+                <li>Write high-quality, original blog posts and tutorials.</li>
+                <li>Optimize on-page elements: titles, meta descriptions, and images.</li>
+                <li>Promote content on social media and developer forums.</li>
+            </ol>
+            <p>Want to learn SEO hands-on? Join our internship program and help us grow!</p>`
+            },
+
+
         ];
 
-        const container = document.getElementById("iframeContainer");
+        // ======= Globals =======
+        const PAGE_SIZE = 4;
+        let currentPage = 1;
+        let filtered = posts.slice();
 
-        function renderCards(filter = "") {
-            container.innerHTML = "";
+        // ======= Utilities =======
+        function formatDate(d) {
+            const dt = new Date(d);
+            return dt.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+        }
 
-            const filtered = urls
-                .filter(u => u.toLowerCase().includes(filter.toLowerCase()))
-                .slice(0, 60); // ✅ limit to 60 links per load
+        // ======= Render functions =======
+        function renderPosts() {
+            const start = (currentPage - 1) * PAGE_SIZE;
+            const pageItems = filtered.slice(start, start + PAGE_SIZE);
+            const grid = document.getElementById('postsGrid');
+            grid.innerHTML = '';
+            if (pageItems.length === 0) {
+                grid.innerHTML = '<div class="col-12"><div class="alert alert-info">No posts found.</div></div>';
+                renderPagination();
+                return;
+            }
 
-            filtered.forEach(url => {
-                const hostname = new URL(url).hostname.replace("www.", "");
-
-                const col = document.createElement("div");
-                col.className = "col-lg-4 col-md-6 col-12 mb-4";
-
+            pageItems.forEach(p => {
+                const col = document.createElement('div');
+                col.className = 'col-md-6';
                 col.innerHTML = `
-          <div class="card h-100 shadow-sm">
-            <div class="card-body d-flex flex-column">
-              <h6 class="card-title text-truncate">${hostname}</h6>
-              <p class="text-muted small flex-grow-1">
-                External article related to Alfido Tech internships & programs.
-              </p>
-              <a href="${url}"
-                 target="_blank"
-                 rel="nofollow noopener"
-                 class="btn btn-open btn-sm mt-auto">
-                 Read Article
-              </a>
+          <article class="post-card p-0 overflow-hidden h-100">
+            <img src="${p.image}" alt="${p.title}" class="post-image">
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h5 class="mb-0">${p.title}</h5>
+                <small class="text-muted">${formatDate(p.date)}</small>
+              </div>
+              <p class="small text-muted mb-2">${p.summary}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <span class="badge-category">${p.category}</span>
+                  <small class="text-muted ms-2">by ${p.author}</small>
+                </div>
+                <div>
+                  <button class="btn btn-sm btn-outline-primary" onclick="openPost(${p.id})">Read</button>
+                </div>
+              </div>
             </div>
-          </div>
+          </article>
         `;
+                grid.appendChild(col);
+            });
+            renderPagination();
+        }
 
-                container.appendChild(col);
+        function renderCategories() {
+            const cats = Array.from(new Set(posts.map(p => p.category)));
+            const el = document.getElementById('categories');
+            el.innerHTML = '';
+            const allBtn = document.createElement('button');
+            allBtn.className = 'btn btn-sm btn-outline-secondary';
+            allBtn.textContent = 'All';
+            allBtn.onclick = () => { document.getElementById('searchInput').value = ''; filtered = posts.slice(); currentPage = 1; renderPosts(); };
+            el.appendChild(allBtn);
+            cats.forEach(c => {
+                const b = document.createElement('button');
+                b.className = 'btn btn-sm btn-outline-primary';
+                b.textContent = c;
+                b.onclick = () => { filtered = posts.filter(p => p.category === c); currentPage = 1; renderPosts(); }
+                el.appendChild(b);
             });
         }
 
-        renderCards();
+        function renderRecent() {
+            const recent = posts.slice().sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 4);
+            const ul = document.getElementById('recentList'); ul.innerHTML = '';
+            recent.forEach(r => {
+                const li = document.createElement('li');
+                li.className = 'mb-2';
+                li.innerHTML = `<a href='#' onclick='openPost(${r.id});return false;' class='text-decoration-none'><strong>${r.title}</strong><br><small class='text-muted'>${formatDate(r.date)} • ${r.category}</small></a>`;
+                ul.appendChild(li);
+            });
+        }
 
-        document.getElementById("filterInput").addEventListener("input", e => {
-            renderCards(e.target.value);
+        // ======= Pagination =======
+        function renderPagination() {
+            const total = Math.ceil(filtered.length / PAGE_SIZE);
+            const ul = document.getElementById('pagination'); ul.innerHTML = '';
+            if (total <= 1) return;
+            for (let i = 1; i <= total; i++) {
+                const li = document.createElement('li');
+                li.className = 'page-item' + (i === currentPage ? ' active' : '');
+                li.innerHTML = `<a class='page-link' href='#' onclick='gotoPage(${i});return false;'>${i}</a>`;
+                ul.appendChild(li);
+            }
+        }
+        function gotoPage(i) { currentPage = i; renderPosts(); window.scrollTo({ top: 200, behavior: 'smooth' }); }
+
+        // ======= Search & sort handlers =======
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const q = e.target.value.trim().toLowerCase();
+            filtered = posts.filter(p => (p.title + p.summary + p.category + p.author).toLowerCase().includes(q));
+            currentPage = 1; renderPosts();
         });
-    </script>
 
+        document.getElementById('sortSelect').addEventListener('change', (e) => {
+            const v = e.target.value;
+            if (v === 'new') posts.sort((a, b) => new Date(b.date) - new Date(a.date));
+            else posts.sort((a, b) => new Date(a.date) - new Date(b.date));
+            filtered = posts.slice(); currentPage = 1; renderPosts(); renderRecent();
+        });
+
+        // ======= Open post modal =======
+        function openPost(id) {
+            const p = posts.find(x => x.id === id); if (!p) return;
+            document.getElementById('modalTitle').textContent = p.title;
+            document.getElementById('modalMeta').innerHTML = `${p.author} • ${formatDate(p.date)} • <span class='badge-category'>${p.category}</span>`;
+            document.getElementById('modalImage').src = p.image;
+            document.getElementById('modalBody').innerHTML = p.content;
+            const modal = new bootstrap.Modal(document.getElementById('postModal'));
+            modal.show();
+        }
+
+        // ======= Subscribe form (demo) =======
+        document.getElementById('subscribeForm').addEventListener('submit', (e) => { e.preventDefault(); alert('Thanks! — (demo) We would save this email to the newsletter list.'); e.target.reset(); });
+
+        // ======= Init =======
+        function init() {
+            document.getElementById('year').textContent = new Date().getFullYear();
+            renderCategories(); renderRecent(); renderPosts();
+        }
+        init();
+
+    </script>
+    <script>
+  fetch("/footer.html")
+    .then(res => res.text())
+    .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+    
 </body>
 
 </html>
