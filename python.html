@@ -42,43 +42,76 @@
     .whatsapp img{width:64px; height:64px}
     footer{color:#cfd6ff}
     .kbd{border:1px solid rgba(255,255,255,.2); border-bottom-width:3px; padding:.05rem .35rem; border-radius:6px; font-weight:700}
+     .navbar {
+        background: #fff;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        z-index: 999;
+    }
+
+    .navbar-brand img {
+        height: 45px;
+    }
+
+    .nav-link {
+        font-weight: 500;
+        transition: color .3s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: #dD242a !important;
+    }
   </style>
 
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container py-2">
-      <a class="navbar-brand d-flex align-items-center gap-2" href="https://www.alfidotech.com/">
-        <img src="Logo 2.png" alt="Alfido Tech" width="180" height="38" loading="lazy" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="nav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item" ><a class="nav-link" style="color: #0b1220;" href="https://www.alfidotech.com/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" style="color: #0b1220;" href="https://www.alfidotech.com/service.html">Services</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="internDD" role="button" data-bs-toggle="dropdown" style="color: #0b1220;" aria-expanded="false">Internship</a>
-            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="internDD">
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Registration</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html" target="_blank">Offer Letter</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task Submission</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/report.html">Report Card</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html" target="_blank">Code Editor</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link active" aria-current="page" style="color: #0b1220;" href="#quiz">Certification</a></li>
-          <li class="nav-item"><a class="nav-link" style="color: #0b1220;" href="https://www.alfidotech.com/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://www.alfidotech.com/"><img
+                    src="https://www.alfidotech.com/Logo%202.png" alt="Alfido Tech"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown">Internship</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship
+                                    Registration</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task
+                                    Submission</a></li>
+                            <li><a class="dropdown-item"
+                                    href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/internProfile.html">Intern
+                                    Profile</a></li>
+                            <li><a class="dropdown-item " href="https://www.alfidotech.com/task.html">Tasks</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/report.html">Report Card</a>
+                            </li>
+                            <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact
+                            Us</a></li>
+                    <li class="nav-item"><a class="nav-link active"
+                            href="https://www.alfidotech.com/certification.html">Certification</a></li>
+                    <li class="nav-item"><a class="nav-link " href="https://www.alfidotech.com/blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <br><br>
 
   <!-- Hero -->
   <header class="hero container pt-5" style="margin-top:72px">
@@ -137,38 +170,12 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <footer class="pt-5 border-top border-opacity-10">
-    <div class="container">
-      <div class="row g-4 pb-4">
-        <div class="col-md-4">
-          <h5 class="fw-bold">Alfido Tech</h5>
-          <p class="muted">Custom software, SMM, SEO, and Ads optimization to grow your online presence.</p>
-        </div>
-        <div class="col-md-4">
-          <h6 class="fw-bold">Quick links</h6>
-          <ul class="list-unstyled m-0 d-grid gap-1">
-            <li><a href="https://www.alfidotech.com/">Home</a></li>
-            <li><a href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
-            <li><a href="https://www.alfidotech.com/contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h6 class="fw-bold">Contact</h6>
-          <p class="m-0">Hyderabad, Telangana</p>
-          <p class="m-0">info@alfidotech.com</p>
-          <p class="m-0">+91 9977465250</p>
-        </div>
-      </div>
-      <div class="d-flex flex-wrap align-items-center justify-content-between py-3 border-top border-opacity-10">
-        <p class="m-0 small muted">© 2019–2025 Alfido Tech. All rights reserved.</p>
-        <div class="d-flex gap-3 small">
-          <a href="privacy.html">Privacy</a>
-          <a href="Terms&Conditions.html">Terms</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <div id="footer"></div>
+  <script>
+    fetch("/footer.html")
+      .then(res => res.text())
+      .then(data => document.getElementById("footer").innerHTML = data);
+  </script>
 
   <!-- WhatsApp Floating -->
   <a class="whatsapp" href="https://api.whatsapp.com/send?phone=919977465250" target="_blank" aria-label="Chat on WhatsApp">
