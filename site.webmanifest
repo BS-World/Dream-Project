@@ -1,11 +1,10 @@
 {
-  "id": "/",
+  "id": "/?source=pwa",
   "name": "Alfido Tech",
   "short_name": "Alfido",
-  "start_url": "/",
+  "start_url": "/?source=pwa",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#0f172a",
   "theme_color": "#0f172a",
   "icons": [
