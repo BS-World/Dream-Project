@@ -280,6 +280,28 @@
             }
         }
     </style>
+    =======
+    #whatsapp-btn img {
+    width: 65px;
+    height: auto;
+    }
+    </style>
+    <style>
+        body {
+            padding-top: 80px;
+            /* navbar height ke hisaab se adjust kar sakte ho */
+        }
+    </style>
+
+    <!-- Google Site Verification -->
+
+
+    <!-- Google Site Verification -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1950697215537872"
+        crossorigin="anonymous"></script>
+    <meta name="google-adsense-account" content="ca-pub-1950697215537872">
+    <link rel="manifest" href="/site.webmanifest">
+    >>>>>>> 9f458685d873fecdee2397b2ee803ba47f9252a4
 </head>
 
 <body>
@@ -468,6 +490,45 @@
                             <option>Java Developer</option>
                             <option>.NET Developer</option>
 
+                            <<<<<<< HEAD <option>Data Analytics</option>
+                                <option>Business Analytics</option>
+                                <option>Data Science</option>
+                                <option>Artificial Intelligence</option>
+                                <option>Machine Learning</option>
+
+                                <option>Digital Marketing</option>
+                                <option>Cybersecurity</option>
+                                <option>UX/UI Design</option>
+                                <option>Android Developer</option>
+
+                                <option>Very Large Scale Integration (VLSI)</option>
+                                <option>Embedded Systems</option>
+                                <option>Cloud Computing</option>
+                                <option>DevOps</option>
+                        </select>
+                    </div>
+
+                    <!-- Candidate ID -->
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold"><i class="fa-solid fa-id-card"></i> Candidate ID</label>
+                        <input type="text" class="form-control form-control-lg rounded-3" id="cidno" name="cidno"
+                            required>
+                    </div>
+                    <!-- Domain -->
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold"><i class="fa-solid fa-laptop-code"></i> Internship
+                            Domain</label>
+                        <select class="form-select form-select-lg rounded-3" id="internshipDomain"
+                            name="internshipDomain" required>
+                            <option value="">Select Domain...</option>
+                            <option>Frontend Developer</option>
+                            <option>React.JS</option>
+                            <option>MERN Stack Developer</option>
+                            <option>Python Developer</option>
+                            <option>C++/C Programming</option>
+                            <option>Java Developer</option>
+                            <option>.NET Developer</option>
+
                             <option>Data Analytics</option>
                             <option>Business Analytics</option>
                             <option>Data Science</option>
@@ -485,13 +546,7 @@
                             <option>DevOps</option>
                         </select>
                     </div>
-
-                    <!-- Candidate ID -->
-                    <div class="mb-4">
-                        <label class="form-label fw-semibold"><i class="fa-solid fa-id-card"></i> Candidate ID</label>
-                        <input type="text" class="form-control form-control-lg rounded-3" id="cidno" name="cidno"
-                            required>
-                    </div>
+                    >>>>>>> 9f458685d873fecdee2397b2ee803ba47f9252a4
 
                     <!-- LinkedIn -->
                     <div class="mb-4">
@@ -558,9 +613,9 @@
                             <span id="btnLoader" class="spinner-border spinner-border-sm d-none" role="status"></span>
                         </button>
 
-                        <button type="reset" class="btn btn-outline-secondary btn-lg px-4">
+                        <<<<<<< HEAD <button type="reset" class="btn btn-outline-secondary btn-lg px-4">
                             <i class="fa-solid fa-rotate-right"></i> Reset
-                        </button>
+                            </button>
                     </div>
                 </form>
             </div>
@@ -589,16 +644,67 @@
             <p class="text-muted mb-0">Please wait, do not refresh…</p>
         </div>
     </div>
+    =======
+    <!-- Submit -->
+    <!-- Buttons -->
+    <div class="text-center">
+        <button id="submitBtn" type="submit"
+            class="btn btn-primary btn-lg px-4 shadow-sm me-2 d-inline-flex align-items-center gap-2">
+            <span id="btnText">
+                <i class="fa-solid fa-paper-plane"></i> Submit
+            </span>
+            <span id="btnLoader" class="spinner-border spinner-border-sm d-none" role="status"></span>
+        </button>
+
+        <button type="reset" class="btn btn-outline-secondary btn-lg px-4">
+            <i class="fa-solid fa-rotate-right"></i> Reset
+        </button>
+    </div>
+    </form>
+    </div>
+    </div>
+    </section>
+
+    <!-- ================= LOADING OVERLAY ================= -->
+    <div id="loadingOverlay" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.6);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+">
+        <div style="
+    background:#fff;
+    padding:30px 40px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.3);
+  ">
+            <div class="spinner-border text-warning mb-3"></div>
+            <h5 class="fw-bold mb-1">Submitting your details</h5>
+            <p class="text-muted mb-0">Please wait, do not refresh…</p>
+        </div>
+    </div>
 
 
-
-
-
-
-
-    <!-- Page Content -->
+    <!-- WhatsApp Button -->
+    <div id="whatsapp-btn">
+        <a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank">
+            <img src="https://www.pngall.com/wp-content/uploads/2016/04/WhatsApp-PNG-Picture.png"
+                alt="WhatsApp Contact">
+        </a>
+    </div>
 
     <div id="footer"></div>
+    <script>
+        fetch("/footer.html")
+            .then(res => res.text())
+            .then(data => document.getElementById("footer").innerHTML = data);
+    </script>
+
+
 
     <!-- Form Submission Script -->
     <script>
@@ -612,69 +718,84 @@
             document.getElementById("loadingOverlay").style.display = "flex";
             document.getElementById("submitBtn").disabled = true;
 
-            const formData = {
-                fullName: document.getElementById('fullName').value,
-                email: document.getElementById('email').value,
-                whatsapp: document.getElementById('whatsapp').value,
-                internshipDomain: document.getElementById('internshipDomain').value,
-                cidno: document.getElementById('cidno').value,
-                linkedIn: document.getElementById('linkedIn').value,
-                gtask1: document.getElementById('gtask1').value,
-                ltask1: document.getElementById('ltask1').value,
-                gtask2: document.getElementById('gtask2').value,
-                ltask2: document.getElementById('ltask2').value,
-                gtask3: document.getElementById('gtask3').value,
-                ltask3: document.getElementById('ltask3').value,
-            };
 
-            fetch("https://script.google.com/macros/s/AKfycbwOIBNHoPEFRXaH7gSDoKbckAUOKb1xnAGbhcO7BJSzdZ0qunKc_OweBNL7rMmjc2Ekug/exec", {
-                method: "POST",
-                mode: "no-cors",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(formData),
-            })
-                .then(() => {
-                    // UX delay (smooth feel)
-                    setTimeout(() => {
-                        document.getElementById("submissionForm").reset();
-                        window.location.href = "https://payments.cashfree.com/forms/NewInternship";
-                    }, 1200);
+            <div id="footer"></div>
+
+        <!--Form Submission Script-- >
+                        <script>
+                            let isSubmitting = false;
+                            document.getElementById("submissionForm").addEventListener("submit", function (e) {
+                                e.preventDefault();
+                            if (isSubmitting) return;
+                            isSubmitting = true;
+    
+                            // Show loading
+                            document.getElementById("loadingOverlay").style.display = "flex";
+                            document.getElementById("submitBtn").disabled = true;
+    
+                            const formData = {
+                                fullName: document.getElementById('fullName').value,
+                            email: document.getElementById('email').value,
+                            whatsapp: document.getElementById('whatsapp').value,
+                            internshipDomain: document.getElementById('internshipDomain').value,
+                            cidno: document.getElementById('cidno').value,
+                            linkedIn: document.getElementById('linkedIn').value,
+                            gtask1: document.getElementById('gtask1').value,
+                            ltask1: document.getElementById('ltask1').value,
+                            gtask2: document.getElementById('gtask2').value,
+                            ltask2: document.getElementById('ltask2').value,
+                            gtask3: document.getElementById('gtask3').value,
+                            ltask3: document.getElementById('ltask3').value,
+                };
+    
+                            fetch("https://script.google.com/macros/s/AKfycbwOIBNHoPEFRXaH7gSDoKbckAUOKb1xnAGbhcO7BJSzdZ0qunKc_OweBNL7rMmjc2Ekug/exec", {
+                                method: "POST",
+                            mode: "no-cors",
+                            headers: {"Content-Type": "application/json" },
+                            body: JSON.stringify(formData),
                 })
-                .catch((error) => {
-                    console.error("Error:", error);
-                    alert("Submission failed. Please try again.");
-                    document.getElementById("loadingOverlay").style.display = "none";
-                    document.getElementById("submitBtn").disabled = false;
-                    isSubmitting = false;
-                });
-        });
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const loadHTML = (url, id) =>
-                fetch(url).then(r => r.text())
-                    .then(h => document.getElementById(id).innerHTML = h);
-
-            loadHTML("/header.html", "header");
-            loadHTML("/footer.html", "footer");
-        });
-    </script>
-
-
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker
-                    .register("/sw.js")
-                    .then(() => console.log("Service Worker registered"))
-                    .catch(err => console.log("SW registration failed", err));
+                    .then(() => {
+                                // UX delay (smooth feel)
+                                setTimeout(() => {
+                                    document.getElementById("submissionForm").reset();
+                                    window.location.href = "https://payments.cashfree.com/forms/NewInternship";
+                                }, 1200);
+                    })
+                    .catch((error) => {
+                                console.error("Error:", error);
+                            alert("Submission failed. Please try again.");
+                            document.getElementById("loadingOverlay").style.display = "none";
+                            document.getElementById("submitBtn").disabled = false;
+                            isSubmitting = false;
+                    });
             });
-        }
-    </script>
-
-
-</body>
-
-</html>
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                const loadHTML = (url, id) =>
+                    fetch(url).then(r => r.text())
+                        .then(h => document.getElementById(id).innerHTML = h);
+    
+                loadHTML("/header.html", "header");
+                loadHTML("/footer.html", "footer");
+            });
+            </script>
+    
+    
+        <script>
+                if ("serviceWorker" in navigator) {
+                    window.addEventListener("load", () => {
+                        navigator.serviceWorker
+                            .register("/sw.js")
+                            .then(() => console.log("Service Worker registered"))
+                            .catch(err => console.log("SW registration failed", err));
+                    });
+            }
+            </script>
+    
+    
+    </body>
+    
+    </html>
