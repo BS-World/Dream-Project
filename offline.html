@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Offline | Alfido Tech</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg1:#0b1220;
+  --bg2:#000000;
+  --cyan:#00e5ff;
+  --red:#ff3b3b;
+  --glass:rgba(255,255,255,0.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  background:linear-gradient(135deg,var(--bg1),var(--bg2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  color:#fff;
+}
+
+/* animated background glow */
+body::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,var(--cyan),transparent 60%);
+  opacity:.15;
+  animation:float 8s ease-in-out infinite;
+}
+
+@keyframes float{
+  0%{transform:translate(-100px,-80px);}
+  50%{transform:translate(100px,80px);}
+  100%{transform:translate(-100px,-80px);}
+}
+
+/* glass card */
+.card{
+  position:relative;
+  background:var(--glass);
+  backdrop-filter:blur(18px);
+  border-radius:22px;
+  padding:50px 45px;
+  max-width:420px;
+  width:90%;
+  text-align:center;
+  border:1px solid rgba(255,255,255,0.15);
+  box-shadow:0 25px 60px rgba(0,0,0,0.6);
+  animation:cardIn 1.2s ease;
+}
+
+@keyframes cardIn{
+  from{opacity:0;transform:scale(.85);}
+  to{opacity:1;transform:scale(1);}
+}
+
+/* animated icon */
+.wifi{
+  font-size:64px;
+  margin-bottom:20px;
+  color:var(--red);
+  animation:pulse 1.6s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:.9;}
+  50%{transform:scale(1.15);opacity:1;}
+}
+
+h2{
+  font-size:26px;
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+p{
+  font-size:15px;
+  opacity:.85;
+  margin-bottom:30px;
+  line-height:1.6;
+}
+
+/* retry button */
+button{
+  background:linear-gradient(135deg,var(--red),#ff6a6a);
+  border:none;
+  padding:14px 34px;
+  color:#fff;
+  border-radius:50px;
+  font-size:15px;
+  cursor:pointer;
+  box-shadow:0 10px 30px rgba(255,59,59,.4);
+  transition:.3s;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 15px 40px rgba(255,59,59,.6);
+}
+
+/* footer */
+.footer{
+  margin-top:25px;
+  font-size:13px;
+  opacity:.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="wifi">📡</div>
+  <h2>You’re Offline</h2>
+  <p>
+    It looks like your internet connection is unavailable.<br>
+    Please reconnect to continue using Alfido Tech.
+  </p>
+
+  <button onclick="location.reload()">Retry Connection</button>
+
+  <div class="footer">
+    © 2026 Alfido Tech
+  </div>
+</div>
+
+</body>
+</html>

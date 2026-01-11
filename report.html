@@ -1,42 +1,284 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <!-- ================= BASIC META ================= -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Internship Report Card Generator | Alfido Tech</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://www.alfidotech.com/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="https://www.alfidotech.com/apple-touch-icon.png">
+    <title>Internship Report Card Generator | Alfido Tech Internship Portal</title>
 
-    <!-- Bootstrap & Fonts -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- ================= SEO META ================= -->
+    <meta name="description"
+        content="Generate and download an official internship report card from Alfido Tech. View performance evaluation, task completion status, and overall internship assessment in A4-ready format.">
+    <meta name="keywords"
+        content="Alfido Tech Internship Report Card, Internship Performance Report, Internship Evaluation Report, Report Card Generator, AICTE Internship Report">
+    <meta name="author" content="Alfido Tech">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.alfidotech.com/report.html">
+
+    <!-- ================= OPEN GRAPH (WhatsApp / LinkedIn) ================= -->
+    <meta property="og:site_name" content="Alfido Tech">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Internship Report Card Generator | Alfido Tech">
+    <meta property="og:description"
+        content="Generate your official internship report card with performance evaluation and task status through the Alfido Tech Internship Portal.">
+    <meta property="og:url" content="https://www.alfidotech.com/report.html">
+    <meta property="og:image" content="https://www.alfidotech.com/img/alfido-report-card-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Internship Report Card Generator | Alfido Tech">
+    <meta name="twitter:description"
+        content="Instantly generate and download your official internship report card from Alfido Tech.">
+    <meta name="twitter:image" content="https://www.alfidotech.com/img/alfido-report-card-og.jpg">
+    <meta name="twitter:site" content="@AlfidoTech">
+    <meta name="twitter:creator" content="@AlfidoTech">
 
 
 
-    <!-- Google Tag Manager End -->
+
+    <!-- ================= APPLE TOUCH ICONS ================= -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+
+    <!-- ================= ANDROID ICONS ================= -->
+    <link rel="icon" type="image/png" sizes="36x36" href="/img/favicon/android-icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="/img/favicon/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="/img/favicon/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+
+    <!-- ================= STANDARD FAVICONS ================= -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+
+    <!-- ================= MANIFEST ================= -->
+    <link rel="manifest" href="/img/favicon/manifest.json">
+
+    <!-- ================= WINDOWS TILES ================= -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+
+    <!-- ================= THEME COLOR ================= -->
+    <meta name="theme-color" content="#c1121f">
+
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
+
     <style>
-        .navbar {
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
+
+        .badge-custom {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 14px;
+        }
+
+        .service-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+
+
+        /* ================= HERO ================= */
+        .hero {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
+
+        /* Badge */
+        .badge-custom {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            backdrop-filter: blur(6px);
+        }
+
+        /* Image animation */
+        .hero-img-wrapper img {
+            animation: floatHero 6s ease-in-out infinite;
+        }
+
+        @keyframes floatHero {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile spacing */
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+            }
+
+            .hero .btn {
+                width: 100%;
+            }
+        }
+
+        .hero-header {
+            min-height: 70vh;
+            padding-top: 120px;
+            padding-bottom: 80px;
+
+            background:
+                linear-gradient(135deg,
+                    rgba(20, 5, 5, 0.85),
+                    rgba(120, 10, 10, 0.85),
+                    rgba(20, 5, 5, 0.9)),
+                url("img/banar.png");
+
+            background-repeat: no-repeat;
+            background-size: 200%;
+            /* zoomed – 50% visible */
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .hero-header {
+                min-height: 75vh;
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            .hero-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            /* fade effect */
+        }
+
+        .popup-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .popup-overlay.hide {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Popup Box */
+        .popup-box {
             background: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.4s ease;
         }
 
-        .navbar-brand img {
-            height: 45px;
+        /* Success Tick */
+        .tick {
+            font-size: 60px;
+            color: green;
+            animation: pop 0.4s ease;
         }
 
-        .nav-link {
-            font-weight: 500;
-            transition: color .3s;
+        /* Tick Pop Animation */
+        @keyframes pop {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: #dD242a !important;
+        /* Box Fade-in */
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         body {
@@ -140,67 +382,18 @@
             break-inside: avoid !important;
         }
     </style>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9354605524157273"
-        crossorigin="anonymous"></script>
-    <!-- Google Site Verification -->
-     
-<!-- Google Site Verification -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1950697215537872"
-    crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-1950697215537872">
-<link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="Logo 2.png" alt="Alfido Tech"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Internship</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship
-                                    Registration</a></li>
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a>
-                            </li>
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task
-                                    Submission</a></li>
-                            <li><a class="dropdown-item"
-                                    href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
-                            <li><a class="dropdown-item " href="https://www.alfidotech.com/internProfile.html">Intern
-                                    Profile</a></li>
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
-                            <li><a class="dropdown-item active" href="https://www.alfidotech.com/Report.html">Report
-                                    Card</a></li>
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact
-                            Us</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="https://www.alfidotech.com/certification.html">Certification</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div id="header"></div>
+
     <br><br>
 
     <div class="container card-container">
         <div class="report-card">
             <div class="d-flex justify-content-between align-items-center mb-3">
                 <div>
-                    <img src="https://www.alfidotech.com/Logo%202.png" alt="Logo" style="height:60px;">
+                    <img src="img/nav-logo.png" alt="Logo" style="height:60px;">
                 </div>
                 <div class="text-end">
                     <h5 class="mb-0">Internship Report Card Generator</h5>
@@ -286,12 +479,18 @@
             <small class="text-muted">Tip: upload a CSV to bulk-generate multiple report cards.</small>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+    <!-- Page Content -->
+
     <div id="footer"></div>
-    <script>
-        fetch("/footer.html")
-            .then(res => res.text())
-            .then(data => document.getElementById("footer").innerHTML = data);
-    </script>
 
     <!-- html2pdf for PDF download -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
@@ -663,9 +862,9 @@
         }
 
         /**********************
-         * create weekly breakdown given start & end
-         * Weeks are 7-day windows starting from startDate (week 1 = start..start+6)
-         **********************/
+ * create weekly breakdown given start & end
+ * Weeks are 7-day windows starting from startDate (week 1 = start..start+6)
+ **********************/
         function createWeeklyBreakdown(startDateStr, endDateStr, domain, seed) {
             const start = parseDateISO(startDateStr);
             const end = parseDateISO(endDateStr);
@@ -684,16 +883,15 @@
             for (let i = 0; i < days.length; i += 7) {
                 const chunk = days.slice(i, i + 7);
                 const weekNo = Math.floor(i / 7) + 1;
+
                 const entries = chunk.map((date, idx) => {
-                    // topic cycles through topics list
                     const topic = topics[(i + idx) % topics.length];
-                    // marks deterministic choice
+
+                    // 🔒 FIXED MARKS LOGIC (85+ only)
                     const r = rand();
                     let marks, remark;
-                    if (r < 0.15) { marks = Math.floor(40 + r * 100); remark = "Needs Improvement"; }
-                    else if (r < 0.5) { marks = Math.floor(60 + r * 50); remark = "Average"; }
-                    else if (r < 0.85) { marks = Math.floor(70 + r * 30); remark = "Good"; }
-                    else { marks = Math.floor(85 + r * 15); remark = "Excellent"; }
+                    marks = Math.floor(85 + r * 16); // 85–100
+                    remark = "Excellent";
 
                     return {
                         date: new Date(date),
@@ -702,10 +900,55 @@
                         remark
                     };
                 });
-                weeks.push({ weekNo, entries, startDate: chunk[0], endDate: chunk[chunk.length - 1] });
+
+                weeks.push({
+                    weekNo,
+                    entries,
+                    startDate: chunk[0],
+                    endDate: chunk[chunk.length - 1]
+                });
             }
+
+            // ✅ RETURN MUST BE INSIDE FUNCTION
             return weeks;
         }
+        /**********************
+ * Overall Percentage, Grade & Remark Calculator
+ **********************/
+        function calculateOverallResult(weeks) {
+            let totalMarks = 0;
+            let totalCount = 0;
+
+            weeks.forEach(week => {
+                week.entries.forEach(entry => {
+                    totalMarks += entry.marks;
+                    totalCount++;
+                });
+            });
+
+            const percentage = totalCount
+                ? (totalMarks / (totalCount * 100)) * 100
+                : 0;
+
+            let grade = "A";
+            let remarkLine = "Excellent Performance";
+
+            if (percentage >= 90) {
+                grade = "A+";
+                remarkLine = "Outstanding Performance";
+            } else if (percentage >= 85) {
+                grade = "A";
+                remarkLine = "Excellent Performance";
+            }
+
+            return {
+                percentage: percentage.toFixed(2),
+                grade,
+                remarkLine
+            };
+        }
+
+
 
         /**********************
          * render a single report card DOM
@@ -713,6 +956,8 @@
         function renderReportCard(data) {
             // data: { name, candidateId, domain, startDate, endDate, certLink }
             const weeks = createWeeklyBreakdown(data.startDate, data.endDate, data.domain, data.candidateId || data.name);
+            const overallResult = calculateOverallResult(weeks);
+
             const wrapper = document.createElement('div');
             wrapper.className = 'report-card';
 
@@ -723,7 +968,7 @@
 
           <div class="d-flex justify-content-between align-items-start">
             <div>
-              <img src="https://www.alfidotech.com/Logo%202.png" alt="logo" style="height:56px;">
+              <img src="img/nav-logo.png" alt="logo" style="height:56px;">
             </div>
             <div class="text-end">
               <h4 class="mb-0">${escapeHtml(data.name)}</h4>
@@ -737,6 +982,24 @@
           <div class="text-center my-4">
             <h2 class="mb-3" style="color: #2c3e50; font-weight: 600;">Report Card</h2>
           </div>
+          <div class="text-center my-3">
+  <h5>
+    Overall Percentage:
+    <span style="color:#198754;">
+      ${overallResult.percentage}%
+    </span>
+  </h5>
+  <h5>
+    Grade:
+    <span style="color:#0d6efd;">
+      ${overallResult.grade}
+    </span>
+  </h5>
+  <p class="fw-semibold text-success">
+    ${overallResult.remarkLine}
+  </p>
+</div>
+
           <hr>
         <p class="mb-2 meta">Maintor/Supervisor - Akash Dubey (<a href="mailto:akash.dubey@alfidotech.com">akash.dubey@alfidotech.com</a>)</p> </br>
         </div>
@@ -781,19 +1044,17 @@
             lastDiv.innerHTML = `
   <div class="signature-row d-flex flex-wrap align-items-center justify-content-between mt-3 text-center">
       <div class="signature-item1">
-          <img src="https://alfidotech.com/img/mentor.png" alt="Founder Signature" style="height:90px;">
+          <img src="img/mentor.png" alt="Founder Signature" style="height:90px;">
           <p class="mt-1"><b>Akash Dubey<br>Maintor/Supervisor</b></p>
       </div>
       
-      <div class="signature-item">
-          <img src="aicte.png" alt="AICTE Logo" style="height:90px;">
-      </div>
+      
       <div class="signature-item qr-holder">
           <canvas class="qrCanvas"></canvas>
           <p class="meta mt-1">Scan to Verify</p>
       </div>
       <div class="signature-item">
-          <img src="MSME Logo.png" alt="MSME Logo" style="height:90px;">
+          <img src="img/msme.png" alt="MSME Logo" style="height:90px;">
       </div>
   </div>
   <div class="mt-3 meta">Generated on: ${fmtDate(new Date())}</div>
@@ -997,8 +1258,30 @@
         // document.addEventListener('DOMContentLoaded', () => { /* optional sample fill */ });
 
     </script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loadHTML = (url, id) =>
+                fetch(url).then(r => r.text())
+                    .then(h => document.getElementById(id).innerHTML = h);
+
+            loadHTML("/header.html", "header");
+            loadHTML("/footer.html", "footer");
+        });
+    </script>
+
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(() => console.log("Service Worker registered"))
+                    .catch(err => console.log("SW registration failed", err));
+            });
+        }
+    </script>
 
 
 </body>

@@ -2,478 +2,700 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Alfido Tech Code Editor - A powerful online code editing platform for developers and programmers.">
-  <meta name="keywords" content="Alfido Tech, Code Editor, Online Code Editor, Coding, Development">
-  <meta name="author" content="Alfido Tech">
+    <!-- ================= BASIC META ================= -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Alfido Tech Code Editor | Empowering Developers</title>
+    <title>Online Code Editor | Alfido Tech Developer Tools</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="https://www.alfidotech.com/logo.png" type="image/png">
+    <!-- ================= SEO META ================= -->
+    <meta name="description"
+        content="Use Alfido Tech’s online code editor to write, edit, and test code in a clean, browser-based environment. Ideal for learning, practice, and internship tasks.">
+    <meta name="keywords"
+        content="Alfido Tech Code Editor, Online Code Editor, Web Based Code Editor, Coding Practice Tool, Internship Coding Editor, Developer Tools Alfido Tech">
+    <meta name="author" content="Alfido Tech">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.alfidotech.com/editor.html">
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.alfidotech.com/">
-  <meta property="og:title" content="Alfido Tech Code Editor">
-  <meta property="og:description" content="Experience coding like never before with Alfido Tech's Code Editor.">
-  <meta property="og:image" content="https://www.alfidotech.com/logo.png">
+    <!-- ================= OPEN GRAPH (WhatsApp / LinkedIn) ================= -->
+    <meta property="og:site_name" content="Alfido Tech">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Online Code Editor | Alfido Tech">
+    <meta property="og:description"
+        content="Write, edit, and test code online using Alfido Tech’s browser-based code editor. Built for learners, interns, and developers.">
+    <meta property="og:url" content="https://www.alfidotech.com/editor.html">
+    <meta property="og:image" content="https://www.alfidotech.com/img/alfido-code-editor-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="https://www.alfidotech.com/">
-  <meta property="twitter:title" content="Alfido Tech Code Editor">
-  <meta property="twitter:description" content="A seamless code editing experience with Alfido Tech.">
-  <meta property="twitter:image" content="https://www.alfidotech.com/logo.png">
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Online Code Editor | Alfido Tech">
+    <meta name="twitter:description"
+        content="A fast, clean online code editor by Alfido Tech for coding practice, internships, and development.">
+    <meta name="twitter:image" content="https://www.alfidotech.com/img/alfido-code-editor-og.jpg">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://www.alfidotech.com/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="https://www.alfidotech.com/apple-touch-icon.png">
 
-  <!-- Bootstrap & Fonts -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Tag Manager -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-HKXWNH34MG');
-  </script>
 
-  <!-- Custom Styling -->
-  <style>
-    :root {
-      --brand: #dD242a;
-      --ink: #0f172a;
-      --bg: #f8f9fa;
-      --footer-bg: #020617;
-    }
 
-    body,
-    html {
-      height: 100%;
-      margin: 0;
-      overflow-x: hidden;
-      overflow-y: auto;
-      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background-color: var(--bg);
-      color: #343a40;
-    }
 
-    .container-fluid {
-      min-height: 70vh;
-    }
+    <!-- ================= APPLE TOUCH ICONS ================= -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
 
-    #code-input {
-      height: 80vh;
-      resize: none;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 15px;
-      padding: 10px;
-      border-radius: 8px;
-      outline: none;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
-      background: #ffffff;
-    }
+    <!-- ================= ANDROID ICONS ================= -->
+    <link rel="icon" type="image/png" sizes="36x36" href="/img/favicon/android-icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="/img/favicon/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="/img/favicon/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
 
-    #output {
-      border: 1px solid #e2e8f0;
-      height: 80vh;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.08);
-      padding: 0;
-      overflow-y: auto;
-      background-color: #ffffff;
-    }
+    <!-- ================= STANDARD FAVICONS ================= -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
 
-    #file-explorer {
-      height: 80vh;
-      overflow-y: auto;
-      border-right: 1px solid #e2e8f0;
-      padding: 10px;
-      background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.06);
-    }
 
-    .file {
-      cursor: pointer;
-      color: #0f172a;
-      text-decoration: none;
-      padding: 6px 10px;
-      border-radius: 6px;
-      margin-bottom: 4px;
-      font-size: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: background 0.2s, transform 0.1s;
-    }
+    <!-- ================= MANIFEST ================= -->
+    <link rel="manifest" href="/img/favicon/manifest.json">
 
-    .file::before {
-      content: "\f15b";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      font-size: 13px;
-      color: var(--brand);
-    }
+    <!-- ================= WINDOWS TILES ================= -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
 
-    .file:hover {
-      background: rgba(221, 36, 42, 0.06);
-      transform: translateX(2px);
-    }
+    <!-- ================= THEME COLOR ================= -->
+    <meta name="theme-color" content="#c1121f">
 
-    .navbar {
-      background: #fff;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
 
-    .navbar-brand img {
-      height: 45px;
-    }
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    .nav-link {
-      font-weight: 500;
-      transition: color .3s;
-    }
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--brand) !important;
-    }
+    <link rel="stylesheet" href="css/styles.css">
 
-    .editor-controls .btn {
-      border-radius: 20px;
-      padding: 6px 14px;
-      font-size: 13px;
-      margin-right: 6px;
-      margin-bottom: 6px;
-    }
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
 
-    .editor-controls .btn-primary {
-      background: var(--brand);
-      border-color: var(--brand);
-    }
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
 
-    .editor-controls .btn-info {
-      background: #0f172a;
-      border-color: #0f172a;
-    }
+        .hero {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
 
-    /* Brand Footer */
-    .brand-footer {
-      background: radial-gradient(circle at top left, var(--brand), var(--footer-bg));
-      color: #e5e7eb;
-      padding: 40px 0 20px;
-      margin-top: 16px;
-      border-top-left-radius: 32px;
-      border-top-right-radius: 32px;
-      box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.4);
-    }
+        .badge-custom {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 14px;
+        }
 
-    .brand-footer h5,
-    .brand-footer h6 {
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
+        .service-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .brand-footer p {
-      font-size: 14px;
-      margin-bottom: 8px;
-      opacity: 0.9;
-    }
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
 
-    .brand-footer a {
-      color: #e5e7eb;
-      text-decoration: none;
-      font-size: 14px;
-      display: inline-block;
-      margin-bottom: 4px;
-      opacity: 0.9;
-    }
 
-    .brand-footer a:hover {
-      opacity: 1;
-      text-decoration: underline;
-    }
 
-    .brand-footer .footer-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.65);
-      font-size: 11px;
-      margin-bottom: 10px;
-    }
+        /* ================= HERO ================= */
+        .hero {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
 
-    .brand-footer .footer-badge i {
-      font-size: 10px;
-      color: #facc15;
-    }
+        /* Badge */
+        .badge-custom {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            backdrop-filter: blur(6px);
+        }
 
-    .brand-footer hr {
-      border-color: rgba(148, 163, 184, 0.5);
-    }
+        /* Image animation */
+        .hero-img-wrapper img {
+            animation: floatHero 6s ease-in-out infinite;
+        }
 
-    .brand-footer .social-icons a {
-      font-size: 18px;
-      margin-right: 10px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(15, 23, 42, 0.7);
-      transition: transform 0.2s, background 0.2s;
-    }
+        @keyframes floatHero {
+            0% {
+                transform: translateY(0);
+            }
 
-    .brand-footer .social-icons a:hover {
-      background: #020617;
-      transform: translateY(-2px) scale(1.05);
-    }
+            50% {
+                transform: translateY(-10px);
+            }
 
-    .brand-footer .copy-text {
-      font-size: 12px;
-      color: #cbd5f5;
-      margin-bottom: 0;
-    }
+            100% {
+                transform: translateY(0);
+            }
+        }
 
-    @media (max-width: 768px) {
-      #code-input,
-      #output,
-      #file-explorer {
-        height: 60vh;
-      }
+        /* Mobile spacing */
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+            }
 
-      .brand-footer {
-        border-radius: 24px 24px 0 0;
-      }
-    }
-  </style>
-  
-  <!-- Google Site Verification -->
-   
+            .hero .btn {
+                width: 100%;
+            }
+        }
 
-<!-- Google Site Verification -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1950697215537872"
-    crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-1950697215537872">
-<link rel="manifest" href="/site.webmanifest">
+        .hero-header {
+            min-height: 70vh;
+            padding-top: 120px;
+            padding-bottom: 80px;
+
+            background:
+                linear-gradient(135deg,
+                    rgba(20, 5, 5, 0.85),
+                    rgba(120, 10, 10, 0.85),
+                    rgba(20, 5, 5, 0.9)),
+                url("img/banar.png");
+
+            background-repeat: no-repeat;
+            background-size: 200%;
+            /* zoomed – 50% visible */
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .hero-header {
+                min-height: 75vh;
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            .hero-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            /* fade effect */
+        }
+
+        .popup-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .popup-overlay.hide {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Popup Box */
+        .popup-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.4s ease;
+        }
+
+        /* Success Tick */
+        .tick {
+            font-size: 60px;
+            color: green;
+            animation: pop 0.4s ease;
+        }
+
+        /* Tick Pop Animation */
+        @keyframes pop {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Box Fade-in */
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        :root {
+            --brand: #dD242a;
+            --ink: #0f172a;
+            --bg: #f8f9fa;
+            --footer-bg: #020617;
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background-color: var(--bg);
+            color: #343a40;
+        }
+
+        .container-fluid {
+            min-height: 70vh;
+        }
+
+        #code-input {
+            height: 80vh;
+            resize: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            outline: none;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+            background: #ffffff;
+        }
+
+        #output {
+            border: 1px solid #e2e8f0;
+            height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(15, 23, 42, 0.08);
+            padding: 0;
+            overflow-y: auto;
+            background-color: #ffffff;
+        }
+
+        #file-explorer {
+            height: 80vh;
+            overflow-y: auto;
+            border-right: 1px solid #e2e8f0;
+            padding: 10px;
+            background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+            border-radius: 12px;
+            box-shadow: 0 2px 5px rgba(15, 23, 42, 0.06);
+        }
+
+        .file {
+            cursor: pointer;
+            color: #0f172a;
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 6px;
+            margin-bottom: 4px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .file::before {
+            content: "\f15b";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 13px;
+            color: var(--brand);
+        }
+
+        .file:hover {
+            background: rgba(221, 36, 42, 0.06);
+            transform: translateX(2px);
+        }
+
+        .navbar {
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .navbar-brand img {
+            height: 45px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            transition: color .3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--brand) !important;
+        }
+
+        .editor-controls .btn {
+            border-radius: 20px;
+            padding: 6px 14px;
+            font-size: 13px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+        }
+
+        .editor-controls .btn-primary {
+            background: var(--brand);
+            border-color: var(--brand);
+        }
+
+        .editor-controls .btn-info {
+            background: #0f172a;
+            border-color: #0f172a;
+        }
+
+        /* Brand Footer */
+        .brand-footer {
+            background: radial-gradient(circle at top left, var(--brand), var(--footer-bg));
+            color: #e5e7eb;
+            padding: 40px 0 20px;
+            margin-top: 16px;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.4);
+        }
+
+        .brand-footer h5,
+        .brand-footer h6 {
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .brand-footer p {
+            font-size: 14px;
+            margin-bottom: 8px;
+            opacity: 0.9;
+        }
+
+        .brand-footer a {
+            color: #e5e7eb;
+            text-decoration: none;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 4px;
+            opacity: 0.9;
+        }
+
+        .brand-footer a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        .brand-footer .footer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.65);
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
+        .brand-footer .footer-badge i {
+            font-size: 10px;
+            color: #facc15;
+        }
+
+        .brand-footer hr {
+            border-color: rgba(148, 163, 184, 0.5);
+        }
+
+        .brand-footer .social-icons a {
+            font-size: 18px;
+            margin-right: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(15, 23, 42, 0.7);
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .brand-footer .social-icons a:hover {
+            background: #020617;
+            transform: translateY(-2px) scale(1.05);
+        }
+
+        .brand-footer .copy-text {
+            font-size: 12px;
+            color: #cbd5f5;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+
+            #code-input,
+            #output,
+            #file-explorer {
+                height: 60vh;
+            }
+
+            .brand-footer {
+                border-radius: 24px 24px 0 0;
+            }
+        }
+    </style>
 </head>
 
-
 <body>
+    <div id="header"></div>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="Logo 2.png" alt="Alfido Tech"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Internship</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship
-                  Registration</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task Submission</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
-              <li><a class="dropdown-item " href="https://www.alfidotech.com/internProfile.html">Intern
-                  Profile</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/task.html">Tasks</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/report.html">Report Card</a></li>
-              <li><a class="dropdown-item active" href="https://www.alfidotech.com/editor.html">Code Editor</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact
-              Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/certification.html">Certification</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- Main Editor Layout -->
+    <div class="container-fluid mt-5 pt-4">
+        <div class="row h-100">
+            <div class="text-center mb-3 mt-2">
+                <img src="img/nav-logo.png" alt="Alfido Tech Logo" height="50" width="250">
+                <p class="mt-1 mb-0 text-muted" style="font-size: 13px;">Smart Code Editor • Live Preview • Folder
+                    Access</p>
+            </div>
 
-  <!-- Main Editor Layout -->
-  <div class="container-fluid mt-5 pt-4">
-    <div class="row h-100">
-      <div class="text-center mb-3 mt-2">
-        <img src="Logo 2.png" alt="Alfido Tech Logo" height="50" width="250">
-        <p class="mt-1 mb-0 text-muted" style="font-size: 13px;">Smart Code Editor • Live Preview • Folder Access</p>
-      </div>
+            <!-- File Explorer Sidebar -->
+            <div class="col-md-3 p-3">
+                <div id="file-explorer">
+                    <h5 class="fw-semibold mb-3"><i class="fa-solid fa-folder-open me-2 text-danger"></i>File Explorer
+                    </h5>
+                    <button class="btn btn-outline-dark btn-sm mb-3" onclick="openFolder()">
+                        <i class="fa-solid fa-folder-tree me-1"></i> Open Folder
+                    </button>
+                    <div id="folder-contents"></div>
+                </div>
+            </div>
 
-      <!-- File Explorer Sidebar -->
-      <div class="col-md-3 p-3">
-        <div id="file-explorer">
-          <h5 class="fw-semibold mb-3"><i class="fa-solid fa-folder-open me-2 text-danger"></i>File Explorer</h5>
-          <button class="btn btn-outline-dark btn-sm mb-3" onclick="openFolder()">
-            <i class="fa-solid fa-folder-tree me-1"></i> Open Folder
-          </button>
-          <div id="folder-contents"></div>
+            <!-- Code Input Area with Buttons -->
+            <div class="col-md-4 p-3">
+                <h5 class="fw-semibold mb-2"><i class="fa-solid fa-code me-2 text-danger"></i>Write Code
+                    (HTML/JS/Bootstrap)</h5>
+                <div class="editor-controls mb-2">
+                    <button class="btn btn-secondary btn-sm" onclick="createFile()"><i
+                            class="fa-solid fa-file-circle-plus me-1"></i> New</button>
+                    <button class="btn btn-primary btn-sm" onclick="openFile()"><i
+                            class="fa-solid fa-folder-open me-1"></i> Open</button>
+                    <button class="btn btn-success btn-sm" onclick="saveFile()"><i
+                            class="fa-solid fa-floppy-disk me-1"></i> Save</button>
+                    <button class="btn btn-info btn-sm text-white" onclick="toggleTheme()"><i
+                            class="fa-solid fa-moon me-1"></i> Dark Mode</button>
+                </div>
+                <textarea id="code-input" class="form-control" oninput="updatePreview()"
+                    placeholder="Type your HTML/Bootstrap/JavaScript code here..."></textarea>
+            </div>
+
+            <!-- Live Preview Area -->
+            <div class="col-md-5 p-3">
+                <h5 class="fw-semibold mb-2"><i class="fa-solid fa-display me-2 text-danger"></i>Live Preview</h5>
+                <iframe id="output" class="w-100"></iframe>
+            </div>
         </div>
-      </div>
-
-      <!-- Code Input Area with Buttons -->
-      <div class="col-md-4 p-3">
-        <h5 class="fw-semibold mb-2"><i class="fa-solid fa-code me-2 text-danger"></i>Write Code (HTML/JS/Bootstrap)</h5>
-        <div class="editor-controls mb-2">
-          <button class="btn btn-secondary btn-sm" onclick="createFile()"><i class="fa-solid fa-file-circle-plus me-1"></i> New</button>
-          <button class="btn btn-primary btn-sm" onclick="openFile()"><i class="fa-solid fa-folder-open me-1"></i> Open</button>
-          <button class="btn btn-success btn-sm" onclick="saveFile()"><i class="fa-solid fa-floppy-disk me-1"></i> Save</button>
-          <button class="btn btn-info btn-sm text-white" onclick="toggleTheme()"><i class="fa-solid fa-moon me-1"></i> Dark Mode</button>
-        </div>
-        <textarea id="code-input" class="form-control" oninput="updatePreview()"
-          placeholder="Type your HTML/Bootstrap/JavaScript code here..."></textarea>
-      </div>
-
-      <!-- Live Preview Area -->
-      <div class="col-md-5 p-3">
-        <h5 class="fw-semibold mb-2"><i class="fa-solid fa-display me-2 text-danger"></i>Live Preview</h5>
-        <iframe id="output" class="w-100"></iframe>
-      </div>
     </div>
-  </div>
 
-<div id="footer"></div>
-<script>
-  fetch("/footer.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("footer").innerHTML = data);
-</script>
 
-  <!-- JavaScript to Update Preview, Handle File Operations, and Display Folder Contents -->
-  <script>
-    let fileHandle;
-    let isDarkMode = false;
 
-    // Dynamic year
-    document.getElementById("yearSpan").textContent = new Date().getFullYear();
 
-    // Update preview in real-time
-    function updatePreview() {
-      const code = document.getElementById("code-input").value;
-      const outputFrame = document.getElementById("output");
-      const doc = outputFrame.contentDocument || outputFrame.contentWindow.document;
-      doc.open();
-      doc.write(code);
-      doc.close();
-    }
 
-    // Toggle Dark Mode
-    function toggleTheme() {
-      isDarkMode = !isDarkMode;
-      document.body.style.backgroundColor = isDarkMode ? '#020617' : '#f8f9fa';
-      document.getElementById('code-input').style.backgroundColor = isDarkMode ? '#0b1120' : '#ffffff';
-      document.getElementById('code-input').style.color = isDarkMode ? '#e5e7eb' : '#000';
-      document.getElementById('output').style.backgroundColor = isDarkMode ? '#020617' : '#ffffff';
-    }
 
-    // Create a new blank file
-    function createFile() {
-      fileHandle = null;
-      document.getElementById("code-input").value = "";
-      updatePreview();
-      alert("New file created. Start coding!");
-    }
+    <!-- Page Content -->
 
-    // Open a file and load its content into the editor
-    async function openFile() {
-      try {
-        [fileHandle] = await window.showOpenFilePicker({
-          types: [{
-            description: 'HTML or JavaScript files',
-            accept: {
-              'text/html': ['.html', '.htm'],
-              'text/javascript': ['.js'],
-              'text/plain': ['.txt']
+    <div id="footer"></div>
+
+    <!-- JavaScript to Update Preview, Handle File Operations, and Display Folder Contents -->
+    <script>
+        let fileHandle;
+        let isDarkMode = false;
+
+        // Dynamic year
+        document.getElementById("yearSpan").textContent = new Date().getFullYear();
+
+        // Update preview in real-time
+        function updatePreview() {
+            const code = document.getElementById("code-input").value;
+            const outputFrame = document.getElementById("output");
+            const doc = outputFrame.contentDocument || outputFrame.contentWindow.document;
+            doc.open();
+            doc.write(code);
+            doc.close();
+        }
+
+        // Toggle Dark Mode
+        function toggleTheme() {
+            isDarkMode = !isDarkMode;
+            document.body.style.backgroundColor = isDarkMode ? '#020617' : '#f8f9fa';
+            document.getElementById('code-input').style.backgroundColor = isDarkMode ? '#0b1120' : '#ffffff';
+            document.getElementById('code-input').style.color = isDarkMode ? '#e5e7eb' : '#000';
+            document.getElementById('output').style.backgroundColor = isDarkMode ? '#020617' : '#ffffff';
+        }
+
+        // Create a new blank file
+        function createFile() {
+            fileHandle = null;
+            document.getElementById("code-input").value = "";
+            updatePreview();
+            alert("New file created. Start coding!");
+        }
+
+        // Open a file and load its content into the editor
+        async function openFile() {
+            try {
+                [fileHandle] = await window.showOpenFilePicker({
+                    types: [{
+                        description: 'HTML or JavaScript files',
+                        accept: {
+                            'text/html': ['.html', '.htm'],
+                            'text/javascript': ['.js'],
+                            'text/plain': ['.txt']
+                        }
+                    }],
+                    multiple: false
+                });
+
+                const file = await fileHandle.getFile();
+                const content = await file.text();
+
+                document.getElementById("code-input").value = content;
+                updatePreview();
+
+            } catch (err) {
+                console.error('Error opening file:', err);
             }
-          }],
-          multiple: false
+        }
+
+        // Save the content in the editor to the file
+        async function saveFile() {
+            try {
+                if (!fileHandle) {
+                    fileHandle = await window.showSaveFilePicker({
+                        suggestedName: 'Untitled.html',
+                        types: [{
+                            description: 'HTML or JavaScript files',
+                            accept: {
+                                'text/html': ['.html', '.htm'],
+                                'text/javascript': ['.js'],
+                                'text/plain': ['.txt']
+                            }
+                        }]
+                    });
+                }
+
+                const writable = await fileHandle.createWritable();
+                await writable.write(document.getElementById("code-input").value);
+                await writable.close();
+
+                alert("File saved successfully!");
+
+            } catch (err) {
+                console.error('Error saving file:', err);
+            }
+        }
+
+        // Open a folder and display its contents
+        async function openFolder() {
+            try {
+                const dirHandle = await window.showDirectoryPicker();
+                document.getElementById("folder-contents").innerHTML = "";
+                for await (const entry of dirHandle.values()) {
+                    const div = document.createElement("div");
+                    div.className = "file";
+                    div.textContent = entry.name;
+                    div.onclick = () => loadFileFromFolder(entry);
+                    document.getElementById("folder-contents").appendChild(div);
+                }
+            } catch (err) {
+                console.error('Error opening folder:', err);
+            }
+        }
+
+        // Load file from folder to editor
+        async function loadFileFromFolder(fileHandle) {
+            if (fileHandle.kind === 'file') {
+                const file = await fileHandle.getFile();
+                const content = await file.text();
+                document.getElementById("code-input").value = content;
+                updatePreview();
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loadHTML = (url, id) =>
+                fetch(url).then(r => r.text())
+                    .then(h => document.getElementById(id).innerHTML = h);
+
+            loadHTML("/header.html", "header");
+            loadHTML("/footer.html", "footer");
         });
+    </script>
 
-        const file = await fileHandle.getFile();
-        const content = await file.text();
 
-        document.getElementById("code-input").value = content;
-        updatePreview();
-
-      } catch (err) {
-        console.error('Error opening file:', err);
-      }
-    }
-
-    // Save the content in the editor to the file
-    async function saveFile() {
-      try {
-        if (!fileHandle) {
-          fileHandle = await window.showSaveFilePicker({
-            suggestedName: 'Untitled.html',
-            types: [{
-              description: 'HTML or JavaScript files',
-              accept: {
-                'text/html': ['.html', '.htm'],
-                'text/javascript': ['.js'],
-                'text/plain': ['.txt']
-              }
-            }]
-          });
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(() => console.log("Service Worker registered"))
+                    .catch(err => console.log("SW registration failed", err));
+            });
         }
+    </script>
 
-        const writable = await fileHandle.createWritable();
-        await writable.write(document.getElementById("code-input").value);
-        await writable.close();
-
-        alert("File saved successfully!");
-
-      } catch (err) {
-        console.error('Error saving file:', err);
-      }
-    }
-
-    // Open a folder and display its contents
-    async function openFolder() {
-      try {
-        const dirHandle = await window.showDirectoryPicker();
-        document.getElementById("folder-contents").innerHTML = "";
-        for await (const entry of dirHandle.values()) {
-          const div = document.createElement("div");
-          div.className = "file";
-          div.textContent = entry.name;
-          div.onclick = () => loadFileFromFolder(entry);
-          document.getElementById("folder-contents").appendChild(div);
-        }
-      } catch (err) {
-        console.error('Error opening folder:', err);
-      }
-    }
-
-    // Load file from folder to editor
-    async function loadFileFromFolder(fileHandle) {
-      if (fileHandle.kind === 'file') {
-        const file = await fileHandle.getFile();
-        const content = await file.text();
-        document.getElementById("code-input").value = content;
-        updatePreview();
-      }
-    }
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

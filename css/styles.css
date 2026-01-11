@@ -1,0 +1,285 @@
+.navbar .nav-link:hover {
+    color: #c1121f !important; /* Alfido red */
+}
+
+.btn-danger {
+    background-color: #c1121f;
+    border-color: #c1121f;
+}
+
+.btn-danger:hover {
+    background-color: #9b0d18;
+    border-color: #9b0d18;
+}
+.btn-danger:focus, .btn-danger:active {
+    background-color: #7e0a14;
+    border-color: #7e0a14;
+}
+/* ================= DROPDOWN HOVER (DESKTOP ONLY) ================= */
+@media (min-width: 992px) {
+    .navbar .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .navbar .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.2s ease;
+    }
+}
+
+/* Dropdown look polish */
+.dropdown-menu {
+    border-radius: 14px;
+    padding: 10px 0;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(193, 18, 31, 0.08);
+    color: #c1121f;
+}
+/* ===== HOW IT WORKS ===== */
+.work-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+    position: relative;
+    transition: all 0.35s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(193,18,31,0.15);
+}
+
+/* Step number */
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #c1121f;
+    color: #fff;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 14px;
+}
+
+/* Icon */
+.icon-box {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto 10px;
+    background: rgba(193,18,31,0.1);
+    color: #c1121f;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Mobile polish */
+@media (max-width: 768px) {
+    .step-number {
+        top: -10px;
+    }
+}
+
+/* ================= DOMAIN CARD – FINAL POLISH ================= */
+.domain-card {
+    background: linear-gradient(
+        135deg,
+        rgba(193, 18, 31, 0.22),
+        rgba(193, 18, 31, 0.08)
+    );
+    backdrop-filter: blur(18px);
+    border-radius: 22px;
+    padding: 22px;
+    height: 100%;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 20px 50px rgba(193, 18, 31, 0.25);
+    transition: all 0.35s ease;
+}
+
+.domain-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 80px rgba(193, 18, 31, 0.45);
+}
+
+/* Image */
+.domain-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 16px;
+}
+
+/* Content wrapper */
+.domain-content {
+    padding: 6px 6px 0;
+}
+
+/* 🔴 Domain Title */
+.domain-name {
+    color: #c1121f;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+/* ⚫ List text */
+.domain-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.domain-list li {
+    color: #111827;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.domain-list li::before {
+    content: "✔";
+    color: #16a34a;
+    margin-right: 8px;
+}
+
+/* 🔴 CTA Button */
+.domain-btn {
+    background: linear-gradient(135deg, #c1121f, #9b0d18);
+    color: #fff;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 12px;
+    width: 100%;
+    box-shadow: 0 12px 30px rgba(193, 18, 31, 0.45);
+}
+
+.domain-btn:hover {
+    background: linear-gradient(135deg, #9b0d18, #7e0a14);
+}
+
+/* Badge */
+.domain-badge {
+    background: #ffffff;
+    color: #000;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+/* ================= SERVICE CARDS ================= */
+.service-card {
+    border-radius: 18px;
+    border: none;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+    background: #fff;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(193,18,31,0.18);
+}
+
+/* Service image */
+.service-img {
+    height: 170px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* CTA link */
+.service-link {
+    font-weight: 600;
+    color: #c1121f;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.service-link:hover {
+    text-decoration: underline;
+}
+
+/* ================= CTA SECTION ================= */
+.cta-section {
+    background: linear-gradient(
+        135deg,
+        rgba(193,18,31,0.08),
+        rgba(193,18,31,0.02)
+    );
+}
+
+.cta-subtext {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #4b5563;
+    font-size: 1.05rem;
+}
+/* ================= FAQ ================= */
+.accordion-button {
+    background-color: #fff;
+    color: #111827;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: rgba(193,18,31,0.05);
+    color: #c1121f;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-item {
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+}
+.work-card img {
+    transition: transform 0.3s ease;
+}
+
+.work-card:hover img {
+    transform: scale(1.15);
+}
+
+
+.how-it-works {
+    background: #f8f9fa;
+}
+
+
+.icon-circle {
+    width: 70px;
+    height: 70px;
+    background: #f1f5ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+}
+
+.icon-circle img {
+    width: 36px;
+    height: 36px;
+}
+.hero-img-wrapper img {
+    max-height: 480px;
+    object-fit: cover;
+}
+

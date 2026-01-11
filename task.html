@@ -1,20 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tasks · Alfido Tech Internship</title>
-  <meta name="description" content="Explore internship tasks for multiple domains at Alfido Tech." />
-  <link rel="icon" href="favicon-32x32.png">
-  <meta name="author" content="Alfido Tech" />
-  <meta name="keywords" content="internship, tasks, domains, Alfido Tech, programming, AI, VLSI, web development, data science, cybersecurity, devops, frontend, backend" />
-  <meta name="robots" content="index, follow" />
-  <link rel="shortcut icon" type="image/png" href="Logo.png"/>
+    <!-- ================= BASIC META ================= -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Internship Tasks | Alfido Tech Internship Portal</title>
+
+    <!-- ================= SEO META ================= -->
+    <meta name="description"
+        content="View and manage your Alfido Tech internship tasks. Access assigned assignments, track progress, and submit work through the internship portal.">
+    <meta name="keywords"
+        content="Alfido Tech Internship Tasks, Internship Assignments, Remote Internship Tasks, Intern Task Dashboard, AICTE Internship Portal">
+    <meta name="author" content="Alfido Tech">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.alfidotech.com/task.html">
+
+    <!-- ================= OPEN GRAPH (WhatsApp / LinkedIn) ================= -->
+    <meta property="og:site_name" content="Alfido Tech">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Internship Tasks | Alfido Tech">
+    <meta property="og:description"
+        content="Access your assigned internship tasks, manage submissions, and monitor progress in the Alfido Tech Internship Portal.">
+    <meta property="og:url" content="https://www.alfidotech.com/task.html">
+    <meta property="og:image" content="https://www.alfidotech.com/img/alfido-tasks-dashboard-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Internship Tasks | Alfido Tech">
+    <meta name="twitter:description"
+        content="View, manage, and submit your internship tasks via the Alfido Tech Intern Dashboard.">
+    <meta name="twitter:image" content="https://www.alfidotech.com/img/alfido-tasks-dashboard-og.jpg">
 
 
-  <!-- Google Tag Manager -->
+
+
+
+    <!-- ================= APPLE TOUCH ICONS ================= -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+
+    <!-- ================= ANDROID ICONS ================= -->
+    <link rel="icon" type="image/png" sizes="36x36" href="/img/favicon/android-icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="/img/favicon/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="/img/favicon/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+
+    <!-- ================= STANDARD FAVICONS ================= -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+
+
+    <!-- ================= MANIFEST ================= -->
+    <link rel="manifest" href="/img/favicon/manifest.json">
+
+    <!-- ================= WINDOWS TILES ================= -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+
+    <!-- ================= THEME COLOR ================= -->
+    <meta name="theme-color" content="#c1121f">
+
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
-
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -22,426 +95,839 @@
         gtag('config', 'G-HKXWNH34MG');
     </script>
 
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&family=Inter:wght@300;400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
+        .hero {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        .badge-custom {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 14px;
+        }
+
+        .service-card {
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
 
 
-  <style>
-    :root{
-      --brand-red: #DD242A;
-      --brand-red-dark: #b2191f;
-      --bg: #000000;
-      --card: rgba(255,255,255,0.03);
-      --muted: rgba(255,255,255,0.85);
-      --muted-2: rgba(255,255,255,0.55);
-      --glass-border: rgba(255,255,255,0.04);
-      --shadow: 0 12px 30px rgba(0,0,0,0.8);
-      --card-radius: 14px;
-      --glass-blur: 8px;
-      --white: #FFFFFF;
-    }
 
-    /* Navbar (white) */
-    body {
-        font-family: 'Poppins', sans-serif;
-        background: var(--bg);
-        color: var(--white);
-        padding-top: 76px;
-        -webkit-font-smoothing:antialiased;
-        -moz-osx-font-smoothing:grayscale;
-    }
+        /* ================= HERO ================= */
+        .hero {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+        }
 
-    .navbar {
-        background: #ffffff;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        padding: 12px 0;
-    }
+        /* Badge */
+        .badge-custom {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            backdrop-filter: blur(6px);
+        }
 
-    .navbar-brand img { height: 45px; }
-    .nav-link { font-weight: 500; color: #1e293b !important; transition: color .3s; padding: 8px 12px; }
-    .nav-link:hover, .nav-link.active { color: var(--brand-red) !important; }
-    .dropdown-menu { border-radius: 8px; border: 1px solid #e5e7eb; }
-    .dropdown-item:hover { background: var(--brand-red); color: #fff !important; }
-    .navbar-toggler { border-color: rgba(0,0,0,0.12); }
-    .navbar-toggler-icon { background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"); }
+        /* Image animation */
+        .hero-img-wrapper img {
+            animation: floatHero 6s ease-in-out infinite;
+        }
 
-    /* Hero / controls */
-    .hero{ padding:36px 18px; max-width:1200px; margin:0 auto; display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
-    .kicker{ display:inline-block; font-weight:700; color:var(--white); background: linear-gradient(90deg, rgba(221,36,42,0.12), rgba(221,36,42,0.06)); padding:6px 10px; border-radius:999px; font-size:13px; margin-bottom:10px; border:1px solid rgba(221,36,42,0.14); }
-    .hero h1{ margin:0 0 10px; font-family:'Jost'; font-size:28px; color:var(--white); }
-    .hero p{ margin:0; color:var(--muted-2); font-size:14px }
+        @keyframes floatHero {
+            0% {
+                transform: translateY(0);
+            }
 
-    .controls{ display:flex; gap:12px; align-items:center; margin-top:14px; flex-wrap:wrap; }
-    .search{ min-width:240px; max-width:480px; display:flex; align-items:center; gap:8px; background:var(--card); padding:8px 12px; border-radius:12px; border:1px solid var(--glass-border); backdrop-filter: blur(var(--glass-blur)); }
-    .search input{ border:0; outline:0; background:transparent; color:var(--white); width:100%; font-size:14px; }
-    .controls .btn { border-radius:10px; font-weight:600; }
+            50% {
+                transform: translateY(-10px);
+            }
 
-    /* Grid */
-    .tasks-wrap{ max-width:1200px; margin:18px auto; padding:0 18px; }
-    .grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:18px; }
-    @media (max-width:1100px){ .grid{ grid-template-columns: repeat(3,1fr)} }
-    @media (max-width:820px){ .grid{ grid-template-columns: repeat(2,1fr)} }
-    @media (max-width:520px){ .grid{ grid-template-columns: 1fr } }
+            100% {
+                transform: translateY(0);
+            }
+        }
 
-    .task-card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--card-radius); padding:18px; min-height:120px; display:flex; flex-direction:column; gap:10px;
-      align-items:flex-start; justify-content:center; transition: transform .18s ease, box-shadow .18s;
-      border:1px solid var(--glass-border); box-shadow:var(--shadow); cursor:pointer; backdrop-filter: blur(var(--glass-blur));
-    }
-    .task-card:hover{ transform: translateY(-6px); box-shadow: 0 28px 48px rgba(0,0,0,0.85); }
-    .task-top{ display:flex; gap:12px; align-items:center; width:100%; }
-    .task-icon{ width:56px; height:56px; border-radius:12px; display:grid; place-items:center; font-size:22px; background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark)); color:var(--white); flex-shrink:0; box-shadow: 0 8px 22px rgba(221,36,42,0.12); }
-    .task-title{ font-weight:700; font-size:15px; color:var(--white); }
-    .task-sub{ font-size:13px; color:var(--muted-2); margin-top:4px }
-    .tag-row{ margin-top:8px; display:flex; gap:8px; flex-wrap:wrap; }
-    .tag{ font-size:12px; padding:6px 8px; border-radius:999px; background: rgba(255,255,255,0.03); color:var(--muted); border:1px solid rgba(255,255,255,0.03); }
+        /* Mobile spacing */
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+            }
 
-    /* Table view */
-    .table-wrap{ display:none; margin-top:18px; }
-    .table-wrap table{ width:100%; border-collapse:collapse; background:rgba(255,255,255,0.02); border-radius:8px; overflow:hidden; }
-    .table-wrap th, .table-wrap td{ padding:12px 14px; font-size:14px; color:var(--muted); border-bottom:1px solid rgba(255,255,255,0.03); }
-    .table-wrap thead th{ background:rgba(255,255,255,0.015); color:var(--white); text-align:left; font-weight:700; }
-    .link-btn{ color:var(--brand-red); text-decoration:none; font-weight:600; }
+            .hero .btn {
+                width: 100%;
+            }
+        }
 
-    /* CTA & footer */
-    .btn-primary{ background: linear-gradient(90deg, var(--brand-red), var(--brand-red-dark)); color:var(--white); border:0; padding:10px 14px; border-radius:10px; }
-    footer{ max-width:1200px; margin:48px auto 28px; padding:18px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); gap:12px; }
+        .hero-header {
+            min-height: 70vh;
+            padding-top: 120px;
+            padding-bottom: 80px;
 
-    /* Floating CTA */
-    #whatsapp-btn{ position:fixed; bottom:22px; right:20px; z-index:1200; }
-    #whatsapp-btn a{ display:inline-block; width:64px; height:64px; border-radius:14px; background: linear-gradient(90deg,var(--brand-red), var(--brand-red-dark)); display:grid; place-items:center; color:var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.6) }
-    #whatsapp-btn a i{ font-size:22px }
+            background:
+                linear-gradient(135deg,
+                    rgba(20, 5, 5, 0.85),
+                    rgba(120, 10, 10, 0.85),
+                    rgba(20, 5, 5, 0.9)),
+                url("img/banar.png");
 
-    .fade-in{ animation: fadeUp .5s ease both }
-    @keyframes fadeUp { from{ opacity:0; transform: translateY(8px) } to{ opacity:1; transform:none } }
+            background-repeat: no-repeat;
+            background-size: 200%;
+            /* zoomed – 50% visible */
+            background-position: center;
 
-    @media (max-width:767px) {
-      .hero { padding-top: 12px; }
-    }
-  </style>
-  
-  <!-- Google Site Verification -->
-   
+            display: flex;
+            align-items: center;
+        }
 
-<!-- Google Site Verification -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1950697215537872"
-    crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-1950697215537872">
-<link rel="manifest" href="/site.webmanifest">
+
+
+        @media (max-width: 768px) {
+            .hero-header {
+                min-height: 75vh;
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+
+            .hero-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            /* fade effect */
+        }
+
+        .popup-overlay.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .popup-overlay.hide {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Popup Box */
+        .popup-box {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 0.4s ease;
+        }
+
+        /* Success Tick */
+        .tick {
+            font-size: 60px;
+            color: green;
+            animation: pop 0.4s ease;
+        }
+
+        /* Tick Pop Animation */
+        @keyframes pop {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Box Fade-in */
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .search {
+            min-width: 240px;
+            max-width: 480px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--card);
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(var(--glass-blur));
+        }
+
+        .search input {
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: var(--white);
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .controls .btn {
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        /* Grid */
+        .tasks-wrap {
+            max-width: 1200px;
+            margin: 18px auto;
+            padding: 0 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        @media (max-width:1100px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+        }
+
+        @media (max-width:820px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:520px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+
+        .task-card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border-radius: var(--card-radius);
+            padding: 18px;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: flex-start;
+            justify-content: center;
+            transition: transform .18s ease, box-shadow .18s;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            backdrop-filter: blur(var(--glass-blur));
+        }
+
+        .task-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 48px rgba(0, 0, 0, 0.85);
+        }
+
+        .task-top {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .task-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            display: grid;
+            place-items: center;
+            font-size: 22px;
+            background: linear-gradient(135deg, var(--brand-red), var(--brand-red-dark));
+            color: var(--white);
+            flex-shrink: 0;
+            box-shadow: 0 8px 22px rgba(221, 36, 42, 0.12);
+        }
+
+        .task-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: red;
+        }
+
+        .task-sub {
+            font-size: 13px;
+            color: var(--muted-2);
+            margin-top: 4px
+        }
+
+        .tag-row {
+            margin-top: 8px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 12px;
+            padding: 6px 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--muted);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        /* Table view */
+        .table-wrap {
+            display: none;
+            margin-top: 18px;
+        }
+
+        .table-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .table-wrap th,
+        .table-wrap td {
+            padding: 12px 14px;
+            font-size: 14px;
+            color: var(--muted);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .table-wrap thead th {
+            background: rgba(255, 255, 255, 0.015);
+            color: var(--white);
+            text-align: left;
+            font-weight: 700;
+        }
+
+        .link-btn {
+            color: var(--brand-red);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        :root {
+            --brand-red: #DD242A;
+            --brand-red-dark: #b2191f;
+            --bg: #000000;
+            --card: rgba(255, 255, 255, 0.03);
+            --muted: rgba(255, 255, 255, 0.85);
+            --muted-2: rgba(1, 1, 1, 0.55);
+            --glass-border: rgba(255, 255, 255, 0.04);
+            --shadow: 0 12px 30px rgba(0, 0, 0, 0.8);
+            --card-radius: 14px;
+            --glass-blur: 8px;
+            --white: #f9f4f4;
+        }
+
+        .controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .search {
+            min-width: 240px;
+            max-width: 480px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--card);
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(var(--glass-blur));
+        }
+
+        .search input {
+            border: 0;
+            outline: 0;
+            background: transparent;
+            color: var(--white);
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .controls .btn {
+            border-radius: 10px;
+            font-weight: 600;
+        }
+    </style>
+
+
 </head>
 
 <body>
+    <div id="header"></div>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="Logo 2.png" alt="Alfido Tech"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Internship</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship Registration</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task Submission</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
-              <li><a class="dropdown-item " href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
-              <li><a class="dropdown-item active" href="https://www.alfidotech.com/task.html">Tasks</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/report.html">Report Card</a></li>
-              <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/certification.html">Certification</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <!-- ================= TASKS PAGE HERO ================= -->
+    <section class="hero-header d-flex align-items-center text-center">
+        <div class="container">
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="kicker">Internship • Tasks</div>
-      <h1>Explore tasks aligned with your domain expertise</h1>
-      <p class="muted-2">Pick a domain to view hands-on tasks, submission instructions, and resources. Toggle between card and table views.</p>
+            <span class="badge bg-primary text-dark mb-3 px-3 py-2 rounded-pill fw-semibold">
+                Internship Tasks & Assignments
+            </span>
 
-      <div class="controls">
-        <div class="search" role="search">
-          <i class="fa-solid fa-magnifying-glass" style="opacity:.7"></i>
-          <input id="searchInput" placeholder="Search tasks (e.g. 'Python', 'Design')" aria-label="Search tasks">
+            <h1 class="fw-bold text-white mt-3">
+                Internship Tasks
+            </h1>
+
+            <p class="lead text-white-50 mt-3">
+                View, manage, and submit assigned tasks to track your internship progress
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+                <a href="#taskList" class="btn btn-warning btn-lg fw-bold px-5 rounded-pill">
+                    View Tasks
+                </a>
+
+                <a href="https://www.alfidotech.com/submission.html"
+                    class="btn btn-outline-light btn-lg fw-semibold px-4 rounded-pill">
+                    Submit Work
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TASK GRID -->
+    <main class="tasks-wrap">
+        <div id="grid" class="grid fade-in">
+
+            <!-- Cards (domains and links you provided) -->
+            <div class="task-card" data-title="ASP.NET Developer"
+                onclick="openLink('https://www.alfidotech.com/task/ASP.NETdeveloper.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-window-maximize"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">ASP.NET Developer</div>
+                        <div class="task-sub">C# • ASP.NET</div>
+                    </div>
+                </div>
+                <div class="tag-row"><span class="tag">Backend</span></div>
+            </div>
+
+            <div class="task-card" data-title="Very Large Scale Integration (VLSI)"
+                onclick="openLink('https://www.alfidotech.com/task/VLSI.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">VLSI</div>
+                        <div class="task-sub">VLSI Design</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Cloud Computing"
+                onclick="openLink('https://www.alfidotech.com/task/cloud_computing.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Cloud Computing</div>
+                        <div class="task-sub">AWS / GCP</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Cybersecurity"
+                onclick="openLink('https://www.alfidotech.com/task/cybersecurity.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Cybersecurity</div>
+                        <div class="task-sub">Ethical Hacking</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="DevOps"
+                onclick="openLink('https://www.alfidotech.com/task/devops.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-server"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">DevOps</div>
+                        <div class="task-sub">CI/CD, Docker</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Digital Marketing"
+                onclick="openLink('https://www.alfidotech.com/task/digitalmarketing.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Digital Marketing</div>
+                        <div class="task-sub">SEO, Ads</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Embedded Systems"
+                onclick="openLink('https://www.alfidotech.com/task/embedded_systems.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Embedded Systems</div>
+                        <div class="task-sub">Microcontrollers</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Frontend Developer"
+                onclick="openLink('https://www.alfidotech.com/task/frontend_developer.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-code"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Frontend Developer</div>
+                        <div class="task-sub">HTML/CSS/JS</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Java Developer"
+                onclick="openLink('https://www.alfidotech.com/task/javadeveloper.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-brands fa-java"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Java Developer</div>
+                        <div class="task-sub">Core Java</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="MERN Stack"
+                onclick="openLink('https://www.alfidotech.com/task/mern.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-brands fa-js"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">MERN Stack</div>
+                        <div class="task-sub">Mongo/Express/React/Node</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Python Developer"
+                onclick="openLink('https://www.alfidotech.com/task/pythondeveloper.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-brands fa-python"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Python Developer</div>
+                        <div class="task-sub">Scripting & Web</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="React.js Developer"
+                onclick="openLink('https://www.alfidotech.com/task/reactdeveloper.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-brands fa-react"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">React.js Developer</div>
+                        <div class="task-sub">React Components</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="UX/UI Design"
+                onclick="openLink('https://www.alfidotech.com/task/uxui.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-palette"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">UX/UI Design</div>
+                        <div class="task-sub">Figma • Prototypes</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Artificial Intelligence"
+                onclick="openLink('https://www.alfidotech.com/task/artificial_integence.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-robot"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Artificial Intelligence</div>
+                        <div class="task-sub">AI Projects</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Android Developer"
+                onclick="openLink('https://www.alfidotech.com/task/androiddeveloper.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-brands fa-android"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Android Developer</div>
+                        <div class="task-sub">Kotlin • App Dev</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="C / C++ Programming"
+                onclick="openLink('https://www.alfidotech.com/task/CProgramming.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-code-branch"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">C / C++ Programming</div>
+                        <div class="task-sub">Algorithms</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Data Analyst"
+                onclick="openLink('https://www.alfidotech.com/task/data_analyst.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Data Analyst</div>
+                        <div class="task-sub">BI & Dashboards</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Data Science"
+                onclick="openLink('https://www.alfidotech.com/task/data_science.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-database"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Data Science</div>
+                        <div class="task-sub">Pandas & ML</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Machine Learning"
+                onclick="openLink('https://www.alfidotech.com/task/machine_learning.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-brain"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Machine Learning</div>
+                        <div class="task-sub">Models & Pipelines</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="task-card" data-title="Business Analytics"
+                onclick="openLink('https://www.alfidotech.com/task/business_analytics.html')">
+                <div class="task-top">
+                    <div class="task-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div style="flex:1">
+                        <div class="task-title">Business Analytics</div>
+                        <div class="task-sub">BI & Dashboards</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <!-- <button id="viewToggle" class="btn btn-outline-light">View as table</button> -->
-        <button id="sortBtn" class="btn btn-outline-light"><i class="fa-solid fa-sort-alpha-down"></i> Sort</button>
-
-        <div class="ms-2">
-          <button class="btn btn-light" onclick="window.open('https://www.alfidotech.com/submission.html','_blank')"><i class="fa-solid fa-upload"></i> Submit</button>
-          <button class="btn btn-primary" onclick="window.open('https://www.alfidotech.com/registration.html','_blank')"><i class="fa-solid fa-user-plus"></i> Register</button>
+        <!-- Table view (hidden by default) -->
+        <div id="tableView" class="table-wrap fade-in">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody id="tasksTableBody">
+                    <!-- Rows inserted by JS for cleanliness -->
+                </tbody>
+            </table>
         </div>
-      </div>
-    </div>
+    </main>
 
-    <div class="hero-right text-end d-none d-lg-block">
-      <div style="width:220px; height:140px; border-radius:12px; padding:12px; background: linear-gradient(135deg,var(--brand-red), var(--brand-red-dark)); color:white; box-shadow: 0 12px 30px rgba(0,0,0,0.6)">
-        <div style="font-weight:800; font-size:18px">19 Tasks</div>
-        <div style="opacity:0.95; margin-top:8px; font-size:13px">From Frontend & DevOps to AI & VLSI</div>
-      </div>
-    </div>
-  </section>
 
-  <!-- TASK GRID -->
-  <main class="tasks-wrap">
-    <div id="grid" class="grid fade-in">
 
-      <!-- Cards (domains and links you provided) -->
-      <div class="task-card" data-title="ASP.NET Developer" onclick="openLink('https://www.alfidotech.com/task/ASP.NETdeveloper.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-window-maximize"></i></div>
-        <div style="flex:1"><div class="task-title">ASP.NET Developer</div><div class="task-sub">C# • ASP.NET</div></div></div>
-        <div class="tag-row"><span class="tag">Backend</span></div>
-      </div>
 
-      <div class="task-card" data-title="Very Large Scale Integration (VLSI)" onclick="openLink('https://www.alfidotech.com/task/VLSI.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-microchip"></i></div>
-        <div style="flex:1"><div class="task-title">VLSI</div><div class="task-sub">VLSI Design</div></div></div>
-      </div>
 
-      <div class="task-card" data-title="Cloud Computing" onclick="openLink('https://www.alfidotech.com/task/cloud_computing.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-cloud"></i></div>
-        <div style="flex:1"><div class="task-title">Cloud Computing</div><div class="task-sub">AWS / GCP</div></div></div>
-      </div>
 
-      <div class="task-card" data-title="Cybersecurity" onclick="openLink('https://www.alfidotech.com/task/cybersecurity.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div style="flex:1"><div class="task-title">Cybersecurity</div><div class="task-sub">Ethical Hacking</div></div></div>
-      </div>
 
-      <div class="task-card" data-title="DevOps" onclick="openLink('https://www.alfidotech.com/task/devops.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-server"></i></div>
-        <div style="flex:1"><div class="task-title">DevOps</div><div class="task-sub">CI/CD, Docker</div></div></div>
-      </div>
+    <!-- Page Content -->
 
-      <div class="task-card" data-title="Digital Marketing" onclick="openLink('https://www.alfidotech.com/task/digitalmarketing.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-bullhorn"></i></div>
-        <div style="flex:1"><div class="task-title">Digital Marketing</div><div class="task-sub">SEO, Ads</div></div></div>
-      </div>
+    <div id="footer"></div>
 
-      <div class="task-card" data-title="Embedded Systems" onclick="openLink('https://www.alfidotech.com/task/embedded_systems.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-microchip"></i></div>
-        <div style="flex:1"><div class="task-title">Embedded Systems</div><div class="task-sub">Microcontrollers</div></div></div>
-      </div>
+    <!-- Scripts -->
+    <script>
+        // Data list (Domain & Link) — mirrors exactly what you provided
+        const TASKS = [
+            ["ASP.NET Developer", "https://www.alfidotech.com/task/ASP.NETdeveloper.html"],
+            ["Very Large Scale Integration (VLSI)", "https://www.alfidotech.com/task/VLSI.html"],
+            ["Cloud Computing", "https://www.alfidotech.com/task/cloud_computing.html"],
+            ["Cybersecurity", "https://www.alfidotech.com/task/cybersecurity.html"],
+            ["DevOps", "https://www.alfidotech.com/task/devops.html"],
+            ["Digital Marketing", "https://www.alfidotech.com/task/digitalmarketing.html"],
+            ["Embedded Systems", "https://www.alfidotech.com/task/embedded_systems.html"],
+            ["Frontend Developer", "https://www.alfidotech.com/task/frontend_developer.html"],
+            ["Java Developer", "https://www.alfidotech.com/task/javadeveloper.html"],
+            ["MERN Stack", "https://www.alfidotech.com/task/mern.html"],
+            ["Python Developer", "https://www.alfidotech.com/task/pythondeveloper.html"],
+            ["React.js Developer", "https://www.alfidotech.com/task/reactdeveloper.html"],
+            ["UX/UI Design", "https://www.alfidotech.com/task/uxui.html"],
+            ["Artificial Intelligence", "https://www.alfidotech.com/task/artificial_integence.html"],
+            ["Android Developer", "https://www.alfidotech.com/task/androiddeveloper.html"],
+            ["C / C++ Programming", "https://www.alfidotech.com/task/CProgramming.html"],
+            ["Data Analyst", "https://www.alfidotech.com/task/data_analyst.html"],
+            ["Data Science", "https://www.alfidotech.com/task/data_science.html"],
+            ["Machine Learning", "https://www.alfidotech.com/task/machine_learning.html"]
+        ];
 
-      <div class="task-card" data-title="Frontend Developer" onclick="openLink('https://www.alfidotech.com/task/frontend_developer.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-code"></i></div>
-        <div style="flex:1"><div class="task-title">Frontend Developer</div><div class="task-sub">HTML/CSS/JS</div></div></div>
-      </div>
+        // Populate the table body
+        const tableBody = document.getElementById('tasksTableBody');
+        function buildTableRows(list) {
+            tableBody.innerHTML = '';
+            list.forEach(item => {
+                const tr = document.createElement('tr');
+                const domainTd = document.createElement('td'); domainTd.textContent = item[0];
+                const linkTd = document.createElement('td');
+                const a = document.createElement('a'); a.href = item[1]; a.textContent = item[1]; a.className = 'link-btn'; a.target = '_blank';
+                linkTd.appendChild(a);
+                tr.appendChild(domainTd); tr.appendChild(linkTd);
+                tableBody.appendChild(tr);
+            });
+        }
+        buildTableRows(TASKS);
 
-      <div class="task-card" data-title="Java Developer" onclick="openLink('https://www.alfidotech.com/task/javadeveloper.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-brands fa-java"></i></div>
-        <div style="flex:1"><div class="task-title">Java Developer</div><div class="task-sub">Core Java</div></div></div>
-      </div>
+        // Open link helper for cards
+        function openLink(url) {
+            window.open(url, '_blank');
+        }
 
-      <div class="task-card" data-title="MERN Stack" onclick="openLink('https://www.alfidotech.com/task/mern.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-brands fa-js"></i></div>
-        <div style="flex:1"><div class="task-title">MERN Stack</div><div class="task-sub">Mongo/Express/React/Node</div></div></div>
-      </div>
+        // Search / filter (works on cards & table)
+        const input = document.getElementById('searchInput');
+        const cards = Array.from(document.querySelectorAll('.task-card'));
+        input.addEventListener('input', () => {
+            const q = input.value.trim().toLowerCase();
+            // cards
+            cards.forEach(c => {
+                const title = (c.dataset.title || '').toLowerCase();
+                c.style.display = title.includes(q) ? '' : 'none';
+            });
+            // table rows
+            const filtered = TASKS.filter(t => t[0].toLowerCase().includes(q) || t[1].toLowerCase().includes(q));
+            buildTableRows(filtered);
+        });
 
-      <div class="task-card" data-title="Python Developer" onclick="openLink('https://www.alfidotech.com/task/pythondeveloper.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-brands fa-python"></i></div>
-        <div style="flex:1"><div class="task-title">Python Developer</div><div class="task-sub">Scripting & Web</div></div></div>
-      </div>
+        // Sort toggle (alphabetical by domain)
+        const sortBtn = document.getElementById('sortBtn');
+        let asc = false;
+        sortBtn.addEventListener('click', () => {
+            TASKS.sort((a, b) => asc ? b[0].localeCompare(a[0]) : a[0].localeCompare(b[0]));
+            asc = !asc;
+            // rebuild both views
+            buildTableRows(TASKS);
+            // reorder DOM cards to match TASKS order (optional)
+            const grid = document.getElementById('grid');
+            // create map of domain->card
+            const map = {};
+            cards.forEach(c => map[c.dataset.title] = c);
+            // clear and append in order
+            grid.innerHTML = '';
+            TASKS.forEach(t => {
+                const card = map[t[0]];
+                if (card) grid.appendChild(card);
+            });
+        });
 
-      <div class="task-card" data-title="React.js Developer" onclick="openLink('https://www.alfidotech.com/task/reactdeveloper.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-brands fa-react"></i></div>
-        <div style="flex:1"><div class="task-title">React.js Developer</div><div class="task-sub">React Components</div></div></div>
-      </div>
+        // View toggle: cards <-> table
+        const viewToggle = document.getElementById('viewToggle');
+        const gridEl = document.getElementById('grid');
+        const tableEl = document.getElementById('tableView');
+        let tableVisible = false;
+        viewToggle.addEventListener('click', () => {
+            tableVisible = !tableVisible;
+            if (tableVisible) {
+                gridEl.style.display = 'none';
+                tableEl.style.display = 'block';
+                viewToggle.textContent = 'View as cards';
+            } else {
+                gridEl.style.display = 'grid';
+                tableEl.style.display = 'none';
+                viewToggle.textContent = 'View as table';
+            }
+        });
 
-      <div class="task-card" data-title="UX/UI Design" onclick="openLink('https://www.alfidotech.com/task/uxui.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-palette"></i></div>
-        <div style="flex:1"><div class="task-title">UX/UI Design</div><div class="task-sub">Figma • Prototypes</div></div></div>
-      </div>
+        // Accessibility: allow enter to open first matching card
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                const visible = cards.find(c => c.style.display !== 'none');
+                if (visible) visible.click();
+            }
+        });
+    </script>
 
-      <div class="task-card" data-title="Artificial Intelligence" onclick="openLink('https://www.alfidotech.com/task/artificial_integence.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-robot"></i></div>
-        <div style="flex:1"><div class="task-title">Artificial Intelligence</div><div class="task-sub">AI Projects</div></div></div>
-      </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-      <div class="task-card" data-title="Android Developer" onclick="openLink('https://www.alfidotech.com/task/androiddeveloper.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-brands fa-android"></i></div>
-        <div style="flex:1"><div class="task-title">Android Developer</div><div class="task-sub">Kotlin • App Dev</div></div></div>
-      </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loadHTML = (url, id) =>
+                fetch(url).then(r => r.text())
+                    .then(h => document.getElementById(id).innerHTML = h);
 
-      <div class="task-card" data-title="C / C++ Programming" onclick="openLink('https://www.alfidotech.com/task/CProgramming.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-code-branch"></i></div>
-        <div style="flex:1"><div class="task-title">C / C++ Programming</div><div class="task-sub">Algorithms</div></div></div>
-      </div>
+            loadHTML("/header.html", "header");
+            loadHTML("/footer.html", "footer");
+        });
+    </script>
 
-      <div class="task-card" data-title="Data Analyst" onclick="openLink('https://www.alfidotech.com/task/data_analyst.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <div style="flex:1"><div class="task-title">Data Analyst</div><div class="task-sub">BI & Dashboards</div></div></div>
-      </div>
 
-      <div class="task-card" data-title="Data Science" onclick="openLink('https://www.alfidotech.com/task/data_science.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-database"></i></div>
-        <div style="flex:1"><div class="task-title">Data Science</div><div class="task-sub">Pandas & ML</div></div></div>
-      </div>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(() => console.log("Service Worker registered"))
+                    .catch(err => console.log("SW registration failed", err));
+            });
+        }
+    </script>
 
-      <div class="task-card" data-title="Machine Learning" onclick="openLink('https://www.alfidotech.com/task/machine_learning.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-brain"></i></div>
-        <div style="flex:1"><div class="task-title">Machine Learning</div><div class="task-sub">Models & Pipelines</div></div></div>
-      </div>
 
-      <div class="task-card" data-title="Business Analytics" onclick="openLink('https://www.alfidotech.com/task/business_analytics.html')">
-        <div class="task-top"><div class="task-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <div style="flex:1"><div class="task-title">Business Analytics</div><div class="task-sub">BI & Dashboards</div></div></div>
-      </div>
-
-    </div>
-
-    <!-- Table view (hidden by default) -->
-    <div id="tableView" class="table-wrap fade-in">
-      <table>
-        <thead>
-          <tr><th>Domain</th><th>Link</th></tr>
-        </thead>
-        <tbody id="tasksTableBody">
-          <!-- Rows inserted by JS for cleanliness -->
-        </tbody>
-      </table>
-    </div>
-  </main>
-
-  <!-- WhatsApp CTA -->
-  <div id="whatsapp-btn"><a href="https://api.whatsapp.com/send?phone=919977465250" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div>
-
-<div id="footer"></div>
-<script>
-  fetch("/footer.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("footer").innerHTML = data);
-</script>
-
-  <!-- Scripts -->
-  <script>
-    // Data list (Domain & Link) — mirrors exactly what you provided
-    const TASKS = [
-      ["ASP.NET Developer","https://www.alfidotech.com/task/ASP.NETdeveloper.html"],
-      ["Very Large Scale Integration (VLSI)","https://www.alfidotech.com/task/VLSI.html"],
-      ["Cloud Computing","https://www.alfidotech.com/task/cloud_computing.html"],
-      ["Cybersecurity","https://www.alfidotech.com/task/cybersecurity.html"],
-      ["DevOps","https://www.alfidotech.com/task/devops.html"],
-      ["Digital Marketing","https://www.alfidotech.com/task/digitalmarketing.html"],
-      ["Embedded Systems","https://www.alfidotech.com/task/embedded_systems.html"],
-      ["Frontend Developer","https://www.alfidotech.com/task/frontend_developer.html"],
-      ["Java Developer","https://www.alfidotech.com/task/javadeveloper.html"],
-      ["MERN Stack","https://www.alfidotech.com/task/mern.html"],
-      ["Python Developer","https://www.alfidotech.com/task/pythondeveloper.html"],
-      ["React.js Developer","https://www.alfidotech.com/task/reactdeveloper.html"],
-      ["UX/UI Design","https://www.alfidotech.com/task/uxui.html"],
-      ["Artificial Intelligence","https://www.alfidotech.com/task/artificial_integence.html"],
-      ["Android Developer","https://www.alfidotech.com/task/androiddeveloper.html"],
-      ["C / C++ Programming","https://www.alfidotech.com/task/CProgramming.html"],
-      ["Data Analyst","https://www.alfidotech.com/task/data_analyst.html"],
-      ["Data Science","https://www.alfidotech.com/task/data_science.html"],
-      ["Machine Learning","https://www.alfidotech.com/task/machine_learning.html"]
-    ];
-
-    // Populate the table body
-    const tableBody = document.getElementById('tasksTableBody');
-    function buildTableRows(list){
-      tableBody.innerHTML = '';
-      list.forEach(item=>{
-        const tr = document.createElement('tr');
-        const domainTd = document.createElement('td'); domainTd.textContent = item[0];
-        const linkTd = document.createElement('td');
-        const a = document.createElement('a'); a.href = item[1]; a.textContent = item[1]; a.className='link-btn'; a.target='_blank';
-        linkTd.appendChild(a);
-        tr.appendChild(domainTd); tr.appendChild(linkTd);
-        tableBody.appendChild(tr);
-      });
-    }
-    buildTableRows(TASKS);
-
-    // Open link helper for cards
-    function openLink(url){
-      window.open(url, '_blank');
-    }
-
-    // Search / filter (works on cards & table)
-    const input = document.getElementById('searchInput');
-    const cards = Array.from(document.querySelectorAll('.task-card'));
-    input.addEventListener('input', () => {
-      const q = input.value.trim().toLowerCase();
-      // cards
-      cards.forEach(c => {
-        const title = (c.dataset.title || '').toLowerCase();
-        c.style.display = title.includes(q) ? '' : 'none';
-      });
-      // table rows
-      const filtered = TASKS.filter(t => t[0].toLowerCase().includes(q) || t[1].toLowerCase().includes(q));
-      buildTableRows(filtered);
-    });
-
-    // Sort toggle (alphabetical by domain)
-    const sortBtn = document.getElementById('sortBtn');
-    let asc = false;
-    sortBtn.addEventListener('click', () => {
-      TASKS.sort((a,b) => asc ? b[0].localeCompare(a[0]) : a[0].localeCompare(b[0]));
-      asc = !asc;
-      // rebuild both views
-      buildTableRows(TASKS);
-      // reorder DOM cards to match TASKS order (optional)
-      const grid = document.getElementById('grid');
-      // create map of domain->card
-      const map = {};
-      cards.forEach(c => map[c.dataset.title] = c);
-      // clear and append in order
-      grid.innerHTML = '';
-      TASKS.forEach(t => {
-        const card = map[t[0]];
-        if (card) grid.appendChild(card);
-      });
-    });
-
-    // View toggle: cards <-> table
-    const viewToggle = document.getElementById('viewToggle');
-    const gridEl = document.getElementById('grid');
-    const tableEl = document.getElementById('tableView');
-    let tableVisible = false;
-    viewToggle.addEventListener('click', () => {
-      tableVisible = !tableVisible;
-      if (tableVisible) {
-        gridEl.style.display = 'none';
-        tableEl.style.display = 'block';
-        viewToggle.textContent = 'View as cards';
-      } else {
-        gridEl.style.display = 'grid';
-        tableEl.style.display = 'none';
-        viewToggle.textContent = 'View as table';
-      }
-    });
-
-    // Accessibility: allow enter to open first matching card
-    input.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        const visible = cards.find(c => c.style.display !== 'none');
-        if (visible) visible.click();
-      }
-    });
-  </script>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
 
+</html>
