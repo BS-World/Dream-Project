@@ -277,6 +277,52 @@
                 opacity: 1;
             }
         }
+
+        .social-widget {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 9999;
+        }
+
+        .social-widget a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .facebook {
+            background: #3b5998;
+        }
+
+        .instagram {
+            background: #E1306C;
+        }
+
+        .linkedin {
+            background: #0077b5;
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .social-widget a:hover {
+            transform: scale(1.2);
+            opacity: 0.9;
+        }
     </style>
     <script type="application/ld+json">
 {
@@ -334,41 +380,46 @@
         </div>
     </section>
 
+    <!-- ================= INTERNSHIP DETAILS ================= -->
+    <section id="details" class="container py-5">
+        <div class="text-center mb-4">
+            <!-- <img src="img/verified.png" alt="AICTE Internship Listing" height="90" class="mb-3"> -->
+            <h2 class="fw-bold">Internship Program Highlights</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <ul class="list-group shadow-sm">
+                    <li class="list-group-item"><strong>Duration:</strong> 1, 2, 4 or 6 Months / 45 Days</li>
+                    <li class="list-group-item"><strong>Start Date:</strong> <span class="text-danger">20 Jan
+                            2026</span></li>
+                    <li class="list-group-item"><strong>Mode:</strong> Online • Task-Based</li>
+                    <li class="list-group-item">
+                        <strong>Benefits:</strong> Offer Letter, Completion Certificate, LOR, Weekly Report Card
+                    </li>
+                    <li class="list-group-item"><strong>Domains:</strong> 19+ IT & Tech Domains</li>
+                </ul>
+
+                <div class="alert alert-primary text-center mt-4">
+                    📌 Apply early — Offer Letter will be issued before the internship start date.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="social-widget">
+        <a href="https://www.facebook.com/profile.php?id=61552559429791" target="_blank" class="facebook"><i
+                class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/alfido_tech/" target="_blank" class="instagram"><i
+                class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/company/alfido-tech/" target="_blank" class="linkedin"><i
+                class="fab fa-linkedin-in"></i></a>
+        <a href="https://whatsapp.com/channel/0029Va9oTsF1CYoKbCt5TJ41" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+
 
     <!-- Registration Form -->
     <section id="formSection" class="container py-5 glass-section">
-        <!-- Internship Details -->
-        <section class="container py-5 bg-light">
-            <div class="text-center mb-4">
-                <!-- <img src="aicte.png" alt="AICTE Approved" height="100" class="mb-3"> -->
-                <h2 class="fw-bold">Internship Program Highlights</h2>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <ul class="list-group shadow-sm">
-                        <li class="list-group-item"><strong>Duration:</strong> 1, 2, 4, or 6 months or 45 Days</li>
-                        <li class="list-group-item"><strong>Start Date:</strong> <span class="text-danger">10 Jan
-                                2026</span></li>
-                        <li class="list-group-item"><strong>Mode:</strong> Online & Task-Based</li>
-                        <li class="list-group-item"><strong>Perks:</strong> Offer Letter, Completion Certificate, LOR,
-                            and Weekly Report Card</li>
-                        <li class="list-group-item"><strong>Domains:</strong> 19+</li>
-                    </ul>
-                    <p class="alert alert-primary text-center mt-3">📌 Apply today – Offer Letter will be sent 2 days
-                        before start date.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="social-widget">
-            <a href="https://www.facebook.com/profile.php?id=61552559429791" target="_blank" class="facebook"><i
-                    class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/alfido_tech/" target="_blank" class="instagram"><i
-                    class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/company/alfido-tech/" target="_blank" class="linkedin"><i
-                    class="fab fa-linkedin-in"></i></a>
-            <a href="https://wa.me/919977465250" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-        </div>
 
         <div class="card shadow-lg border-0 rounded-4">
             <div class="card-body p-5">
