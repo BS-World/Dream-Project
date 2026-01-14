@@ -189,8 +189,20 @@
 
         /* ================= HERO ================= */
         .hero {
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #fff;
+            background:
+                linear-gradient(135deg,
+                    rgba(20, 5, 5, 0.85),
+                    rgba(120, 10, 10, 0.85),
+                    rgba(20, 5, 5, 0.9)),
+                url("img/banar.png");
+
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* ⭐ KEY FIX */
+            background-position: center;
+
+            display: flex;
+            align-items: center;
 
         }
 
@@ -545,7 +557,7 @@
 
             <!-- Heading -->
             <div class="text-center mb-5">
-                <h2 class="domain-title">Choose Your Domain</h2>
+                <h2 class="domain-title" id="internships">Choose Your Domain</h2>
                 <p class="domain-subtitle">
                     19 cutting-edge domains with live projects, certification & placement support
                 </p>
@@ -1490,5 +1502,4 @@
     </script>
 
 </body>
-
 </html>
