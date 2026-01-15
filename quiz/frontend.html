@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- ================= BASIC META ================= -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Frontend Developer — Skill Assessment | Alfido Tech Internship Portal</title>
+
+    <!-- ================= SEO META ================= -->
+    <meta name="description"
+        content="Complete the Frontend Developer Skill Assessment at Alfido Tech. Test your knowledge of HTML, CSS, JavaScript, accessibility, performance, and modern frontend best practices.">
+
+    <meta name="keywords"
+        content="Frontend Developer Assessment, Frontend Skill Test Alfido Tech, HTML CSS JavaScript Assessment, Web Development Internship Assessment, Frontend Internship Evaluation">
+
+    <meta name="author" content="Alfido Tech">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://www.alfidotech.com/quiz/frontend.html">
+
+    <!-- ================= OPEN GRAPH (WhatsApp / LinkedIn) ================= -->
+    <meta property="og:site_name" content="Alfido Tech">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Frontend Developer — Skill Assessment | Alfido Tech">
+    <meta property="og:description"
+        content="Evaluate your frontend development skills in HTML, CSS, JavaScript, accessibility, and UI best practices through the Alfido Tech Internship Assessment Portal.">
+    <meta property="og:url" content="https://www.alfidotech.com/quiz/frontend.html">
+    <meta property="og:image" content="https://www.alfidotech.com/img/domains/frontend.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Frontend Developer — Skill Assessment | Alfido Tech">
+    <meta name="twitter:description"
+        content="Take the Frontend Developer Skill Assessment to test HTML, CSS, JavaScript, accessibility, and modern frontend development skills at Alfido Tech.">
+    <meta name="twitter:image" content="https://www.alfidotech.com/img/domains/frontend.webp">
+
+
+
+    <!-- ================= APPLE TOUCH ICONS ================= -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+
+    <!-- ================= ANDROID ICONS ================= -->
+    <link rel="icon" type="image/png" sizes="36x36" href="/img/favicon/android-icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="/img/favicon/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="/img/favicon/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+
+    <!-- ================= STANDARD FAVICONS ================= -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+    <!-- ================= MANIFEST ================= -->
+    <link rel="manifest" href="/img/favicon/manifest.json">
+
+    <!-- ================= WINDOWS TILES ================= -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+
+    <!-- ================= THEME COLOR ================= -->
+    <meta name="theme-color" content="#c1121f">
+
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-HKXWNH34MG');
+    </script>
+    <style>
+        /* ================= ALFIDO TECH DESIGN TOKENS ================= */
+        :root {
+            --alfido-red: #c1121f;
+            --alfido-red-dark: #9b0d18;
+            --alfido-red-darker: #7e0a14;
+
+            --alfido-dark: #0b0b14;
+            --alfido-dark-soft: #121225;
+
+            --alfido-yellow: #FFC107;
+            --alfido-white: #ffffff;
+        }
+
+        /* ================= BASE ================= */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--alfido-dark);
+            color: #e5e7eb;
+        }
+
+        /* ================= HERO ================= */
+        .hero-header {
+            min-height: 30vh;
+            padding-top: 120px;
+            padding-bottom: 80px;
+
+            background:
+                linear-gradient(135deg,
+                    rgba(20, 5, 5, 0.85),
+                    rgba(120, 10, 10, 0.85),
+                    rgba(20, 5, 5, 0.9)),
+                url("/img/banar.webp");
+
+            background-repeat: no-repeat;
+            background-size: 200%;
+            /* zoomed – 50% visible */
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .hero-header {
+                min-height: 75vh;
+                padding: 100px 0 60px;
+            }
+
+            .hero-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        /* ================= BADGES ================= */
+        .badge-custom {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(6px);
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+        }
+
+        /* ================= BUTTONS ================= */
+        .btn-warning {
+            background: var(--alfido-yellow);
+            border-color: var(--alfido-yellow);
+            color: #111;
+            font-weight: 700;
+        }
+
+        .btn-warning:hover {
+            background: #ffb300;
+            border-color: #ffb300;
+        }
+
+        .btn-outline-light {
+            border-width: 2px;
+        }
+
+        /* ================= QUIZ CONTAINER ================= */
+        .quiz-box {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px;
+            border-radius: 22px;
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 0.12),
+                    rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(14px);
+            border: 1px solid rgba(193, 18, 31, 0.45);
+            box-shadow: 0 30px 80px rgba(193, 18, 31, 0.35);
+        }
+
+        /* ================= TIMER BAR ================= */
+        .quiz-timer-bar {
+            position: sticky;
+            top: 78px;
+            z-index: 10;
+            margin-bottom: 25px;
+            padding: 12px 18px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, var(--alfido-dark), var(--alfido-dark-soft));
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid rgba(193, 18, 31, 0.45);
+        }
+
+        .quiz-timer-bar span {
+            color: var(--alfido-yellow);
+            font-weight: 700;
+        }
+
+        /* ================= QUESTIONS ================= */
+        #questions {
+            counter-reset: question;
+        }
+
+        .question {
+            background: rgba(0, 0, 0, 0.35);
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all .3s ease;
+        }
+
+        .question:hover {
+            border-color: var(--alfido-red);
+            box-shadow: 0 0 0 1px rgba(193, 18, 31, 0.35);
+        }
+
+        .question h6 {
+            display: flex;
+            gap: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .question h6::before {
+            counter-increment: question;
+            content: counter(question);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--alfido-yellow);
+            color: #111;
+            font-size: .85rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* ================= OPTIONS ================= */
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            cursor: pointer;
+            transition: all .25s ease;
+        }
+
+        .form-check:hover {
+            background: rgba(255, 193, 7, 0.12);
+            border-color: rgba(255, 193, 7, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .form-check-input {
+            margin: 0;
+            transform: scale(1.1);
+        }
+
+        .form-check-input:checked {
+            background-color: var(--alfido-yellow);
+            border-color: var(--alfido-yellow);
+        }
+
+        .form-check-input:checked+.form-check-label {
+            color: var(--alfido-yellow);
+            font-weight: 600;
+        }
+
+        /* ================= RESULT MODAL ================= */
+        .modal-content {
+            background: var(--alfido-dark);
+            border: 2px solid var(--alfido-red);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-body h2 {
+            color: var(--alfido-yellow);
+        }
+
+        .pass {
+            color: #22c55e;
+            font-weight: 700;
+        }
+
+        .fail {
+            color: #ef4444;
+            font-weight: 700;
+        }
+
+        /* ================= MOBILE ================= */
+        @media (max-width: 576px) {
+            .quiz-box {
+                padding: 22px;
+            }
+
+            .question {
+                padding: 18px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="header"></div>
+
+    <!-- ================= ASSESSMENT PAGE HERO ================= -->
+    <section class="hero-header d-flex align-items-center text-center">
+        <div class="container">
+
+            <span class="badge rounded-pill fw-semibold px-3 py-2" style="background:#fff;color:#c1121f;">
+                Alfido Tech Internship
+            </span>
+
+            <h1 class="fw-bold text-white mt-3">
+                Frontend Developer — Skill Assessment
+            </h1>
+
+            <p class="lead text-white-50 mt-3">
+                Evaluate your frontend development skills in HTML, CSS, JavaScript, accessibility, and modern UI best
+                practices
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+                <a href="#questions" class="btn btn-warning btn-lg fw-bold px-5 rounded-pill">
+                    Start Assessment
+                </a>
+
+                <a href="#guidelines" class="btn btn-outline-light btn-lg fw-semibold px-4 rounded-pill">
+                    Assessment Guidelines
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- QUIZ -->
+    <section class="container pb-5">
+        <div class="quiz-box mx-auto">
+
+
+            <div class="quiz-timer-bar">
+                <div>
+                    ⏱ Time Remaining:
+                    <span id="time">20:00</span>
+                </div>
+                <div>
+                    Passing Score: <strong>60%</strong>
+                </div>
+            </div>
+
+
+            <form id="quizForm">
+
+                <div id="questions"></div>
+
+                <div class="text-center">
+                    <button type="button" onclick="submitQuiz()" class="btn btn-warning px-5 py-2 rounded-pill fw-bold">
+                        Submit Assessment
+                    </button>
+                    <p class="text-center text-secondary mt-3 small">
+                        ⚠ Do not refresh the page. Assessment auto-submits when time ends.
+                    </p>
+
+                </div>
+            </form>
+
+
+
+        </div>
+    </section>
+
+    <script>
+        /* ================= QUESTIONS ================= */
+        const questions = [
+            {
+                q: "Which HTML attribute is essential for screen readers to describe images?",
+                options: ["title", "alt", "src", "role"],
+                answer: 1 // alt
+            },
+            {
+                q: "Which CSS property adds space inside an element’s border?",
+                options: ["margin", "gap", "padding", "border-spacing"],
+                answer: 2 // padding
+            },
+            {
+                q: "What is the key difference between == and === in JavaScript?",
+                options: [
+                    "== compares only type",
+                    "=== compares value and type",
+                    "=== is slower",
+                    "== is deprecated"
+                ],
+                answer: 1
+            },
+            {
+                q: "Which CSS unit is relative to the font-size of the parent element?",
+                options: ["px", "rem", "em", "vw"],
+                answer: 2 // em
+            },
+            {
+                q: "Event delegation mainly relies on which JavaScript concept?",
+                options: ["Closures", "Bubbling", "Promises", "Shadow DOM"],
+                answer: 1 // Bubbling
+            },
+            {
+                q: "Which meta tag is mandatory for responsive layouts on mobile devices?",
+                options: ["charset", "viewport", "robots", "theme-color"],
+                answer: 1
+            },
+            {
+                q: "Which of the following is NOT a valid JavaScript data type?",
+                options: ["Undefined", "Boolean", "Float", "Symbol"],
+                answer: 2 // Float
+            },
+            {
+                q: "Which CSS layout system is best suited for one-dimensional layouts?",
+                options: ["Grid", "Float", "Flexbox", "Position"],
+                answer: 2 // Flexbox
+            },
+            {
+                q: "What does DOM stand for in web development?",
+                options: [
+                    "Document Object Model",
+                    "Data Object Model",
+                    "Digital Object Manager",
+                    "Document Order Map"
+                ],
+                answer: 0
+            },
+            {
+                q: "Which method safely converts a JSON string into a JavaScript object?",
+                options: ["JSON.parse()", "JSON.stringify()", "parseJSON()", "Object.parse()"],
+                answer: 0
+            },
+            {
+                q: "Which HTML tag conveys meaning about the content it contains?",
+                options: ["<div>", "<span>", "<section>", "<b>"],
+                answer: 2 // section
+            },
+            {
+                q: "Which JavaScript keyword prevents variable reassignment?",
+                options: ["var", "let", "const", "static"],
+                answer: 2 // const
+            },
+            {
+                q: "What is the default value of the CSS position property?",
+                options: ["absolute", "relative", "fixed", "static"],
+                answer: 3 // static
+            },
+            {
+                q: "Which CSS pseudo-class applies when a user hovers over an element?",
+                options: [":active", ":focus", ":hover", "::after"],
+                answer: 2
+            },
+            {
+                q: "Which JavaScript array method returns a new array without mutating the original?",
+                options: ["forEach", "map", "push", "pop"],
+                answer: 1 // map
+            },
+            {
+                q: "Which practice most improves frontend performance?",
+                options: [
+                    "Using inline CSS everywhere",
+                    "Minifying CSS and JS files",
+                    "Using large uncompressed images",
+                    "Disabling browser cache"
+                ],
+                answer: 1
+            },
+            {
+                q: "ARIA attributes are primarily used to improve:",
+                options: [
+                    "SEO ranking",
+                    "Accessibility for assistive technologies",
+                    "Animations",
+                    "Security"
+                ],
+                answer: 1
+            },
+            {
+                q: "Which HTML element is used to link an external CSS file?",
+                options: ["<style>", "<css>", "<script>", "<link>"],
+                answer: 3
+            },
+            {
+                q: "Which tool is most commonly used to debug frontend issues in browsers?",
+                options: ["VS Code", "Chrome DevTools", "Git", "NPM"],
+                answer: 1
+            }
+        ];
+
+
+        /* ================= RENDER (FINAL FIXED) ================= */
+        const container = document.getElementById("questions");
+
+        function escapeHTML(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;");
+        }
+
+        questions.forEach((item, i) => {
+            container.innerHTML += `
+    <div class="question">
+      <h6>${item.q}</h6>
+
+      ${item.options.map((opt, idx) => {
+                const id = `q${i}_opt${idx}`;
+                return `
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="q${i}"
+              id="${id}"
+              value="${idx}"
+            >
+            <label class="form-check-label" for="${id}">
+              ${escapeHTML(opt)}
+            </label>
+          </div>
+        `;
+            }).join("")}
+
+    </div>
+  `;
+        });
+
+
+
+        /* ================= TIMER (20 MIN) ================= */
+        /* ================= PERSISTENT TIMER ================= */
+        const TOTAL_TIME = 20 * 60;
+
+        const startTime =
+            localStorage.getItem("frontend_start_time") ||
+            Date.now();
+
+        localStorage.setItem("frontend_start_time", startTime);
+
+        const timerEl = document.getElementById("time");
+
+        const timer = setInterval(() => {
+            const elapsed = Math.floor((Date.now() - startTime) / 1000);
+            const remaining = TOTAL_TIME - elapsed;
+
+            if (remaining <= 0) {
+                clearInterval(timer);
+                submitQuiz(true);
+                return;
+            }
+
+            const m = Math.floor(remaining / 60);
+            const s = remaining % 60;
+            timerEl.textContent = `${m}:${s.toString().padStart(2, "0")}`;
+        }, 1000);
+    </script>
+
+    <script>
+        function submitQuiz(auto = false) {
+
+            if (typeof timer !== "undefined") {
+                clearInterval(timer);
+            }
+
+            let score = 0;
+            questions.forEach((q, i) => {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && parseInt(selected.value) === q.answer) {
+                    score++;
+                }
+            });
+
+            localStorage.setItem("frontend_score", score);
+
+            const modalScore = document.getElementById("modalScore");
+            const modalMsg = document.getElementById("modalResultMsg");
+            const modalCertBtn = document.getElementById("modalCertificateBtn");
+            const retryBtn = document.getElementById("retryBtn");
+
+            modalScore.innerText = score;
+
+            if (score >= 12) {
+                // ✅ PASS
+                modalMsg.innerHTML = `<span class="pass">🎉 Congratulations! You Passed.</span>`;
+                modalCertBtn.classList.remove("d-none");
+                retryBtn.classList.add("d-none");
+
+                localStorage.setItem("frontend_certificate", "unlocked");
+                localStorage.setItem("frontend_attempted", "true"); // lock only on pass
+
+            } else {
+                // ❌ FAIL → RETEST ALLOWED
+                modalMsg.innerHTML = `<span class="fail">❌ You did not pass. Please retry the assessment.</span>`;
+                retryBtn.classList.remove("d-none");
+
+                localStorage.removeItem("frontend_certificate");
+                localStorage.removeItem("frontend_attempted");
+                localStorage.removeItem("frontend_start_time");
+            }
+
+            // Disable inputs for current attempt
+            document.querySelectorAll('input[type="radio"]')
+                .forEach(r => r.disabled = true);
+
+            const resultModal = new bootstrap.Modal(
+                document.getElementById("resultModal"),
+                { backdrop: "static", keyboard: false }
+            );
+            resultModal.show();
+        }
+    </script>
+
+
+
+
+
+    <!-- RESULT MODAL -->
+    <div class="modal fade" id="resultModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark text-white rounded-4 border border-warning">
+
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fw-bold">
+                        Assessment Result
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+
+
+                </div>
+                <button id="retryBtn" class="btn btn-warning mt-3 d-none" onclick="location.reload()">
+                    🔄 Retry Assessment
+                </button>
+
+                <div class="modal-body text-center">
+                    <h2 class="fw-bold mb-2">
+                        <span id="modalScore"></span>/19
+                    </h2>
+
+                    <p id="modalResultMsg" class="fs-5 mb-3"></p>
+
+                    <a id="modalCertificateBtn" href="https://payments.cashfree.com/forms/certification19"
+                        class="btn btn-success px-4 py-2 rounded-pill d-none">
+                        🎓 Download Certificate
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loadHTML = (url, id) =>
+                fetch(url).then(r => r.text())
+                    .then(h => document.getElementById(id).innerHTML = h);
+
+            loadHTML("/header.html", "header");
+            loadHTML("/footer.html", "footer");
+        });
+    </script>
+
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/sw.js")
+                    .then(() => console.log("Service Worker registered"))
+                    .catch(err => console.log("SW registration failed", err));
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>
