@@ -1,0 +1,681 @@
+ /* ================= ROOT ================= */
+        :root {
+            --yellow: #FFC107;
+            --dark: #0f0f23;
+        }
+
+        /* ================= BASE ================= */
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-padding-top: 100px
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark);
+            color: #fff;
+            overflow-x: hidden;
+            padding-top: 84px;
+            /* FIXED NAVBAR SPACE */
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        
+        /* ================= HERO ================= */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(255, 193, 7, .1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, .05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .hero .lead {
+            font-size: 1.4rem;
+            opacity: .95
+        }
+
+        /* ================= HERO BADGES ================= */
+        .hero-badge {
+            background: rgba(255, 193, 7, .15);
+            color: #FFC107;
+            border: 1px solid rgba(255, 193, 7, .45);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            backdrop-filter: blur(6px);
+        }
+
+        /* ================= ANIMATIONS ================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: .8s cubic-bezier(.25, .46, .45, .94);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: none;
+        }
+
+        .float {
+            animation: float 4s ease-in-out infinite
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-12px)
+            }
+        }
+
+        /* ================= BUTTONS ================= */
+        .btn-yellow {
+            background: linear-gradient(45deg, #FFC107, #FFD54F);
+            color: #000;
+            font-weight: 700;
+            border: none;
+            padding: 14px 34px;
+            border-radius: 50px;
+            box-shadow: 0 15px 35px rgba(255, 193, 7, .45);
+            transition: .3s;
+        }
+
+        .btn-yellow:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 50px rgba(255, 193, 7, .6);
+        }
+
+        /* ================= GLASS ================= */
+        .glass-primary {
+            background: rgba(255, 193, 7, .15);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 193, 7, .35);
+            border-radius: 22px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, .4);
+        }
+
+        /* ================= SECTIONS ================= */
+        .py-5 {
+            padding: 5rem 0 !important
+        }
+
+        .bg-light {
+            background: rgba(255, 255, 255, .03) !important
+        }
+
+        /* ================= DOMAIN CARDS ================= */
+        .domain-card {
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15);
+            backdrop-filter: blur(16px);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            transition: .4s;
+            height: 100%;
+        }
+
+        .domain-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--yellow);
+            box-shadow: 0 30px 60px rgba(255, 193, 7, .2);
+        }
+
+        .domain-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 193, 7, .25);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--yellow);
+            font-size: 1.4rem;
+            margin: 0 auto 20px;
+        }
+
+        /* ================= APPLY BUTTON ================= */
+        .btn-apply {
+            background: linear-gradient(45deg, var(--yellow), #FFD54F);
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            width: 100%;
+        }
+
+        /* ================= SERVICES ================= */
+        .service-card {
+            border: 1px solid rgba(255, 255, 255, .1);
+            border-radius: 25px;
+            padding: 3rem 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: .3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--yellow);
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(255, 193, 7, .2);
+        }
+
+        .service-icon {
+            transition: .35s
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        /* ================= FORMS ================= */
+        .form-control,
+        .form-select {
+            background: rgba(255, 255, 255, .08) !important;
+            border: 1px solid rgba(255, 255, 255, .2) !important;
+            color: #fff !important;
+            border-radius: 15px;
+        }
+
+        .form-control::placeholder {
+            color: #ccc !important
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            background: rgba(255, 255, 255, .12) !important;
+            border-color: var(--yellow) !important;
+            box-shadow: 0 0 0 .2rem rgba(255, 193, 7, .25) !important;
+        }
+
+        /* ================= CHATBOT ================= */
+        .chatbot-toggle {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(45deg, var(--yellow), #FFD54F);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 40px rgba(255, 193, 7, .5);
+            z-index: 1050;
+            color: #000;
+            font-size: 1.5rem;
+        }
+
+        .chatbot-panel {
+            position: fixed;
+            bottom: 110px;
+            right: 30px;
+            width: 380px;
+            height: 500px;
+            background: rgba(255, 255, 255, .95);
+            border-radius: 25px;
+            box-shadow: 0 25px 70px rgba(0, 0, 0, .3);
+            display: none;
+            flex-direction: column;
+            z-index: 1051;
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background: linear-gradient(180deg, #0b0b1c 0%, #0f0f23 100%);
+            border-top: 1px solid rgba(255, 255, 255, .05);
+        }
+
+        .footer-link {
+            color: #ccc
+        }
+
+        .footer-link:hover {
+            color: var(--yellow)
+        }
+
+        /* ================= DROPDOWN ================= */
+        .dropdown-menu {
+            background: rgba(15, 15, 35, .98);
+            backdrop-filter: blur(20px);
+        }
+
+        .dropdown-item {
+            color: #eee;
+            font-weight: 500;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item.active {
+            background: rgba(255, 193, 7, .2);
+            color: #FFC107;
+        }
+
+        /* ================= MOBILE ================= */
+        @media(max-width:768px) {
+            body {
+                padding-top: 96px
+            }
+
+            .hero {
+                text-align: center
+            }
+
+            .domain-card {
+                padding: 2rem 1.5rem
+            }
+
+            .chatbot-panel {
+                right: 20px;
+                width: calc(100vw - 40px)
+            }
+
+            .float {
+                animation: none
+            }
+        }
+
+        /* ================= CHATBOT FIX ================= */
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            background: #f7f7f7;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 10px 14px;
+            margin-bottom: 10px;
+            border-radius: 16px;
+            font-size: 14px;
+            line-height: 1.4;
+            word-wrap: break-word;
+        }
+
+        .message.user {
+            background: #ffc107;
+            color: #000;
+            margin-left: auto;
+            border-bottom-right-radius: 4px;
+        }
+
+        .message.bot {
+            background: #ffffff;
+            color: #000;
+            border: 1px solid #ddd;
+            margin-right: auto;
+            border-bottom-left-radius: 4px;
+        }
+
+        #chatInput {
+            background: #ffffff !important;
+            color: #000000 !important;
+            border: 2px solid #FFC107;
+        }
+
+        #chatInput::placeholder {
+            color: #555;
+        }
+
+        .footer-link {
+            color: #bfc3d1;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-link:hover {
+            color: #FFC107;
+        }
+
+        .footer-social {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 193, 7, 0.15);
+            color: #FFC107;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .footer-social:hover {
+            background: #FFC107;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* ================= GLASS CONTAINER ================= */
+.glass-section {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0 25px 45px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+
+  position: relative;
+}
+
+/* Soft glow effect */
+.glass-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 193, 7, 0.15),
+    rgba(255, 255, 255, 0.05)
+  );
+  pointer-events: none;
+}
+
+/* ================= CARD INSIDE GLASS ================= */
+.glass-section .card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  border: none;
+  border-radius: 18px;
+}
+
+/* ================= INPUT FIELDS ================= */
+.glass-section .form-control,
+.glass-section .form-select {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.glass-section .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.glass-section .form-control:focus,
+.glass-section .form-select:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #ffc107;
+  box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+  color: #fff;
+}
+
+/* ================= LABELS ================= */
+.glass-section label,
+.glass-section legend {
+  color: #fff;
+  font-weight: 500;
+}
+
+/* ================= BUTTON ================= */
+.glass-section .btn-primary {
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  border: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.glass-section .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.35);
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .glass-section {
+    padding: 30px 15px;
+    border-radius: 18px;
+  }
+}
+
+.glass-section {
+  animation: glassFade 0.8s ease;
+}
+
+@keyframes glassFade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ================= DESIGN REFINEMENT PATCH ================= */
+
+/* ---------- GLOBAL COLOR BALANCE ---------- */
+:root {
+  --accent: #FFC107;
+  --accent-soft: rgba(255, 193, 7, 0.15);
+  --panel-bg: rgba(255, 255, 255, 0.06);
+  --panel-border: rgba(255, 255, 255, 0.15);
+}
+
+/* ---------- HERO SECTION ---------- */
+.hero-header {
+  position: relative;
+  /* background:
+    linear-gradient(
+      135deg,
+      rgba(15, 15, 35, 0.9),
+      rgba(26, 26, 46, 0.95)
+    ),
+    url("img/banar1.jpg") center/cover no-repeat; */
+}
+
+.hero-header h1 {
+  letter-spacing: 0.5px;
+}
+
+.hero-header .lead {
+  opacity: 0.9;
+}
+
+/* ---------- SECTION SEPARATION ---------- */
+section.container.py-5 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+/* ---------- BOOTSTRAP bg-light FIX ---------- */
+.bg-light {
+  background: var(--panel-bg) !important;
+  border: 1px solid var(--panel-border);
+  border-radius: 22px;
+}
+
+/* ---------- LIST GROUP (HIGHLIGHTS) ---------- */
+.list-group-item {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.list-group-item strong {
+  color: var(--accent);
+}
+
+/* ---------- ALERT FIX ---------- */
+.alert-primary {
+  background: rgba(13, 110, 253, 0.15);
+  border: 1px solid rgba(13, 110, 253, 0.35);
+  color: #cfe2ff;
+}
+
+/* ---------- FORM CARD VISUAL DEPTH ---------- */
+.glass-section .card {
+  background: rgba(15, 15, 35, 0.75);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+/* ---------- FORM HEADING ---------- */
+.glass-section h2 {
+  color: #fff;
+}
+
+.glass-section h2 samp {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ---------- INPUT ICON COLOR ---------- */
+.glass-section label i {
+  color: var(--accent);
+  margin-right: 6px;
+}
+
+/* ---------- BUTTON HARMONIZATION ---------- */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), #ffb300);
+  border: none;
+  color: #000;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ffb300, var(--accent));
+  transform: translateY(-2px);
+}
+
+/* ---------- RESET BUTTON ---------- */
+.btn-outline-secondary {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.btn-outline-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* ---------- SOCIAL WIDGET TONE ---------- */
+.social-widget a {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- POPUP DESIGN ---------- */
+.popup-box {
+  border-radius: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.popup-box h2 {
+  font-weight: 700;
+}
+
+/* ---------- FOOTER BLEND ---------- */
+footer {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 25, 0.95),
+    rgba(15, 15, 35, 1)
+  );
+}
+/* ================= SELECT DROPDOWN FIX ================= */
+
+/* Select box itself */
+.glass-section select.form-select {
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: 1px solid rgba(255, 193, 7, 0.5);
+}
+
+/* Dropdown options */
+.glass-section select.form-select option {
+  background-color: #111827; /* dark slate */
+  color: #fff;
+}
+
+/* Hover / selected option */
+.glass-section select.form-select option:hover,
+.glass-section select.form-select option:checked {
+  background-color: #ffc107;
+  color: #000;
+}
+/* ================= PROCESS POPUP FIX ================= */
+
+.popup-overlay {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.popup-box {
+  background: rgba(20, 20, 35, 0.9) !important;
+  color: #fff;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+/* Hourglass icon */
+.popup-box i {
+  color: #ffc107;
+}
+
+/* Popup text */
+.popup-box h3,
+.popup-box p,
+.popup-box div {
+  color: #fff;
+}
+.popup-box {
+  animation: popupFade 0.4s ease;
+}
+
+@keyframes popupFade {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.footer-logo {
+  height: 90px;          /* footer ke liye ideal */
+  width: auto;
+  object-fit: contain;
+}
+
