@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+  http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ========= CORE PAGES ========= -->
+  <url><loc>https://www.alfidotech.com/</loc><priority>1.00</priority></url>
+  <url><loc>https://www.alfidotech.com/registration.html</loc><priority>0.90</priority></url>
+  <url><loc>https://www.alfidotech.com/domains.html</loc><priority>0.85</priority></url>
+  <url><loc>https://www.alfidotech.com/assessment.html</loc><priority>0.90</priority></url>
+  <url><loc>https://www.alfidotech.com/certificate.html</loc><priority>0.85</priority></url>
+  <url><loc>https://www.alfidotech.com/service.html</loc><priority>0.80</priority></url>
+  <url><loc>https://www.alfidotech.com/blog.html</loc><priority>0.80</priority></url>
+  <url><loc>https://www.alfidotech.com/contact.html</loc><priority>0.80</priority></url>
+  <url><loc>https://www.alfidotech.com/editor.html</loc><priority>0.70</priority></url>
+
+  <!-- ========= POLICY PAGES ========= -->
+  <url><loc>https://www.alfidotech.com/about-us.html</loc><priority>0.60</priority></url>
+  <url><loc>https://www.alfidotech.com/privacy-policy.html</loc><priority>0.60</priority></url>
+  <url><loc>https://www.alfidotech.com/terms-and-conditions.html</loc><priority>0.60</priority></url>
+  <url><loc>https://www.alfidotech.com/refund-policy.html</loc><priority>0.60</priority></url>
+  <url><loc>https://www.alfidotech.com/disclaimer.html</loc><priority>0.60</priority></url>
+  <url><loc>https://www.alfidotech.com/cookie-policy.html</loc><priority>0.50</priority></url>
+
+  <!-- ========= QUIZ PAGES ========= -->
+  <url><loc>https://www.alfidotech.com/quiz/frontend.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/reactjs.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/mern.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/python.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/cpp.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/java.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/dotnet.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/data-analytics.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/business-analytics.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/data-science.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/ai.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/digital-marketing.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/ml.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/cybersecurity.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/uiux.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/android.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/vlsi.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/embedded.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/cloud.html</loc><priority>0.75</priority></url>
+  <url><loc>https://www.alfidotech.com/quiz/devops.html</loc><priority>0.75</priority></url>
+
+  <!-- ========= TASK PAGES ========= -->
+  <url><loc>https://www.alfidotech.com/task/ASP.NETdeveloper.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/VLSI.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/cloud_computing.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/cybersecurity.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/devops.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/digitalmarketing.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/embedded_systems.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/frontend_developer.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/javadeveloper.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/mern.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/pythondeveloper.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/reactdeveloper.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/uxui.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/artificial_integence.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/androiddeveloper.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/CProgramming.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/data_analyst.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/data_science.html</loc><priority>0.70</priority></url>
+  <url><loc>https://www.alfidotech.com/task/machine_learning.html</loc><priority>0.70</priority></url>
+
+</urlset>
