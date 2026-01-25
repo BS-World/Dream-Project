@@ -1,116 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Embedded Systems - Tasks</title>
-    <link rel="icon" type="image/png" href="Logo.webp"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <meta name="description" content="Embedded Systems Internship Tasks: Objective, features, technologies, and 4 practical hands-on tasks for microcontroller programming, sensor interfacing, real-time control, data logging, and IoT.">
-    <meta name="keywords" content="Embedded Systems, Internship, Arduino, ESP32, STM32, IoT, Microcontroller, Tasks, Sensors, Actuators, Data Logging, PWM, LCD, SD Card">
+
+  <head>
+    <!-- ================= BASIC META ================= -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Embedded Systems Tasks | Alfido Tech Internship Program</title>
+
+    <!-- ================= SEO META ================= -->
+    <meta name="description"
+      content="Embedded Systems internship tasks by Alfido Tech. Work on real-world embedded projects using C/C++, microcontrollers, Arduino, sensors, IoT concepts, and hardware interfacing.">
+
+    <meta name="keywords"
+      content="Embedded Systems Tasks, Embedded Systems Internship Alfido Tech, Microcontroller Projects, Arduino Internship, IoT Embedded Tasks, Alfido Tech Internship">
+
     <meta name="author" content="Alfido Tech">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://www.alfidotech.com/task/embedded_systems.html">
+
+    <!-- ================= OPEN GRAPH (WhatsApp / LinkedIn) ================= -->
+    <meta property="og:site_name" content="Alfido Tech">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Embedded Systems Tasks | Alfido Tech Internship">
+    <meta property="og:description"
+      content="Hands-on Embedded Systems internship tasks by Alfido Tech. Learn microcontrollers, C/C++, Arduino, sensors, IoT, and hardware interfacing through practical projects.">
+    <meta property="og:url" content="https://www.alfidotech.com/task/embedded_systems.html">
+    <meta property="og:image" content="https://www.alfidotech.com/img/domains/embedded.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- ================= TWITTER CARD ================= -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Embedded Systems Tasks | Alfido Tech Internship">
+    <meta name="twitter:description"
+      content="Complete real-world Embedded Systems internship tasks using microcontrollers, C/C++, Arduino, IoT, and hardware interfacing at Alfido Tech.">
+    <meta name="twitter:image" content="https://www.alfidotech.com/img/domains/embedded.webp">
 
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Google Tag Manager -->
+
+
+
+    <!-- ================= APPLE TOUCH ICONS ================= -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-icon-180x180.png">
+
+    <!-- ================= ANDROID ICONS ================= -->
+    <link rel="icon" type="image/png" sizes="36x36" href="/img/favicon/android-icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/img/favicon/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="/img/favicon/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="/img/favicon/android-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/img/favicon/android-icon-192x192.png">
+
+    <!-- ================= STANDARD FAVICONS ================= -->
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+    <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+    <!-- ================= MANIFEST ================= -->
+    <link rel="manifest" href="/img/favicon/manifest.json">
+
+    <!-- ================= WINDOWS TILES ================= -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/img/favicon/ms-icon-144x144.png">
+
+    <!-- ================= THEME COLOR ================= -->
+    <meta name="theme-color" content="#c1121f">
+
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/styles.css">
+
+    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HKXWNH34MG"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-HKXWNH34MG');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-HKXWNH34MG');
     </script>
-  <style>
-    body{font-family: "Poppins", sans-serif; background: #f4f7fb; color:#0f1724}
-    .hero{background: linear-gradient(135deg,#0f1724,#dD242a);color:#fff;padding:48px 0;border-radius:0 0 28px 28px}
-    .card-custom{border-radius:14px;box-shadow:0 8px 30px rgba(15,23,36,0.06)}
-    .badge-tech{background:#eef2ff;color:#dD242a}
-    .task-num{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:#fff;font-weight:700}
-    pre{white-space:pre-wrap}
-    body {
-            font-family: 'Poppins', sans-serif;
-            background: #f9fafc;
-            color: #1e293b;
+
+    <style>
+      body {
+        font-family: 'Poppins', sans-serif;
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #fff;
+      }
+
+      .badge-custom {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 6px 14px;
+        border-radius: 50px;
+        font-size: 14px;
+      }
+
+      .service-card {
+        border: none;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+
+
+
+      /* ================= HERO ================= */
+      .hero {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        color: #fff;
+      }
+
+      /* Badge */
+      .badge-custom {
+        background: rgba(255, 255, 255, 0.15);
+        padding: 8px 16px;
+        border-radius: 50px;
+        font-size: 14px;
+        backdrop-filter: blur(6px);
+      }
+
+      /* Image animation */
+      .hero-img-wrapper img {
+        animation: floatHero 6s ease-in-out infinite;
+      }
+
+      @keyframes floatHero {
+        0% {
+          transform: translateY(0);
         }
 
-        .navbar {
-            background: #fff;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        50% {
+          transform: translateY(-10px);
         }
 
-        .navbar-brand img {
-            height: 45px;
+        100% {
+          transform: translateY(0);
+        }
+      }
+
+      /* Mobile spacing */
+      @media (max-width: 768px) {
+        .hero {
+          text-align: center;
         }
 
-        .nav-link {
-            font-weight: 500;
-            transition: color .3s;
+        .hero .btn {
+          width: 100%;
+        }
+      }
+
+      .hero-header {
+        min-height: 50vh;
+        padding-top: 120px;
+        padding-bottom: 80px;
+
+        background:
+          linear-gradient(135deg,
+            rgba(20, 5, 5, 0.85),
+            rgba(120, 10, 10, 0.85),
+            rgba(20, 5, 5, 0.9)),
+          url("/img/banar.webp");
+
+        background-repeat: no-repeat;
+        background-size: 200%;
+        /* zoomed – 50% visible */
+        background-position: center;
+
+        display: flex;
+        align-items: center;
+      }
+
+
+
+      @media (max-width: 768px) {
+        .hero-header {
+          min-height: 75vh;
+          padding-top: 100px;
+          padding-bottom: 60px;
         }
 
-        .nav-link:hover,
-        .nav-link.active {
-            color: #dD242a !important;
+        .hero-header h1 {
+          font-size: 2rem;
         }
-  </style>
-  
-  <!-- Google Site Verification -->
-   
+      }
 
-<!-- Google Site Verification -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1950697215537872"
-    crossorigin="anonymous"></script>
-  <meta name="google-adsense-account" content="ca-pub-1950697215537872">
-<link rel="manifest" href="/site.webmanifest">
-</head>
+      .badge-tech {
+        background: #efe8ff;
+        color: #4b0082
+      }
+
+      .task-num {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        font-weight: 700
+      }
+
+      .tool-badge {
+        background: #fff;
+        border: 1px solid #e6e6e6;
+        padding: 6px 10px;
+        border-radius: 8px;
+        margin-right: 6px
+      }
+    </style>
+  </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="https://www.alfidotech.com/"><img src="Logo 2.webp" alt="Alfido Tech"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/service.html">Services</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button"
-                            data-bs-toggle="dropdown">Internship</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/registration.html">Internship
-                                    Registration</a></li>
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/offer.html">Offer Letter</a>
-                            </li>
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/submission.html">Task
-                                    Submission</a></li>
-                            <li><a class="dropdown-item"
-                                    href="https://www.alfidotech.com/certificate.html">Certificate</a></li>
-                            <li><a class="dropdown-item "
-                                    href="https://www.alfidotech.com/internProfile.html">Intern Profile</a></li>
-                            <li><a class="dropdown-item active" href="https://www.alfidotech.com/task.html">Tasks</a></li>
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/report.html">Report Card</a></li>
-                            <li><a class="dropdown-item" href="https://www.alfidotech.com/editor.html">Code Editor</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/contact.html">Contact
-                            Us</a></li>
-                    <li class="nav-item"><a class="nav-link"
-                            href="https://www.alfidotech.com/certification.html">Certification</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.alfidotech.com/blog.html">Blog</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav><br><br><br>
-  <header class="hero">
-    <div class="container text-center">
-      <h1 class="mb-2">Embedded Systems — Internship Tasks</h1>
-      <p class="mb-0">Objective, Features, Technologies and 4 practical tasks for interns.</p>
+  <div id="header"></div>
+
+  <!-- ================= BLOG PAGE HERO ================= -->
+  <section class="hero-header d-flex align-items-center text-center">
+    <div class="container">
+
+      <span class="badge bg-info text-dark mb-3 px-3 py-2 rounded-pill fw-semibold">
+        Alfido Tech Internship
+      </span>
+
+      <h1 class="fw-bold text-white mt-3">
+        Embedded Systems Tasks
+      </h1>
+
+      <p class="lead text-white-50 mt-3">
+        Hands-on embedded systems tasks using C/C++, microcontrollers, Arduino, sensors, IoT concepts, and hardware
+        interfacing
+      </p>
+
+      <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
+        <a href="#embeddedTasks" class="btn btn-warning btn-lg fw-bold px-5 rounded-pill">
+          View Tasks
+        </a>
+
+        <a href="#submission" class="btn btn-outline-light btn-lg fw-semibold px-4 rounded-pill">
+          Submission Guide
+        </a>
+      </div>
+
     </div>
-  </header>
+  </section>
+
+
 
   <main class="container my-5">
     <div class="row g-4">
@@ -149,22 +310,25 @@
           <h4 class="mb-3">Tasks (4)</h4>
 
           <!-- Tasks Accordion -->
-          <div class="accordion" id="tasksAccordion">
+          <div class="accordion" id="embeddedTasks">
 
             <!-- Task 1 -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#taskOne" aria-expanded="false" aria-controls="taskOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#taskOne" aria-expanded="false" aria-controls="taskOne">
                   <div class="d-flex align-items-center me-3">
                     <div class="task-num me-3">1</div>
                   </div>
                   Task 1 — Temperature Monitoring & LCD Display
                 </button>
               </h2>
-              <div id="taskOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#tasksAccordion">
+              <div id="taskOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#tasksAccordion">
                 <div class="accordion-body">
                   <h6>Goal</h6>
-                  <p>Read temperature from a sensor and display current value on a 16x2 LCD. Log readings over serial.</p>
+                  <p>Read temperature from a sensor and display current value on a 16x2 LCD. Log readings over serial.
+                  </p>
 
                   <h6>Requirements</h6>
                   <ul>
@@ -185,14 +349,16 @@
             <!-- Task 2 -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingTwo">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#taskTwo" aria-expanded="false" aria-controls="taskTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#taskTwo" aria-expanded="false" aria-controls="taskTwo">
                   <div class="d-flex align-items-center me-3">
                     <div class="task-num me-3">2</div>
                   </div>
                   Task 2 — Motor Control with PWM & Obstacle Detection
                 </button>
               </h2>
-              <div id="taskTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#tasksAccordion">
+              <div id="taskTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                data-bs-parent="#tasksAccordion">
                 <div class="accordion-body">
                   <h6>Goal</h6>
                   <p>Control DC motor speed using PWM and stop when an ultrasonic sensor detects an obstacle.</p>
@@ -215,17 +381,20 @@
             <!-- Task 3 -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingThree">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#taskThree" aria-expanded="false" aria-controls="taskThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#taskThree" aria-expanded="false" aria-controls="taskThree">
                   <div class="d-flex align-items-center me-3">
                     <div class="task-num me-3">3</div>
                   </div>
                   Task 3 — Data Logger: Sensor → SD Card
                 </button>
               </h2>
-              <div id="taskThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#tasksAccordion">
+              <div id="taskThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                data-bs-parent="#tasksAccordion">
                 <div class="accordion-body">
                   <h6>Goal</h6>
-                  <p>Collect sensor data (e.g., temperature and light) and save timestamped entries to an SD card (CSV).</p>
+                  <p>Collect sensor data (e.g., temperature and light) and save timestamped entries to an SD card (CSV).
+                  </p>
 
                   <h6>Requirements</h6>
                   <ul>
@@ -245,22 +414,27 @@
             <!-- Task 4 -->
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingFour">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#taskFour" aria-expanded="false" aria-controls="taskFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#taskFour" aria-expanded="false" aria-controls="taskFour">
                   <div class="d-flex align-items-center me-3">
                     <div class="task-num me-3">4</div>
                   </div>
                   Task 4 — Simple IoT: ESP32 Web Dashboard
                 </button>
               </h2>
-              <div id="taskFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#tasksAccordion">
+              <div id="taskFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                data-bs-parent="#tasksAccordion">
                 <div class="accordion-body">
                   <h6>Goal</h6>
-                  <p>Create a basic web dashboard served by an ESP32 that shows live sensor data and allows toggling a digital output (LED/relay).</p>
+                  <p>Create a basic web dashboard served by an ESP32 that shows live sensor data and allows toggling a
+                    digital output (LED/relay).</p>
 
                   <h6>Requirements</h6>
                   <ul>
                     <li>Hardware: ESP32, sensor (e.g., DHT11/DHT22), LED/relay</li>
-                    <li>Software: ESP32 core for Arduino, <code>WiFi.h</code>, <code>ESPAsyncWebServer</code> or <code>WebServer</code></li>
+                    <li>Software: ESP32 core for Arduino, <code>WiFi.h</code>, <code>ESPAsyncWebServer</code> or
+                      <code>WebServer</code>
+                    </li>
                   </ul>
 
                   <h6>Deliverables</h6>
@@ -275,44 +449,45 @@
           </div>
 
           <hr>
-<!-- Task Documentation & Submission Instructions -->
-    <h4>How to Submit Your Tasks</h4>
-    <ol>
-        <li>
-            <strong>For each task:</strong>
-            <ul>
-                <li>Create a separate document (DOC, DOCX, or PDF) for <b>each task</b> (Task 1, Task 2, Task 3, Task 4).</li>
+          <!-- Task Documentation & Submission Instructions -->
+          <h4 id="submission">How to Submit Your Tasks</h4>
+          <ol>
+            <li>
+              <strong>For each task:</strong>
+              <ul>
+                <li>Create a separate document (DOC, DOCX, or PDF) for <b>each task</b> (Task 1, Task 2, Task 3, Task
+                  4).</li>
                 <li>Add all required screenshots, code snippets, commands, and links as per the deliverables.</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Upload your documents:</strong>
-            <ul>
-                <li>Upload each task document to <b>Google Drive</b> or <b>GitHub</b> (create a public repository or shareable folder).</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Upload your documents:</strong>
+              <ul>
+                <li>Upload each task document to <b>Google Drive</b> or <b>GitHub</b> (create a public repository or
+                  shareable folder).</li>
                 <li>Make sure the sharing permissions allow anyone with the link to view your files.</li>
-            </ul>
-        </li>
-        <li>
-            <strong>Submit your links:</strong>
-            <ul>
+              </ul>
+            </li>
+            <li>
+              <strong>Submit your links:</strong>
+              <ul>
                 <li>Copy the public links for each task document.</li>
-                <li>Go to the <a href="https://www.alfidotech.com/submission.html" target="_blank">Task Submission</a> page.</li>
-                <li>Paste your document links in the submission form, clearly mentioning the task number for each link.</li>
-            </ul>
-        </li>
-    </ol>
-    <p class="text-success"><b>Tip:</b> Organize your files and links clearly for faster review and feedback!</p>
+                <li>Go to the <a href="https://www.alfidotech.com/submission.html" target="_blank">Task Submission</a>
+                  page.</li>
+                <li>Paste your document links in the submission form, clearly mentioning the task number for each link.
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <p class="text-success"><b>Tip:</b> Organize your files and links clearly for faster review and feedback!</p>
           <div class="text-center mt-5">
-        <a href="https://www.alfidotech.com/submission.html" target="_blank" >
-            <button class="btn btn-primary btn-sm" >Submit Your Task</button></a>
-    </div>
+            <a href="https://www.alfidotech.com/submission.html" target="_blank">
+              <button class="btn btn-danger btn-sm">Submit Your Task</button></a>
+          </div>
 
           <div class="d-flex justify-content-between align-items-center mt-4">
-            <small class="text-muted">Suggested duration: 4–6 weeks for the full set (can be separated into smaller milestones).</small>
-            <div>
-              <button id="copyTasks" class="btn btn-outline-primary btn-sm me-2"><i class="fa fa-copy"></i> Copy Tasks</button>
-              <a href="#" id="downloadBtn" class="btn btn-primary btn-sm">Download (TXT)</a>
-            </div>
+            <small class="text-muted">Suggested duration: 4–6 weeks for the full set (can be separated into smaller
+              milestones).</small>
           </div>
 
         </div>
@@ -340,57 +515,39 @@
         </div>
       </div>
       <div class="text-center mt-5">
-        <a href="https://www.alfidotech.com/submission.html" target="_blank" >
-            <button class="btn btn-primary btn-sm" >Submit Your Task</button></a>
-    </div>
+        <a href="https://www.alfidotech.com/submission.html" target="_blank">
+          <button class="btn btn-danger btn-sm">Submit Your Task</button></a>
+      </div>
     </div>
   </main>
 
   <div id="footer"></div>
-<script>
-  fetch("/footer.html")
-    .then(res => res.text())
-    .then(data => document.getElementById("footer").innerHTML = data);
-</script>
-
-  
-
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Build a plain-text version of the tasks for 'copy' and 'download'
-    function buildPlainText(){
-      const title = 'Embedded Systems — Tasks\n\n';
-      const sections = [];
-      sections.push('Objective:\nLearn the fundamentals of embedded systems design through hands-on tasks.');
-      sections.push('\nFeatures:\n- Microcontroller programming\n- Sensor & actuator interfacing\n- Real-time control\n- Data logging & basic IoT');
-      sections.push('\nTechnologies:\nC/C++, Arduino IDE, ESP32/STM32, I2C/SPI/UART');
+    document.addEventListener("DOMContentLoaded", () => {
+      const loadHTML = (url, id) =>
+        fetch(url).then(r => r.text())
+          .then(h => document.getElementById(id).innerHTML = h);
 
-      // Task details
-      sections.push('\nTasks:\n1) Temperature Monitoring & LCD Display - Read sensor and show value on 16x2 LCD.\n2) Motor Control with PWM & Obstacle Detection - Control motor and stop on obstacle.\n3) Data Logger to SD Card - Save timestamped sensor data to CSV.\n4) Simple IoT (ESP32) - Serve dashboard and toggle outputs.');
-
-      return title + sections.join('\n\n');
-    }
-
-    document.getElementById('copyTasks').addEventListener('click', async () => {
-      const txt = buildPlainText();
-      try{
-        await navigator.clipboard.writeText(txt);
-        alert('Tasks copied to clipboard');
-      }catch(e){
-        prompt('Copy tasks text (select and copy manually):', txt);
-      }
-    });
-
-    document.getElementById('downloadBtn').addEventListener('click', (e) =>{
-      e.preventDefault();
-      const txt = buildPlainText();
-      const blob = new Blob([txt], {type: 'text/plain'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'embedded_systems_tasks.txt';
-      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+      loadHTML("/header.html", "header");
+      loadHTML("/footer.html", "footer");
     });
   </script>
+
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(() => console.log("Service Worker registered"))
+          .catch(err => console.log("SW registration failed", err));
+      });
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 </body>
+
 </html>
