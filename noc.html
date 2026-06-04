@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOC Certificate Generator | Alfido Tech</title>
+
+  <meta name="description"
+    content="Generate and download an official Alfido Tech No Objection Certificate (NOC) in A4 PDF format for college internship verification and submission.">
+
+  <meta name="keywords"
+    content="Alfido Tech NOC Generator, NOC Certificate, Internship NOC, College Internship Verification, Alfido Tech Certificate, NOC PDF Download">
+
+  <meta name="author" content="Alfido Tech">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/img/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon/favicon-96x96.png">
+  <link rel="apple-touch-icon" href="/img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/img/favicon/site.webmanifest">
+  <meta name="theme-color" content="#0f0f23">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png">
+  <link rel="shortcut icon" href="/favicon.ico">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <style>
+    :root {
+      --dark: #0f0f23;
+      --yellow: #ffc107;
+      --blue: #1e3a8a;
+      --muted: #6b7280;
+    }
+
+    body {
+      margin: 0;
+      background: var(--dark);
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .page-wrapper {
+      max-width: 1140px;
+      margin: 30px auto 60px;
+      padding: 0 15px;
+    }
+
+    .page-header h1 {
+      color: var(--yellow);
+      font-weight: 800;
+    }
+
+    .page-header p {
+      color: #cbd5e1;
+    }
+
+    .info-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+
+    @media(max-width:900px) {
+      .info-form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .info-card,
+    .form-card {
+      background: rgba(255, 255, 255, .08);
+      backdrop-filter: blur(18px);
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      padding: 24px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, .45);
+    }
+
+    .form-control,
+    .form-select {
+      background: rgba(255, 255, 255, .12) !important;
+      border: 1px solid rgba(255, 255, 255, .25) !important;
+      color: #fff !important;
+      border-radius: 14px;
+    }
+
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .form-select option {
+      background: #0f0f23;
+      color: #fff;
+    }
+
+    .btn-primary-main,
+    #downloadButton {
+      background: linear-gradient(135deg, #ffc107, #ffb300);
+      border: none;
+      color: #000;
+      font-weight: 700;
+      border-radius: 999px;
+    }
+
+    .letter-outer {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .letter-paper {
+      width: 100%;
+      max-width: 820px;
+      background: #f7f7fb;
+      border-radius: 24px;
+      padding: 18px;
+      border: 1px solid #e3e7f3;
+      display: none;
+    }
+
+    #nocLetter {
+      position: relative;
+      width: 794px;
+      max-width: 100%;
+      height: 1123px !important;
+      max-height: 1123px !important;
+      margin: 0 auto;
+      overflow: hidden !important;
+      background: #fff;
+      color: #000;
+    }
+
+    .letter-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      padding: 26px 40px 28px;
+      border: 2px solid #fff;
+      border-radius: 18px;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+
+    .watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .08;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .watermark img {
+      max-width: 420px;
+      width: 100%;
+    }
+
+    .letter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 8px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .letter-header img {
+      max-width: 220px;
+      height: auto;
+    }
+
+    .letter-contact {
+      text-align: right;
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.35;
+    }
+
+    .letter-contact p {
+      margin-bottom: 2px;
+    }
+
+    .top-divider {
+      border-top: 2px solid #000;
+      margin: 6px 0 14px;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--blue);
+      margin: 12px 0 18px;
+      /* text-decoration: underline; */
+    }
+
+    .content {
+      font-size: 14px;
+      line-height: 1.72;
+      color: #2f3b4c;
+      text-align: justify;
+      position: relative;
+      z-index: 2;
+    }
+
+    .content p {
+      margin-bottom: 10px;
+    }
+
+    .details-box {
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin: 12px 0;
+      font-size: 13.5px;
+      /* background: rgba(248, 250, 252, .85); */
+    }
+
+    .details-box p {
+      margin: 3px 0;
+    }
+
+    .signature-row {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+      page-break-inside: avoid !important;
+      break-inside: avoid !important;
+    }
+
+    .signature-item,
+    .signature-item1 {
+      text-align: center;
+      font-size: 11px;
+    }
+
+    .signature-item img,
+    .signature-item1 img {
+      max-height: 70px;
+      max-width: 95px;
+    }
+
+    @media(max-width:768px) {
+      .letter-paper {
+        padding: 10px;
+        border-radius: 18px;
+        overflow: auto;
+      }
+
+      #nocLetter {
+        width: 794px;
+        max-width: none;
+      }
+    }
+
+    .signature-img {
+      width: 160px;
+      height: auto;
+      display: block;
+      margin: 8px 0 -5px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="page-wrapper">
+    <div class="page-header mb-4">
+      <h1>Alfido Tech NOC Generator</h1>
+      <p>Fill intern details and download official A4-size NOC PDF.</p>
+    </div>
+
+    <div class="info-form-grid">
+      <div class="info-card">
+        <!-- <img src="img/nav-logo.webp" alt="Alfido Tech Logo" style="max-width:180px" class="mb-3"> -->
+
+        <h4 class="text-warning">Fill Details for NOC Certificate</h4>
+
+        <ul class="text-light">
+          <li>Enter student full name and father name correctly</li>
+          <li>Fill Candidate ID, college name and internship domain</li>
+          <li>Select internship start date, end date and issue date</li>
+          <li>Click Generate NOC to preview certificate format</li>
+          <li>Download single-page A4 size PDF for college submission</li>
+        </ul>
+      </div>
+
+      <div class="form-card">
+        <h3 class="text-warning mb-3">Intern Details</h3>
+        <form id="nocForm">
+          <div class="mb-2">
+            <label class="form-label text-warning">Full Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter full name" required>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label text-warning">Father Name</label>
+            <input type="text" id="fatherName" class="form-control" placeholder="Enter father name" required>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label text-warning">Candidate ID</label>
+            <input type="text" id="candidateId" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label text-warning">College Name</label>
+            <input type="text" id="college" class="form-control" required>
+          </div>
+
+          <div class="mb-2">
+            <label class="form-label text-warning">Internship Domain</label>
+            <input type="text" id="domain" class="form-control" required>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-2">
+              <label class="form-label text-warning">Start Date</label>
+              <input type="date" id="startDate" class="form-control" required>
+            </div>
+            <div class="col-md-6 mb-2">
+              <label class="form-label text-warning">End Date</label>
+              <input type="date" id="endDate" class="form-control" required>
+            </div>
+          </div>
+
+          <input type="hidden" id="issueDate">
+
+          <input type="hidden" id="authName" value="Manshi Singh">
+          <input type="hidden" id="designation" value="Hr Manager">
+
+
+
+          <button type="button" class="btn btn-primary-main w-100" onclick="generateNOC()">
+            <i class="fa-solid fa-file-lines me-1"></i> Generate NOC
+          </button>
+        </form>
+
+        <button id="downloadButton" class="btn btn-success w-100 mt-2" style="display:none" onclick="downloadPDF()">
+          <i class="fa-solid fa-download me-1"></i> Download NOC PDF
+        </button>
+      </div>
+    </div>
+
+    <div class="letter-outer">
+      <div class="letter-paper" id="letterWrapper">
+        <div id="nocLetter">
+          <div class="letter-inner">
+            <div class="watermark"><img src="img/logo.webp" alt="Watermark"></div>
+
+            <div class="letter-header">
+              <div><img src="/img/nav-logo.webp" alt="Alfido Tech Logo"></div>
+              <div class="letter-contact">
+                <p>Hyderabad, Telangana, 500081 India</p>
+                <p>internship@alfidotech.com</p>
+                <p>www.alfidotech.com</p>
+                <p><b>Date:</b> <span id="displayIssueDate"></span></p>
+              </div>
+            </div>
+
+            <div class="top-divider"></div>
+            <div class="title">NO OBJECTION CERTIFICATE</div>
+
+            <div class="content">
+              <p><b>To Whom It May Concern,</b></p>
+
+              <p>This is to certify that <b><span id="displayName">Ravi</span></b>, son/daughter of <b><span
+                    id="displayFather">--</span></b>, bearing Candidate ID <b><span
+                    id="displayCandidate">IS-2026-6950</span></b>, student of <b><span id="displayCollege">B.K. Birla
+                    Institute of Engineering and Technology</span></b>, is currently enrolled in the <b><span
+                    id="displayDomain">Data Analytics</span> Internship Program</b> at <b>Alfido Tech</b>.</p>
+
+              <div class="details-box">
+                <p><b>Candidate ID:</b> <span id="displayCandidate2"></span></p>
+                <p><b>Father Name:</b> <span id="displayFather2"></span></p>
+                <p><b>Internship Domain:</b> <span id="displayDomain2"></span></p>
+                <p><b>Internship Duration:</b> <span id="displayStart"></span> to <span id="displayEnd"></span></p>
+              </div>
+
+              <p>Alfido Tech has no objection to the submission of this No Objection Certificate to the concerned
+                college/university for internship verification, academic record, attendance sheet, performance sheet, or
+                any other official college submission purpose.</p>
+
+              <p>The intern is associated with Alfido Tech for learning, training, and task-based internship activities.
+                This certificate is issued upon the request of the student for college submission.</p>
+
+              <p>We wish the student success in future academic and professional endeavors.</p>
+
+              <p class="mt-3">Sincerely,</p>
+
+              <div class="signature-box">
+                <!-- <p>For <strong><span id="previewCompanySign">Alfido Tech</span></strong></p> -->
+                <br><br>
+                <p>
+                  <img src="img/hr.png" alt="Signature" class="signature-img"><br>
+                  <strong><span id="previewAuth">Manshi Singh</span></strong><br>
+                  <span id="previewDesignation">HR Manager</span><br>
+                  Authorized Signatory
+                </p>
+              </div>
+            </div>
+
+            <!-- <div class="signature-row">
+            <div class="signature-item1">
+              <img src="img/sing.webp" alt="Signature">
+              <p><b><span id="displayAuth">Rubi Singh</span></b><br><span id="displayDesignation">Internship Coordinator</span></p>
+            </div>
+            <div class="signature-item"><img src="img/stampa.webp" alt="Seal"></div>
+            <div class="signature-item"><img src="img/aicte.webp" alt="AICTE Logo"></div>
+            <div class="signature-item"><img src="img/iso.webp" alt="ISO Logo"></div>
+            <div class="signature-item"><img src="img/qr.jpg" alt="QR Code"></div>
+            <div class="signature-item"><img src="img/MSME Logo.webp" alt="MSME Logo"></div>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const endDateField = document.getElementById("endDate");
+
+      // Auto Issue Date = End Date + 1 Day
+      endDateField.addEventListener("change", function () {
+
+        if (!this.value) return;
+
+        const endDate = new Date(this.value);
+        endDate.setDate(endDate.getDate() + 1);
+
+        const yyyy = endDate.getFullYear();
+        const mm = String(endDate.getMonth() + 1).padStart(2, "0");
+        const dd = String(endDate.getDate()).padStart(2, "0");
+
+        document.getElementById("issueDate").value =
+          `${yyyy}-${mm}-${dd}`;
+      });
+
+    });
+
+    function getValue(id) {
+      const el = document.getElementById(id);
+      return el ? el.value.trim() : "";
+    }
+
+    function setText(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = value;
+    }
+
+    function formatDate(dateValue) {
+      if (!dateValue) return "--";
+      const [year, month, day] = dateValue.split("-");
+      return `${day}/${month}/${year}`;
+    }
+
+    function generateNOC() {
+
+      const fields = [
+        "name",
+        "fatherName",
+        "candidateId",
+        "college",
+        "domain",
+        "startDate",
+        "endDate"
+      ];
+
+      for (const id of fields) {
+        if (!getValue(id)) {
+          alert("Please fill all required fields.");
+          return false;
+        }
+      }
+
+      // Ensure Issue Date exists
+      if (!getValue("issueDate")) {
+
+        const endDate = new Date(getValue("endDate"));
+        endDate.setDate(endDate.getDate() + 1);
+
+        const yyyy = endDate.getFullYear();
+        const mm = String(endDate.getMonth() + 1).padStart(2, "0");
+        const dd = String(endDate.getDate()).padStart(2, "0");
+
+        document.getElementById("issueDate").value =
+          `${yyyy}-${mm}-${dd}`;
+      }
+
+      setText("displayName", getValue("name"));
+      setText("displayFather", getValue("fatherName"));
+      setText("displayFather2", getValue("fatherName"));
+
+      setText("displayCandidate", getValue("candidateId"));
+      setText("displayCandidate2", getValue("candidateId"));
+
+      setText("displayCollege", getValue("college"));
+
+      setText("displayDomain", getValue("domain"));
+      setText("displayDomain2", getValue("domain"));
+
+      setText("displayStart", formatDate(getValue("startDate")));
+      setText("displayEnd", formatDate(getValue("endDate")));
+      setText("displayIssueDate", formatDate(getValue("issueDate")));
+
+      // Fixed Signature
+      setText("previewAuth", "Manshi Singh");
+      setText("previewDesignation", "HR Manager");
+
+      setText("displayAuth", "Manshi Singh");
+      setText("displayDesignation", "HR Manager");
+
+      document.getElementById("letterWrapper").style.display = "block";
+      document.getElementById("downloadButton").style.display = "block";
+
+      document.getElementById("letterWrapper").scrollIntoView({
+        behavior: "smooth",
+        block: "nearest"
+      });
+
+      return true;
+    }
+
+    function fitToSinglePage() {
+      const content = document.querySelector(".content");
+      const letterInner = document.querySelector(".letter-inner");
+
+      if (!content || !letterInner) return;
+
+      let fontSize = 14;
+      content.style.fontSize = fontSize + "px";
+
+      while (letterInner.scrollHeight > 1123 && fontSize > 12) {
+        fontSize -= 0.2;
+        content.style.fontSize = fontSize.toFixed(1) + "px";
+      }
+    }
+
+    function downloadPDF() {
+
+      const isGenerated = generateNOC();
+      if (!isGenerated) return;
+
+      fitToSinglePage();
+
+      const element = document.getElementById("nocLetter");
+      const studentName = getValue("name") || "Student";
+
+      const fileName =
+        `InternSpark_NOC_${studentName.replaceAll(" ", "_")}.pdf`;
+
+      html2pdf().set({
+        margin: 10,
+        filename: fileName,
+        image: {
+          type: "jpeg",
+          quality: 0.98
+        },
+        html2canvas: {
+          scale: 2.5,
+          useCORS: true,
+          backgroundColor: "#ffffff",
+          scrollY: 0
+        },
+        jsPDF: {
+          unit: "pt",
+          format: "a4",
+          orientation: "portrait"
+        }
+      }).from(element).save();
+    }
+
+  </script>
+
+
+
+</body>
+
+</html>
