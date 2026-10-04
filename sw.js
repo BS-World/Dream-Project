@@ -5,7 +5,7 @@ const ASSETS_TO_CACHE = [
   "/",
   "/index.html",
   "/css/styles.css",
-  "/img/logo.webp",
+  "/img/Logo.png",
   "/img/favicon/favicon-32x32.png",
   "/img/favicon/android-icon-192x192.png",
   OFFLINE_URL
