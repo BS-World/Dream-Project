@@ -1,0 +1,3980 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+
+    <!-- Basic Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alfido Tech - Attendance Record Generator</title>
+
+    <meta name="title" content="Alfido Tech - Attendance Record Generator">
+
+    <meta name="description"
+        content="Generate and download official internship attendance records from Alfido Tech. Enter candidate details, internship duration, college information and generate a professional PDF attendance record.">
+
+    <meta name="keywords"
+        content="Alfido Tech, Attendance Record, Internship Attendance, Attendance Certificate, Internship Record, Attendance Generator, Alfido Tech Internship, Internship PDF">
+
+    <meta name="author" content="Alfido Tech">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="language" content="English">
+
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.alfidotech.com/attendance.html">
+
+
+    <!-- Theme / Browser -->
+    <meta name="theme-color" content="#d43635">
+
+    <meta name="msapplication-TileColor" content="#d43635">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <meta name="apple-mobile-web-app-title" content="Alfido Tech Attendance">
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="https://www.alfidotech.com/img/nav-logo.webp">
+
+    <link rel="apple-touch-icon" href="https://www.alfidotech.com/img/nav-logo.webp">
+
+
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website">
+
+    <meta property="og:url" content="https://www.alfidotech.com/attendance.html">
+
+    <meta property="og:title" content="Alfido Tech - Attendance Record Generator">
+
+    <meta property="og:description"
+        content="Generate a professional internship attendance record PDF with candidate details, internship duration, attendance summary and authorized signatures.">
+
+    <meta property="og:image" content="https://www.alfidotech.com/img/attendance-og.webp">
+
+    <meta property="og:image:secure_url" content="https://www.alfidotech.com/img/attendance-og.webp">
+
+    <meta property="og:image:type" content="image/webp">
+
+    <meta property="og:image:width" content="1200">
+
+    <meta property="og:image:height" content="630">
+
+    <meta property="og:image:alt" content="Alfido Tech Attendance Record Generator">
+
+    <meta property="og:site_name" content="Alfido Tech">
+
+    <meta property="og:locale" content="en_IN">
+
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Alfido Tech - Attendance Record Generator">
+
+    <meta name="twitter:description"
+        content="Generate and download professional internship attendance records from Alfido Tech.">
+
+    <meta name="twitter:image" content="https://www.alfidotech.com/img/attendance-og.webp">
+
+    <meta name="twitter:image:alt" content="Alfido Tech Attendance Record Generator">
+
+
+    <!-- Mobile Browser -->
+    <meta name="format-detection" content="telephone=no">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <!-- Preload Logo -->
+    <link rel="preload" as="image" href="https://www.alfidotech.com/img/nav-logo.webp">
+
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+
+    <!-- =====================================================
+         BOOTSTRAP 5
+    ====================================================== -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+    <!-- =====================================================
+         JSPDF
+    ====================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js">
+    </script>
+
+
+    <!-- =====================================================
+         JSPDF AUTOTABLE
+    ====================================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js">
+    </script>
+
+
+    <style>
+        /* =========================================================
+   ROOT
+========================================================= */
+
+        :root {
+
+            --alfido-red: #d43635;
+
+            --alfido-dark-red: #a92323;
+
+            --light-red: #fff5f5;
+
+            --dark: #222;
+
+            --muted: #6c757d;
+
+        }
+
+
+        /* =========================================================
+   GENERAL
+========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            font-family: "Inter", sans-serif;
+
+            background: #f3f5f8;
+
+            color: var(--dark);
+
+        }
+
+
+        /* =========================================================
+   TOP BAR
+========================================================= */
+
+        .topbar {
+
+            background:
+                linear-gradient(135deg,
+                    var(--alfido-red),
+                    var(--alfido-dark-red));
+
+            color: #fff;
+
+            padding: 12px 0;
+
+            box-shadow:
+                0 4px 18px rgba(0, 0, 0, .12);
+
+        }
+
+
+        .topbar-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-size: 21px;
+
+            font-weight: 800;
+
+        }
+
+
+        .topbar-logo {
+
+            width: 42px;
+
+            height: 42px;
+
+            object-fit: contain;
+
+            background: #fff;
+
+            border-radius: 8px;
+
+            padding: 5px;
+
+        }
+
+
+        /* =========================================================
+   HERO
+========================================================= */
+
+        .hero {
+
+            text-align: center;
+
+            padding:
+                42px 15px 30px;
+
+        }
+
+
+        .hero h1 {
+
+            font-size: 30px;
+
+            font-weight: 800;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .hero p {
+
+            color: var(--muted);
+
+            margin: 0;
+
+        }
+
+
+        /* =========================================================
+   FORM CARD
+========================================================= */
+
+        .main-card {
+
+            border: 0;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            background: #fff;
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, .08);
+
+        }
+
+
+        .card-heading {
+
+            padding: 20px 25px;
+
+            background: var(--light-red);
+
+            color: var(--alfido-red);
+
+            font-weight: 700;
+
+            border-bottom:
+                1px solid #f0dada;
+
+        }
+
+
+        .form-body {
+
+            padding: 28px;
+
+        }
+
+
+        .form-label {
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .required {
+
+            color: var(--alfido-red);
+
+        }
+
+
+        .form-control,
+        .form-select {
+
+            min-height: 46px;
+
+            border-radius: 9px;
+
+            border:
+                1px solid #d7dce1;
+
+        }
+
+
+        .form-control:focus,
+        .form-select:focus {
+
+            border-color:
+                var(--alfido-red);
+
+            box-shadow:
+                0 0 0 .2rem rgba(212, 54, 53, .12);
+
+        }
+
+
+        .info-box {
+
+            background: #f8fafc;
+
+            border-left:
+                4px solid var(--alfido-red);
+
+            border-radius: 7px;
+
+            padding: 13px 15px;
+
+            font-size: 13px;
+
+            color: #59616d;
+
+        }
+
+
+        /* =========================================================
+   BUTTON
+========================================================= */
+
+        .btn-generate {
+
+            min-height: 50px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            padding:
+                0 28px;
+
+            font-weight: 700;
+
+            color: #fff;
+
+            background:
+                linear-gradient(135deg,
+                    #d43635,
+                    #a92323);
+
+            box-shadow:
+                0 5px 15px rgba(212, 54, 53, .25);
+
+        }
+
+
+        .btn-generate:hover {
+
+            color: #fff;
+
+            background:
+                #a52222;
+
+        }
+
+
+        .btn-reset {
+
+            min-height: 50px;
+
+            border-radius: 10px;
+
+            font-weight: 600;
+
+        }
+
+
+        /* =========================================================
+   PREVIEW
+========================================================= */
+
+        #previewSection {
+
+            display: none;
+
+            margin-top: 35px;
+
+        }
+
+
+        .preview-wrapper {
+
+            background: #e5e9ed;
+
+            padding: 30px 15px;
+
+            border-radius: 15px;
+
+            overflow-x: auto;
+
+        }
+
+
+        .pdf-page {
+
+            width: 210mm;
+
+            min-height: 297mm;
+
+            background: #fff;
+
+            margin: auto;
+
+            padding:
+                10mm 13mm;
+
+            position: relative;
+
+            box-shadow:
+                0 5px 25px rgba(0, 0, 0, .12);
+
+        }
+
+
+        /* =========================================================
+   PDF HEADER
+========================================================= */
+
+        .pdf-header {
+
+            border-bottom:
+                2px solid var(--alfido-red);
+
+            padding-bottom: 9px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .pdf-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+        }
+
+
+        .pdf-logo {
+
+            width: 130px !important;
+
+            height: 30px !important;
+
+            object-fit: contain !important;
+
+            object-position:
+                left center !important;
+
+            display: block;
+
+        }
+
+
+        .official-text {
+
+            text-align: right;
+
+            font-size: 8px;
+
+            color: #777;
+
+        }
+
+
+        .official-text strong {
+
+            color: #666;
+
+        }
+
+
+        .document-title {
+
+            text-align: center;
+
+            font-size: 20px;
+
+            font-weight: 800;
+
+            margin-top: 10px;
+
+        }
+
+
+        .document-subtitle {
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 9px;
+
+        }
+
+
+        /* =========================================================
+   CANDIDATE BOX
+========================================================= */
+
+        .candidate-box {
+
+            border:
+                1px solid #dcdcdc;
+
+            border-radius: 6px;
+
+            padding: 9px;
+
+            margin-bottom: 12px;
+
+        }
+
+
+        .candidate-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 7px 18px;
+
+        }
+
+
+        .candidate-item {
+
+            font-size: 8.5px;
+
+            line-height: 1.4;
+
+        }
+
+
+        .candidate-item strong {
+
+            display: inline-block;
+
+            min-width: 86px;
+
+        }
+
+
+        /* =========================================================
+   ATTENDANCE HEADING
+========================================================= */
+
+        .attendance-heading {
+
+            background:
+                var(--alfido-red);
+
+            color: #fff;
+
+            padding: 7px 9px;
+
+            font-size: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* =========================================================
+   ATTENDANCE TABLE
+========================================================= */
+
+        .attendance-table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
+            font-size: 8px;
+
+        }
+
+
+        .attendance-table th,
+        .attendance-table td {
+
+            border:
+                1px solid #ccc;
+
+            padding: 4px;
+
+            text-align: center;
+
+        }
+
+
+        .attendance-table th {
+
+            background: #f4f4f4;
+
+            font-weight: 700;
+
+        }
+
+
+        .attendance-table td:nth-child(2) {
+
+            text-align: left;
+
+        }
+
+
+        /* =========================================================
+   SUMMARY
+========================================================= */
+
+        .summary-box {
+
+            display: flex;
+
+            gap: 8px;
+
+            margin-top: 12px;
+
+        }
+
+
+        .summary-item {
+
+            flex: 1;
+
+            border:
+                1px solid #ddd;
+
+            border-radius: 5px;
+
+            padding: 7px;
+
+            text-align: center;
+
+        }
+
+
+        .summary-number {
+
+            color: var(--alfido-red);
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+        }
+
+
+        .summary-label {
+
+            color: #777;
+
+            font-size: 7px;
+
+        }
+
+
+        /* =========================================================
+   DECLARATION
+========================================================= */
+
+        .declaration {
+
+            margin-top: 11px;
+
+            padding: 8px;
+
+            border:
+                1px solid #e4e4e4;
+
+            background: #fafafa;
+
+            font-size: 7.5px;
+
+            line-height: 1.45;
+
+            color: #555;
+
+        }
+
+
+        /* =========================================================
+   SIGNATURE AREA
+========================================================= */
+
+        .signature-area {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-end;
+
+            margin-top: 17px;
+
+            padding:
+                0 15px;
+
+        }
+
+
+        .signature {
+
+            width: 160px;
+
+            text-align: center;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+
+        /* =========================================================
+   MENTOR SIGNATURE
+========================================================= */
+
+        .mentor-signature {
+
+            width: 115px !important;
+
+            height: 55px !important;
+
+            object-fit: contain !important;
+
+            display: block;
+
+            margin-bottom: 2px;
+
+        }
+
+
+        /* =========================================================
+   HR SIGNATURE
+========================================================= */
+
+        .hr-signature {
+
+            width: 100px !important;
+
+            height: 100px !important;
+
+            object-fit: contain !important;
+
+            display: block;
+
+            margin-bottom: 2px;
+
+        }
+
+
+        /* =========================================================
+   SIGNATURE LINE
+========================================================= */
+
+        .signature-line {
+
+            width: 160px !important;
+
+            border-top:
+                1px solid #333;
+
+            padding-top: 4px;
+
+            font-size: 8px;
+
+            font-weight: 700;
+
+        }
+
+
+        .signature-small {
+
+            font-size: 6.8px;
+
+            color: #777;
+
+            margin-top: 2px;
+
+        }
+
+
+        /* =========================================================
+   PDF FOOTER
+========================================================= */
+
+        .pdf-footer {
+
+            margin-top: 13px;
+
+            border-top:
+                1px solid #ddd;
+
+            padding-top: 5px;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            font-size: 7px;
+
+            color: #888;
+
+        }
+
+
+        /* =========================================================
+   DOWNLOAD
+========================================================= */
+
+        .download-area {
+
+            text-align: center;
+
+            padding: 25px 0;
+
+        }
+
+
+        .download-btn {
+
+            background: #198754;
+
+            border: none;
+
+            color: #fff;
+
+            padding:
+                12px 25px;
+
+            border-radius: 9px;
+
+            font-weight: 700;
+
+        }
+
+
+        .download-btn:hover {
+
+            background: #146c43;
+
+            color: #fff;
+
+        }
+
+
+        /* =========================================================
+   FOOTER
+========================================================= */
+
+        .site-footer {
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 12px;
+
+            padding: 25px;
+
+        }
+
+
+        /* =========================================================
+   MOBILE
+========================================================= */
+
+        @media(max-width:767px) {
+
+            .hero {
+
+                padding:
+                    30px 15px 20px;
+
+            }
+
+            .hero h1 {
+
+                font-size: 25px;
+
+            }
+
+            .form-body {
+
+                padding: 20px;
+
+            }
+
+            .candidate-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .preview-wrapper {
+
+                overflow-x: auto;
+
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+     TOP BAR
+========================================================= -->
+
+    <header class="topbar">
+
+        <div class="container">
+
+            <div class="topbar-brand">
+
+                <img src="https://www.alfidotech.com/img/nav-bar.png" class="topbar-logo" alt="Alfido Tech">
+
+                <span>
+                    Alfido Tech
+                </span>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+     HERO
+========================================================= -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <h1>
+                Attendance Record Generator
+            </h1>
+
+            <p>
+                Generate your official Alfido Tech internship attendance record.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+     MAIN
+========================================================= -->
+
+    <div class="container pb-5">
+
+
+        <!-- =====================================================
+         FORM CARD
+    ====================================================== -->
+
+        <div class="card main-card">
+
+
+            <div class="card-heading">
+
+                <i class="fa-solid fa-clipboard-check me-2"></i>
+
+                Candidate Attendance Details
+
+            </div>
+
+
+            <div class="form-body">
+
+
+                <div class="info-box mb-4">
+
+                    <i class="fa-solid fa-circle-info me-1"></i>
+
+                    Please enter your internship details carefully.
+                    Attendance will be generated automatically for
+                    the selected internship period.
+
+                </div>
+
+
+
+                <form id="attendanceForm">
+
+
+                    <div class="row g-4">
+
+
+                        <!-- FULL NAME -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+
+                                Full Name
+                                <span class="required">*</span>
+
+                            </label>
+
+                            <input type="text" class="form-control" id="fullName" placeholder="Enter full name"
+                                required>
+
+                        </div>
+
+
+
+                        <!-- CANDIDATE ID -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+
+                                Candidate ID
+                                <span class="required">*</span>
+
+                            </label>
+
+                            <input type="text" class="form-control" id="candidateId"
+                                placeholder="Example: BS/REG/101256" required>
+
+                        </div>
+
+
+
+                        <!-- DOMAIN -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+
+                                Internship Domain
+                                <span class="required">*</span>
+
+                            </label>
+
+                            <select class="form-select" id="domain" required>
+
+                                <option value="">
+                                    Select Domain
+                                </option>
+
+                                <option>
+                                    Frontend Development
+                                </option>
+
+                                <option>
+                                    UX/UI
+                                </option>
+
+                                <option>
+                                    React.JS
+                                </option>
+
+                                <option>
+                                    Python
+                                </option>
+
+                                <option>
+                                    Java
+                                </option>
+
+                                <option>
+                                    Data Science
+                                </option>
+
+                                <option>
+                                    Data Analytics
+                                </option>
+
+                                <option>
+                                    Android
+                                </option>
+
+                                <option>
+                                    .NET
+                                </option>
+
+                                <option>
+                                    C/C++
+                                </option>
+
+                                <option>
+                                    Machine Learning
+                                </option>
+
+                                <option>
+                                    Artificial Intelligence
+                                </option>
+
+                                <option>
+                                    Cybersecurity
+                                </option>
+
+                                <option>
+                                    Business Analytics
+                                </option>
+
+                                <option>
+                                    Digital Marketing
+                                </option>
+
+                                <option>
+                                    VLSI
+                                </option>
+
+                                <option>
+                                    Embedded Systems
+                                </option>
+
+                                <option>
+                                    Cloud Computing
+                                </option>
+
+                                <option>
+                                    DevOps
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- DURATION -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+
+                                Duration
+                                <span class="required">*</span>
+
+                            </label>
+
+                            <select class="form-select" id="duration" required>
+
+                                <option value="">
+                                    Select Duration
+                                </option>
+
+                                <option>
+                                    1 Month
+                                </option>
+
+                                <option>
+                                    2 Months
+                                </option>
+
+                                <option>
+                                    3 Months
+                                </option>
+
+                                <option>
+                                    4 Months
+                                </option>
+
+                                <option>
+                                    5 Months
+                                </option>
+
+                                <option>
+                                    6 Months
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- START DATE -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+
+                                Start Date
+                                <span class="required">*</span>
+
+                            </label>
+
+                            <input type="date" class="form-control" id="startDate" required>
+
+                        </div>
+
+
+
+                        <!-- END DATE -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+
+                                End Date
+                                <span class="required">*</span>
+
+                            </label>
+
+                            <input type="date" class="form-control" id="endDate" required>
+
+                        </div>
+
+
+
+                        <!-- COLLEGE -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+
+                                College / Institution Name
+                                <span class="required">*</span>
+
+                            </label>
+
+                            <input type="text" class="form-control" id="collegeName" placeholder="Enter college name"
+                                required>
+
+                        </div>
+
+
+
+                        <!-- ORGANIZATION -->
+
+                        <div class="col-md-6">
+
+                            <label class="form-label">
+
+                                Organization Name
+
+                            </label>
+
+                            <input type="text" class="form-control" id="organizationName" value="Alfido Tech" readonly>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <hr class="my-4">
+
+
+
+                    <div class="d-flex flex-column flex-sm-row justify-content-end gap-3">
+
+
+                        <button type="reset" class="btn btn-outline-secondary btn-reset px-4">
+
+                            <i class="fa-solid fa-rotate-left me-2">
+                            </i>
+
+                            Reset
+
+                        </button>
+
+
+                        <button type="submit" class="btn btn-generate">
+
+                            <i class="fa-solid fa-file-pdf me-2">
+                            </i>
+
+                            Generate Attendance Record
+
+                        </button>
+
+
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+         PREVIEW
+    ====================================================== -->
+
+        <section id="previewSection">
+
+
+            <h4 class="fw-bold mb-3">
+
+                Attendance Record Preview
+
+            </h4>
+
+
+
+            <div class="preview-wrapper">
+
+
+                <div id="pdfPage" class="pdf-page">
+
+
+                    <!-- =================================================
+                     PDF HEADER
+                ================================================== -->
+
+                    <div class="pdf-header">
+
+
+                        <div class="pdf-brand">
+
+
+                            <img src="https://www.alfidotech.com/img/nav-bar.png" class="pdf-logo"
+                                alt="Alfido Tech Logo">
+
+
+                            <div class="official-text">
+
+                                <strong>
+                                    OFFICIAL DOCUMENT
+                                </strong>
+
+                                <br>
+
+                                Internship Program
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="document-title">
+
+                            ATTENDANCE RECORD
+
+                        </div>
+
+
+                        <div class="document-subtitle">
+
+                            Internship Attendance Statement
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     CANDIDATE INFORMATION
+                ================================================== -->
+
+                    <div class="candidate-box">
+
+
+                        <div class="candidate-grid">
+
+
+                            <div class="candidate-item">
+
+                                <strong>
+                                    Candidate Name:
+                                </strong>
+
+                                <span id="pFullName"></span>
+
+                            </div>
+
+
+                            <div class="candidate-item">
+
+                                <strong>
+                                    Candidate ID:
+                                </strong>
+
+                                <span id="pCandidateId"></span>
+
+                            </div>
+
+
+                            <div class="candidate-item">
+
+                                <strong>
+                                    Domain:
+                                </strong>
+
+                                <span id="pDomain"></span>
+
+                            </div>
+
+
+                            <div class="candidate-item">
+
+                                <strong>
+                                    Duration:
+                                </strong>
+
+                                <span id="pDuration"></span>
+
+                            </div>
+
+
+                            <div class="candidate-item">
+
+                                <strong>
+                                    Start Date:
+                                </strong>
+
+                                <span id="pStartDate"></span>
+
+                            </div>
+
+
+                            <div class="candidate-item">
+
+                                <strong>
+                                    End Date:
+                                </strong>
+
+                                <span id="pEndDate"></span>
+
+                            </div>
+
+
+                            <div class="candidate-item">
+
+                                <strong>
+                                    College:
+                                </strong>
+
+                                <span id="pCollege"></span>
+
+                            </div>
+
+
+                            <div class="candidate-item">
+
+                                <strong>
+                                    Organization:
+                                </strong>
+
+                                <span id="pOrganization"></span>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     ATTENDANCE HEADING
+                ================================================== -->
+
+                    <div class="attendance-heading">
+
+                        ATTENDANCE DETAILS
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     ATTENDANCE TABLE
+                ================================================== -->
+
+                    <table class="attendance-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>S.No.</th>
+
+                                <th>Date</th>
+
+                                <th>Day</th>
+
+                                <th>Status</th>
+
+                                <th>Remarks</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="attendanceBody">
+
+                        </tbody>
+
+                    </table>
+
+
+
+                    <!-- =================================================
+                     SUMMARY
+                ================================================== -->
+
+                    <div class="summary-box">
+
+
+                        <div class="summary-item">
+
+                            <div class="summary-number" id="totalDays">
+
+                                0
+
+                            </div>
+
+                            <div class="summary-label">
+
+                                TOTAL DAYS
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="summary-item">
+
+                            <div class="summary-number" id="workingDays">
+
+                                0
+
+                            </div>
+
+                            <div class="summary-label">
+
+                                WORKING DAYS
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="summary-item">
+
+                            <div class="summary-number" id="presentDays">
+
+                                0
+
+                            </div>
+
+                            <div class="summary-label">
+
+                                PRESENT
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="summary-item">
+
+                            <div class="summary-number" id="attendancePercentage">
+
+                                0%
+
+                            </div>
+
+                            <div class="summary-label">
+
+                                ATTENDANCE
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     DECLARATION
+                ================================================== -->
+
+                    <div class="declaration">
+
+                        <strong>
+                            Declaration:
+                        </strong>
+
+                        This attendance record has been generated
+                        for the internship program conducted by
+                        <strong>Alfido Tech</strong>.
+                        The record represents the attendance status
+                        during the internship period mentioned above
+                        and is issued for official academic and
+                        internship documentation purposes.
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     SIGNATURES
+                ================================================== -->
+
+                    <div class="signature-area">
+
+
+                        <!-- MENTOR -->
+
+                        <div class="signature">
+
+
+                            <img src="https://www.alfidotech.com/img/mentor.webp" alt="Mentor Signature"
+                                class="mentor-signature">
+
+
+                            <div class="signature-line">
+
+                                Mentor
+
+                            </div>
+
+
+                            <div class="signature-small">
+
+                                Internship Mentor
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- HR -->
+
+                        <div class="signature">
+
+
+                            <img src="https://www.alfidotech.com/img/hr.png" alt="HR Signature" class="hr-signature">
+
+
+                            <div class="signature-line">
+
+                                HR / Authorized Signatory
+
+                            </div>
+
+
+                            <div class="signature-small">
+
+                                Alfido Tech
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                     FOOTER
+                ================================================== -->
+
+                    <div class="pdf-footer">
+
+
+                        <span>
+
+                            Alfido Tech | Internship Program
+
+                        </span>
+
+
+                        <span>
+
+                            Candidate ID:
+                            <span id="footerCandidateId"></span>
+
+                        </span>
+
+
+                        <span>
+
+                            Generated:
+                            <span id="generatedDate"></span>
+
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================================
+             DOWNLOAD
+        ====================================================== -->
+
+            <div class="download-area">
+
+
+                <button id="downloadBtn" class="btn download-btn">
+
+                    <i class="fa-solid fa-download me-2"></i>
+
+                    Download Attendance Record PDF
+
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+    </div>
+
+
+
+    <!-- =========================================================
+     FOOTER
+========================================================= -->
+
+    <footer class="site-footer">
+
+        ©
+        <span id="currentYear"></span>
+        Alfido Tech. All Rights Reserved.
+
+    </footer>
+
+
+
+    <script>
+
+        /* =========================================================
+           IMAGE URLS
+        ========================================================= */
+
+        const ALFIDO_LOGO =
+            "https://www.alfidotech.com/img/nav-bar.png";
+
+        const MENTOR_SIGNATURE =
+            "https://www.alfidotech.com/img/mentor.webp";
+
+        const HR_SIGNATURE =
+            "https://www.alfidotech.com/img/hr.png";
+
+
+        /* =========================================================
+           ELEMENTS
+        ========================================================= */
+
+        const form =
+            document.getElementById(
+                "attendanceForm"
+            );
+
+
+        const previewSection =
+            document.getElementById(
+                "previewSection"
+            );
+
+
+        const downloadBtn =
+            document.getElementById(
+                "downloadBtn"
+            );
+
+
+        /* =========================================================
+           YEAR
+        ========================================================= */
+
+        document.getElementById(
+            "currentYear"
+        ).textContent =
+            new Date().getFullYear();
+
+
+        /* =========================================================
+           LOCAL DATE PARSER
+           IMPORTANT:
+           Do NOT use new Date("2026-10-01")
+           because timezone can cause date shifting.
+        ========================================================= */
+
+        function parseLocalDate(dateString) {
+
+            const parts =
+                dateString.split("-");
+
+            return new Date(
+                Number(parts[0]),
+                Number(parts[1]) - 1,
+                Number(parts[2])
+            );
+
+        }
+
+
+        /* =========================================================
+           FORMAT DATE
+        ========================================================= */
+
+        function formatDate(dateString) {
+
+            if (!dateString) {
+
+                return "";
+
+            }
+
+
+            const date =
+                parseLocalDate(dateString);
+
+
+            return date.toLocaleDateString(
+                "en-IN",
+                {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+        /* =========================================================
+           FORMAT PDF DATE
+        ========================================================= */
+
+        function getTodayFormatted() {
+
+            const now =
+                new Date();
+
+            const day =
+                String(
+                    now.getDate()
+                ).padStart(2, "0");
+
+            const month =
+                String(
+                    now.getMonth() + 1
+                ).padStart(2, "0");
+
+            const year =
+                now.getFullYear();
+
+
+            return formatDate(
+                `${year}-${month}-${day}`
+            );
+
+        }
+
+
+        /* =========================================================
+           LOAD IMAGE AS DATA URL
+        ========================================================= */
+
+        async function loadImageAsDataURL(url) {
+
+            return new Promise(
+                (resolve, reject) => {
+
+                    const img =
+                        new Image();
+
+                    img.crossOrigin =
+                        "anonymous";
+
+
+                    img.onload =
+                        function () {
+
+                            try {
+
+                                const canvas =
+                                    document.createElement(
+                                        "canvas"
+                                    );
+
+
+                                canvas.width =
+                                    img.naturalWidth;
+
+
+                                canvas.height =
+                                    img.naturalHeight;
+
+
+                                const ctx =
+                                    canvas.getContext(
+                                        "2d"
+                                    );
+
+
+                                ctx.drawImage(
+                                    img,
+                                    0,
+                                    0
+                                );
+
+
+                                resolve(
+                                    canvas.toDataURL(
+                                        "image/png"
+                                    )
+                                );
+
+
+                            } catch (error) {
+
+                                reject(error);
+
+                            }
+
+                        };
+
+
+                    img.onerror =
+                        function () {
+
+                            reject(
+                                new Error(
+                                    "Unable to load image: " +
+                                    url
+                                )
+                            );
+
+                        };
+
+
+                    img.src =
+                        url;
+
+                }
+            );
+
+        }
+
+
+        /* =========================================================
+           GENERATE ATTENDANCE
+        ========================================================= */
+
+        function generateAttendance(
+            start,
+            end
+        ) {
+
+
+            const tbody =
+                document.getElementById(
+                    "attendanceBody"
+                );
+
+
+            tbody.innerHTML = "";
+
+
+            /*
+             * IMPORTANT:
+             * Local date objects are used.
+             * No toISOString().
+             * This prevents 01 Oct -> 30 Sep bug.
+             */
+
+
+            let current =
+                parseLocalDate(start);
+
+
+            const endDate =
+                parseLocalDate(end);
+
+
+            let serial = 1;
+
+            let totalDays = 0;
+
+            let workingDays = 0;
+
+            let presentDays = 0;
+
+
+
+            while (
+                current <= endDate
+            ) {
+
+
+                const year =
+                    current.getFullYear();
+
+
+                const month =
+                    String(
+                        current.getMonth() + 1
+                    ).padStart(2, "0");
+
+
+                const day =
+                    String(
+                        current.getDate()
+                    ).padStart(2, "0");
+
+
+                const dateString =
+                    `${year}-${month}-${day}`;
+
+
+                const dayName =
+                    current.toLocaleDateString(
+                        "en-IN",
+                        {
+                            weekday: "long"
+                        }
+                    );
+
+
+                const dayNumber =
+                    current.getDay();
+
+
+                let status;
+
+                let remarks;
+
+
+
+                /*
+                 * SATURDAY / SUNDAY
+                 */
+
+                if (
+                    dayNumber === 0 ||
+                    dayNumber === 6
+                ) {
+
+                    status =
+                        "Weekend";
+
+                    remarks =
+                        "Weekly Off";
+
+                }
+
+
+                /*
+                 * MONDAY - FRIDAY
+                 */
+
+                else {
+
+                    status =
+                        "Present";
+
+                    remarks =
+                        "Internship";
+
+                    workingDays++;
+
+                    presentDays++;
+
+                }
+
+
+                totalDays++;
+
+
+
+                const row =
+                    document.createElement(
+                        "tr"
+                    );
+
+
+                row.innerHTML = `
+
+            <td>
+                ${serial}
+            </td>
+
+            <td>
+                ${formatDate(dateString)}
+            </td>
+
+            <td>
+                ${dayName}
+            </td>
+
+            <td>
+                ${status}
+            </td>
+
+            <td>
+                ${remarks}
+            </td>
+
+        `;
+
+
+                tbody.appendChild(row);
+
+
+                serial++;
+
+
+                /*
+                 * NEXT DAY
+                 */
+
+                current.setDate(
+                    current.getDate() + 1
+                );
+
+            }
+
+
+
+            let percentage = 0;
+
+
+            if (
+                workingDays > 0
+            ) {
+
+                percentage =
+                    Math.round(
+                        (
+                            presentDays /
+                            workingDays
+                        ) * 100
+                    );
+
+            }
+
+
+
+            document.getElementById(
+                "totalDays"
+            ).textContent =
+                totalDays;
+
+
+            document.getElementById(
+                "workingDays"
+            ).textContent =
+                workingDays;
+
+
+            document.getElementById(
+                "presentDays"
+            ).textContent =
+                presentDays;
+
+
+            document.getElementById(
+                "attendancePercentage"
+            ).textContent =
+                percentage + "%";
+
+        }
+
+
+        /* =========================================================
+           FORM SUBMIT
+        ========================================================= */
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+
+                const fullName =
+                    document.getElementById(
+                        "fullName"
+                    ).value.trim();
+
+
+                const candidateId =
+                    document.getElementById(
+                        "candidateId"
+                    ).value.trim();
+
+
+                const domain =
+                    document.getElementById(
+                        "domain"
+                    ).value;
+
+
+                const duration =
+                    document.getElementById(
+                        "duration"
+                    ).value;
+
+
+                const startDate =
+                    document.getElementById(
+                        "startDate"
+                    ).value;
+
+
+                const endDate =
+                    document.getElementById(
+                        "endDate"
+                    ).value;
+
+
+                const college =
+                    document.getElementById(
+                        "collegeName"
+                    ).value.trim();
+
+
+                const organization =
+                    document.getElementById(
+                        "organizationName"
+                    ).value;
+
+
+
+                /* =====================================================
+                   DATE VALIDATION
+                ====================================================== */
+
+                if (
+                    parseLocalDate(endDate) <
+                    parseLocalDate(startDate)
+                ) {
+
+                    alert(
+                        "End Date cannot be earlier than Start Date."
+                    );
+
+                    return;
+
+                }
+
+
+
+                /* =====================================================
+                   PREVIEW DATA
+                ====================================================== */
+
+                document.getElementById(
+                    "pFullName"
+                ).textContent =
+                    fullName;
+
+
+                document.getElementById(
+                    "pCandidateId"
+                ).textContent =
+                    candidateId;
+
+
+                document.getElementById(
+                    "pDomain"
+                ).textContent =
+                    domain;
+
+
+                document.getElementById(
+                    "pDuration"
+                ).textContent =
+                    duration;
+
+
+                document.getElementById(
+                    "pStartDate"
+                ).textContent =
+                    formatDate(startDate);
+
+
+                document.getElementById(
+                    "pEndDate"
+                ).textContent =
+                    formatDate(endDate);
+
+
+                document.getElementById(
+                    "pCollege"
+                ).textContent =
+                    college;
+
+
+                document.getElementById(
+                    "pOrganization"
+                ).textContent =
+                    organization;
+
+
+                document.getElementById(
+                    "footerCandidateId"
+                ).textContent =
+                    candidateId;
+
+
+                document.getElementById(
+                    "generatedDate"
+                ).textContent =
+                    getTodayFormatted();
+
+
+
+                /* =====================================================
+                   GENERATE TABLE
+                ====================================================== */
+
+                generateAttendance(
+                    startDate,
+                    endDate
+                );
+
+
+
+                /* =====================================================
+                   SHOW PREVIEW
+                ====================================================== */
+
+                previewSection.style.display =
+                    "block";
+
+
+                setTimeout(
+                    function () {
+
+                        previewSection.scrollIntoView({
+                            behavior: "smooth"
+                        });
+
+                    },
+                    100
+                );
+
+            }
+        );
+
+
+        /* =========================================================
+           DOWNLOAD PDF
+        ========================================================= */
+
+        downloadBtn.addEventListener(
+            "click",
+            async function () {
+
+
+                const oldText =
+                    downloadBtn.innerHTML;
+
+
+                downloadBtn.disabled =
+                    true;
+
+
+                downloadBtn.innerHTML = `
+
+            <i class="fa-solid fa-spinner fa-spin me-2"></i>
+
+            Generating PDF...
+
+        `;
+
+
+
+                try {
+
+
+                    const {
+                        jsPDF
+                    } =
+                        window.jspdf;
+
+
+
+                    /* =================================================
+                       CREATE PDF
+                    ================================================== */
+
+                    const doc =
+                        new jsPDF({
+
+                            orientation:
+                                "portrait",
+
+                            unit:
+                                "mm",
+
+                            format:
+                                "a4",
+
+                            compress:
+                                true
+
+                        });
+
+
+
+                    const pageWidth =
+                        doc.internal.pageSize.getWidth();
+
+
+                    const pageHeight =
+                        doc.internal.pageSize.getHeight();
+
+
+
+                    /* =================================================
+                       DATA
+                    ================================================== */
+
+                    const fullName =
+                        document.getElementById(
+                            "fullName"
+                        ).value.trim();
+
+
+                    const candidateId =
+                        document.getElementById(
+                            "candidateId"
+                        ).value.trim();
+
+
+                    const domain =
+                        document.getElementById(
+                            "domain"
+                        ).value;
+
+
+                    const duration =
+                        document.getElementById(
+                            "duration"
+                        ).value;
+
+
+                    const startDate =
+                        document.getElementById(
+                            "startDate"
+                        ).value;
+
+
+                    const endDate =
+                        document.getElementById(
+                            "endDate"
+                        ).value;
+
+
+                    const college =
+                        document.getElementById(
+                            "collegeName"
+                        ).value.trim();
+
+
+                    const organization =
+                        document.getElementById(
+                            "organizationName"
+                        ).value;
+
+
+
+                    /* =================================================
+                       LOAD IMAGES
+                    ================================================== */
+
+                    let logoData = null;
+
+                    let mentorData = null;
+
+                    let hrData = null;
+
+
+
+                    try {
+
+                        logoData =
+                            await loadImageAsDataURL(
+                                ALFIDO_LOGO
+                            );
+
+                    } catch (error) {
+
+                        console.warn(
+                            "Logo could not be loaded.",
+                            error
+                        );
+
+                    }
+
+
+
+                    try {
+
+                        mentorData =
+                            await loadImageAsDataURL(
+                                MENTOR_SIGNATURE
+                            );
+
+                    } catch (error) {
+
+                        console.warn(
+                            "Mentor signature could not be loaded.",
+                            error
+                        );
+
+                    }
+
+
+
+                    try {
+
+                        hrData =
+                            await loadImageAsDataURL(
+                                HR_SIGNATURE
+                            );
+
+                    } catch (error) {
+
+                        console.warn(
+                            "HR signature could not be loaded.",
+                            error
+                        );
+
+                    }
+
+
+
+                    /* =================================================
+                       TOP RED BAR
+                    ================================================== */
+
+                    doc.setFillColor(
+                        212,
+                        54,
+                        53
+                    );
+
+
+                    doc.rect(
+                        0,
+                        0,
+                        pageWidth,
+                        6,
+                        "F"
+                    );
+
+
+
+                    /* =================================================
+                       LOGO
+                       FIXED WIDTH / HEIGHT
+                    ================================================== */
+
+                    if (logoData) {
+
+                        doc.addImage(
+
+                            logoData,
+
+                            "PNG",
+
+                            16,
+
+                            10,
+
+                            43,
+
+                            17
+
+                        );
+
+                    }
+
+
+
+                    /* =================================================
+                       OFFICIAL DOCUMENT
+                    ================================================== */
+
+                    doc.setFont(
+                        "helvetica",
+                        "bold"
+                    );
+
+
+                    doc.setFontSize(8);
+
+
+                    doc.setTextColor(
+                        90,
+                        90,
+                        90
+                    );
+
+
+                    doc.text(
+                        "OFFICIAL DOCUMENT",
+                        pageWidth - 15,
+                        18,
+                        {
+                            align: "right"
+                        }
+                    );
+
+
+                    doc.setFont(
+                        "helvetica",
+                        "normal"
+                    );
+
+
+                    doc.text(
+                        "Internship Program",
+                        pageWidth - 15,
+                        24,
+                        {
+                            align: "right"
+                        }
+                    );
+
+
+
+                    /* =================================================
+                       HEADER LINE
+                    ================================================== */
+
+                    doc.setDrawColor(
+                        212,
+                        54,
+                        53
+                    );
+
+
+                    doc.setLineWidth(
+                        0.8
+                    );
+
+
+                    doc.line(
+                        15,
+                        36,
+                        pageWidth - 15,
+                        36
+                    );
+
+
+
+                    /* =================================================
+                       TITLE
+                    ================================================== */
+
+                    doc.setTextColor(
+                        35,
+                        35,
+                        35
+                    );
+
+
+                    doc.setFont(
+                        "helvetica",
+                        "bold"
+                    );
+
+
+                    doc.setFontSize(
+                        18
+                    );
+
+
+                    doc.text(
+                        "ATTENDANCE RECORD",
+                        pageWidth / 2,
+                        47,
+                        {
+                            align: "center"
+                        }
+                    );
+
+
+                    doc.setFont(
+                        "helvetica",
+                        "normal"
+                    );
+
+
+                    doc.setFontSize(
+                        8
+                    );
+
+
+                    doc.setTextColor(
+                        110,
+                        110,
+                        110
+                    );
+
+
+                    doc.text(
+                        "Internship Attendance Statement",
+                        pageWidth / 2,
+                        53,
+                        {
+                            align: "center"
+                        }
+                    );
+
+
+
+                    /* =================================================
+                       CANDIDATE BOX
+                    ================================================== */
+
+                    const infoY =
+                        60;
+
+
+                    doc.setFillColor(
+                        249,
+                        249,
+                        249
+                    );
+
+
+                    doc.setDrawColor(
+                        220,
+                        220,
+                        220
+                    );
+
+
+                    doc.roundedRect(
+                        15,
+                        infoY,
+                        pageWidth - 30,
+                        40,
+                        2,
+                        2,
+                        "FD"
+                    );
+
+
+
+                    doc.setFont(
+                        "helvetica",
+                        "bold"
+                    );
+
+
+                    doc.setFontSize(
+                        8
+                    );
+
+
+                    doc.setTextColor(
+                        40,
+                        40,
+                        40
+                    );
+
+
+                    doc.text(
+                        "Candidate Name:",
+                        20,
+                        infoY + 9
+                    );
+
+
+                    doc.text(
+                        "Candidate ID:",
+                        110,
+                        infoY + 9
+                    );
+
+
+                    doc.text(
+                        "Domain:",
+                        20,
+                        infoY + 19
+                    );
+
+
+                    doc.text(
+                        "Duration:",
+                        110,
+                        infoY + 19
+                    );
+
+
+                    doc.text(
+                        "Start Date:",
+                        20,
+                        infoY + 29
+                    );
+
+
+                    doc.text(
+                        "End Date:",
+                        110,
+                        infoY + 29
+                    );
+
+
+                    doc.text(
+                        "College:",
+                        20,
+                        infoY + 37
+                    );
+
+
+                    doc.text(
+                        "Organization:",
+                        110,
+                        infoY + 37
+                    );
+
+
+
+                    doc.setFont(
+                        "helvetica",
+                        "normal"
+                    );
+
+
+
+                    doc.text(
+                        fullName,
+                        53,
+                        infoY + 9
+                    );
+
+
+                    doc.text(
+                        candidateId,
+                        137,
+                        infoY + 9
+                    );
+
+
+                    doc.text(
+                        domain,
+                        53,
+                        infoY + 19
+                    );
+
+
+                    doc.text(
+                        duration,
+                        137,
+                        infoY + 19
+                    );
+
+
+                    doc.text(
+                        formatDate(startDate),
+                        53,
+                        infoY + 29
+                    );
+
+
+                    doc.text(
+                        formatDate(endDate),
+                        137,
+                        infoY + 29
+                    );
+
+
+                    /*
+                     * College may be long.
+                     */
+
+                    const collegeText =
+                        doc.splitTextToSize(
+                            college,
+                            48
+                        );
+
+
+                    doc.text(
+                        collegeText,
+                        53,
+                        infoY + 37
+                    );
+
+
+                    doc.text(
+                        organization,
+                        137,
+                        infoY + 37
+                    );
+
+
+
+                    /* =================================================
+                       TABLE HEADING
+                    ================================================== */
+
+                    doc.setFillColor(
+                        212,
+                        54,
+                        53
+                    );
+
+
+                    doc.rect(
+                        15,
+                        106,
+                        pageWidth - 30,
+                        8,
+                        "F"
+                    );
+
+
+                    doc.setFont(
+                        "helvetica",
+                        "bold"
+                    );
+
+
+                    doc.setFontSize(
+                        8.5
+                    );
+
+
+                    doc.setTextColor(
+                        255,
+                        255,
+                        255
+                    );
+
+
+                    doc.text(
+                        "ATTENDANCE DETAILS",
+                        20,
+                        111.5
+                    );
+
+
+
+                    /* =================================================
+                       GET TABLE ROWS
+                    ================================================== */
+
+                    const rows = [];
+
+
+                    const tableRows =
+                        document.querySelectorAll(
+                            "#attendanceBody tr"
+                        );
+
+
+                    tableRows.forEach(
+                        function (row) {
+
+                            const cells =
+                                row.querySelectorAll(
+                                    "td"
+                                );
+
+
+                            rows.push([
+
+                                cells[0].textContent.trim(),
+
+                                cells[1].textContent.trim(),
+
+                                cells[2].textContent.trim(),
+
+                                cells[3].textContent.trim(),
+
+                                cells[4].textContent.trim()
+
+                            ]);
+
+                        }
+                    );
+
+
+
+                    /* =================================================
+                       AUTOTABLE
+                    ================================================== */
+
+                    doc.autoTable({
+
+                        startY:
+                            114,
+
+                        head: [[
+                            "S.No.",
+                            "Date",
+                            "Day",
+                            "Status",
+                            "Remarks"
+                        ]],
+
+                        body:
+                            rows,
+
+                        margin: {
+
+                            left: 15,
+
+                            right: 15,
+
+                            bottom: 20
+
+                        },
+
+                        styles: {
+
+                            font:
+                                "helvetica",
+
+                            fontSize:
+                                7,
+
+                            cellPadding:
+                                2.1,
+
+                            lineColor:
+                                [205, 205, 205],
+
+                            lineWidth:
+                                0.2,
+
+                            textColor:
+                                [40, 40, 40],
+
+                            valign:
+                                "middle"
+
+                        },
+
+                        headStyles: {
+
+                            fillColor:
+                                [245, 245, 245],
+
+                            textColor:
+                                [30, 30, 30],
+
+                            fontStyle:
+                                "bold",
+
+                            halign:
+                                "center"
+
+                        },
+
+                        alternateRowStyles: {
+
+                            fillColor:
+                                [252, 252, 252]
+
+                        },
+
+                        columnStyles: {
+
+                            0: {
+
+                                cellWidth:
+                                    12,
+
+                                halign:
+                                    "center"
+
+                            },
+
+                            1: {
+
+                                cellWidth:
+                                    35,
+
+                                halign:
+                                    "center"
+
+                            },
+
+                            2: {
+
+                                cellWidth:
+                                    34,
+
+                                halign:
+                                    "center"
+
+                            },
+
+                            3: {
+
+                                cellWidth:
+                                    25,
+
+                                halign:
+                                    "center"
+
+                            },
+
+                            4: {
+
+                                cellWidth:
+                                    45
+
+                            }
+
+                        },
+
+                        didDrawPage:
+                            function () {
+
+
+                                /*
+                                 * PAGE FOOTER
+                                 */
+
+                                doc.setDrawColor(
+                                    220,
+                                    220,
+                                    220
+                                );
+
+
+                                doc.setLineWidth(
+                                    0.2
+                                );
+
+
+                                doc.line(
+                                    15,
+                                    pageHeight - 13,
+                                    pageWidth - 15,
+                                    pageHeight - 13
+                                );
+
+
+                                doc.setFont(
+                                    "helvetica",
+                                    "normal"
+                                );
+
+
+                                doc.setFontSize(
+                                    6.5
+                                );
+
+
+                                doc.setTextColor(
+                                    120,
+                                    120,
+                                    120
+                                );
+
+
+                                doc.text(
+                                    "Alfido Tech | Internship Program",
+                                    15,
+                                    pageHeight - 8
+                                );
+
+
+                                doc.text(
+                                    "Candidate ID: " +
+                                    candidateId,
+                                    pageWidth / 2,
+                                    pageHeight - 8,
+                                    {
+                                        align:
+                                            "center"
+                                    }
+                                );
+
+
+                                doc.text(
+                                    "Page " +
+                                    doc.internal.getNumberOfPages(),
+                                    pageWidth - 15,
+                                    pageHeight - 8,
+                                    {
+                                        align:
+                                            "right"
+                                    }
+                                );
+
+                            }
+
+                    });
+
+
+
+                    /* =================================================
+                       FINAL TABLE POSITION
+                    ================================================== */
+
+                    let finalY =
+                        doc.lastAutoTable.finalY + 7;
+
+
+
+                    /*
+                     * Make sure summary has enough room.
+                     */
+
+                    if (
+                        finalY >
+                        pageHeight - 90
+                    ) {
+
+                        doc.addPage();
+
+                        finalY = 25;
+
+                    }
+
+
+
+                    /* =================================================
+                       SUMMARY
+                    ================================================== */
+
+                    doc.setFillColor(
+                        249,
+                        249,
+                        249
+                    );
+
+
+                    doc.roundedRect(
+                        15,
+                        finalY,
+                        pageWidth - 30,
+                        20,
+                        2,
+                        2,
+                        "F"
+                    );
+
+
+                    const total =
+                        document.getElementById(
+                            "totalDays"
+                        ).textContent;
+
+
+                    const working =
+                        document.getElementById(
+                            "workingDays"
+                        ).textContent;
+
+
+                    const present =
+                        document.getElementById(
+                            "presentDays"
+                        ).textContent;
+
+
+                    const percentage =
+                        document.getElementById(
+                            "attendancePercentage"
+                        ).textContent;
+
+
+
+                    const summaryX = [
+
+                        37,
+
+                        82,
+
+                        127,
+
+                        172
+
+                    ];
+
+
+                    const summaryLabels = [
+
+                        "Total Days",
+
+                        "Working Days",
+
+                        "Present",
+
+                        "Attendance"
+
+                    ];
+
+
+                    const summaryValues = [
+
+                        total,
+
+                        working,
+
+                        present,
+
+                        percentage
+
+                    ];
+
+
+
+                    doc.setFont(
+                        "helvetica",
+                        "bold"
+                    );
+
+
+                    doc.setFontSize(
+                        8
+                    );
+
+
+                    doc.setTextColor(
+                        212,
+                        54,
+                        53
+                    );
+
+
+                    for (
+                        let i = 0;
+                        i < 4;
+                        i++
+                    ) {
+
+                        doc.text(
+                            summaryLabels[i],
+                            summaryX[i],
+                            finalY + 8,
+                            {
+                                align:
+                                    "center"
+                            }
+                        );
+
+                    }
+
+
+
+                    doc.setFontSize(
+                        11
+                    );
+
+
+                    doc.setTextColor(
+                        35,
+                        35,
+                        35
+                    );
+
+
+                    for (
+                        let i = 0;
+                        i < 4;
+                        i++
+                    ) {
+
+                        doc.text(
+                            summaryValues[i],
+                            summaryX[i],
+                            finalY + 15,
+                            {
+                                align:
+                                    "center"
+                            }
+                        );
+
+                    }
+
+
+
+                    /* =================================================
+                       DECLARATION
+                    ================================================== */
+
+                    finalY += 27;
+
+
+                    const declaration =
+
+                        "Declaration: This attendance record has been generated for the internship program conducted by Alfido Tech. The record represents the attendance status during the internship period mentioned above and is issued for official academic and internship documentation purposes.";
+
+
+                    doc.setFont(
+                        "helvetica",
+                        "normal"
+                    );
+
+
+                    doc.setFontSize(
+                        7.5
+                    );
+
+
+                    doc.setTextColor(
+                        75,
+                        75,
+                        75
+                    );
+
+
+                    const declarationLines =
+                        doc.splitTextToSize(
+                            declaration,
+                            pageWidth - 40
+                        );
+
+
+                    doc.text(
+                        declarationLines,
+                        20,
+                        finalY
+                    );
+
+
+                    const declarationHeight =
+                        declarationLines.length *
+                        3.5;
+
+
+                    finalY +=
+                        declarationHeight + 8;
+
+
+
+                    /* =================================================
+                       SIGNATURE AREA
+                       SMALL GAP - NO HUGE GAP
+                    ================================================== */
+
+                    if (
+                        finalY >
+                        pageHeight - 55
+                    ) {
+
+                        doc.addPage();
+
+                        finalY = 28;
+
+                    }
+
+
+                    const signatureY =
+                        finalY + 8;
+
+
+
+                    /* =================================================
+                       MENTOR SIGNATURE
+                       40 x 17 MM
+                    ================================================== */
+
+                    if (mentorData) {
+
+                        doc.addImage(
+
+                            mentorData,
+
+                            "PNG",
+
+                            31,
+
+                            signatureY - 17,
+
+                            40,
+
+                            17
+
+                        );
+
+                    }
+
+
+
+                    /* =================================================
+                       HR SIGNATURE
+                       28 x 18 MM
+                    ================================================== */
+
+                    if (hrData) {
+
+                        doc.addImage(
+
+                            hrData,
+
+                            "PNG",
+
+                            pageWidth - 58,
+
+                            signatureY - 18,
+
+                            28,
+
+                            18
+
+                        );
+
+                    }
+
+
+
+                    /* =================================================
+                       SIGNATURE LINES
+                    ================================================== */
+
+                    doc.setDrawColor(
+                        50,
+                        50,
+                        50
+                    );
+
+
+                    doc.setLineWidth(
+                        0.3
+                    );
+
+
+                    /* Mentor */
+
+                    doc.line(
+
+                        25,
+
+                        signatureY,
+
+                        80,
+
+                        signatureY
+
+                    );
+
+
+                    /* HR */
+
+                    doc.line(
+
+                        pageWidth - 80,
+
+                        signatureY,
+
+                        pageWidth - 25,
+
+                        signatureY
+
+                    );
+
+
+
+                    /* =================================================
+                       SIGNATURE TITLES
+                    ================================================== */
+
+                    doc.setFont(
+                        "helvetica",
+                        "bold"
+                    );
+
+
+                    doc.setFontSize(
+                        8
+                    );
+
+
+                    doc.setTextColor(
+                        30,
+                        30,
+                        30
+                    );
+
+
+                    doc.text(
+
+                        "Mentor",
+
+                        52.5,
+
+                        signatureY + 6,
+
+                        {
+                            align:
+                                "center"
+                        }
+
+                    );
+
+
+                    doc.text(
+
+                        "HR / Authorized Signatory",
+
+                        pageWidth - 52.5,
+
+                        signatureY + 6,
+
+                        {
+                            align:
+                                "center"
+                        }
+
+                    );
+
+
+
+                    /* =================================================
+                       SIGNATURE SUBTITLE
+                    ================================================== */
+
+                    doc.setFont(
+                        "helvetica",
+                        "normal"
+                    );
+
+
+                    doc.setFontSize(
+                        7
+                    );
+
+
+                    doc.setTextColor(
+                        110,
+                        110,
+                        110
+                    );
+
+
+                    doc.text(
+
+                        "Internship Mentor",
+
+                        52.5,
+
+                        signatureY + 11,
+
+                        {
+                            align:
+                                "center"
+                        }
+
+                    );
+
+
+                    doc.text(
+
+                        "Alfido Tech",
+
+                        pageWidth - 52.5,
+
+                        signatureY + 11,
+
+                        {
+                            align:
+                                "center"
+                        }
+
+                    );
+
+
+
+                    /* =================================================
+                       FINAL FOOTER
+                    ================================================== */
+
+                    const footerY =
+                        signatureY + 22;
+
+
+
+                    /*
+                     * Footer only if there is enough space.
+                     */
+
+                    if (
+                        footerY <
+                        pageHeight - 5
+                    ) {
+
+
+                        doc.setDrawColor(
+                            220,
+                            220,
+                            220
+                        );
+
+
+                        doc.setLineWidth(
+                            0.2
+                        );
+
+
+                        doc.line(
+
+                            15,
+
+                            footerY,
+
+                            pageWidth - 15,
+
+                            footerY
+
+                        );
+
+
+                        doc.setFont(
+                            "helvetica",
+                            "normal"
+                        );
+
+
+                        doc.setFontSize(
+                            6.5
+                        );
+
+
+                        doc.setTextColor(
+                            120,
+                            120,
+                            120
+                        );
+
+
+                        doc.text(
+
+                            "Alfido Tech | Internship Program",
+
+                            15,
+
+                            footerY + 6
+
+                        );
+
+
+                        doc.text(
+
+                            "Candidate ID: " +
+                            candidateId,
+
+                            pageWidth / 2,
+
+                            footerY + 6,
+
+                            {
+                                align:
+                                    "center"
+                            }
+
+                        );
+
+
+                        doc.text(
+
+                            "Generated: " +
+                            getTodayFormatted(),
+
+                            pageWidth - 15,
+
+                            footerY + 6,
+
+                            {
+                                align:
+                                    "right"
+                            }
+
+                        );
+
+                    }
+
+
+
+                    /* =================================================
+                       FILE NAME
+                    ================================================== */
+
+                    const safeName =
+
+                        fullName
+                            .replace(
+                                /[^a-z0-9]/gi,
+                                "_"
+                            )
+                            .toLowerCase();
+
+
+                    const safeCandidateId =
+
+                        candidateId
+                            .replace(
+                                /[^a-z0-9]/gi,
+                                "_"
+                            );
+
+
+                    const fileName =
+
+                        "Alfido_Tech_Attendance_" +
+
+                        safeName +
+
+                        "_" +
+
+                        safeCandidateId +
+
+                        ".pdf";
+
+
+
+                    /* =================================================
+                       DOWNLOAD
+                    ================================================== */
+
+                    doc.save(
+                        fileName
+                    );
+
+
+                }
+
+                catch (error) {
+
+                    console.error(
+                        error
+                    );
+
+
+                    alert(
+                        "PDF generate karte waqt error aaya. Browser Console check karein."
+                    );
+
+                }
+
+
+                finally {
+
+                    downloadBtn.disabled =
+                        false;
+
+
+                    downloadBtn.innerHTML =
+                        oldText;
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+
+        form.addEventListener(
+            "reset",
+            function () {
+
+                setTimeout(
+                    function () {
+
+                        previewSection.style.display =
+                            "none";
+
+                    },
+                    50
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>
