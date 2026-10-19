@@ -470,6 +470,9 @@
                         style="display:none;">Download Current PDF</button>
                 </div>
                 <div class="col-12 mt-2">
+                    <small class="text-muted">Activities follow a progressive syllabus in chronological order. Each activity is unique within the selected internship period; a six-month plan requires a supported domain curriculum.</small>
+                </div>
+                <div class="col-12 mt-2">
                     <small class="text-muted">CSV format columns (header row required):
                         <code>Name,CandidateID,Domain,StartDate,EndDate,CertificateLink</code></small>
                 </div>
@@ -501,355 +504,514 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
     <script>
         /**********************
-         * Topic bank per domain
-         * You can edit these arrays to match your actual weekly syllabus
+         * Structured 6-month curriculum bank
+         * Each topic is unique within its domain and follows a learning progression.
+         * The sequence is reused only after the domain curriculum is exhausted; for
+         * a standard 6-month (183-day) internship, each domain has enough activities.
          **********************/
         const topicsByDomain = {
-
             "Frontend Developer": [
-                "Introduction to Web",
-                "HTML Basics",
-                "CSS Fundamentals",
-                "Bootstrap & Layouts",
-                "Responsive Design",
-                "JavaScript Basics",
-                "DOM Manipulation",
-                "Forms & Validation",
-                "Version Control (Git)",
-                "API Integration",
-                "Performance Optimization",
-                "Final Project & Review"
+                "Orientation: Internship Goals, Tools & Workflow", "Web Fundamentals: How the Internet Works",
+                "HTML Document Structure", "Semantic HTML Elements", "Links, Lists & Navigation",
+                "Images, Audio & Video in HTML", "Tables and Accessible Markup", "Forms and Input Types",
+                "HTML Form Validation", "CSS Syntax, Selectors & Cascade", "Colors, Units & Typography",
+                "Box Model, Margin & Padding", "Display, Positioning & Stacking Context",
+                "Flexbox Layout Practice", "CSS Grid Layout Practice", "Responsive Design & Media Queries",
+                "Mobile-First Layout Implementation", "Bootstrap Grid and Containers", "Bootstrap Components",
+                "JavaScript Variables, Types & Operators", "Conditions and Loops", "Functions and Scope",
+                "Arrays and Objects", "DOM Selection and Traversal", "DOM Updates and Event Handling",
+                "Form Validation with JavaScript", "ES6 Modules, Destructuring & Spread", "Async JavaScript: Promises",
+                "Fetch API and JSON Handling", "API Error and Loading States", "Git Basics and Repository Setup",
+                "Branching, Commits and Pull Requests", "Browser DevTools and Debugging", "Accessibility Audit",
+                "Cross-Browser Compatibility Checks", "Frontend Performance Fundamentals", "Image and Asset Optimization",
+                "Reusable Component Planning", "UI Implementation from a Design Brief", "Frontend Testing Basics",
+                "Security: Safe DOM Updates and Input Handling", "Code Refactoring and Naming",
+                "Documentation and README Writing", "Midpoint Project: Multi-Page Website",
+                "Project Feedback and Issue Prioritization", "Advanced Responsive Layout Challenge",
+                "Reusable UI Components", "API-Driven Interface Build", "Deployment Preparation",
+                "Hosting and Production Smoke Tests", "SEO Basics for Frontend Pages", "Final Project Requirements",
+                "Final Project: Build and Integrate", "Final Project: Test and Fix Bugs",
+                "Final Project: Accessibility and Performance Review", "Final Demo and Technical Reflection"
             ],
             "Software Developer": [
-    "Understanding Software Development Lifecycle",
-    "Programming Languages (e.g., Python, Java, C#)",
-    "Data Structures & Algorithms",
-    "Object-Oriented Programming",
-    "Database Management & SQL",
-    "Version Control Systems (Git)",
-    "Debugging & Problem Solving",
-    "Software Testing & Quality Assurance",
-    "Agile & Scrum Methodologies",
-    "Deployment & Continuous Integration",
-    "Code Optimization & Performance Tuning",
-    "API Design & Development",
-    "Knowledge of Operating Systems",
-    "Understanding of Cloud Platforms (AWS, Azure, GCP)",
-    "Security Best Practices",
-    "Design Patterns & Architecture",
-    "UI/UX Principles",
-    "Mobile Development Basics",
-    "Documentation & Code Commenting",
-    "Team Collaboration & Communication",
-    "Final Project & Code Review"
-],
+                "Orientation: SDLC, Team Roles & Expectations", "Development Environment Setup",
+                "Programming Language Review", "Variables, Types and Expressions", "Conditions and Iteration",
+                "Functions, Parameters and Return Values", "Arrays and String Operations", "Collections and Maps",
+                "Problem Decomposition Techniques", "Algorithm Complexity: Introductory Big-O", "Searching and Sorting",
+                "Linked Lists, Stacks and Queues", "Trees and Graph Fundamentals", "Object-Oriented Programming Principles",
+                "Encapsulation and Abstraction Practice", "Inheritance and Polymorphism", "Interfaces and Composition",
+                "Error Handling and Exceptions", "File I/O and Data Serialization", "Unit Testing Fundamentals",
+                "Test Cases and Boundary Conditions", "Debugging with IDE Tools", "Git Repository and Commit Hygiene",
+                "Branching, Merging and Conflict Resolution", "Code Review Checklist", "Relational Database Concepts",
+                "SQL Queries and Filtering", "Joins, Aggregations and Subqueries", "Database Normalization Basics",
+                "CRUD Module Implementation", "API Concepts and HTTP Methods", "REST API Design Principles",
+                "Request Validation and Error Responses", "Authentication and Authorization Concepts",
+                "Secure Secrets and Configuration", "Logging and Observability Basics", "Agile Planning and Task Estimation",
+                "Requirements Analysis and Acceptance Criteria", "Design Patterns: Practical Introduction",
+                "Layered Architecture and Separation of Concerns", "Integration Testing", "Mocking External Dependencies",
+                "Performance Profiling and Optimization", "Concurrency and Asynchronous Tasks", "Deployment Pipeline Overview",
+                "Environment-Based Configuration", "Application Security Review", "Technical Documentation",
+                "Midpoint Project: Functional Application", "Refactor for Maintainability", "CI Checks and Quality Gates",
+                "Production Readiness Checklist", "Final Project Planning and Architecture", "Final Project Implementation",
+                "Final Project Testing and Bug Triage", "Final Demonstration and Retrospective"
+            ],
             "Web Development": [
-                "Web Fundamentals",
-                "HTML5 & CSS3",
-                "JavaScript Essentials",
-                "Responsive Web Design",
-                "Bootstrap Framework",
-                "Version Control with Git",
-                "Frontend Frameworks Overview",
-                "Backend Basics (Node.js/Express)",
-                "Database Basics (MongoDB/MySQL)",
-                "RESTful APIs",
-                "Deployment & Hosting",
-                "Final Project"
+                "Orientation: Web Project Lifecycle", "How Browsers and Servers Communicate", "Domain, DNS and Hosting Basics",
+                "HTML Page Structure", "Semantic HTML and Accessibility", "Forms and Validation",
+                "CSS Selectors and Cascade", "Box Model and Layout", "Flexbox Practical Layout",
+                "CSS Grid Practical Layout", "Responsive and Mobile-First Design", "Bootstrap Grid System",
+                "Reusable Navigation and Footer", "JavaScript Syntax and Data Types", "Control Flow and Functions",
+                "Arrays, Objects and Array Methods", "DOM Events and Updates", "Client-Side Form Validation",
+                "Git and GitHub Workflow", "HTTP Requests and Status Codes", "JSON and Fetch API",
+                "REST API Consumption", "Backend Architecture Overview", "Node.js Runtime Introduction",
+                "Express Routing Basics", "Middleware and Request Lifecycle", "Relational vs NoSQL Databases",
+                "SQL CRUD Operations", "MongoDB Document Modeling", "Server-Side Validation",
+                "Authentication Flow Concepts", "Session and Token Security Basics", "Environment Variables",
+                "Error Handling and Logging", "File Upload Safety Basics", "API Testing with a Client",
+                "Frontend-Backend Integration", "Pagination, Search and Filtering", "Reusable Component Refactoring",
+                "Web Security: XSS and CSRF Awareness", "Performance and Caching Basics", "SEO Metadata and Semantic Content",
+                "Accessibility and Keyboard Navigation", "Cross-Browser Testing", "Automated Testing Introduction",
+                "Build Tools and Asset Bundling", "Deployment and Environment Setup", "Domain and HTTPS Configuration",
+                "Production Smoke Testing", "Midpoint Full-Stack Mini Project", "User Feedback and Iteration",
+                "Final Project Scope and Wireframes", "Final Project Database and API", "Final Project UI Integration",
+                "Final Project QA and Security Review", "Final Demo and Documentation"
             ],
-
             "React.JS": [
-                "React Introduction",
-                "JSX & Components",
-                "Props & State",
-                "Event Handling",
-                "Hooks (useState, useEffect)",
-                "Routing with React Router",
-                "Context API",
-                "Redux Toolkit Basics",
-                "API Integration",
-                "Testing",
-                "Optimization",
-                "Deployment"
+                "Orientation: React Ecosystem and Workflow", "Modern JavaScript Refresher", "Node.js and Package Manager Setup",
+                "Create a React Project", "JSX Syntax and Rendering", "Functional Components",
+                "Props and Component Composition", "Rendering Lists and Stable Keys", "Event Handling in React",
+                "State with useState", "Conditional Rendering Patterns", "Controlled Form Inputs",
+                "Form Validation and Feedback", "useEffect and Component Lifecycle Concepts", "Effect Dependencies and Cleanup",
+                "Fetching Data from an API", "Loading, Empty and Error States", "Reusable Custom Hooks",
+                "Lifting State Up", "Component Communication Patterns", "Context API Fundamentals",
+                "React Router Setup", "Nested Routes and Route Parameters", "Navigation and Not-Found Pages",
+                "Styling Strategies in React", "Reusable UI Component Design", "Accessibility in React Interfaces",
+                "Immutable State Updates", "Reducers and useReducer", "State Management Trade-Offs",
+                "Redux Toolkit Concepts", "Async Requests and Data State", "Environment Variables and Configuration",
+                "React DevTools and Debugging", "Component Testing Fundamentals", "Testing User Interactions",
+                "Mocking API Responses", "Performance: Memoization Concepts", "Avoiding Unnecessary Re-Renders",
+                "Lazy Loading and Code Splitting", "Error Boundaries and Recovery UX", "Security and Safe Rendering",
+                "Project Structure and Module Boundaries", "TypeScript with React: Intro", "Typed Props and Events",
+                "API Integration Mini Project", "Code Review and Refactoring", "Build and Deployment Workflow",
+                "Production Configuration Checks", "Midpoint React Application Review", "Feature Planning from User Stories",
+                "Final Project: Architecture and Routes", "Final Project: Components and State", "Final Project: API and Forms",
+                "Final Project: Testing and Accessibility", "Final Project: Optimization and Deployment", "Demo and Retrospective"
             ],
-
             "MERN Stack Developer": [
-                "Web Fundamentals",
-                "HTML, CSS & JavaScript",
-                "React Frontend",
-                "Node.js Basics",
-                "Express.js Framework",
-                "MongoDB & Mongoose",
-                "REST API Development",
-                "Authentication & Authorization",
-                "JWT & Security",
-                "Project Architecture",
-                "Deployment",
-                "Full Stack Project"
+                "Orientation: MERN Architecture and Expectations", "Web and HTTP Fundamentals", "Modern JavaScript Refresher",
+                "HTML and CSS Structure", "Responsive UI Layout", "Git and GitHub Workflow",
+                "React Project Setup", "JSX and Component Design", "Props, State and Events",
+                "React Forms and Validation", "React Router Navigation", "Node.js Runtime Basics",
+                "npm Packages and Project Scripts", "Express Application Setup", "Routes and Controllers",
+                "Middleware and Request Lifecycle", "REST API Design", "HTTP Status Codes and Error Responses",
+                "MongoDB Concepts and Collections", "Mongoose Schemas and Models", "CRUD API Endpoints",
+                "Filtering, Sorting and Pagination", "Input Validation and Sanitization", "Environment Variables",
+                "Async/Await and Error Handling", "Connecting React to Express APIs", "CORS and Cross-Origin Requests",
+                "Authentication Concepts", "Password Hashing Principles", "JWT-Based Authorization Concepts",
+                "Role-Based Access Control", "API Testing with Postman or Equivalent", "Frontend API Service Layer",
+                "Global Error Handling", "File Upload and Storage Options", "Security Headers and Rate Limiting",
+                "Database Indexing Basics", "Data Relationships and Population", "Reusable React Components",
+                "State Management Choices", "Unit Testing API Logic", "Integration Testing Endpoints",
+                "Frontend Component Testing", "Logging and Monitoring Basics", "Deployment Architecture Overview",
+                "Deploying the API Service", "Deploying the React Client", "Production Database Configuration",
+                "HTTPS, Secrets and CORS Review", "Midpoint Full-Stack Project Review", "Issue Tracking and Sprint Planning",
+                "Final Project: Requirements and Schema", "Final Project: API and Authentication", "Final Project: UI Integration",
+                "Final Project: Testing and Security", "Final Project: Deployment and Documentation", "Final Demo and Retrospective"
             ],
-
             "Python Developer": [
-                "Python Basics",
-                "Data Types & Operators",
-                "Control Flow",
-                "Functions & Modules",
-                "Object-Oriented Programming",
-                "File Handling",
-                "Exception Handling",
-                "Libraries & Packages",
-                "Flask / Django Basics",
-                "Database Integration",
-                "Automation Scripts",
-                "Final Project"
+                "Orientation: Python Use Cases and Workflow", "Python Installation and Virtual Environments",
+                "Syntax, Indentation and Comments", "Variables and Built-in Types", "Operators and Expressions",
+                "Strings and Formatting", "Lists and Tuples", "Sets and Dictionaries", "Conditions and Loops",
+                "Functions and Return Values", "Scope and Default Arguments", "Comprehensions and Generators",
+                "Modules, Packages and Imports", "Working with pip and Dependencies", "File Handling and Paths",
+                "CSV and JSON Processing", "Exceptions and Custom Errors", "Debugging with Breakpoints",
+                "Object-Oriented Programming Basics", "Classes, Methods and Constructors", "Inheritance and Composition",
+                "Iterators and Context Managers", "Date and Time Processing", "Regular Expressions",
+                "HTTP Requests and API Consumption", "Working with API JSON Responses", "Logging and Diagnostics",
+                "Unit Testing with unittest or pytest", "Mocks and Test Fixtures", "Type Hints and Docstrings",
+                "Code Style and Formatting", "Git Branching and Collaboration", "SQLite and SQL Fundamentals",
+                "Python Database Integration", "CRUD Application Development", "Environment Variables and Secrets",
+                "Command-Line Argument Parsing", "Automation Script Design", "Scheduling and Batch Processing",
+                "Web Framework Overview: Flask and Django", "Flask Routing and Templates", "Django Models and Views",
+                "REST API Concepts with Python", "Input Validation and Security", "Performance Profiling Basics",
+                "Concurrency Concepts", "Packaging a Python Project", "Dependency Management and Requirements",
+                "Application Configuration Patterns", "Midpoint Automation or API Project", "Code Review and Refactoring",
+                "Deployment Options and Runtime Setup", "Documentation and Usage Examples", "Final Project Planning",
+                "Final Project Implementation", "Final Project Testing and Packaging", "Final Demo and Retrospective"
             ],
-
             "C++/C Programming": [
-                "Introduction to C/C++",
-                "Data Types & Operators",
-                "Control Structures",
-                "Functions",
-                "Pointers & Memory",
-                "Structures & Unions",
-                "Object-Oriented Concepts",
-                "STL Basics",
-                "File Handling",
-                "Data Structures",
-                "Debugging Techniques"
+                "Orientation: C and C++ Toolchain", "Compiler, IDE and Build Process", "Program Structure and Compilation",
+                "Variables, Constants and Data Types", "Operators and Expressions", "Input and Output",
+                "Conditional Statements", "Loops and Iteration", "Functions and Parameter Passing",
+                "Arrays and Multidimensional Arrays", "Strings and Character Handling", "Pointers and Addresses",
+                "Pointer Arithmetic and Safety", "References in C++", "Dynamic Memory Management",
+                "Structures, Unions and Enumerations", "Scope, Storage and Lifetime", "Header Files and Compilation Units",
+                "Recursion and Base Cases", "Searching Algorithms", "Sorting Algorithms", "Time and Space Complexity",
+                "Linked List Implementation", "Stack and Queue Implementation", "Trees and Traversal",
+                "Hashing and Hash Tables", "Object-Oriented Design Introduction", "Classes and Encapsulation",
+                "Constructors and Destructors", "Inheritance and Polymorphism", "Operator Overloading Concepts",
+                "Templates and Generic Programming", "STL Containers", "STL Algorithms and Iterators",
+                "File Streams and File Processing", "Exception Handling in C++", "Debugging and Compiler Warnings",
+                "Memory Leaks and Sanitizer Concepts", "Modular Program Design", "Makefiles and Build Basics",
+                "Unit Testing Introduction", "Boundary and Edge-Case Testing", "Git Version Control",
+                "Code Review and Style Guidelines", "Basic Concurrency Concepts", "Secure Input and Buffer Safety",
+                "Performance Measurement Basics", "Mini Project: Data Structure Utility", "Refactoring and Documentation",
+                "Problem-Solving Practice Set", "Final Project Requirements", "Final Project Implementation",
+                "Final Project Testing and Optimization", "Final Project Code Review", "Demo and Learning Reflection"
             ],
-
             "Java Developer": [
-                "Java Basics",
-                "OOP Concepts",
-                "Exception Handling",
-                "Collections Framework",
-                "Multithreading",
-                "JDBC",
-                "Servlets & JSP",
-                "Spring Framework",
-                "Spring Boot",
-                "REST APIs",
-                "Hibernate",
-                "Project Development"
+                "Orientation: Java Ecosystem and Workflow", "JDK, JRE and JVM Concepts", "IDE Setup and First Program",
+                "Variables, Primitive Types and Casting", "Operators and Expressions", "Conditions and Switch",
+                "Loops and Iteration", "Methods and Parameter Passing", "Arrays and String Handling",
+                "Classes and Objects", "Constructors and Encapsulation", "Inheritance and Composition",
+                "Polymorphism and Method Overriding", "Interfaces and Abstract Classes", "Packages and Access Modifiers",
+                "Exception Handling", "StringBuilder and Immutability", "Wrapper Classes and Generics",
+                "Collections Framework Overview", "List, Set and Map Practice", "Iterators and Comparators",
+                "Lambda Expressions", "Streams API Fundamentals", "Optional and Null Handling",
+                "File I/O and NIO Overview", "Date and Time API", "Multithreading Concepts",
+                "Thread Safety and Synchronization", "Executor Framework Introduction", "JDBC Fundamentals",
+                "SQL Integration with Java", "DAO Pattern and Separation of Concerns", "Maven or Gradle Basics",
+                "Logging and Debugging", "Unit Testing with JUnit", "Mocking and Test Isolation",
+                "HTTP and REST API Concepts", "JSON Serialization", "Servlet and Web Application Overview",
+                "Spring Framework Concepts", "Dependency Injection and IoC", "Spring Boot Project Setup",
+                "Spring REST Controllers", "Validation and Exception Advice", "Spring Data and Persistence",
+                "Authentication Concepts and Secure Configuration", "API Testing", "Application Layering",
+                "Performance and JVM Diagnostics Basics", "Git Collaboration Workflow", "Midpoint Java Application",
+                "Final Project Design and Data Model", "Final Project Implementation", "Final Project Test Coverage",
+                "Packaging and Deployment", "Documentation, Demo and Retrospective"
             ],
-
             ".NET Developer": [
-                ".NET Framework Overview",
-                "C# Basics",
-                "OOP in C#",
-                "ASP.NET Core",
-                "MVC Architecture",
-                "Entity Framework",
-                "Web API Development",
-                "LINQ",
-                "Authentication",
-                "Deployment"
+                "Orientation: .NET Platform and Tooling", "SDK Installation and Project Structure", "C# Syntax and Variables",
+                "Types, Casting and Operators", "Conditions and Loops", "Methods and Parameters",
+                "Arrays, Lists and Dictionaries", "Strings and Date-Time Handling", "Classes and Objects",
+                "Properties and Encapsulation", "Inheritance and Interfaces", "Polymorphism and Composition",
+                "Exception Handling", "Generics and Collections", "LINQ Queries", "Delegates and Events",
+                "Async and Await Concepts", "File I/O and Configuration", "NuGet and Dependency Management",
+                "Git Workflow for .NET Projects", "Unit Testing with xUnit or NUnit", "Debugging and Diagnostics",
+                "SQL and Relational Data Basics", "Entity Framework Core Introduction", "Entities and DbContext",
+                "Migrations and Schema Updates", "CRUD Operations with EF Core", "Dependency Injection in .NET",
+                "ASP.NET Core Request Pipeline", "Routing and Controllers", "Model Binding and Validation",
+                "REST API Design and Status Codes", "Middleware and Exception Handling", "Configuration and Secrets",
+                "Authentication and Authorization Concepts", "Role-Based Access Concepts", "API Documentation with OpenAPI",
+                "API Testing and Test Data", "Logging and Health Checks", "Caching Fundamentals",
+                "Performance and Query Optimization", "Secure Coding and Input Validation", "MVC Architecture Overview",
+                "Razor Views and Layouts", "Frontend Integration with API", "Background Services Overview",
+                "Docker Concepts for .NET", "CI/CD Pipeline Introduction", "Deployment Environment Configuration",
+                "Midpoint .NET Application Review", "Architecture and Refactoring", "Final Project Requirements",
+                "Final Project API and Database", "Final Project UI and Validation", "Final Project Testing and Security",
+                "Deployment, Documentation and Demo"
             ],
-
             "Data Analytics": [
-                "Introduction to Data Analytics",
-                "Excel for Analysis",
-                "SQL Fundamentals",
-                "Data Cleaning",
-                "Data Visualization",
-                "Dashboards",
-                "Power BI",
-                "Tableau",
-                "KPIs & Metrics",
-                "Data Storytelling"
+                "Orientation: Analytics Lifecycle and Business Questions", "Data Types, Sources and File Formats",
+                "Spreadsheet Interface and Data Import", "Excel Tables, Sorting and Filtering", "Core Excel Formulas",
+                "IF, SUMIF and COUNTIF Functions", "Lookup Functions: VLOOKUP and XLOOKUP", "Text and Date Cleaning in Excel",
+                "Conditional Formatting and Data Validation", "Pivot Tables and Pivot Charts", "Descriptive Statistics",
+                "Data Quality Checks and Missing Values", "Duplicate Detection and Removal", "Data Cleaning Workflow",
+                "Relational Data and Database Concepts", "SQL SELECT, WHERE and ORDER BY", "SQL Aggregations and GROUP BY",
+                "SQL Joins Across Tables", "Subqueries and Common Table Expressions", "SQL CASE and Conditional Logic",
+                "Window Functions Introduction", "Query Validation and Reconciliation", "Business Questions to Metrics",
+                "KPI Definitions and Metric Grain", "Exploratory Data Analysis", "Outlier and Distribution Analysis",
+                "Charts: Choosing the Right Visual", "Data Storytelling and Insight Writing", "Power BI Desktop Orientation",
+                "Power Query: Import and Transform", "Power Query Data Types and Cleanup", "Data Model and Relationships",
+                "Star Schema Fundamentals", "DAX Measures and Calculated Columns", "Filter Context Basics in DAX",
+                "Time Intelligence Measures", "Power BI Visuals and Formatting", "Slicers, Filters and Drill-Through",
+                "Dashboard Layout and UX", "Dashboard Interactions and Tooltips", "Tableau Workspace Introduction",
+                "Tableau Dimensions and Measures", "Calculated Fields and Parameters", "Tableau Filters and Dashboards",
+                "Data Visualization Accessibility", "Dashboard Performance and Refresh", "Data Validation Across Tools",
+                "Publishing and Sharing Reports", "Privacy, Governance and Responsible Data Use",
+                "Stakeholder Requirements and Acceptance Criteria", "Midpoint Analytics Case Study",
+                "Advanced Excel Analysis Exercise", "SQL Business Analysis Challenge", "Power BI Dashboard Project",
+                "Final Project: Data Preparation and Model", "Final Project: Analysis and Visualization",
+                "Final Project: Findings and Recommendations", "Final QA, Presentation and Retrospective"
             ],
-
             "Business Analytics": [
-                "Introduction to Business Analytics",
-                "Requirement Gathering",
-                "Business KPIs",
-                "Data Modelling",
-                "Excel & SQL",
-                "Power BI",
-                "Reporting & Insights",
-                "Forecasting",
-                "Decision Making",
-                "Case Studies"
+                "Orientation: Business Analytics and Decision Support", "Business Problem Framing", "Stakeholder Mapping",
+                "Requirements Gathering Techniques", "Data Sources and Data Dictionaries", "Data Quality Assessment",
+                "Spreadsheet Data Preparation", "Excel Formulas for Business Analysis", "Lookup and Reconciliation Methods",
+                "Pivot Tables for Business Questions", "Descriptive Statistics for Managers", "SQL Query Fundamentals",
+                "SQL Aggregations and Joins", "KPI Design and Metric Definitions", "Leading vs Lagging Indicators",
+                "Funnel and Conversion Analysis", "Cohort and Segment Analysis", "Customer and Market Segmentation",
+                "Revenue and Cost Analysis", "Profitability and Margin Analysis", "Variance Analysis",
+                "Budget vs Actual Reporting", "Trend and Seasonality Analysis", "Forecasting Concepts",
+                "Forecast Assumptions and Limitations", "Scenario and Sensitivity Analysis", "Data Modeling Fundamentals",
+                "Power BI Data Import and Transformation", "Relationships and Star Schema", "DAX Measures for KPIs",
+                "Dashboard Design Principles", "Executive Scorecard Development", "Drill-Down and Filter Interactions",
+                "Visualization Selection and Integrity", "Insight Writing and Data Storytelling", "Root Cause Analysis",
+                "Hypothesis-Driven Analysis", "Decision Matrix and Prioritization", "Process Mapping and Bottleneck Analysis",
+                "Customer Satisfaction Metrics", "Operational Efficiency Metrics", "A/B Testing Concepts",
+                "Experiment Results Interpretation", "Business Case and ROI Estimation", "Risk and Assumption Register",
+                "Report Automation Concepts", "Data Governance and Confidentiality", "Stakeholder Presentation Skills",
+                "Midpoint Business Case Review", "Recommendation Tracking and Follow-Up", "Advanced Scenario Workshop",
+                "Final Project: Business Question and Scope", "Final Project: Data and KPI Model",
+                "Final Project: Dashboard and Insights", "Final Project: Recommendations and Limitations",
+                "Executive Presentation and Retrospective"
             ],
-
             "Data Science": [
-                "Introduction to Data Science",
-                "Python for Data Science",
-                "Data Cleaning",
-                "Exploratory Data Analysis",
-                "Statistics",
-                "Data Visualization",
-                "Machine Learning Basics",
-                "Feature Engineering",
-                "Model Evaluation",
-                "Deployment",
-                "Capstone Project"
+                "Orientation: Data Science Workflow", "Python Environment and Notebook Setup", "Python Data Structures Review",
+                "NumPy Arrays and Vectorization", "Pandas Series and DataFrames", "Loading CSV, Excel and JSON Data",
+                "Data Types, Missing Values and Duplicates", "Data Cleaning and Validation", "Exploratory Data Analysis",
+                "Summary Statistics and Distribution Shapes", "Probability Fundamentals", "Common Statistical Distributions",
+                "Sampling and Confidence Intervals", "Hypothesis Testing Concepts", "Correlation and Causation",
+                "Data Visualization with Matplotlib", "Seaborn and Statistical Plots", "Feature Types and Encoding",
+                "Train, Validation and Test Splits", "Data Leakage and Reproducibility", "Scikit-Learn Workflow",
+                "Linear Regression", "Regression Metrics and Residual Analysis", "Logistic Regression",
+                "Classification Metrics and Confusion Matrix", "Decision Trees", "Random Forests",
+                "Gradient Boosting Concepts", "K-Nearest Neighbors", "Support Vector Machines Overview",
+                "Clustering with K-Means", "Dimensionality Reduction Concepts", "Feature Engineering",
+                "Feature Scaling and Pipelines", "Cross-Validation", "Hyperparameter Search",
+                "Imbalanced Data and Sampling Strategies", "Model Interpretability Basics", "Error Analysis by Segment",
+                "Time Series Data Preparation", "Forecasting Evaluation Concepts", "Text Data Processing Introduction",
+                "Ethics, Bias and Fairness in Data", "Privacy and Data Minimization", "Experiment Tracking",
+                "Model Serialization and Reuse", "API Deployment Concepts", "Monitoring Data and Model Drift",
+                "Project Documentation and Reproducibility", "Midpoint End-to-End Case Study", "Research Question and Dataset Selection",
+                "Final Project: Data Preparation", "Final Project: Baseline and Evaluation", "Final Project: Tuning and Error Analysis",
+                "Final Project: Findings and Limitations", "Final Demo and Reproducibility Review"
             ],
-
             "Artificial Intelligence": [
-                "Introduction to AI",
-                "Problem Solving & Search",
-                "Knowledge Representation",
-                "Planning Techniques",
-                "Neural Networks",
-                "Natural Language Processing",
-                "Computer Vision",
-                "Reinforcement Learning",
-                "Ethics in AI",
-                "AI Project"
+                "Orientation: AI Fields and Applications", "Python Setup for AI Work", "Problem Formulation and Constraints",
+                "State Spaces and Search Problems", "Breadth-First and Depth-First Search", "Heuristic Search Concepts",
+                "Knowledge Representation Basics", "Logic and Rule-Based Systems", "Planning and Decision Processes",
+                "Probability and Uncertainty in AI", "Machine Learning vs Rule-Based AI", "Neural Network Fundamentals",
+                "Perceptrons and Activation Functions", "Training, Loss and Optimization Concepts", "Overfitting and Regularization",
+                "Computer Vision Pipeline Overview", "Image Data and Preprocessing", "Classification Model Concepts",
+                "Natural Language Processing Overview", "Text Cleaning and Tokenization", "Embeddings and Semantic Similarity",
+                "Sequence Models: Conceptual Overview", "Transformer Architecture Concepts", "Prompt Design and Evaluation",
+                "Retrieval-Augmented Generation Concepts", "AI API Integration Patterns", "Tool Use and Structured Outputs",
+                "Evaluation Datasets and Test Cases", "Hallucination and Reliability Checks", "Human-in-the-Loop Review",
+                "Responsible AI Principles", "Bias and Fairness Assessment", "Privacy and Data Protection",
+                "Security Risks in AI Applications", "Explainability and User Transparency", "Reinforcement Learning Overview",
+                "Agents and Environment Feedback", "Optimization and Search Applications", "AI System Architecture",
+                "Latency, Cost and Quality Trade-Offs", "Versioning Models and Prompts", "Monitoring AI Outputs",
+                "Failure Analysis and Guardrails", "Data Annotation and Quality", "Benchmark Design",
+                "Integrating AI into a Software Workflow", "Prototype Planning and Scope", "Midpoint AI Prototype Review",
+                "Final Project: Problem and Evaluation Plan", "Final Project: Data and Model/API Integration",
+                "Final Project: Reliability and Safety Testing", "Final Project: UX and Documentation",
+                "Final Demo and Limitations Review"
             ],
-
             "Machine Learning": [
-                "Introduction to Machine Learning",
-                "Linear Regression",
-                "Logistic Regression",
-                "Classification Algorithms",
-                "Clustering Techniques",
-                "Feature Engineering",
-                "Model Selection",
-                "Deep Learning Basics",
-                "TensorFlow / PyTorch",
-                "Model Deployment",
-                "ML Project"
+                "Orientation: ML Workflow and Use Cases", "Python and Notebook Setup", "NumPy and Pandas Refresher",
+                "Dataset Loading and Schema Inspection", "Missing Values and Duplicate Handling", "Exploratory Data Analysis",
+                "Target Definition and Problem Types", "Train, Validation and Test Splits", "Data Leakage Prevention",
+                "Baseline Model Design", "Linear Regression", "Regression Metrics and Residuals",
+                "Feature Encoding and Scaling", "Logistic Regression", "Confusion Matrix and Classification Metrics",
+                "Decision Tree Classifier", "Random Forest Concepts", "Gradient Boosting Overview",
+                "K-Nearest Neighbors", "Support Vector Machines", "Naive Bayes Concepts",
+                "Class Imbalance Strategies", "Clustering and Unsupervised Learning", "K-Means and Cluster Evaluation",
+                "Hierarchical Clustering Overview", "Dimensionality Reduction with PCA", "Feature Engineering",
+                "Feature Selection Methods", "Cross-Validation Strategy", "Hyperparameter Tuning",
+                "Pipelines and Preprocessing", "Ensemble Learning Concepts", "Model Calibration and Thresholds",
+                "Interpretability and Feature Importance", "Error Analysis and Slice Evaluation", "Time Series Split Concepts",
+                "Forecasting Features and Baselines", "Text Classification Workflow", "Neural Network Fundamentals",
+                "Deep Learning Use Cases", "TensorFlow/PyTorch Ecosystem Overview", "Model Serialization",
+                "Reproducible Experiments and Seeds", "Experiment Tracking", "Model Serving Concepts",
+                "Batch vs Real-Time Inference", "Deployment API Design", "Model Monitoring and Drift",
+                "Privacy, Bias and Responsible ML", "Midpoint ML Case Study", "Model Card and Documentation",
+                "Final Project: Data and Baseline", "Final Project: Feature Pipeline", "Final Project: Model Selection",
+                "Final Project: Evaluation and Error Analysis", "Final Project: Deployment Plan", "Final Demo and Retrospective"
             ],
-
             "Digital Marketing": [
-                "Introduction to Digital Marketing",
-                "SEO Fundamentals",
-                "Keyword Research",
-                "Content Marketing",
-                "Social Media Marketing",
-                "Google Ads",
-                "Facebook & Instagram Ads",
-                "Email Marketing",
-                "Affiliate Marketing",
-                "Analytics & Reporting",
-                "Marketing Automation",
-                "Conversion Rate Optimization (CRO)",
-                "Online Reputation Management",
-                "Campaign Planning",
-                "Lead Generation"
+                "Orientation: Digital Marketing Channels and Goals", "Audience Personas and Customer Journey",
+                "Marketing Objectives and KPI Selection", "Competitor and Market Research", "Brand Voice and Messaging",
+                "Website and Landing Page Audit", "SEO Fundamentals and Search Intent", "Keyword Research and Mapping",
+                "On-Page SEO: Titles and Headings", "Technical SEO: Crawlability and Indexing", "Internal Linking Strategy",
+                "Content Calendar Planning", "Blog Briefs and Content Structure", "Content Quality and E-E-A-T Concepts",
+                "Social Media Channel Strategy", "Social Profile Optimization", "Creative Brief and Visual Consistency",
+                "Short-Form Video Planning", "Community Management and Engagement", "Organic Campaign Scheduling",
+                "Paid Advertising Funnel Overview", "Google Ads Campaign Structure", "Search Ad Copy and Extensions",
+                "Meta Ads Campaign Structure", "Audience Targeting and Exclusions", "Budgeting and Bid Concepts",
+                "Landing Page Conversion Principles", "Email Marketing Fundamentals", "List Segmentation and Consent",
+                "Email Copy and Subject-Line Testing", "Marketing Automation Workflow Mapping", "Lead Magnet and Lead Capture",
+                "CRM Funnel and Lead Qualification", "UTM Tracking and Campaign Naming", "Analytics Events and Conversions",
+                "Google Analytics Reporting Concepts", "Traffic Source and Channel Analysis", "Social Media Insights Review",
+                "Campaign ROI and Cost per Lead", "A/B Testing Hypotheses", "Conversion Rate Optimization",
+                "Online Reputation and Review Response", "Influencer and Partnership Campaigns", "Affiliate Marketing Basics",
+                "Local SEO and Business Listings", "Marketing Privacy and Consent", "Accessibility in Marketing Assets",
+                "Midpoint Campaign Performance Review", "Optimization Recommendations", "Campaign Risk and Brand Safety",
+                "Final Campaign Brief and Objectives", "Final Content and Creative Package", "Final Campaign Measurement Plan",
+                "Final Performance Report and Insights", "Final Presentation and Retrospective"
             ],
-
             "Cybersecurity": [
-                "Introduction to Cybersecurity",
-                "Networking Basics",
-                "Types of Threats",
-                "Encryption Techniques",
-                "Vulnerabilities",
-                "Penetration Testing",
-                "Firewalls",
-                "Ethical Hacking",
-                "Incident Response",
-                "SOC Operations",
-                "Cyber Laws & Compliance"
+                "Orientation: Security Ethics and Lab Rules", "CIA Triad and Security Principles", "Networking Fundamentals",
+                "OSI and TCP/IP Models", "IP Addressing and Subnetting Basics", "DNS, DHCP and HTTP/HTTPS",
+                "Linux Command-Line Fundamentals", "Windows Security Overview", "Accounts, Permissions and Least Privilege",
+                "Cryptography Concepts and Terminology", "Hashing, Salting and Password Storage", "Public-Key Infrastructure Basics",
+                "Authentication and Multi-Factor Authentication", "Common Malware Categories", "Phishing and Social Engineering",
+                "Web Application Security Overview", "OWASP Top Risks: Introduction", "Input Validation and Injection Risks",
+                "Cross-Site Scripting Concepts", "Access Control Failure Scenarios", "Secure Session Management",
+                "Network Scanning in an Authorized Lab", "Service Enumeration Concepts", "Vulnerability Assessment Workflow",
+                "Risk Rating and Prioritization", "Patch and Configuration Management", "Firewall Rules and Segmentation",
+                "VPN and Secure Remote Access", "Endpoint Protection Concepts", "Logging and Event Sources",
+                "SIEM Fundamentals and Alert Triage", "Incident Response Lifecycle", "Evidence Handling and Chain of Custody",
+                "Threat Intelligence Basics", "Indicators of Compromise", "Backup and Recovery Planning",
+                "Cloud Security Shared Responsibility", "Identity and Access Management", "Secure Software Development Lifecycle",
+                "Dependency and Secret Scanning", "Security Testing in a Controlled Environment", "Wireless Security Concepts",
+                "Data Classification and Protection", "Privacy and Compliance Overview", "Cyber Laws and Professional Ethics",
+                "Security Awareness Program Design", "Threat Modeling Workshop", "Midpoint Authorized Lab Assessment",
+                "Incident Scenario Tabletop Exercise", "Security Report Writing", "Remediation Plan and Verification",
+                "Final Project: Threat Model and Scope", "Final Project: Assessment and Evidence", "Final Project: Mitigation Plan",
+                "Final Project: Report and Presentation", "Final Review and Lessons Learned"
             ],
-
             "UX/UI Design": [
-                "Introduction to UX/UI",
-                "Design Principles",
-                "User Research",
-                "Wireframing",
-                "Figma Basics",
-                "Prototyping",
-                "Visual Design",
-                "Color Theory",
-                "Typography",
-                "Design Systems",
-                "Usability Testing",
-                "Portfolio Design"
+                "Orientation: UX, UI and Product Design Roles", "Design Brief and Problem Framing", "Stakeholder and User Goals",
+                "Research Planning and Ethics", "Interview Questions and Note Taking", "Survey and Observation Methods",
+                "Research Synthesis and Affinity Mapping", "Personas and Jobs-to-Be-Done", "User Journey Mapping",
+                "Information Architecture Fundamentals", "Card Sorting and Sitemap Design", "Task Flows and User Flows",
+                "Interaction Design Principles", "Sketching and Rapid Ideation", "Low-Fidelity Wireframes",
+                "Wireframe Review and Iteration", "Figma Workspace and Frames", "Auto Layout Fundamentals",
+                "Components and Variants", "Constraints and Responsive Frames", "Visual Hierarchy and Gestalt Principles",
+                "Color Theory and Accessible Contrast", "Typography and Type Scale", "Spacing and Layout Systems",
+                "Iconography and Image Selection", "Design Tokens and Styles", "High-Fidelity Screen Design",
+                "Interactive Prototyping", "Microinteractions and Feedback States", "Forms and Error-State Design",
+                "Navigation Patterns and Wayfinding", "Responsive and Adaptive Design", "Mobile Platform Conventions",
+                "Web Accessibility and WCAG Overview", "Keyboard and Focus States", "Usability Test Planning",
+                "Moderated Usability Testing", "Synthesizing Usability Findings", "Heuristic Evaluation",
+                "Design System Documentation", "Developer Handoff and Specs", "Design QA Against Implementation",
+                "Content Design and Microcopy", "Empty, Loading and Error States", "Inclusive Design Considerations",
+                "Portfolio Case Study Structure", "Presenting Design Rationale", "Midpoint Prototype Critique",
+                "Iteration Prioritization and Trade-Offs", "Final Project Scope and Research", "Final Project Wireframes and Flow",
+                "Final Project Visual System", "Final Project Prototype and Testing", "Final Project Handoff and Case Study",
+                "Portfolio Presentation and Retrospective"
             ],
-
             "Android Developer": [
-                "Android Introduction",
-                "Android Studio Setup",
-                "Layouts & Views",
-                "Activities & Intents",
-                "RecyclerView",
-                "API Integration",
-                "Firebase",
-                "Room Database",
-                "Jetpack Components",
-                "App Testing",
-                "App Publishing"
+                "Orientation: Android Platform and App Lifecycle", "Android Studio and SDK Setup", "Kotlin/Java Project Structure",
+                "Variables, Types and Control Flow", "Functions and Null Safety Concepts", "Classes and Data Models",
+                "Android Manifest and Permissions", "Activities and Lifecycle", "Intents and Navigation",
+                "Layouts and View Hierarchy", "Material Components Overview", "Resources, Themes and Localization",
+                "RecyclerView and Lists", "Adapters and View Binding", "User Input and Form Validation",
+                "Menus, Dialogs and Notifications", "Fragment Basics", "Navigation Component Concepts",
+                "State Preservation and Configuration Changes", "Background Work Concepts", "HTTP and REST API Basics",
+                "JSON Parsing and Serialization", "Network Permissions and Error States", "Coroutines/Async Work Overview",
+                "Room Database Introduction", "Entities, DAOs and Queries", "Data Persistence Patterns",
+                "Repository Pattern and Separation of Concerns", "ViewModel and UI State", "LiveData/Flow Concepts",
+                "Architecture Patterns: MVVM", "Dependency Injection Overview", "Image Loading and Caching",
+                "Runtime Permissions and Privacy", "Secure Local Storage Concepts", "Firebase Services Overview",
+                "Push Notifications Concepts", "Offline-First UX and Sync", "Accessibility and TalkBack Testing",
+                "Responsive Layouts Across Devices", "Unit Testing Basics", "UI Testing Fundamentals",
+                "Debugging with Logcat and Profiler", "App Performance and Memory", "Crash Reporting Concepts",
+                "Gradle Build Variants", "Signing and Build Types", "Release Preparation and Versioning",
+                "Play Store Policy and Listing Basics", "Midpoint App Review", "Final App Requirements and Architecture",
+                "Final App Feature Implementation", "Final App Testing and Accessibility", "Final App Release Build",
+                "Documentation, Demo and Retrospective"
             ],
-
             "Very Large Scale Integration (VLSI)": [
-                "VLSI Introduction",
-                "Digital Electronics",
-                "CMOS Fundamentals",
-                "Verilog HDL",
-                "RTL Design",
-                "Synthesis",
-                "FPGA Implementation",
-                "Timing Analysis",
-                "Testing & Validation",
-                "VLSI Project"
+                "Orientation: VLSI Design Flow and EDA Tools", "Digital Number Systems and Codes", "Boolean Algebra",
+                "Logic Gates and Truth Tables", "Combinational Circuit Design", "K-Map Simplification",
+                "Adders, Multiplexers and Decoders", "Sequential Logic Fundamentals", "Latches and Flip-Flops",
+                "Counters and Registers", "Finite State Machine Design", "Timing Parameters and Constraints",
+                "CMOS Transistor Fundamentals", "CMOS Inverter Operation", "Static and Dynamic Power Concepts",
+                "Standard Cells and Libraries", "RTL Design Flow", "Verilog Modules and Ports",
+                "Verilog Data Types and Operators", "Continuous and Procedural Assignments", "Combinational Always Blocks",
+                "Sequential Always Blocks", "Blocking vs Nonblocking Assignments", "Testbench Fundamentals",
+                "Simulation and Waveform Analysis", "Parameterized RTL Modules", "FSM Coding in Verilog",
+                "Synthesis Concepts and Constraints", "Linting and RTL Quality Checks", "Static Timing Analysis Introduction",
+                "Setup and Hold Time", "Clock Domains and Reset Strategy", "CDC Concepts",
+                "FPGA Architecture Overview", "Pin Constraints and FPGA Build", "Resource Utilization Analysis",
+                "Low-Power Design Principles", "Design-for-Test Concepts", "Scan Chain Overview",
+                "Physical Design Flow Overview", "Floorplanning and Placement Concepts", "Clock Tree Synthesis Overview",
+                "Routing and Parasitics Concepts", "Timing Closure Workflow", "Verification Planning",
+                "Coverage and Assertion Concepts", "EDA Project Organization", "Midpoint RTL Design Review",
+                "Design Documentation and Review", "Final Project Specification", "Final RTL Implementation",
+                "Final Simulation and Debugging", "Synthesis and Timing Review", "Final Demo and Technical Report"
             ],
-
             "Embedded Systems": [
-                "Introduction to Embedded Systems",
-                "Microcontrollers",
-                "Embedded C Programming",
-                "GPIO & Peripherals",
-                "Timers & Interrupts",
-                "I2C / SPI / UART",
-                "Sensors & Actuators",
-                "RTOS Basics",
-                "Embedded Project"
+                "Orientation: Embedded Systems and Use Cases", "Microcontroller Architecture Overview", "Digital and Analog Signals",
+                "Number Systems and Bitwise Operations", "Embedded C Toolchain Setup", "GPIO Input and Output",
+                "Switch Debouncing and LED Control", "Timers and Counters", "Interrupts and Interrupt Safety",
+                "PWM Signal Generation", "ADC Sampling Concepts", "DAC and Signal Output Overview",
+                "UART Serial Communication", "I2C Bus Fundamentals", "SPI Communication Basics",
+                "Sensor Interfaces and Calibration", "Actuator Control and Drivers", "Memory Types and Layout",
+                "Pointers and Memory-Mapped I/O", "Datasheets and Register Maps", "Clocking and Reset Basics",
+                "Power Modes and Energy Awareness", "Watchdog Timers and Fault Recovery", "Finite State Machine Design",
+                "Modular Firmware Architecture", "Build Systems and Compiler Flags", "Debugging with Serial Logs",
+                "Hardware Debugging and Logic Analysis", "Unit Testing Embedded Logic", "Hardware-in-the-Loop Concepts",
+                "Communication Protocol Design", "Packet Framing and Checksums", "Error Handling and Timeouts",
+                "RTOS Concepts and Task Scheduling", "Tasks, Queues and Semaphores", "Race Conditions and Shared State",
+                "Bootloaders and Firmware Update Concepts", "Secure Firmware and Device Identity", "Wireless Connectivity Overview",
+                "BLE/Wi-Fi Integration Concepts", "Data Logging and Telemetry", "Calibration and Measurement Validation",
+                "EMI/EMC Awareness", "Safety and Fail-Safe Design", "Version Control for Firmware",
+                "Hardware-Software Integration Plan", "Prototype Test Plan", "Midpoint Prototype Review",
+                "Final Project Requirements and Block Diagram", "Final Firmware Implementation", "Final Integration and Debugging",
+                "Final Validation and Reliability Tests", "Technical Documentation and Demo"
             ],
-
             "Cloud Computing": [
-                "Cloud Fundamentals",
-                "Virtualization",
-                "AWS Basics",
-                "Compute Services",
-                "Storage Services",
-                "Networking & VPC",
-                "Identity & Access Management (IAM)",
-                "Serverless Computing",
-                "Databases in Cloud",
-                "CI/CD Pipelines",
-                "Monitoring & Logging",
-                "Security & Compliance",
-                "Cost Optimization",
-                "Cloud Architecture",
-                "Capstone Project"
+                "Orientation: Cloud Models and Service Types", "Cloud Regions, Zones and Global Infrastructure",
+                "Virtualization and Hypervisors", "Linux and Command-Line Basics", "Networking Fundamentals for Cloud",
+                "IP Addressing, Subnets and Routing", "Compute Instances and Machine Images", "Storage Types and Use Cases",
+                "Object Storage and Lifecycle Policies", "Managed Database Concepts", "Cloud Networking and VPC Design",
+                "Public, Private and Hybrid Cloud", "Identity and Access Management Principles", "Least Privilege Policies",
+                "Secrets and Key Management", "Load Balancers and Health Checks", "Autoscaling Concepts",
+                "DNS and Domain Routing", "TLS and Certificate Management", "Infrastructure Monitoring Basics",
+                "Logs, Metrics and Alerts", "Backup and Disaster Recovery", "High Availability and Resilience",
+                "Serverless Computing Overview", "Functions and Event Triggers", "Containers and Image Basics",
+                "Container Registry Concepts", "Kubernetes Fundamentals", "Managed Kubernetes Overview",
+                "Infrastructure as Code Concepts", "Declarative Infrastructure Templates", "CI/CD Pipeline Fundamentals",
+                "Artifact and Release Management", "Cloud Database Scaling Concepts", "Caching and CDN Fundamentals",
+                "Application Deployment Patterns", "Blue-Green and Rolling Deployments", "Cloud Security Posture Basics",
+                "Network Security Groups and Firewalls", "Compliance and Data Residency", "Cost Estimation and Budgets",
+                "Resource Tagging and Cost Allocation", "FinOps and Cost Optimization", "Multi-Environment Configuration",
+                "Hybrid Connectivity Overview", "Cloud Architecture Diagrams", "Service Quotas and Capacity Planning",
+                "Midpoint Cloud Deployment Review", "Operational Runbooks", "Incident Response in Cloud Environments",
+                "Final Architecture and Requirements", "Final Infrastructure Provisioning", "Final Application Deployment",
+                "Final Security and Cost Review", "Final Documentation and Demo"
             ],
-
             "DevOps": [
-                "DevOps Fundamentals",
-                "Linux Basics",
-                "Git & GitHub",
-                "CI/CD Concepts",
-                "Jenkins",
-                "Docker",
-                "Kubernetes",
-                "Infrastructure as Code",
-                "Monitoring & Logging",
-                "Cloud Integration",
-                "DevOps Project"
+                "Orientation: DevOps Culture and Delivery Lifecycle", "Linux Filesystem and Shell Basics", "Users, Groups and Permissions",
+                "Processes, Services and Signals", "Networking and DNS for Operations", "Bash Scripting Fundamentals",
+                "Git Basics and Repository Strategy", "Branching, Tags and Release Workflow", "Build Automation Concepts",
+                "Package and Dependency Management", "CI Pipeline Fundamentals", "Automated Test Stages",
+                "Jenkins Pipeline Concepts", "Secrets in CI/CD", "Artifact Repositories",
+                "Docker Images and Containers", "Dockerfiles and Layer Optimization", "Container Networking and Volumes",
+                "Docker Compose for Local Environments", "Container Security Basics", "Kubernetes Architecture Overview",
+                "Pods, Deployments and Services", "ConfigMaps and Secrets", "Ingress and Service Discovery",
+                "Health Probes and Resource Limits", "Helm Charts Concepts", "Infrastructure as Code Introduction",
+                "Terraform State and Modules Concepts", "Configuration Management Overview", "Cloud IAM for DevOps",
+                "Cloud Networking and Firewall Rules", "Environment Promotion Strategy", "Deployment Strategies",
+                "Blue-Green and Canary Releases", "Rollback and Recovery Planning", "Observability: Logs, Metrics and Traces",
+                "Monitoring Dashboards and Alert Design", "Incident Management and On-Call Basics", "SLO, SLA and Error Budgets",
+                "Performance and Capacity Planning", "Backup and Restore Drills", "Vulnerability and Dependency Scanning",
+                "Supply Chain Security Concepts", "Policy as Code Overview", "GitOps Workflow Concepts",
+                "Database Migration in Deployments", "Cost Monitoring and Resource Cleanup", "Runbooks and Operational Documentation",
+                "Midpoint CI/CD Pipeline Review", "Troubleshooting Deployment Failures", "Final Delivery Pipeline Design",
+                "Final Infrastructure and Deployment", "Final Monitoring and Security Checks", "Final Runbook and Demo"
             ],
-
             "Human Resource(HR)": [
-                "HR Fundamentals",
-                "Recruitment & Selection",
-                "Employee Onboarding",
-                "Performance Management",
-                "Compensation & Benefits",
-                "Training & Development",
-                "HR Analytics",
-                "Labor Laws",
-                "Employee Engagement",
-                "Talent Management",
-                "HR Policies",
-                "HR Documentation",
-                "HRIS Systems",
-                "Conflict Resolution",
-                "Leadership Development"
+                "Orientation: HR Function and Professional Ethics", "HR Operating Model and Stakeholders", "Workforce Planning Basics",
+                "Job Analysis and Role Documentation", "Job Description and Competency Mapping", "Recruitment Lifecycle Overview",
+                "Hiring Requisition and Approval Workflow", "Sourcing Channels and Candidate Outreach", "Resume Screening Criteria",
+                "Interview Planning and Structured Questions", "Interview Coordination and Candidate Experience",
+                "Selection Documentation and Decision Records", "Offer Management and Pre-Joining Communication",
+                "Employee Onboarding Checklist", "Personnel File and Document Control", "HRIS Fundamentals",
+                "Employee Data Accuracy and Confidentiality", "Attendance and Leave Administration", "Payroll Inputs and Cut-Offs",
+                "Compensation and Benefits Overview", "Performance Management Cycle", "Goal Setting and KPI Alignment",
+                "Probation Review and Confirmation", "Learning Needs Analysis", "Training Calendar and Evaluation",
+                "Employee Engagement Survey Design", "Internal Communication Planning", "Employee Grievance Handling",
+                "Conflict Resolution and Mediation Basics", "Disciplinary Process and Fair Documentation", "Labor Law Awareness",
+                "Workplace Safety and POSH Awareness", "Diversity, Equity and Inclusion Basics", "Employee Relations Practices",
+                "Exit Interview and Offboarding", "Full and Final Settlement Workflow", "Attrition and Retention Metrics",
+                "HR Analytics: Headcount and Turnover", "Recruitment Funnel Metrics", "Time-to-Hire and Cost-per-Hire",
+                "HR Dashboard Requirements", "Policy Drafting and Version Control", "SOP and Process Mapping",
+                "Audit Readiness and Record Retention", "Data Privacy and Access Controls", "Vendor and Staffing Coordination",
+                "Employer Branding and Career Pages", "HR Project Planning", "Midpoint HR Process Case Study",
+                "Process Improvement and Root Cause Analysis", "Stakeholder Communication Practice", "Final HR Project Scope",
+                "Final HR Dashboard or SOP Package", "Final Findings and Recommendations", "Final Presentation and Retrospective"
             ]
-
         };
 
+        // Map common labels to the closest available curriculum.
+        const domainAliases = {
+            "Frontend Developer": "Frontend Developer",
+            "Frontend": "Frontend Developer",
+            "UX/UI Design": "UX/UI Design",
+            "UI/UX Design": "UX/UI Design",
+            "C/C++ Programming": "C++/C Programming",
+            "C++/C Programming": "C++/C Programming",
+            "AI": "Artificial Intelligence",
+            "Artificial Intelligence": "Artificial Intelligence",
+            "Machine Learning": "Machine Learning",
+            "Data Analytics": "Data Analytics",
+            "Human Resource (HR)": "Human Resource(HR)",
+            "Human Resource(HR)": "Human Resource(HR)"
+        };
 
         /**********************
          * deterministic PRNG using candidate id as seed
@@ -889,93 +1051,116 @@
         }
 
         /**********************
- * create weekly breakdown given start & end
- * Weeks are 7-day windows starting from startDate (week 1 = start..start+6)
- **********************/
+         * Create a chronological daily breakdown, grouped into weeks.
+         * Topics are never repeated within a report. Each domain syllabus is
+         * automatically extended with unique applied activities to cover six months.
+         **********************/
         function createWeeklyBreakdown(startDateStr, endDateStr, domain, seed) {
             const start = parseDateISO(startDateStr);
             const end = parseDateISO(endDateStr);
             if (end < start) return [];
 
-            const topics = topicsByDomain[domain] || ["Introduction", "Theory", "Practical", "Project"];
-            const rand = seededRandom(seed || domain + startDateStr + endDateStr);
+            const normalizedDomain = domainAliases[domain] || domain;
+            const sourceTopics = topicsByDomain[normalizedDomain] ||
+                topicsByDomain[domain] ||
+                ["Orientation: Goals and Workflow", "Fundamentals and Tool Setup",
+                 "Core Concepts and Terminology", "Guided Practical Exercise",
+                 "Applied Problem Solving", "Mini Project Planning",
+                 "Implementation and Testing", "Review and Documentation",
+                 "Final Project Development", "Final Project Review"];
 
-            const days = [];
-            for (let d = new Date(start); d <= end; d = addDays(d, 1)) {
-                days.push(new Date(d));
+            const totalDays = Math.floor((end - start) / 86400000) + 1;
+
+            // Extend every domain syllabus to cover the selected period (up to six months)
+            // without repeating a complete Topic / Activity title. The extension moves
+            // from guided practice to applied cases, debugging, integration, testing,
+            // optimization, documentation and a final capstone.
+            const activityFormats = [
+                "Guided Hands-on Exercise", "Scenario-Based Case Study", "Problem-Solving Challenge",
+                "Debugging and Troubleshooting Lab", "Implementation Workshop", "Integration Exercise",
+                "Testing and Validation Task", "Quality Review and Edge-Case Analysis",
+                "Optimization and Refactoring Task", "Real-World Application Exercise",
+                "Mini-Project Deliverable", "Peer Review and Improvement", "Documentation and Knowledge Share",
+                "Independent Practical Assignment", "Advanced Challenge and Reflection"
+            ];
+
+            const expandedTopics = sourceTopics.slice();
+            const seenTopics = new Set(expandedTopics.map(topic => String(topic).trim().toLowerCase()));
+            let pass = 0;
+            // Six months is typically 181–184 calendar days. The loop also supports
+            // shorter/longer date ranges while ensuring every generated title is unique.
+            while (expandedTopics.length < totalDays && pass < 30) {
+                const format = activityFormats[pass % activityFormats.length];
+                for (let topicIndex = 0; topicIndex < sourceTopics.length && expandedTopics.length < totalDays; topicIndex++) {
+                    const baseTopic = String(sourceTopics[topicIndex]).replace(/^\d+\.\s*/, "").trim();
+                    const phaseLabel = pass < 2 ? "Applied Practice" :
+                        pass < 5 ? "Advanced Practice" : pass < 8 ? "Project Integration" :
+                        pass < 11 ? "Quality and Delivery" : "Capstone Extension";
+                    const candidate = `${phaseLabel} ${pass + 1} — ${baseTopic}: ${format}`;
+                    const key = candidate.toLowerCase();
+                    if (!seenTopics.has(key)) {
+                        expandedTopics.push(candidate);
+                        seenTopics.add(key);
+                    }
+                }
+                pass++;
             }
 
-            // chunk into weeks of 7 days
+            if (expandedTopics.length < totalDays) {
+                throw new Error(`Unable to build ${totalDays} unique activities for ${domain}. Please check the curriculum settings.`);
+            }
+
             const weeks = [];
-            for (let i = 0; i < days.length; i += 7) {
-                const chunk = days.slice(i, i + 7);
+            let currentWeek = null;
+
+            for (let i = 0; i < totalDays; i++) {
+                const date = addDays(start, i);
                 const weekNo = Math.floor(i / 7) + 1;
-
-                const entries = chunk.map((date, idx) => {
-                    const topic = topics[(i + idx) % topics.length];
-
-                    // 🔒 FIXED MARKS LOGIC (85+ only)
-                    const r = rand();
-                    let marks, remark;
-                    marks = Math.floor(85 + r * 16); // 85–100
-                    remark = "Excellent";
-
-                    return {
-                        date: new Date(date),
-                        topic,
-                        marks,
-                        remark
+                if (!currentWeek || currentWeek.weekNo !== weekNo) {
+                    currentWeek = {
+                        weekNo,
+                        entries: [],
+                        startDate: new Date(date),
+                        endDate: new Date(date)
                     };
-                });
+                    weeks.push(currentWeek);
+                }
 
-                weeks.push({
-                    weekNo,
-                    entries,
-                    startDate: chunk[0],
-                    endDate: chunk[chunk.length - 1]
+                // One unique syllabus item per calendar day, in learning order.
+                const topic = expandedTopics[i];
+                const activityIndex = i + 1;
+                const phase = i < Math.ceil(totalDays * 0.2) ? "Foundation" :
+                    i < Math.ceil(totalDays * 0.55) ? "Skill Development" :
+                    i < Math.ceil(totalDays * 0.8) ? "Applied Practice" : "Project & Review";
+
+                currentWeek.entries.push({
+                    date: new Date(date),
+                    topic: `${String(activityIndex).padStart(2, "0")}. ${topic}`,
+                    // Random sample marks from 95 to 100 (inclusive).
+                    marks: Math.floor(Math.random() * 6) + 95,
+                    remark: phase
                 });
+                currentWeek.endDate = new Date(date);
             }
 
-            // ✅ RETURN MUST BE INSIDE FUNCTION
             return weeks;
         }
         /**********************
- * Overall Percentage, Grade & Remark Calculator
- **********************/
+         * Overall result calculator
+         * Activity marks are randomly generated in the 95–100 range for a ready-to-use sample report.
+         **********************/
         function calculateOverallResult(weeks) {
-            let totalMarks = 0;
-            let totalCount = 0;
-
-            weeks.forEach(week => {
-                week.entries.forEach(entry => {
-                    totalMarks += entry.marks;
-                    totalCount++;
-                });
-            });
-
-            const percentage = totalCount
-                ? (totalMarks / (totalCount * 100)) * 100
-                : 0;
-
-            let grade = "A";
-            let remarkLine = "Excellent Performance";
-
-            if (percentage >= 90) {
-                grade = "A+";
-                remarkLine = "Outstanding Performance";
-            } else if (percentage >= 85) {
-                grade = "A";
-                remarkLine = "Excellent Performance";
-            }
-
+            const entries = weeks.flatMap(week => week.entries);
+            const totalCount = entries.length;
+            const percentage = totalCount ? 100 : 0;
             return {
                 percentage: percentage.toFixed(2),
-                grade,
-                remarkLine
+                grade: totalCount ? "Curriculum Plan" : "N/A",
+                remarkLine: totalCount
+                    ? `${totalCount} unique learning activities scheduled in chronological order`
+                    : "No activities available"
             };
         }
-
-
 
         /**********************
          * render a single report card DOM
@@ -1011,13 +1196,13 @@
           </div>
           <div class="text-center my-3">
   <h5>
-    Overall Percentage:
+    Curriculum Coverage:
     <span style="color:#198754;">
       ${overallResult.percentage}%
     </span>
   </h5>
   <h5>
-    Grade:
+    Learning Plan:
     <span style="color:#0d6efd;">
       ${overallResult.grade}
     </span>
@@ -1045,7 +1230,7 @@
             <tr>
               <th style="width:120px">Date</th>
               <th>Topic / Activity</th>
-              <th style="width:100px">Marks</th>
+              <th style="width:80px">Marks</th>
               <th style="width:160px">Remarks</th>
             </tr>
           </thead>
@@ -1054,7 +1239,7 @@
                 const tbody = table.querySelector('tbody');
                 week.entries.forEach(e => {
                     const tr = document.createElement('tr');
-                    tr.innerHTML = `<td>${fmtDate(e.date)}</td><td>${escapeHtml(e.topic)}</td><td>${e.marks}</td><td>${escapeHtml(e.remark)}</td>`;
+                    tr.innerHTML = `<td>${fmtDate(e.date)}</td><td>${escapeHtml(e.topic)}</td><td>${e.marks === null || e.marks === undefined ? '' : escapeHtml(e.marks)}</td><td>${escapeHtml(e.remark || '')}</td>`;
                     tbody.appendChild(tr);
                 });
 
@@ -1138,6 +1323,17 @@
                 return;
             }
 
+            if (parseDateISO(endDate) < parseDateISO(startDate)) {
+                alert('End Date must be on or after Start Date.');
+                return;
+            }
+            try {
+                createWeeklyBreakdown(startDate, endDate, domain, candidateId);
+            } catch (error) {
+                alert(error.message);
+                return;
+            }
+
             const data = { name, candidateId, domain, startDate, endDate, certLink };
             const output = document.getElementById('reportsOutput');
             output.innerHTML = ''; // clear
@@ -1174,6 +1370,16 @@
                         if (!name || !candidateId || !domain || !startDate || !endDate) {
                             // skip invalid rows but continue
                             console.warn('Skipping invalid CSV row', row);
+                            return;
+                        }
+                        if (parseDateISO(endDate) < parseDateISO(startDate)) {
+                            console.warn('Skipping CSV row with EndDate before StartDate', row);
+                            return;
+                        }
+                        try {
+                            createWeeklyBreakdown(startDate, endDate, domain, candidateId);
+                        } catch (error) {
+                            console.warn('Skipping CSV row:', error.message, row);
                             return;
                         }
                         const data = { name, candidateId, domain, startDate, endDate, certLink };
