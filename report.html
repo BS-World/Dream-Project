@@ -1152,13 +1152,22 @@
         function calculateOverallResult(weeks) {
             const entries = weeks.flatMap(week => week.entries);
             const totalCount = entries.length;
-            const percentage = totalCount ? 100 : 0;
+            const totalMarks = entries.reduce((sum, entry) => sum + (Number(entry.marks) || 0), 0);
+            const percentage = totalCount ? totalMarks / totalCount : 0;
+            let grade = "N/A";
+            let performance = "No activities available";
+            if (totalCount) {
+                if (percentage >= 90) { grade = "A+"; performance = "Outstanding Performance"; }
+                else if (percentage >= 80) { grade = "A"; performance = "Excellent Performance"; }
+                else if (percentage >= 70) { grade = "B"; performance = "Very Good Performance"; }
+                else if (percentage >= 60) { grade = "C"; performance = "Good Performance"; }
+                else { grade = "D"; performance = "Needs Improvement"; }
+            }
             return {
                 percentage: percentage.toFixed(2),
-                grade: totalCount ? "Curriculum Plan" : "N/A",
-                remarkLine: totalCount
-                    ? `${totalCount} unique learning activities scheduled in chronological order`
-                    : "No activities available"
+                grade,
+                remarkLine: performance,
+                activityCount: totalCount
             };
         }
 
@@ -1194,23 +1203,22 @@
           <div class="text-center my-4">
             <h2 class="mb-3" style="color: #2c3e50; font-weight: 600;">Report Card</h2>
           </div>
-          <div class="text-center my-3">
-  <h5>
-    Curriculum Coverage:
-    <span style="color:#198754;">
-      ${overallResult.percentage}%
-    </span>
-  </h5>
-  <h5>
-    Learning Plan:
-    <span style="color:#0d6efd;">
-      ${overallResult.grade}
-    </span>
-  </h5>
-  <p class="fw-semibold text-success">
+          <div class="text-center my-3 py-2 overall-result">
+  <h2 class="mb-2" style="font-size: clamp(1.15rem, 2.7vw, 1.8rem); font-weight: 500; color:#172033;">
+    Overall Percentage: <span style="color:#198754;">${overallResult.percentage}%</span>
+  </h2>
+  <h2 class="mb-3" style="font-size: clamp(1.15rem, 2.7vw, 1.8rem); font-weight: 500; color:#172033;">
+    Grade: <span style="color:#0d6efd;">${overallResult.grade}</span>
+  </h2>
+  <p class="fw-bold mb-1" style="font-size:clamp(1rem, 2.2vw, 1.45rem); color:#198754;">
     ${overallResult.remarkLine}
   </p>
 </div>
+
+          <div class="text-center mb-3" style="line-height:1.45;">
+            <p class="mb-1" style="font-size:clamp(0.9rem, 2vw, 1.15rem); font-weight:600; color:#344054;">Curriculum Coverage: <span style="color:#198754;">100.00%</span></p>
+            <p class="mb-0" style="font-size:clamp(0.9rem, 2vw, 1.15rem); font-weight:600; color:#344054;">Learning Plan: <span style="color:#0d6efd;">Curriculum Plan</span></p>
+          </div>
 
           <hr>
         <p class="mb-2 meta">Maintor/Supervisor - Akash Dubey (<a href="mailto:akash.dubey@alfidotech.com">akash.dubey@alfidotech.com</a>)</p> </br>
